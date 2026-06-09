@@ -1,0 +1,30 @@
+/* ============================================================
+  ROOT TOKENS  (--ap-* 네임스페이스 — 실제 메인 소스와 동일)
+============================================================ */
+:root {
+  /* Color */
+  --ap-color-black:   #1B1B1B;
+  --ap-color-white:   #FAFAF8;
+  --ap-color-surface: #F4F3F0;
+  --ap-color-border:  #E4E3DF;
+  --ap-color-gray-100:#F2F1EE;
+  --ap-color-gray-200:#E4E3DF;
+  --ap-color-gray-400:#A8A7A2;
+  --ap-color-gray-600:#6B6A65;
+  --ap-color-blue:    #4B91C5;
+  --ap-color-orange:  #E85C1E;
+
+  /* Typography */
+  --ap-font-serif: 'Cormorant Garamond', Georgia, serif;
+  --ap-font-sans:  'Pretendard', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+
+  /* Layout */
+  --ap-nav-height:    56px;
+  --ap-notice-height: 36px;
+
+  /* Motion */
+  --ap-transition-base: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ap-transition-slow: 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.main_top_banner .top_banner_box_inner .top_banner_text a {font-size: 15px;}

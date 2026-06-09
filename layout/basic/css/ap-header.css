@@ -1,0 +1,6 @@
+
+@media (min-width: 1024px) {
+  .insooth #header.ap-header .inner .top_nav_box .top_category > ul {
+    justify-content: center;
+  }
+}
