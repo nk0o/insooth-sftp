@@ -1,20 +1,4 @@
 <!--@css(/layout/basic/css/ap-header.css)-->
-<div class="main_top_banner ez-align-center" data-ez-module="top-banner" data-ez-align="center"
-  data-ez-role="style.color" data-ez-display="visible" data-ez="contents-0ufi8ba-1">
-  <div class="top_banner_box_inner">
-    <div class="top_banner_text"><!-- 최상단 배너 수정하는곳 -->
-      <a data-ez-role="a" href="#" data-href="#" target="_self"
-        style="color: rgb(255, 255, 255); font-weight: normal;">첫 쇼핑을 지원하는 3,000원 할인 회원가입 쿠폰</a>
-    </div><!-- //top_banner_text -->
-
-    <div class="top_banner_close" data-ez-role="close">
-      <input type="checkbox" name="chkbox" id="top_banner_box_cloase" value="1"
-        data-ez-role="disable-term"><label for="top_banner_box_cloase"
-        data-ez-role="disable-text">오늘 하루 보지 않기</label>
-      <i aria-hidden="true" class="icon icoClose white">닫기</i>
-    </div><!-- //top_banner_close -->
-  </div><!-- //top_banner_box_inner -->
-</div>
 
 <header id="header" class="layout3 ap-header" data-ez-layout="layout3" data-ez="contents-0w8exkg-1">
   <ez-prop data-version="1.0.0">
@@ -25,40 +9,29 @@
       <ez-item data-id="layout4" data-name="2단 슬라이딩 메뉴 노출형"></ez-item>
     </ez-var>
   </ez-prop>
-  <div class="inner">
-    <div class="toparea display_pc_only">
-      <div class="toparea_shoppinginfo">
-        <div module="Layout_multishopList">
-          <button type="button" class="toggle">{$current_language} <i aria-hidden="true"
-              class="icon icoArrowRight"></i></button>
-          <ul module="Layout_multishopListitem">
-            <li class="{$selected_class}">
-              <a href="//{$shop_domain}/">{$locale_language}</a>
-            </li>
-            <li class="{$selected_class}">
-              <a href="//{$shop_domain}/">{$locale_language}</a>
-            </li>
-          </ul>
-        </div><!-- //Layout_multishopList -->
-        <div data-ez-group="shopping-info" data-ez-role="list">
-          <ul module="Layout_shoppingInfo">
-            <li class="{$use_mileage|display}"><a
-                href="/myshop/mileage/historyList.html">{$mileage_name}
-                <strong>{$mileage}</strong></a></li>
-            <li class="{$use_deposit|display}"><a
-                href="/myshop/deposits/historyList.html">{$deposit_name}
-                <strong>{$deposit}</strong></a></li>
-            <li class="{$use_coupon_cnt|display}"><a href="/myshop/coupon/coupon.html">쿠폰
-                <strong>{$coupon_cnt}</strong></a></li>
-            <li class="{$use_interest_prd|display}"><a href="/myshop/wish_list.html">관심상품
-                <strong>{$interest_prd_cnt}</strong></a></li>
-            <li class="{$use_like_product_cnt|display}">{$like_prd_tag}</li>
-            <li class="{$use_basket_cnt|display}"><a href="/order/basket.html">장바구니
-                <strong>{$basket_cnt}<span
-                    class="{$use_basket_price|display}">({$basket_price})</span></strong></a></li>
-          </ul>
-        </div>
-      </div><!-- //toparea_shoppinginfo -->
+  <div class="inner ap-header__inner">
+    <!------------------------
+        최상단 배너 ----- START
+      ------------------------>
+    <div class="main_top_banner ez-align-center ap-notice" data-ez-module="top-banner" data-ez-align="center"
+      data-ez-role="style.color" data-ez-display="visible" data-ez="contents-0ufi8ba-1">
+      <div class="top_banner_box_inner">
+        <div class="top_banner_text">
+          <a data-ez-role="a" href="#" data-href="#" target="_self">첫 쇼핑을 지원하는 <span class="ap-notice__highlight">3,000원</span> 할인 회원가입 쿠폰</a>
+        </div><!-- //top_banner_text -->
+        <div class="top_banner_close" data-ez-role="close">
+          <input type="checkbox" name="chkbox" id="top_banner_box_cloase" value="1"
+            data-ez-role="disable-term"><label for="top_banner_box_cloase"
+            data-ez-role="disable-text">오늘 하루 보지 않기</label>
+          <i aria-hidden="true" class="icon icoClose white">닫기</i>
+        </div><!-- //top_banner_close -->
+      </div><!-- //top_banner_box_inner -->
+    </div><!-- //main_top_banner -->
+    <!------------------------
+        최상단 배너 ----- END
+      ------------------------>
+
+    <div class="toparea displaynone">
 
       <div class="toparea_state" data-ez-group="top-util-menu" data-ez-role="list">
         <a data-ez-item="join" module="Layout_statelogoff" href="/member/agreement.html">회원가입</a>
@@ -80,37 +53,87 @@
     </div><!-- //toparea -->
 
     <div class="top_nav_box" id="top_nav_box">
-      <div class="top_logo" module="Layout_LogoTop"><a href="/"><img src="{$logo}"
-            alt="{$mall_name}"></a></div><!-- //top_logo -->
-
-      <div class="top_mypage">
-        <div module="Layout_MobileAction" class="tablet_detail_only">
-          <a href="#none" onclick="{$go_back}"><img src="/SkinImg/img/back.svg"></a>
+    <!-- ② NAV -->
+      <nav class="ap-nav" id="apNav">
+        <div class="ap-nav__logo" module="Layout_LogoTop">
+          <a href="/">
+            <span class="ap-nav__logo-word"><img src="/web/img/logo.svg" alt="{$mall_name}"></span>
+            <span class="ap-nav__logo-symbol" aria-hidden="true"><img src="/web/img/logo_simbol.png" alt="{$mall_name}"></span>
+          </a>
         </div>
-        <a href="/myshop/index.html"><!--@import(/svg/icon-user.html)--></a>
-        <a href="/order/basket.html"
-          module="Layout_orderBasketcount"><!--@import(/svg/icon-cart.html)--><span
-            class="count {$basket_count_display|display} {$basket_count_display_class}"><span
-              class="{$basket_count_class}">{$basket_count}</span></span></a>
-        <a href="javascript:;" class="eSearch"><!--@import(/svg/icon-search.html)--></a>
-        <a href="javascript:;" class="eNavFold"><i aria-hidden="true" class="icon icoNav"></i></a>
-      </div><!-- //top_mypage -->
+        <ul class="ap-nav__links">
+          <li><a href="#">Brand</a></li>
+          <li><a href="#">Hike&amp;Trek</a></li>
+          <li><a href="#">Camp&amp;Rest</a></li>
+          <li><a href="#">Journal</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+        <div class="ap-nav__actions">
+          <a href="javascript:void(0);" class="eSearch ap-nav__icon-btn" aria-label="검색"><!--@import(/svg/icon-search.html)--></a><!-- 검색 -->
+          <a href="/myshop/index.html" class="ap-nav__icon-btn" aria-label="마이페이지"><!--@import(/svg/icon-user.html)--></a><!-- 마이페이지 -->
+          <a href="/order/basket.html" class="ap-nav__icon-btn ap-nav__cart"><div module="Layout_orderBasketcount">
+            <!--@import(/svg/icon-shopping-bag.html)-->
+              <span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span>
+          </div></a>
+          <a href="javascript:void(0);" class="eNavFold ap-nav__icon-btn ap-nav__menu"><!--@import(/svg/icon-hamburger.html)--></a>
+        </div>
 
-      <div data-ez-module="menu-main/1" data-ez-mode="manual">
-        <div class="xans-element- xans-layout xans-layout-category top_category">
-          <ul>
-            <li><a href="/category/SKINCARE/42/">SKINCARE</a>
-              <ul class="sub_cate01">
-                <li><a href="/category/%EC%8A%A4%ED%82%A8%EC%BC%80%EC%96%B4/46/">스킨케어</a></li>
-                <li><a href="/category/%EC%88%98%EB%B6%84%ED%81%AC%EB%A6%BC/47/">수분크림</a></li>
+        <!-- Full-width mega panel: shown on hover of ANY nav item -->
+        <div class="ap-nav__mega-panel">
+
+          <div class="ap-nav__mega-panel__inner">
+            <!-- Brand -->
+            <div class="ap-nav__mega-col">
+              <ul>
+                <li><a href="/about/insooth_story.html">본질의 여정</a></li>
+                <li><a href="/about/technology.html">기술과 소재</a></li>
+                <li><a href="/about/history.html">가치 있는 흔적</a></li>
+                <li><a href="/about/share_value.html">더 나은 세상</a></li>
               </ul>
-            </li>
-            <li><a href="/category/BODY/43/">BODY</a></li>
-            <li><a href="/category/HAIR/44/">HAIR</a></li>
-            <li><a href="/category/MAKE-UP/45/">MAKE UP</a></li>
-          </ul>
-        </div>
-      </div><!-- //menu-main/1 -->
+            </div><!-- //ap-nav__mega-col -->
+            <!-- Hike & Trek -->
+            <div class="ap-nav__mega-col">
+              <div class="ap-nav__mega-group">
+                <ul>
+                  <li><a href="#">전체</a></li>
+                  <li><a href="#">배낭</a></li>
+                  <li><a href="#">등산스틱</a></li>
+                  <li><a href="#">액세서리</a></li>
+                </ul>
+              </div>
+            </div><!-- //ap-nav__mega-col -->
+            <!-- Camp & Rest -->
+            <div class="ap-nav__mega-col">
+              <div class="ap-nav__mega-group">
+                <ul>
+                  <li><a href="#">전체</a></li>
+                  <li><a href="#">체어</a></li>
+                  <li><a href="#">테이블</a></li>
+                  <li><a href="#">액세서리</a></li>
+                </ul>
+              </div>
+            </div><!-- //ap-nav__mega-col -->
+            <!-- Journal -->
+            <div class="ap-nav__mega-col">
+              <ul>
+                <li><a href="#">큐레이션</a></li>
+                <li><a href="#">제품 가이드</a></li>
+                <li><a href="#">새소식</a></li>
+              </ul>
+            </div><!-- //ap-nav__mega-col -->
+            <!-- Support -->
+            <div class="ap-nav__mega-col">
+              <ul>
+                <li><a href="#">A/S</a></li>
+                <li><a href="#">정품 등록</a></li>
+                <li><a href="#">매장 안내</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+            </div><!-- //ap-nav__mega-col -->
+          </div><!-- //ap-nav__mega-panel__inner -->
+
+        </div><!-- //ap-nav__mega-panel -->
+      </nav>      
     </div><!-- //top_nav_box -->
 
     <div module="Layout_SearchHeader">
@@ -134,3 +157,182 @@
   </div><!-- //inner -->
 </header>
 <!--#ez="1/3"-->
+
+<script>
+  /* ------- LOGO SCROLL INTERACTION ------- */
+  var apNav = document.getElementById('apNav');
+  // threshold: hero 섹션 벗어나면 전환 (nav 높이 + notice 높이 기준)
+  var apLogoScrollThreshold = 80;
+  function apHandleLogoScroll() {
+    if (window.scrollY > apLogoScrollThreshold) {
+      apNav.classList.add('ap-nav--scrolled');
+    } else {
+      apNav.classList.remove('ap-nav--scrolled');
+    }
+  }
+  // passive 리스너: 스크롤 성능 최적화
+  window.addEventListener('scroll', apHandleLogoScroll, { passive: true });
+  // 페이지 로드 시 초기 상태 체크
+  apHandleLogoScroll();
+</script>
+
+
+
+<script>
+  // ap-search-live.js
+const ApSearchLive = (() => {
+  let debounceTimer = null;
+  const DELAY = 400;
+
+  // 레이어 내 라이브 결과 영역 생성
+  function createLiveBox() {
+    const existing = document.querySelector('.ap-search-live');
+    if (existing) return existing;
+
+    const box = document.createElement('div');
+    box.className = 'ap-search-live';
+    box.innerHTML = `
+      <div class="ap-search-live__inner">
+        <div class="ap-search-live__header">
+          <span class="ap-search-live__label">검색 결과</span>
+          <span class="ap-search-live__count"></span>
+        </div>
+        <ul class="ap-search-live__list"></ul>
+        <div class="ap-search-live__empty" style="display:none">
+          검색 결과가 없습니다.
+        </div>
+        <a class="ap-search-live__more" href="#">전체 결과 보기</a>
+      </div>`;
+
+    // 검색 폼 안 fieldset 아래에 삽입
+    const fieldset = document.querySelector('#searchBarForm .xans-layout-searchheader');
+    if (fieldset) fieldset.appendChild(box);
+    return box;
+  }
+
+  // 검색결과 페이지 fetch 후 파싱
+  async function fetchResults(keyword) {
+    const res = await fetch(
+      `/product/search.html?keyword=${encodeURIComponent(keyword)}&count=6`
+    );
+    const text = await res.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(text, 'text/html');
+
+    const items = [];
+    doc.querySelectorAll('.prdList li').forEach(li => {
+      const img   = li.querySelector('.prdImg img');
+      const link  = li.querySelector('.thumbnail a');
+      const name  = li.querySelector('.description .name a');
+      const price = li.querySelector('.description [ec-data-price]');
+
+      if (!img || !name) return;
+
+      items.push({
+        img:   img.getAttribute('src'),
+        alt:   img.getAttribute('alt') || '',
+        href:  link ? link.getAttribute('href') : '#',
+        name:  name.textContent.trim(),
+        price: price ? price.getAttribute('ec-data-price') : '',
+      });
+    });
+
+    return items;
+  }
+
+  // 레이어에 결과 렌더링
+  function renderResults(liveBox, keyword, items) {
+    const list   = liveBox.querySelector('.ap-search-live__list');
+    const empty  = liveBox.querySelector('.ap-search-live__empty');
+    const count  = liveBox.querySelector('.ap-search-live__count');
+    const more   = liveBox.querySelector('.ap-search-live__more');
+
+    list.innerHTML = '';
+
+    if (!items.length) {
+      empty.style.display = 'block';
+      list.style.display  = 'none';
+      count.textContent   = '';
+      more.style.display  = 'none';
+      return;
+    }
+
+    empty.style.display = 'none';
+    list.style.display  = '';
+    count.textContent   = `미리보기 ${items.length}개`;
+    more.href           = `/product/search.html?keyword=${encodeURIComponent(keyword)}`;
+    more.style.display  = '';
+
+    items.slice(0, 6).forEach(item => {
+      const priceNum = parseInt(item.price, 10);
+      const priceStr = priceNum
+        ? priceNum.toLocaleString('ko-KR') + '원'
+        : '';
+
+      const li = document.createElement('li');
+      li.className = 'ap-search-live__item';
+      li.innerHTML = `
+        <a href="${item.href}" class="ap-search-live__link">
+          <span class="ap-search-live__img">
+            <img src="${item.img}" alt="${item.alt}" loading="lazy">
+          </span>
+          <span class="ap-search-live__info">
+            <span class="ap-search-live__name">${item.name}</span>
+            ${priceStr ? `<span class="ap-search-live__price">${priceStr}</span>` : ''}
+          </span>
+        </a>`;
+      list.appendChild(li);
+    });
+  }
+
+  function hideLiveBox(liveBox) {
+    liveBox.style.display = 'none';
+  }
+
+  function showLiveBox(liveBox) {
+    liveBox.style.display = '';
+  }
+
+  // 초기화
+  function init() {
+    const input = document.getElementById('keyword');
+    if (!input) return;
+
+    const liveBox = createLiveBox();
+    hideLiveBox(liveBox);
+
+    input.addEventListener('input', () => {
+      const keyword = input.value.trim();
+      clearTimeout(debounceTimer);
+
+      if (keyword.length < 2) {
+        hideLiveBox(liveBox);
+        return;
+      }
+
+      debounceTimer = setTimeout(async () => {
+        showLiveBox(liveBox);
+        liveBox.querySelector('.ap-search-live__list').innerHTML =
+          '<li class="ap-search-live__loading">검색 중…</li>';
+
+        try {
+          const items = await fetchResults(keyword);
+          renderResults(liveBox, keyword, items);
+        } catch (e) {
+          hideLiveBox(liveBox);
+        }
+      }, DELAY);
+    });
+
+    // 검색 레이어 닫힐 때 초기화
+    document.querySelector('.btnClose')?.addEventListener('click', () => {
+      hideLiveBox(liveBox);
+      input.value = '';
+    });
+  }
+
+  return { init };
+})();
+
+document.addEventListener('DOMContentLoaded', () => ApSearchLive.init());
+</script>

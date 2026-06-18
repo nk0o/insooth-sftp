@@ -1,0 +1,256 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/layout/basic/js/main.js)-->
+<!--@css(/layout/basic/css/main.css)-->
+<!--@import(/smart-banner/shop1/smart-banner-admin-RES00003.html)-->
+<section class="section main_product_list" data-ez-module="product-list/1" data-ez-layout="grid3 list_gallery" data-ez="contents-0d50wav-1">
+	<ez-prop data-version="1.0.0">
+		<ez-var data-prop="layout" data-namespace="ez.module.product-list.layout" data-type="array">
+			<ez-item data-id="grid3" data-name="일반3단형(PC 3열/MOBILE 1열)"></ez-item>
+			<ez-item data-id="grid4" data-name="일반4단형(PC 4열/MOBILE 2열)"></ez-item>
+			<ez-item data-id="grid5" data-name="일반5단형(PC 5열/MOBILE 2열)"></ez-item>
+			<ez-item data-id="grid3 list_gallery" data-name="이미지강조3단형(PC 3열/MOBILE 1열)"></ez-item>
+			<ez-item data-id="grid4 list_gallery" data-name="이미지강조4단형(PC 4열/MOBILE 2열)"></ez-item>
+			<ez-item data-id="grid5 list_gallery" data-name="이미지강조5단형(PC 5열/MOBILE 2열)"></ez-item>
+		</ez-var>
+	</ez-prop>
+	<div class="main_title ez-align-left" data-ez-role="ez-align" data-ez-align="left"><!-- New Arrivals 타이틀 수정하는곳 -->
+		<div class="main_title_txt01" data-ez-role="title">BEST ITEM</div>
+		<div class="main_title_txt02" data-ez-role="subtitle">가장 인기있는 아이템</div>
+	</div><!-- //main_title -->
+
+	<div data-ez-holder="product_listmain">
+		<div module="product_listmain_1" class="ec-base-product">
+			<!--
+				$count = 3
+				$basket_result = /product/add_basket.html
+				$basket_option = /product/basket_option.html
+				$moreview = no
+				$cache = yes
+			-->
+			<ul class="prdList grid3 list_gallery" data-ez-role="layout ez-discount-tag">
+				<!--@import(/product/list_product.html)-->
+			</ul>
+		</div>
+	</div>
+    <div module="product_listmore_1" class="more">
+        <a href="#none" onclick="{$more_action}" class="btnMore">MORE</a>
+    </div>
+</section>
+<section class="section main_product_category" data-ez-module="product-list-category/2" data-ez-layout="grid5" data-ez="contents-067zsen-1">
+	<ez-prop data-version="1.0.0">
+		<ez-var data-prop="layout" data-namespace="ez.module.product-list-category.layout" data-type="array">
+			<ez-item data-id="grid3" data-name="일반3단형(PC 3열/MOBILE 2열)"></ez-item>
+			<ez-item data-id="grid4" data-name="일반4단형(PC 4열/MOBILE 2열)"></ez-item>
+			<ez-item data-id="grid5" data-name="일반5단형(PC 5열/MOBILE 3열)"></ez-item>
+			<ez-item data-id="grid3 list_gallery" data-name="이미지강조3단형(PC 3열/MOBILE 2열)"></ez-item>
+			<ez-item data-id="grid4 list_gallery" data-name="이미지강조4단형(PC 4열/MOBILE 2열)"></ez-item>
+			<ez-item data-id="grid5 list_gallery" data-name="이미지강조5단형(PC 5열/MOBILE 3열)"></ez-item>
+		</ez-var>
+	</ez-prop>
+	<div class="main_product_inner">
+		<div class="main_title ez-align-left" data-ez-role="ez-align" data-ez-align="left"><!-- Make it yours 타이틀 수정하는곳 -->
+			<div class="main_title_txt01" data-ez-role="title">MAKE IT YOURS</div>
+			<div class="main_title_txt02" data-ez-role="subtitle">당신 취향에 딱 맞는</div>
+		</div><!-- //main_title -->
+
+		<ul class="main_product_tab" data-ez-role="tab-list">
+			<li data-ez-role="tab-item">#<button type="button" class="button" data-id="tabContent1" data-ez-role="name" data-name="SKINCARE">SKINCARE</button></li>
+			<li data-ez-role="tab-item">#<button type="button" class="button" data-id="tabContent2" data-ez-role="name" data-name="BODY">BODY</button></li>
+			<li data-ez-role="tab-item">#<button type="button" class="button" data-id="tabContent3" data-ez-role="name" data-name="HAIR">HAIR</button></li>
+			<li data-ez-role="tab-item">#<button type="button" class="button" data-id="tabContent4" data-ez-role="name" data-name="MAKE UP">MAKE UP</button></li>
+		</ul>
+	</div><!-- //main_product_inner -->
+
+	<div class="content_list" data-ez-role="content-list">
+		<div class="tabcontent" id="tabContent1" data-ez-role="content-item">
+			<div data-ez-holder="product_listmain">
+				<div module="product_listmain_2" class="ec-base-product">
+					<!--
+						$count = 100
+						$basket_result = /product/add_basket.html
+						$basket_option = /product/basket_option.html
+						$moreview = yes
+						$cache = yes
+					-->
+					<ul class="prdList grid5" data-ez-role="layout ez-discount-tag">
+						<!--@import(/product/list_product.html)-->
+					</ul>
+				</div>
+				<div module="product_listmore_1" class="more">
+					<a href="#none" onclick="{$more_action}" class="btnMore">MORE</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="tabcontent" id="tabContent2" data-ez-role="content-item">
+			<div data-ez-holder="product_listmain">
+				<div module="product_listmain_3" class="ec-base-product">
+					<!--
+						$count = 100
+						$basket_result = /product/add_basket.html
+						$basket_option = /product/basket_option.html
+						$moreview = yes
+						$cache = yes
+					-->
+					<ul class="prdList grid5" data-ez-role="layout ez-discount-tag">
+						<!--@import(/product/list_product.html)-->
+					</ul>
+				</div>
+				<div module="product_listmore_2" class="more">
+					<a href="#none" onclick="{$more_action}" class="btnMore">MORE</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="tabcontent" id="tabContent3" data-ez-role="content-item">
+			<div data-ez-holder="product_listmain">
+				<div module="product_listmain_4" class="ec-base-product">
+					<!--
+						$count = 100
+						$basket_result = /product/add_basket.html
+						$basket_option = /product/basket_option.html
+						$moreview = yes
+						$cache = yes
+					-->
+					<ul class="prdList grid5" data-ez-role="layout ez-discount-tag">
+						<!--@import(/product/list_product.html)-->
+					</ul>
+				</div>
+				<div module="product_listmore_3" class="more">
+					<a href="#none" onclick="{$more_action}" class="btnMore">MORE</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="tabcontent" id="tabContent4" data-ez-role="content-item">
+			<div data-ez-holder="product_listmain">
+				<div module="product_listmain_12" class="ec-base-product">
+					<!--
+						$count = 100
+						$basket_result = /product/add_basket.html
+						$basket_option = /product/basket_option.html
+						$moreview = yes
+						$cache = yes
+					-->
+					<ul class="prdList grid5" data-ez-role="layout ez-discount-tag">
+						<!--@import(/product/list_product.html)-->
+					</ul>
+				</div>
+				<div module="product_listmore_4" class="more">
+					<a href="#none" onclick="{$more_action}" class="btnMore">MORE</a>
+				</div>
+			</div>
+		</div>
+	</div><!-- //content-list -->
+</section>
+<section class="section main_video ez-align-left" data-ez-module="video/1" data-ez-role="style.background" data-ez-align="left" data-ez="contents-1jj8zgj-1">
+	<div class="main_title"><!-- 비디오 타이틀 수정하는곳 -->
+		<div class="main_title_txt01" data-ez-role="title">BRAND STORY</div>
+		<div class="main_title_txt02" data-ez-role="desc">미디어로 보는</div>
+	</div><!-- //main_title -->
+	<div class="margin_video_box">
+		<div class="wrap_video_box">
+			<div class="main_video_box"><iframe data-ez-role="video" id="ytplayer" type="text/html" src="https://m-img.cafe24.com/images/ec/sde/video/beauty_1920x1080.mp4" frameborder="0" allowfullscreen data-ez-rawsrc="https://m-img.cafe24.com/images/ec/sde/video/beauty_1920x1080.mp4"></iframe></div>
+		</div>
+	</div>
+</section>
+<section class="section main_product_list" data-ez-module="product-list/1" data-ez-layout="grid4" style="margin-bottom: 120px;" data-ez="contents-1errjzz-1">
+	<ez-prop data-version="1.0.0">
+		<ez-var data-prop="layout" data-namespace="ez.module.product-list.layout" data-type="array">
+			<ez-item data-id="grid3" data-name="일반3단형(PC 3열/MOBILE 1열)"></ez-item>
+			<ez-item data-id="grid4" data-name="일반4단형(PC 4열/MOBILE 2열)"></ez-item>
+			<ez-item data-id="grid5" data-name="일반5단형(PC 5열/MOBILE 2열)"></ez-item>
+			<ez-item data-id="grid3 list_gallery" data-name="이미지강조3단형(PC 3열/MOBILE 1열)"></ez-item>
+			<ez-item data-id="grid4 list_gallery" data-name="이미지강조4단형(PC 4열/MOBILE 2열)"></ez-item>
+			<ez-item data-id="grid5 list_gallery" data-name="이미지강조5단형(PC 5열/MOBILE 2열)"></ez-item>
+		</ez-var>
+	</ez-prop>
+	<div class="main_title ez-align-left" data-ez-role="ez-align" data-ez-align="left"><!-- New Arrivals 타이틀 수정하는곳 -->
+		<div class="main_title_txt01" data-ez-role="title">TRENDING NOW</div>
+		<div class="main_title_txt02" data-ez-role="subtitle">지금 뜨고있는 아이템</div>
+	</div><!-- //main_title -->
+	<div data-ez-holder="product_listmain">
+		<div module="product_listmain_13" class="ec-base-product">
+			<!--
+				$count = 4
+				$basket_result = /product/add_basket.html
+				$basket_option = /product/basket_option.html
+				$moreview = yes
+				$cache = yes
+			-->
+			<ul class="prdList grid4" data-ez-role="layout ez-discount-tag">
+				<!--@import(/product/list_product.html)-->
+			</ul>
+		</div>
+	</div>
+    <div module="product_listmore_13" class="more">
+        <a href="#none" onclick="{$more_action}" class="btnMore">MORE</a>
+    </div>
+</section>
+<!--@import(/smart-banner/shop1/smart-banner-admin-RES00004.html)-->
+<section class="section main_product_list" data-ez-module="product-list/1" data-ez-layout="grid4" data-ez="contents-17byk6j-1">
+	<ez-prop data-version="1.0.0">
+		<ez-var data-prop="layout" data-namespace="ez.module.product-list.layout" data-type="array">
+			<ez-item data-id="grid3" data-name="일반3단형(PC 3열/MOBILE 1열)"></ez-item>
+			<ez-item data-id="grid4" data-name="일반4단형(PC 4열/MOBILE 2열)"></ez-item>
+			<ez-item data-id="grid5" data-name="일반5단형(PC 5열/MOBILE 2열)"></ez-item>
+			<ez-item data-id="grid3 list_gallery" data-name="이미지강조3단형(PC 3열/MOBILE 1열)"></ez-item>
+			<ez-item data-id="grid4 list_gallery" data-name="이미지강조4단형(PC 4열/MOBILE 2열)"></ez-item>
+			<ez-item data-id="grid5 list_gallery" data-name="이미지강조5단형(PC 5열/MOBILE 2열)"></ez-item>
+		</ez-var>
+	</ez-prop>
+	<div class="main_title ez-align-left" data-ez-role="ez-align" data-ez-align="left"><!-- New Arrivals 타이틀 수정하는곳 -->
+		<div class="main_title_txt01" data-ez-role="title">NEW ARRIVALS</div>
+		<div class="main_title_txt02" data-ez-role="subtitle">놓치기에 아쉬운</div>
+	</div><!-- //main_title -->
+	<div data-ez-holder="product_listmain">
+		<div module="product_listmain_14" class="ec-base-product">
+			<!--
+				$count = 8
+				$basket_result = /product/add_basket.html
+				$basket_option = /product/basket_option.html
+				$moreview = yes
+				$cache = yes
+			-->
+			<ul class="prdList grid4" data-ez-role="layout ez-discount-tag">
+				<!--@import(/product/list_product.html)-->
+			</ul>
+		</div>
+	</div>
+    <div module="product_listmore_14" class="more">
+        <a href="#none" onclick="{$more_action}" class="btnMore">MORE</a>
+    </div>
+</section>
+<section class="section main_text ez-textsize-medium ez-align-center" data-ez-module="text/1" data-ez-role="style.background" data-ez-align="center" data-ez-textsize="medium" style="background-color: rgb(31, 31, 31);" data-ez="contents-16taq7s-1"><!-- 메인 텍스트배너 수정하는곳 -->
+	<div class="main_text_txt"><!-- How to ASHFRAME 타이틀 수정하는곳 -->
+		<div class="main_text_txt01" data-ez-role="title" style="color: rgb(255, 255, 255);">JOIN EVENT</div>
+		<div class="main_text_txt02" data-ez-role="desc" style="color: rgb(51, 51, 51);"><p><span style="color: rgb(255, 255, 255);">쇼핑몰 회원가입 시 적립금 3,000원 즉시 지급</span></p></div>
+		<div class="main_text_link" style="display: none;"><a data-ez-role="a" href="#" target="_self"></a></div>
+	</div><!-- //main_text_txt -->
+</section>
+<section class="section main_map ez-align-left" data-ez-module="map/1" data-ez-align="left" data-ez="contents-0bcjn6e-1">
+	<ez-prop data-version="1.0.0">
+		<ez-var data-prop="image" data-namespace="ez.module.map.image">
+			<ez-item data-id="size" data-pc="840 525" data-mobile="840 525"></ez-item>
+		</ez-var>
+	</ez-prop>
+	<div class="main_map_banner">
+		<div class="main_map_banner_txt_box">
+			<div class="main_map_banner_txt">
+				<div class="main_map_banner_txt01" data-ez-role="title" style="color: rgb(51, 51, 51);">BEAUTY</div>
+				<div class="main_map_banner_txt02" data-ez-role="desc" style="color: rgb(51, 51, 51);">
+					<p>서울특별시 동작구 보라매로0길 00</p>
+					<p>00, Boramae-ro 0-gil, Dongjak-gu, Seoul, Republic of Korea</p>
+					<p>02-0000-0000</p>
+				</div>
+				<div class="main_long_banner_link"><span class="displaynone" data-ez-role="address">서울특별시 동작구 보라매로0길 00</span><a data-ez-role="a" href="https://www.google.com/maps/dir/서울특별시%20동작구%20보라매로0길%2000" target="_blank">매장 위치 확인하기</a></div>
+			</div><!-- //main_map_banner_txt -->
+		</div><!-- //main_map_banner_txt_box -->
+		<picture>
+			<source srcset="/SkinImg/img/main_map_pc.png" media="(max-width: 1024px)" data-ez-role="img-pc">
+			<img src="/SkinImg/img/main_map_pc.png" data-ez-role="img-mobile">
+		</picture>
+	</div><!-- //main_map_banner -->
+</section>
+<!--@define(cmc_log)-->
+<!--#ez="1/20"-->

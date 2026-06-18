@@ -1,256 +1,745 @@
 <!--@layout(/layout/basic/layout.html)-->
 <!--@js(/layout/basic/js/main.js)-->
 <!--@css(/layout/basic/css/main.css)-->
-<!--@import(/smart-banner/shop1/smart-banner-admin-RES00003.html)-->
-<section class="section main_product_list" data-ez-module="product-list/1" data-ez-layout="grid3 list_gallery" data-ez="contents-0d50wav-1">
-	<ez-prop data-version="1.0.0">
-		<ez-var data-prop="layout" data-namespace="ez.module.product-list.layout" data-type="array">
-			<ez-item data-id="grid3" data-name="일반3단형(PC 3열/MOBILE 1열)"></ez-item>
-			<ez-item data-id="grid4" data-name="일반4단형(PC 4열/MOBILE 2열)"></ez-item>
-			<ez-item data-id="grid5" data-name="일반5단형(PC 5열/MOBILE 2열)"></ez-item>
-			<ez-item data-id="grid3 list_gallery" data-name="이미지강조3단형(PC 3열/MOBILE 1열)"></ez-item>
-			<ez-item data-id="grid4 list_gallery" data-name="이미지강조4단형(PC 4열/MOBILE 2열)"></ez-item>
-			<ez-item data-id="grid5 list_gallery" data-name="이미지강조5단형(PC 5열/MOBILE 2열)"></ez-item>
-		</ez-var>
-	</ez-prop>
-	<div class="main_title ez-align-left" data-ez-role="ez-align" data-ez-align="left"><!-- New Arrivals 타이틀 수정하는곳 -->
-		<div class="main_title_txt01" data-ez-role="title">BEST ITEM</div>
-		<div class="main_title_txt02" data-ez-role="subtitle">가장 인기있는 아이템</div>
-	</div><!-- //main_title -->
+<!--@css(/layout/basic/css/ap-main.css)-->
+<!-- ④ HERO SWIPER -->
+<section class="ap-hero">
+  <div class="swiper ap-hero__swiper">
+    <div class="swiper-wrapper">
 
-	<div data-ez-holder="product_listmain">
-		<div module="product_listmain_1" class="ec-base-product">
-			<!--
-				$count = 3
-				$basket_result = /product/add_basket.html
-				$basket_option = /product/basket_option.html
-				$moreview = no
-				$cache = yes
-			-->
-			<ul class="prdList grid3 list_gallery" data-ez-role="layout ez-discount-tag">
-				<!--@import(/product/list_product.html)-->
-			</ul>
-		</div>
-	</div>
-    <div module="product_listmore_1" class="more">
-        <a href="#none" onclick="{$more_action}" class="btnMore">MORE</a>
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <a href="/product/list.html?cate_no=49" class="ap-hero__slide ap-hero__slide--1">
+          <div class="ap-hero__bg ap-hero__bg--1"></div>
+          <div class="ap-hero__slide-num">01</div>
+          <div class="ap-hero__content">
+            <h1 class="ap-hero__title">
+              Lighten the Load,<br>
+              <em>Find Yourself.</em>
+            </h1>
+            <p class="ap-hero__sub">짐은 최대한 가볍게 덜어내고, 당신에게만 집중할 수 있는 시간</p>
+            <div class="ap-hero__actions">
+              <button class="ap-hero__cta">초경량 컬렉션 보기</button>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <a href="/product/list.html?cate_no=49" class="ap-hero__slide ap-hero__slide--2">
+          <div class="ap-hero__bg ap-hero__bg--2"></div>
+          <div class="ap-hero__slide-num">02</div>
+          <div class="ap-hero__content">
+            <h1 class="ap-hero__title">
+              Save Energy for<br>
+              <em>the Mountain Peak.</em>
+            </h1>
+            <p class="ap-hero__sub">정상을 향하는 발걸음들, 더욱 가볍게</p>
+            <div class="ap-hero__actions">
+              <button class="ap-hero__cta">등산 제품 보기</button>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <a href="/product/list.html?cate_no=49" class="ap-hero__slide ap-hero__slide--3">
+          <div class="ap-hero__bg ap-hero__bg--3"></div>
+          <div class="ap-hero__slide-num">03</div>
+          <div class="ap-hero__content">
+            <h1 class="ap-hero__title">
+              Less Setup,<br>
+              <em>More Together.</em>
+            </h1>
+            <p class="ap-hero__sub">장비를 챙기는 수고는 덜고, 함께하는 시간은 더 길게</p>
+            <div class="ap-hero__actions">
+              <button class="ap-hero__cta">캠핑 제품 보기</button>
+            </div>
+          </div>
+        </a>
+      </div>
+
     </div>
-</section>
-<section class="section main_product_category" data-ez-module="product-list-category/2" data-ez-layout="grid5" data-ez="contents-067zsen-1">
-	<ez-prop data-version="1.0.0">
-		<ez-var data-prop="layout" data-namespace="ez.module.product-list-category.layout" data-type="array">
-			<ez-item data-id="grid3" data-name="일반3단형(PC 3열/MOBILE 2열)"></ez-item>
-			<ez-item data-id="grid4" data-name="일반4단형(PC 4열/MOBILE 2열)"></ez-item>
-			<ez-item data-id="grid5" data-name="일반5단형(PC 5열/MOBILE 3열)"></ez-item>
-			<ez-item data-id="grid3 list_gallery" data-name="이미지강조3단형(PC 3열/MOBILE 2열)"></ez-item>
-			<ez-item data-id="grid4 list_gallery" data-name="이미지강조4단형(PC 4열/MOBILE 2열)"></ez-item>
-			<ez-item data-id="grid5 list_gallery" data-name="이미지강조5단형(PC 5열/MOBILE 3열)"></ez-item>
-		</ez-var>
-	</ez-prop>
-	<div class="main_product_inner">
-		<div class="main_title ez-align-left" data-ez-role="ez-align" data-ez-align="left"><!-- Make it yours 타이틀 수정하는곳 -->
-			<div class="main_title_txt01" data-ez-role="title">MAKE IT YOURS</div>
-			<div class="main_title_txt02" data-ez-role="subtitle">당신 취향에 딱 맞는</div>
-		</div><!-- //main_title -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section><!-- //ap-hero -->
 
-		<ul class="main_product_tab" data-ez-role="tab-list">
-			<li data-ez-role="tab-item">#<button type="button" class="button" data-id="tabContent1" data-ez-role="name" data-name="SKINCARE">SKINCARE</button></li>
-			<li data-ez-role="tab-item">#<button type="button" class="button" data-id="tabContent2" data-ez-role="name" data-name="BODY">BODY</button></li>
-			<li data-ez-role="tab-item">#<button type="button" class="button" data-id="tabContent3" data-ez-role="name" data-name="HAIR">HAIR</button></li>
-			<li data-ez-role="tab-item">#<button type="button" class="button" data-id="tabContent4" data-ez-role="name" data-name="MAKE UP">MAKE UP</button></li>
-		</ul>
-	</div><!-- //main_product_inner -->
-
-	<div class="content_list" data-ez-role="content-list">
-		<div class="tabcontent" id="tabContent1" data-ez-role="content-item">
-			<div data-ez-holder="product_listmain">
-				<div module="product_listmain_2" class="ec-base-product">
-					<!--
-						$count = 100
-						$basket_result = /product/add_basket.html
-						$basket_option = /product/basket_option.html
-						$moreview = yes
-						$cache = yes
-					-->
-					<ul class="prdList grid5" data-ez-role="layout ez-discount-tag">
-						<!--@import(/product/list_product.html)-->
-					</ul>
-				</div>
-				<div module="product_listmore_1" class="more">
-					<a href="#none" onclick="{$more_action}" class="btnMore">MORE</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="tabcontent" id="tabContent2" data-ez-role="content-item">
-			<div data-ez-holder="product_listmain">
-				<div module="product_listmain_3" class="ec-base-product">
-					<!--
-						$count = 100
-						$basket_result = /product/add_basket.html
-						$basket_option = /product/basket_option.html
-						$moreview = yes
-						$cache = yes
-					-->
-					<ul class="prdList grid5" data-ez-role="layout ez-discount-tag">
-						<!--@import(/product/list_product.html)-->
-					</ul>
-				</div>
-				<div module="product_listmore_2" class="more">
-					<a href="#none" onclick="{$more_action}" class="btnMore">MORE</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="tabcontent" id="tabContent3" data-ez-role="content-item">
-			<div data-ez-holder="product_listmain">
-				<div module="product_listmain_4" class="ec-base-product">
-					<!--
-						$count = 100
-						$basket_result = /product/add_basket.html
-						$basket_option = /product/basket_option.html
-						$moreview = yes
-						$cache = yes
-					-->
-					<ul class="prdList grid5" data-ez-role="layout ez-discount-tag">
-						<!--@import(/product/list_product.html)-->
-					</ul>
-				</div>
-				<div module="product_listmore_3" class="more">
-					<a href="#none" onclick="{$more_action}" class="btnMore">MORE</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="tabcontent" id="tabContent4" data-ez-role="content-item">
-			<div data-ez-holder="product_listmain">
-				<div module="product_listmain_12" class="ec-base-product">
-					<!--
-						$count = 100
-						$basket_result = /product/add_basket.html
-						$basket_option = /product/basket_option.html
-						$moreview = yes
-						$cache = yes
-					-->
-					<ul class="prdList grid5" data-ez-role="layout ez-discount-tag">
-						<!--@import(/product/list_product.html)-->
-					</ul>
-				</div>
-				<div module="product_listmore_4" class="more">
-					<a href="#none" onclick="{$more_action}" class="btnMore">MORE</a>
-				</div>
-			</div>
-		</div>
-	</div><!-- //content-list -->
-</section>
-<section class="section main_video ez-align-left" data-ez-module="video/1" data-ez-role="style.background" data-ez-align="left" data-ez="contents-1jj8zgj-1">
-	<div class="main_title"><!-- 비디오 타이틀 수정하는곳 -->
-		<div class="main_title_txt01" data-ez-role="title">BRAND STORY</div>
-		<div class="main_title_txt02" data-ez-role="desc">미디어로 보는</div>
-	</div><!-- //main_title -->
-	<div class="margin_video_box">
-		<div class="wrap_video_box">
-			<div class="main_video_box"><iframe data-ez-role="video" id="ytplayer" type="text/html" src="https://m-img.cafe24.com/images/ec/sde/video/beauty_1920x1080.mp4" frameborder="0" allowfullscreen data-ez-rawsrc="https://m-img.cafe24.com/images/ec/sde/video/beauty_1920x1080.mp4"></iframe></div>
-		</div>
-	</div>
-</section>
-<section class="section main_product_list" data-ez-module="product-list/1" data-ez-layout="grid4" style="margin-bottom: 120px;" data-ez="contents-1errjzz-1">
-	<ez-prop data-version="1.0.0">
-		<ez-var data-prop="layout" data-namespace="ez.module.product-list.layout" data-type="array">
-			<ez-item data-id="grid3" data-name="일반3단형(PC 3열/MOBILE 1열)"></ez-item>
-			<ez-item data-id="grid4" data-name="일반4단형(PC 4열/MOBILE 2열)"></ez-item>
-			<ez-item data-id="grid5" data-name="일반5단형(PC 5열/MOBILE 2열)"></ez-item>
-			<ez-item data-id="grid3 list_gallery" data-name="이미지강조3단형(PC 3열/MOBILE 1열)"></ez-item>
-			<ez-item data-id="grid4 list_gallery" data-name="이미지강조4단형(PC 4열/MOBILE 2열)"></ez-item>
-			<ez-item data-id="grid5 list_gallery" data-name="이미지강조5단형(PC 5열/MOBILE 2열)"></ez-item>
-		</ez-var>
-	</ez-prop>
-	<div class="main_title ez-align-left" data-ez-role="ez-align" data-ez-align="left"><!-- New Arrivals 타이틀 수정하는곳 -->
-		<div class="main_title_txt01" data-ez-role="title">TRENDING NOW</div>
-		<div class="main_title_txt02" data-ez-role="subtitle">지금 뜨고있는 아이템</div>
-	</div><!-- //main_title -->
-	<div data-ez-holder="product_listmain">
-		<div module="product_listmain_13" class="ec-base-product">
-			<!--
-				$count = 4
-				$basket_result = /product/add_basket.html
-				$basket_option = /product/basket_option.html
-				$moreview = yes
-				$cache = yes
-			-->
-			<ul class="prdList grid4" data-ez-role="layout ez-discount-tag">
-				<!--@import(/product/list_product.html)-->
-			</ul>
-		</div>
-	</div>
-    <div module="product_listmore_13" class="more">
-        <a href="#none" onclick="{$more_action}" class="btnMore">MORE</a>
+<!-- ⑤ MANIFESTO -->
+<section class="ap-manifesto">
+  <div class="ap-manifesto__sticky">
+    <div class="ap-manifesto__inner">
+      <h2 class="ap-manifesto__headline ap-txt__title"> 덜어낼수록,&nbsp;깊어지는 아웃도어 </h2>
+      <div class="ap-manifesto__texts">
+        <p class="ap-manifesto__line"> 인수스는 군더더기 없는 편안함을 만듭니다. </p>
+        <p class="ap-manifesto__line"> 장비에 대한 신경은 내려놓고, </p>
+        <p class="ap-manifesto__line"> 오롯이 자연 속 당신에게만 집중해보세요. </p>
+      </div>
     </div>
+    <!-- <div class="ap-manifesto__visual"><img src="/web/img/main/img_manifesto-bg.webp" alt></div> -->
+     <div class="ap-manifesto__visual" style="opacity:0; transform:translate(-50%, calc(-50% + 120px));"> <video autoplay="" muted="" loop="" playsinline=""> <source src="https://forb01.godohosting.com/insooth/renewal/video/video_membership.mp4" type="video/mp4">브라우저가 동영상을 지원하지 않습니다.</video></div>
+  </div>
 </section>
-<!--@import(/smart-banner/shop1/smart-banner-admin-RES00004.html)-->
-<section class="section main_product_list" data-ez-module="product-list/1" data-ez-layout="grid4" data-ez="contents-17byk6j-1">
-	<ez-prop data-version="1.0.0">
-		<ez-var data-prop="layout" data-namespace="ez.module.product-list.layout" data-type="array">
-			<ez-item data-id="grid3" data-name="일반3단형(PC 3열/MOBILE 1열)"></ez-item>
-			<ez-item data-id="grid4" data-name="일반4단형(PC 4열/MOBILE 2열)"></ez-item>
-			<ez-item data-id="grid5" data-name="일반5단형(PC 5열/MOBILE 2열)"></ez-item>
-			<ez-item data-id="grid3 list_gallery" data-name="이미지강조3단형(PC 3열/MOBILE 1열)"></ez-item>
-			<ez-item data-id="grid4 list_gallery" data-name="이미지강조4단형(PC 4열/MOBILE 2열)"></ez-item>
-			<ez-item data-id="grid5 list_gallery" data-name="이미지강조5단형(PC 5열/MOBILE 2열)"></ez-item>
-		</ez-var>
-	</ez-prop>
-	<div class="main_title ez-align-left" data-ez-role="ez-align" data-ez-align="left"><!-- New Arrivals 타이틀 수정하는곳 -->
-		<div class="main_title_txt01" data-ez-role="title">NEW ARRIVALS</div>
-		<div class="main_title_txt02" data-ez-role="subtitle">놓치기에 아쉬운</div>
-	</div><!-- //main_title -->
-	<div data-ez-holder="product_listmain">
-		<div module="product_listmain_14" class="ec-base-product">
-			<!--
-				$count = 8
-				$basket_result = /product/add_basket.html
-				$basket_option = /product/basket_option.html
-				$moreview = yes
-				$cache = yes
-			-->
-			<ul class="prdList grid4" data-ez-role="layout ez-discount-tag">
-				<!--@import(/product/list_product.html)-->
-			</ul>
-		</div>
-	</div>
-    <div module="product_listmore_14" class="more">
-        <a href="#none" onclick="{$more_action}" class="btnMore">MORE</a>
+
+<!-- GPT_TEST_0611 -->
+<!-- ⑥ CATEGORY ACCORDION (Hike & Trek / Camp & Rest) -->
+<div class="ap-category ap-reveal">
+
+  <!-- Hike & Trek -->
+  <div class="ap-category__col ap-category__col--active" data-col="hike">
+    <div class="ap-category__bg ap-category__bg--hike"></div>
+    <button type="button" class="ap-category__arrow"><!--@import(/svg/icon-chevron-left-th.html)--></button>
+    <div class="ap-category__indicator">Hike &amp; Trek</div>
+    <div class="ap-category__content">
+      <div class="ap-category__title ap-txt__title">Hike &amp; Trek</div>
+      <div class="ap-category__sub ap-txt__body">정상을 향하는 모든 발걸음을 위한<br>경량 하이킹 기어 컬렉션</div>
+      <div class="ap-category__body">
+        <div module="product_listmain_5" class="ap-category__products">
+          <!--
+              $count = 3
+          -->
+            <a href="/product/detail.html{$param}" class="ap-category__prod-item" id="anchorBoxId_{$product_no}">
+                <div class="ap-category__prod-thumb" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></div>
+                <div class="ap-category__info">
+                  <div class="ap-category__prod-desc">{$summary_desc}</div>
+                  <div class="ap-category__prod-name">{$product_name}</div>
+                  <div class="ap-category__prod-price">{$product_price|numberformat}{$price_unit_tail}</div>
+                </div><!-- //ap-category__info -->
+            </a>
+            <a href="/product/detail.html{$param}" class="ap-category__prod-item" id="anchorBoxId_{$product_no}">
+                <div class="ap-category__prod-thumb" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></div>
+                <div class="ap-category__info">
+                  <div class="ap-category__prod-desc">{$summary_desc}</div>
+                  <div class="ap-category__prod-name">{$product_name}</div>
+                  <div class="ap-category__prod-price">{$product_price|numberformat}{$price_unit_tail}</div>
+                </div><!-- //ap-category__info -->
+            </a>
+        </div><!-- //ap-category__products -->
+      </div><!-- //ap-category__body -->
+      <a href="/product/list.html?cate_no=24" class="ap-category__link">전체 제품 보기</a>
     </div>
-</section>
-<section class="section main_text ez-textsize-medium ez-align-center" data-ez-module="text/1" data-ez-role="style.background" data-ez-align="center" data-ez-textsize="medium" style="background-color: rgb(31, 31, 31);" data-ez="contents-16taq7s-1"><!-- 메인 텍스트배너 수정하는곳 -->
-	<div class="main_text_txt"><!-- How to ASHFRAME 타이틀 수정하는곳 -->
-		<div class="main_text_txt01" data-ez-role="title" style="color: rgb(255, 255, 255);">JOIN EVENT</div>
-		<div class="main_text_txt02" data-ez-role="desc" style="color: rgb(51, 51, 51);"><p><span style="color: rgb(255, 255, 255);">쇼핑몰 회원가입 시 적립금 3,000원 즉시 지급</span></p></div>
-		<div class="main_text_link" style="display: none;"><a data-ez-role="a" href="#" target="_self"></a></div>
-	</div><!-- //main_text_txt -->
-</section>
-<section class="section main_map ez-align-left" data-ez-module="map/1" data-ez-align="left" data-ez="contents-0bcjn6e-1">
-	<ez-prop data-version="1.0.0">
-		<ez-var data-prop="image" data-namespace="ez.module.map.image">
-			<ez-item data-id="size" data-pc="840 525" data-mobile="840 525"></ez-item>
-		</ez-var>
-	</ez-prop>
-	<div class="main_map_banner">
-		<div class="main_map_banner_txt_box">
-			<div class="main_map_banner_txt">
-				<div class="main_map_banner_txt01" data-ez-role="title" style="color: rgb(51, 51, 51);">BEAUTY</div>
-				<div class="main_map_banner_txt02" data-ez-role="desc" style="color: rgb(51, 51, 51);">
-					<p>서울특별시 동작구 보라매로0길 00</p>
-					<p>00, Boramae-ro 0-gil, Dongjak-gu, Seoul, Republic of Korea</p>
-					<p>02-0000-0000</p>
-				</div>
-				<div class="main_long_banner_link"><span class="displaynone" data-ez-role="address">서울특별시 동작구 보라매로0길 00</span><a data-ez-role="a" href="https://www.google.com/maps/dir/서울특별시%20동작구%20보라매로0길%2000" target="_blank">매장 위치 확인하기</a></div>
-			</div><!-- //main_map_banner_txt -->
-		</div><!-- //main_map_banner_txt_box -->
-		<picture>
-			<source srcset="/SkinImg/img/main_map_pc.png" media="(max-width: 1024px)" data-ez-role="img-pc">
-			<img src="/SkinImg/img/main_map_pc.png" data-ez-role="img-mobile">
-		</picture>
-	</div><!-- //main_map_banner -->
-</section>
-<!--@define(cmc_log)-->
-<!--#ez="1/20"-->
+  </div>
+
+  <!-- Camp & Rest -->
+  <div class="ap-category__col" data-col="camp">
+    <div class="ap-category__bg ap-category__bg--camp"></div>
+    <button type="button" class="ap-category__arrow"><!--@import(/svg/icon-chevron-right-th.html)--></button>
+    <div class="ap-category__indicator">Camp &amp; Rest</div>
+    <div class="ap-category__content">
+      <div class="ap-category__title ap-txt__title">Camp &amp; Rest</div>
+      <div class="ap-category__sub ap-txt__body">장비를 챙기는 수고는 줄이고<br>함께하는 시간을 더 길게</div>
+      <div class="ap-category__body">
+        <div module="product_listmain_6" class="ap-category__products">
+          <!--
+              $count = 3
+          -->
+          <a href="/product/detail.html{$param}" class="ap-category__prod-item" id="anchorBoxId_{$product_no}">
+            <div class="ap-category__prod-thumb" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></div>
+            <div class="ap-category__info">
+              <div class="ap-category__prod-desc">{$summary_desc}</div>
+              <div class="ap-category__prod-name">{$product_name}</div>
+              <div class="ap-category__prod-price">{$product_price|numberformat}{$price_unit_tail}</div>
+            </div><!-- //ap-category__info -->
+          </a>
+          <a href="/product/detail.html{$param}" class="ap-category__prod-item" id="anchorBoxId_{$product_no}">
+            <div class="ap-category__prod-thumb" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></div>
+            <div class="ap-category__info">
+              <div class="ap-category__prod-desc">{$summary_desc}</div>
+              <div class="ap-category__prod-name">{$product_name}</div>
+              <div class="ap-category__prod-price">{$product_price|numberformat}{$price_unit_tail}</div>
+            </div><!-- //ap-category__info -->
+          </a>
+        </div><!-- //ap-category__products -->
+      </div><!-- //ap-category__body -->
+      <a href="/product/list.html?cate_no=24" class="ap-category__link">전체 제품 보기</a>
+    </div>
+  </div>
+</div><!-- //ap-category -->
+<!-- ⑦ JOURNAL SWIPER (active card center scale) -->
+<div class="ap-journal ap-reveal">
+  <div class="ap-container">
+    <div class="ap-journal__header">
+      <h2 class="ap-journal__title ap-txt__title">Expedition Stories</h2>
+      <p class="ap-journal__desc ap-txt__body">인수스가 생각하는 아웃도어의 가치와 철학을 전합니다.</p>
+    </div>
+  </div><!-- //ap-container -->
+  <div class="ap-journal__swiper-wrap">
+    <div class="swiper ap-journal__swiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide ap-journal__slide">
+          <div class="ap-journal__card">
+            <div class="ap-journal__img"><img src="/web/img/main/img_brand-1.webp" alt=""></div>
+            <div class="ap-journal__body">
+              <div class="ap-journal__card-title ap-txt__title">본질의 여정</div>
+              <div class="ap-journal__card-sub">더 편안하게, 더 깊게.<br>진짜 나를 마주하는 시간</div>
+              <a href="/about/insooth_story.html" class="ap-journal__link">자세히 보기<!--@import(/svg/icon-arrow-right.html)--></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide ap-journal__slide">
+          <div class="ap-journal__card">
+            <div class="ap-journal__img"><img src="/web/img/main/img_brand-2.webp" alt=""></div>
+            <div class="ap-journal__body">
+              <div class="ap-journal__card-title ap-txt__title">기술과 소재</div>
+              <div class="ap-journal__card-sub">30년의 헤리티지. 시간이 증명하는<br>섬세한 봉제, 견고한 가공 기술력</div>
+              <a href="/about/technology.html" class="ap-journal__link">자세히 보기<!--@import(/svg/icon-arrow-right.html)--></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide ap-journal__slide">
+          <div class="ap-journal__card">
+            <div class="ap-journal__img"><img src="/web/img/main/img_brand-3.webp" alt=""></div>
+            <div class="ap-journal__body">
+              <div class="ap-journal__card-title ap-txt__title">더 나은 세상</div>
+              <div class="ap-journal__card-sub">세상의 소외된 곳을 찾아나서는<br>이웃의 내일을 밝히는 온기 </div>
+              <a href="/about/share_value.html" class="ap-journal__link">자세히 보기<!--@import(/svg/icon-arrow-right.html)--></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide ap-journal__slide">
+          <div class="ap-journal__card">
+            <div class="ap-journal__img"><img src="/web/img/main/img_brand-4.webp" alt=""></div>
+            <div class="ap-journal__body">
+              <div class="ap-journal__card-title ap-txt__title">가치있는 흔적</div>
+              <div class="ap-journal__card-sub">자연에게 미안하지 않도록,<br>더 오래 더 단단하게</div>
+              <a href="/about/history.html" class="ap-journal__link">자세히 보기<!--@import(/svg/icon-arrow-right.html)--></a>
+            </div>
+          </div>
+        </div>
+        
+      </div><!-- //swiper-wrapper -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div><!-- //ap-journal ap-reveal -->
+
+<!-- ⑨ Notice -->
+<div class="ap-mainNotice">
+  <div class="ap-container--narrow">
+    <div class="ap-mainNotice__grid">
+
+      <!-- Curation -->
+      <div class="ap-mainNotice__item ap-mainCuration">
+        <div class="ap-mainNotice__head">
+          <div>
+            <div class="ap-txt__title">Curation</div>
+            <div class="ap-txt__body">인수스의 이야기를 만나보세요</div>
+          </div>
+          <a href="/board/gallery/list.html?board_no=8">더보기 <!--@import(/svg/icon-chevron-right.html)--></a>
+        </div><!-- //ap-mainNotice__head -->
+
+        <div class="board" module="board_list_8">
+          <!--
+              $count = 1
+              $subject_cut = 999999
+              $main_list_image = yes
+          -->
+          <a href="{$link_board_detail}"
+            class="ap-mainCuration__card"
+            style="background-image:url('{$img_src}');">
+            <div class="ap-mainCuration__body">
+              <div class="ap-mainCuration__eyebrow">NEWSLETTER</div>
+              <div class="ap-mainCuration__date">{$write_date|date:Y.m.d}</div>
+              <div class="ap-mainCuration__tit">{$subject}</div>
+              <span class="ap-mainCuration__cta">
+                자세히 보기<!--@import(/svg/icon-arrow-right.html)-->
+              </span>
+            </div>
+          </a>
+        </div>
+      </div><!-- //ap-mainCuration -->
+
+      <!-- Notice -->
+      <div class="ap-mainNotice__item ap-mainNews">
+        <div class="ap-mainNotice__head">
+          <div>
+            <div class="ap-txt__title">Notice</div>
+            <div class="ap-txt__body">새로운 소식을 전합니다</div>
+          </div>
+          <a href="/board/free/list.html?board_no=1">더보기 <!--@import(/svg/icon-chevron-right.html)--></a>
+        </div><!-- //ap-mainNotice__head -->
+
+        <div class="ap-mainNews__cont">
+          <div class="board" module="board_list_1">
+            <!--@css(/css/module/board/mainRecommend.css)-->
+            <!--
+                $count = 4
+                $subject_cut = 999999
+            -->
+            <ul class="ap-mainNews__list">
+              <li class="ap-mainNews__item">
+                <a href="{$link_board_detail}">
+                  <span class="title">{$subject}</span>
+                  <span class="date">{$write_date|date:Y.m.d}</span>
+                </a>
+              </li>
+              <li class="ap-mainNews__item">
+                <a href="{$link_board_detail}">
+                  <span class="title">{$subject}</span>
+                  <span class="date">{$write_date|date:Y.m.d}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div><!-- //ap-mainNews__cont -->
+      </div><!-- //ap-mainNews -->
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ⑨ SHORTS PICKS -->
+<div class="ap-shorts ap-reveal">
+  <div class="ap-container">
+    <div class="ap-shorts__header">
+      <div class="ap-shorts__title ap-txt__title">Move Further</div>
+      <p class="ap-shorts__desc ap-txt__body">프리미엄 인수스 제품을 영상으로 만나보세요</p>
+    </div>
+  </div><!-- //ap-container -->
+  <div class="swiper ap-shorts__swiper">
+    <div class="ap-shorts__row swiper-wrapper">
+      <div class="ap-shorts__card swiper-slide">
+        <div class="ap-shorts__card-overlay"></div>
+        <div class="ap-shorts__card-ph ap-shorts__wrap" data-video="p0x2Zxk4xTI">
+          <iframe src=""></iframe>
+          <div class="shorts_progress">
+            <div class="shorts_progress_bar"></div>
+          </div>
+          <div class="ap-shorts__card-bg"><img src="https://img.youtube.com/vi/p0x2Zxk4xTI/maxresdefault.jpg" alt="인수스 쇼츠 썸네일"></div>
+        </div><!-- //ap-shorts__wrap -->
+        <div class="ap-shorts__prd">
+          <div class="ap-shorts__prd-thumb"><img src="https://insooth.co.kr/web/product/extra/big/20240516/dc2b0a5edf9589eeb11776d2273a56aa.jpg" alt></div>
+          <div class="ap-shorts__prd-info">
+            <div class="ap-shorts__prd-desc">경량 백패킹&캠핑 테이블</div>
+            <div class="ap-shorts__prd-name">TX-475</div>
+            <div class="ap-shorts__prd-price">139,000원</div>
+          </div><!-- //ap-shorts__prd-info -->
+        </div><!-- //ap-shorts__prd -->
+      </div>
+      <div class="ap-shorts__card swiper-slide">
+        <div class="ap-shorts__card-overlay"></div>
+        <div class="ap-shorts__card-ph ap-shorts__wrap" data-video="RfnLMJZ7Jww">
+          <iframe src=""></iframe>
+          <div class="shorts_progress">
+            <div class="shorts_progress_bar"></div>
+          </div>
+          <div class="ap-shorts__card-bg"><img src="https://img.youtube.com/vi/p0x2Zxk4xTI/maxresdefault.jpg" alt="인수스 쇼츠 썸네일"></div>
+        </div><!-- //ap-shorts__wrap -->
+        <div class="ap-shorts__prd">
+          <div class="ap-shorts__prd-thumb"><img src="https://insooth.co.kr/web/product/extra/big/20240516/dc2b0a5edf9589eeb11776d2273a56aa.jpg" alt></div>
+          <div class="ap-shorts__prd-info">
+            <div class="ap-shorts__prd-desc">경량 백패킹&캠핑 테이블</div>
+            <div class="ap-shorts__prd-name">TX-475</div>
+            <div class="ap-shorts__prd-price">139,000원</div>
+          </div><!-- //ap-shorts__prd-info -->
+        </div><!-- //ap-shorts__prd -->
+      </div>
+      <div class="ap-shorts__card swiper-slide">
+        <div class="ap-shorts__card-overlay"></div>
+        <div class="ap-shorts__card-ph ap-shorts__wrap" data-video="u03RmRhOn7Q">
+          <iframe src=""></iframe>
+          <div class="shorts_progress">
+            <div class="shorts_progress_bar"></div>
+          </div>
+          <div class="ap-shorts__card-bg"><img src="https://img.youtube.com/vi/u03RmRhOn7Q/maxresdefault.jpg" alt="인수스 쇼츠 썸네일"></div>
+        </div><!-- //ap-shorts__wrap -->
+        <div class="ap-shorts__prd">
+          <div class="ap-shorts__prd-thumb"><img src="https://insooth.co.kr/web/product/extra/big/20240516/dc2b0a5edf9589eeb11776d2273a56aa.jpg" alt></div>
+          <div class="ap-shorts__prd-info">
+            <div class="ap-shorts__prd-desc">경량 백패킹&캠핑 테이블</div>
+            <div class="ap-shorts__prd-name">TX-475</div>
+            <div class="ap-shorts__prd-price">139,000원</div>
+          </div><!-- //ap-shorts__prd-info -->
+        </div><!-- //ap-shorts__prd -->
+      </div>
+      <div class="ap-shorts__card swiper-slide">
+        <div class="ap-shorts__card-overlay"></div>
+        <div class="ap-shorts__card-ph ap-shorts__wrap" data-video="11e6JBsJx_Y">
+          <iframe src=""></iframe>
+          <div class="shorts_progress">
+            <div class="shorts_progress_bar"></div>
+          </div>
+          <div class="ap-shorts__card-bg"><img src="https://img.youtube.com/vi/11e6JBsJx_Y/maxresdefault.jpg" alt="인수스 쇼츠 썸네일"></div>
+        </div><!-- //ap-shorts__wrap -->
+        <div class="ap-shorts__prd">
+          <div class="ap-shorts__prd-thumb"><img src="https://insooth.co.kr/web/product/medium/202311/2556399639e74ac532e9db2ebeb6e50e.jpg" alt></div>
+          <div class="ap-shorts__prd-info">
+            <div class="ap-shorts__prd-desc">경량 백패킹/BBQ/낚시 체어</div>
+            <div class="ap-shorts__prd-name">CX-295</div>
+            <div class="ap-shorts__prd-price">79,000</div>
+          </div><!-- //ap-shorts__prd-info -->
+        </div><!-- //ap-shorts__prd -->
+      </div>
+      <div class="ap-shorts__card swiper-slide">
+        <div class="ap-shorts__card-bg"><img src="https://img.youtube.com/vi/X061feNt-WQ/maxresdefault.jpg" alt="인수스 쇼츠 썸네일"></div>
+        <div class="ap-shorts__card-overlay"></div>
+        <div class="ap-shorts__card-ph ap-shorts__wrap" data-video="X061feNt-WQ">
+          <iframe src=""></iframe>
+          <div class="shorts_progress">
+            <div class="shorts_progress_bar"></div>
+          </div>
+          <div class="ap-shorts__card-bg"><img src="https://img.youtube.com/vi/X061feNt-WQ/maxresdefault.jpg" alt="인수스 쇼츠 썸네일"></div>
+        </div><!-- //ap-shorts__wrap -->
+        <div class="ap-shorts__prd">
+          <div class="ap-shorts__prd-thumb"><img src="https://insooth.co.kr/web/product/medium/202304/e82d808ec79a57f5db54f8003d5e1a45.jpg" alt></div>
+          <div class="ap-shorts__prd-info">
+            <div class="ap-shorts__prd-desc">원터치 자동 조절형 등산 스틱</div>
+            <div class="ap-shorts__prd-name">AUTO POLE</div>
+            <div class="ap-shorts__prd-price">350,000원</div>
+          </div><!-- //ap-shorts__prd-info -->
+        </div><!-- //ap-shorts__prd -->
+      </div>
+      <div class="ap-shorts__card swiper-slide">
+        <div class="ap-shorts__card-overlay"></div>
+        <div class="ap-shorts__card-ph ap-shorts__wrap" data-video="p0x2Zxk4xTI">
+          <iframe src=""></iframe>
+          <div class="shorts_progress">
+            <div class="shorts_progress_bar"></div>
+          </div>
+          <div class="ap-shorts__card-bg"><img src="https://img.youtube.com/vi/p0x2Zxk4xTI/maxresdefault.jpg" alt="인수스 쇼츠 썸네일"></div>
+        </div><!-- //ap-shorts__wrap -->
+        <div class="ap-shorts__prd">
+          <div class="ap-shorts__prd-thumb"><img src="https://insooth.co.kr/web/product/extra/big/20240516/dc2b0a5edf9589eeb11776d2273a56aa.jpg" alt></div>
+          <div class="ap-shorts__prd-info">
+            <div class="ap-shorts__prd-desc">경량 백패킹&캠핑 테이블</div>
+            <div class="ap-shorts__prd-name">TX-475</div>
+            <div class="ap-shorts__prd-price">139,000원</div>
+          </div><!-- //ap-shorts__prd-info -->
+        </div><!-- //ap-shorts__prd -->
+      </div>
+      <div class="ap-shorts__card swiper-slide">
+        <div class="ap-shorts__card-overlay"></div>
+        <div class="ap-shorts__card-ph ap-shorts__wrap" data-video="RfnLMJZ7Jww">
+          <iframe src=""></iframe>
+          <div class="shorts_progress">
+            <div class="shorts_progress_bar"></div>
+          </div>
+          <div class="ap-shorts__card-bg"><img src="https://img.youtube.com/vi/RfnLMJZ7Jww/maxresdefault.jpg" alt="인수스 쇼츠 썸네일"></div>
+        </div><!-- //ap-shorts__wrap -->
+        <div class="ap-shorts__prd">
+          <div class="ap-shorts__prd-thumb"><img src="https://insooth.co.kr/web/product/extra/big/20240516/dc2b0a5edf9589eeb11776d2273a56aa.jpg" alt></div>
+          <div class="ap-shorts__prd-info">
+            <div class="ap-shorts__prd-desc">경량 백패킹&캠핑 테이블</div>
+            <div class="ap-shorts__prd-name">TX-475</div>
+            <div class="ap-shorts__prd-price">139,000원</div>
+          </div><!-- //ap-shorts__prd-info -->
+        </div><!-- //ap-shorts__prd -->
+      </div>
+      <div class="ap-shorts__card swiper-slide">
+        <div class="ap-shorts__card-overlay"></div>
+        <div class="ap-shorts__card-ph ap-shorts__wrap" data-video="u03RmRhOn7Q">
+          <iframe src=""></iframe>
+          <div class="shorts_progress">
+            <div class="shorts_progress_bar"></div>
+          </div>
+          <div class="ap-shorts__card-bg"><img src="https://img.youtube.com/vi/u03RmRhOn7Q/maxresdefault.jpg" alt="인수스 쇼츠 썸네일"></div>
+        </div><!-- //ap-shorts__wrap -->
+        <div class="ap-shorts__prd">
+          <div class="ap-shorts__prd-thumb"><img src="https://insooth.co.kr/web/product/extra/big/20240516/dc2b0a5edf9589eeb11776d2273a56aa.jpg" alt></div>
+          <div class="ap-shorts__prd-info">
+            <div class="ap-shorts__prd-desc">경량 백패킹&캠핑 테이블</div>
+            <div class="ap-shorts__prd-name">TX-475</div>
+            <div class="ap-shorts__prd-price">139,000원</div>
+          </div><!-- //ap-shorts__prd-info -->
+        </div><!-- //ap-shorts__prd -->
+      </div>
+      <div class="ap-shorts__card swiper-slide">
+        <div class="ap-shorts__card-overlay"></div>
+        <div class="ap-shorts__card-ph ap-shorts__wrap" data-video="11e6JBsJx_Y">
+          <iframe src=""></iframe>
+          <div class="shorts_progress">
+            <div class="shorts_progress_bar"></div>
+          </div>
+          <div class="ap-shorts__card-bg"><img src="https://img.youtube.com/vi/11e6JBsJx_Y/maxresdefault.jpg" alt="인수스 쇼츠 썸네일"></div>
+        </div><!-- //ap-shorts__wrap -->
+        <div class="ap-shorts__prd">
+          <div class="ap-shorts__prd-thumb"><img src="https://insooth.co.kr/web/product/medium/202311/2556399639e74ac532e9db2ebeb6e50e.jpg" alt></div>
+          <div class="ap-shorts__prd-info">
+            <div class="ap-shorts__prd-desc">경량 백패킹/BBQ/낚시 체어</div>
+            <div class="ap-shorts__prd-name">CX-295</div>
+            <div class="ap-shorts__prd-price">79,000</div>
+          </div><!-- //ap-shorts__prd-info -->
+        </div><!-- //ap-shorts__prd -->
+      </div>
+      <div class="ap-shorts__card swiper-slide">
+        <div class="ap-shorts__card-overlay"></div>
+        <div class="ap-shorts__card-ph ap-shorts__wrap" data-video="X061feNt-WQ">
+          <iframe src=""></iframe>
+          <div class="shorts_progress">
+            <div class="shorts_progress_bar"></div>
+          </div>
+          <div class="ap-shorts__card-bg"><img src="https://img.youtube.com/vi/X061feNt-WQ/maxresdefault.jpg" alt="인수스 쇼츠 썸네일"></div>
+        </div><!-- //ap-shorts__wrap -->
+        <div class="ap-shorts__prd">
+          <div class="ap-shorts__prd-thumb"><img src="https://insooth.co.kr/web/product/medium/202304/e82d808ec79a57f5db54f8003d5e1a45.jpg" alt></div>
+          <div class="ap-shorts__prd-info">
+            <div class="ap-shorts__prd-desc">원터치 자동 조절형 등산 스틱</div>
+            <div class="ap-shorts__prd-name">AUTO POLE</div>
+            <div class="ap-shorts__prd-price">350,000원</div>
+          </div><!-- //ap-shorts__prd-info -->
+        </div><!-- //ap-shorts__prd -->
+      </div>
+    </div><!-- //swiper-wrapper -->
+  </div><!-- //ap-shorts__swiper -->
+</div><!-- //ap-shorts -->
+
+<!-- ⑩ mainCTA CTA -->
+<div class="ap-mainCTA ap-reveal">
+  <div class="ap-mainCTA__img"><video autoplay="" muted="" loop="" playsinline=""> <source src="https://forb01.godohosting.com/insooth/renewal/video/video_membership.mp4" type="video/mp4">브라우저가 동영상을 지원하지 않습니다.</video></div>
+  <div class="ap-container">
+    <div class="ap-mainCTA__content">
+      <div class="ap-mainCTA__eyebrow">MEMBERSHIP</div>
+      <h2 class="ap-mainCTA__title ap-txt__title">인수스와 함께하는<br>여정의 시작</h2>
+      <p class="ap-mainCTA__body ap-txt__body">
+        회원가입 후 5,000원 혜택과 함께,<br>
+        완벽한 프리미엄 아웃도어를 경험해보세요.
+      </p>
+      <button class="ap-mainCTA__cta">첫 여정 함께하기</button>
+    </div><!-- //ap-mainCTA__content -->
+  </div><!-- //ap-container -->
+</div><!-- //ap-mainCTA -->
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ------- HERO SWIPER ------- */
+  new Swiper('.ap-hero__swiper', {
+    loop: true,
+    speed: 900,
+    /* autoplay: { delay: 5000, disableOnInteraction: false }, */
+    effect: 'fade',
+    fadeEffect: { crossFade: true },
+    pagination: {
+      el: '.ap-hero .swiper-pagination',
+      clickable: true,
+    },
+  });
+
+  /* ------- JOURNAL SWIPER (center scale + peek) ------- */
+  new Swiper('.ap-journal__swiper', {
+    speed: 700,
+    centeredSlides: true,
+    initialSlide: 1,
+    slidesPerView: 'auto',
+    spaceBetween: 0,
+    grabCursor: true,
+    watchSlidesProgress: true,
+    slideToClickedSlide: true,
+    pagination: {
+      el: '.ap-journal .swiper-pagination',
+      clickable: true,
+    },
+  });
+
+});
+/* ------- CATEGORY ACCORDION ------- */
+const apCategoryCols = document.querySelectorAll('.ap-category__arrow');
+const apCategorySection = document.querySelector('.ap-category');
+
+apCategoryCols.forEach(function (col) {
+  col.addEventListener('click', function () {
+    apCategoryCols.forEach(function (c) {
+      c.closest('.ap-category__col')?.classList.remove('ap-category__col--active');
+    });
+
+    col.closest('.ap-category__col')?.classList.add('ap-category__col--active');
+  });
+});
+
+/* 섹션을 위로 빠져나갈 때 Camp 활성화 */
+if (apCategorySection) {
+  const apCategoryObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      const rect = entry.boundingClientRect;
+
+      // 화면 위로 빠져나가는 중인지 (스크롤 다운으로 섹션을 통과)
+      const leavingUpward = rect.top < 0 && !entry.isIntersecting;
+
+      if (leavingUpward) {
+        document.querySelectorAll('.ap-category__col').forEach(function (c) {
+          c.classList.remove('ap-category__col--active');
+        });
+
+        const campCol = document.querySelector('.ap-category__col[data-col="camp"]');
+        campCol?.classList.add('ap-category__col--active');
+      }
+    });
+  }, { threshold: 0 });
+
+  apCategoryObserver.observe(apCategorySection);
+}
+
+/* ------- SHORTS SWIPER ------- */
+(function () {
+    function getVideoSrc(videoId) {
+        return "https://www.youtube.com/embed/" + videoId +
+            "?autoplay=1" +
+            "&mute=1" +
+            "&controls=0" +
+            "&rel=0" +
+            "&playsinline=1" +
+            "&loop=1" +
+            "&playlist=" + videoId;
+    }
+
+    function resetAllVideos() {
+        document.querySelectorAll(
+          '.ap-shorts__swiper .swiper-slide:not(.swiper-slide-active) iframe'
+        ).forEach(function (iframe) {
+            iframe.src = '';
+        });
+    }
+
+    
+      function resetAllProgress() {
+        document.querySelectorAll('.ap-shorts__swiper .shorts_progress_bar').forEach(function (bar) {
+          bar.style.width = '0%';
+        });
+      }
+   
+    function getActiveSlide() {
+        return document.querySelector('.ap-shorts__swiper .swiper-slide-active');
+    }
+
+    function playActiveVideo() {
+        resetAllVideos();
+        resetAllProgress();
+
+        var activeSlide = getActiveSlide();
+        if (!activeSlide) return;
+
+        var videoWrap = activeSlide.querySelector('.ap-shorts__wrap');
+        var iframe = activeSlide.querySelector('.ap-shorts__wrap iframe');
+
+        if (!videoWrap || !iframe) return;
+
+        var videoId = videoWrap.getAttribute('data-video');
+        if (!videoId) return;
+
+        iframe.setAttribute('src', getVideoSrc(videoId));
+    }
+
+    function updateActiveProgress(progress) {
+        resetAllProgress();
+
+        var activeSlide = getActiveSlide();
+        if (!activeSlide) return;
+
+        var progressBar = activeSlide.querySelector('.shorts_progress_bar');
+        if (!progressBar) return;
+
+        progressBar.style.width = ((1 - progress) * 100) + "%";
+    }
+
+    var shortsswiper = new Swiper(".ap-shorts__swiper", {
+        observer: true,
+        observeParents: true,
+        resizeObserver: true,
+        slidesPerView: 'auto',
+        spaceBetween: 0,
+        loop: true,
+        centeredSlides: true,
+        initialSlide: 0,
+        speed: 600,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false
+        },
+        pagination: {
+            el: ".ap-shorts__swiper .swiper-pagination",
+            type: "fraction",
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 3,
+            },
+            1280: {
+                slidesPerView: 5,
+                spaceBetween: 20,
+            },
+        },
+        on: {
+            init: function () {
+                playActiveVideo();
+                setTimeout(() => {
+                    this.update();
+                }, 300);
+            },
+
+            slideChangeTransitionStart: function () {
+                resetAllProgress();
+            },
+
+            slideChangeTransitionEnd: function () {
+                playActiveVideo();
+            },
+
+            autoplayTimeLeft: function (swiper, time, progress) {
+                updateActiveProgress(progress);
+            }
+        }
+    });
+})();
+document.addEventListener('load', () => {
+    shortsswiper.update();
+});
+
+
+
+const manifesto = document.querySelector('.ap-manifesto');
+const headline  = manifesto.querySelector('.ap-manifesto__headline');
+const lines     = manifesto.querySelectorAll('.ap-manifesto__line');
+const visual    = manifesto.querySelector('.ap-manifesto__visual');
+
+/* 0~255 선형 보간 → rgb 문자열 반환 */
+function lerpColor(progress, startVal, endVal) {
+  const v = Math.round(startVal + (endVal - startVal) * progress);
+  return `rgb(${v}, ${v}, ${v})`;
+}
+
+document.addEventListener('scroll', () => {
+  const rect = manifesto.getBoundingClientRect();
+  const progress = Math.min(
+    Math.max(-rect.top / (manifesto.offsetHeight - window.innerHeight), 0),
+    1
+  );
+
+  /* 헤드라인 확대 */
+  headline.style.transform = `scale(${1 + progress * 0.15})`;
+
+  /* 문장 천천히 제거 */
+  const fade1 = Math.min(Math.max((progress - 0.15) / 0.25, 0), 1);
+  const fade2 = Math.min(Math.max((progress - 0.35) / 0.25, 0), 1);
+  const fade3 = Math.min(Math.max((progress - 0.55) / 0.25, 0), 1);
+
+  lines[0].style.opacity   = 1 - fade1;
+  lines[0].style.transform = `translateY(${-30 * fade1}px)`;
+  lines[1].style.opacity   = 1 - fade2;
+  lines[1].style.transform = `translateY(${-30 * fade2}px)`;
+  lines[2].style.opacity   = 1 - fade3;
+  lines[2].style.transform = `translateY(${-30 * fade3}px)`;
+
+  /* 텍스트 색상: 검정(0) → 흰색(255), 비디오 등장 시점에 맞춰 전환 */
+  const colorProgress = Math.min(Math.max((progress - 0.5) / 0.3, 0), 1);
+  const textColor = lerpColor(colorProgress, 0, 255);
+  headline.style.color = textColor;
+  lines.forEach(line => { line.style.color = textColor; });
+
+  /* 비디오 등장 */
+  const imageProgress = Math.min(Math.max((progress - 0.7) / 0.25, 0), 1);
+  const y = 120 - (120 * imageProgress);
+  visual.style.opacity   = imageProgress;
+  visual.style.transform = `translate(-50%, calc(-50% + ${y}px))`;
+});
+
+</script>

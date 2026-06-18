@@ -1,0 +1,9 @@
+.insooth #aside{inset:auto; top: var(--ap-header-height);height: 0; transition: all 0.3s ease;}
+body.insooth.expand #aside {height: calc(100dvh - var(--ap-header-height));}
+.insooth #aside .navigation-menu__category .view, #aside .navigation-menu__project .view{color: var(--ap-color-black); font-size: var(--ap-text-md);line-height: 1.5;}
+.insooth #aside .navigation-menu__category #slide_add_category li > a{color: var(--ap-color-black);}
+.insooth #aside .navigation-menu{padding: 16px var(--ap-gutter);}
+.insooth #aside .btnClose{display: none;}
+.insooth #aside .navigation-menu__category #slide_add_category li.selected .sub_cate01 a.view{padding-bottom: 6px; font-size: var(--ap-text-base);color: var(--ap-color-black); line-height: 1.5;}
+.insooth #aside .navigation-menu__category #slide_add_category li.selected{padding-bottom: 36px;}
+.insooth #aside .navigation-menu__category #slide_add_category li.selected > a{font-weight: 700;}

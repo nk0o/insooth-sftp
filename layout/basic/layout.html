@@ -36,8 +36,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"><!-- theme02 -->
 	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" /><!-- theme03 -->
-    <!--@css(/layout/basic/css/swiper.min.css)-->
-	<!--@js(/layout/basic/js/swiper-bundle.min.js)-->
+    <link rel="stylesheet" href="/layout/basic/css/swiper.min.css">
+	  <script src="/layout/basic/js/swiper-bundle.min.js"></script>
 	<!--@js(/js/module/product/sale_price.js)-->
 
     <!--@js(/layout/basic/js/basic.js)-->
@@ -131,4 +131,40 @@
 	<!--@css(/layout/basic/css/add_theme02.css)-->
 	<!--@css(/layout/basic/css/add_layout.css)-->
 </body>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    /* ------- SCROLL REVEAL ------- */
+  const apRevealEls = document.querySelectorAll('.ap-reveal');
+  const apRevealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('ap-reveal--visible');
+        apRevealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.07 });
+  apRevealEls.forEach(function (el) { apRevealObserver.observe(el); });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.ap-header__inner');
+
+  if (!header) return;
+  const updateHeaderHeight = () => {
+    document.documentElement.style.setProperty(
+      '--ap-header-height',
+      `${header.offsetHeight}px`
+    );
+  };
+
+  updateHeaderHeight();
+
+  const observer = new ResizeObserver(updateHeaderHeight);
+  observer.observe(header);
+
+  window.addEventListener('resize', updateHeaderHeight);
+});
+</script>
 </html>
