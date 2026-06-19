@@ -78,84 +78,86 @@
       </div>
     </div>
     <!-- <div class="ap-manifesto__visual"><img src="/web/img/main/img_manifesto-bg.webp" alt></div> -->
-     <div class="ap-manifesto__visual" style="opacity:0; transform:translate(-50%, calc(-50% + 120px));"> <video autoplay="" muted="" loop="" playsinline=""> <source src="https://forb01.godohosting.com/insooth/renewal/video/video_membership.mp4" type="video/mp4">브라우저가 동영상을 지원하지 않습니다.</video></div>
+     <div class="ap-manifesto__visual" style="opacity:0; transform:translate(-50%, calc(-50% + 120px));"> <video autoplay="" muted="" loop="" playsinline=""> <source src="https://forb01.godohosting.com/insooth/renewal/video/video_manifesto-bg.mp4" type="video/mp4">브라우저가 동영상을 지원하지 않습니다.</video></div>
   </div>
 </section>
 
 <!-- GPT_TEST_0611 -->
 <!-- ⑥ CATEGORY ACCORDION (Hike & Trek / Camp & Rest) -->
-<div class="ap-category ap-reveal">
+ <div class="ap-category-sticky-wrap ap-reveal" id="apCategoryStickyWrap">
+  <div class="ap-category ap-reveal" id="apCategorySection">
 
-  <!-- Hike & Trek -->
-  <div class="ap-category__col ap-category__col--active" data-col="hike">
-    <div class="ap-category__bg ap-category__bg--hike"></div>
-    <button type="button" class="ap-category__arrow"><!--@import(/svg/icon-chevron-left-th.html)--></button>
-    <div class="ap-category__indicator">Hike &amp; Trek</div>
-    <div class="ap-category__content">
-      <div class="ap-category__title ap-txt__title">Hike &amp; Trek</div>
-      <div class="ap-category__sub ap-txt__body">정상을 향하는 모든 발걸음을 위한<br>경량 하이킹 기어 컬렉션</div>
-      <div class="ap-category__body">
-        <div module="product_listmain_5" class="ap-category__products">
-          <!--
-              $count = 3
-          -->
+    <!-- Hike & Trek -->
+    <div class="ap-category__col ap-category__col--active" data-col="hike">
+      <div class="ap-category__bg ap-category__bg--hike"></div>
+      <button type="button" class="ap-category__arrow"><!--@import(/svg/icon-chevron-left-th.html)--></button>
+      <div class="ap-category__indicator">Hike &amp; Trek</div>
+      <div class="ap-category__content">
+        <div class="ap-category__title ap-txt__title">Hike &amp; Trek</div>
+        <div class="ap-category__sub ap-txt__body">정상을 향하는 모든 발걸음을 위한<br>경량 하이킹 기어 컬렉션</div>
+        <div class="ap-category__body">
+          <div module="product_listmain_5" class="ap-category__products">
+            <!--
+                $count = 3
+            -->
+              <a href="/product/detail.html{$param}" class="ap-category__prod-item" id="anchorBoxId_{$product_no}">
+                  <div class="ap-category__prod-thumb" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></div>
+                  <div class="ap-category__info">
+                    <div class="ap-category__prod-desc">{$summary_desc}</div>
+                    <div class="ap-category__prod-name">{$product_name}</div>
+                    <div class="ap-category__prod-price">{$product_price|numberformat}{$price_unit_tail}</div>
+                  </div><!-- //ap-category__info -->
+              </a>
+              <a href="/product/detail.html{$param}" class="ap-category__prod-item" id="anchorBoxId_{$product_no}">
+                  <div class="ap-category__prod-thumb" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></div>
+                  <div class="ap-category__info">
+                    <div class="ap-category__prod-desc">{$summary_desc}</div>
+                    <div class="ap-category__prod-name">{$product_name}</div>
+                    <div class="ap-category__prod-price">{$product_price|numberformat}{$price_unit_tail}</div>
+                  </div><!-- //ap-category__info -->
+              </a>
+          </div><!-- //ap-category__products -->
+        </div><!-- //ap-category__body -->
+        <a href="/product/list.html?cate_no=24" class="ap-category__link">전체 제품 보기</a>
+      </div>
+    </div>
+
+    <!-- Camp & Rest -->
+    <div class="ap-category__col" data-col="camp">
+      <div class="ap-category__bg ap-category__bg--camp"></div>
+      <button type="button" class="ap-category__arrow"><!--@import(/svg/icon-chevron-right-th.html)--></button>
+      <div class="ap-category__indicator">Camp &amp; Rest</div>
+      <div class="ap-category__content">
+        <div class="ap-category__title ap-txt__title">Camp &amp; Rest</div>
+        <div class="ap-category__sub ap-txt__body">장비를 챙기는 수고는 줄이고<br>함께하는 시간을 더 길게</div>
+        <div class="ap-category__body">
+          <div module="product_listmain_6" class="ap-category__products">
+            <!--
+                $count = 3
+            -->
             <a href="/product/detail.html{$param}" class="ap-category__prod-item" id="anchorBoxId_{$product_no}">
-                <div class="ap-category__prod-thumb" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></div>
-                <div class="ap-category__info">
-                  <div class="ap-category__prod-desc">{$summary_desc}</div>
-                  <div class="ap-category__prod-name">{$product_name}</div>
-                  <div class="ap-category__prod-price">{$product_price|numberformat}{$price_unit_tail}</div>
-                </div><!-- //ap-category__info -->
+              <div class="ap-category__prod-thumb" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></div>
+              <div class="ap-category__info">
+                <div class="ap-category__prod-desc">{$summary_desc}</div>
+                <div class="ap-category__prod-name">{$product_name}</div>
+                <div class="ap-category__prod-price">{$product_price|numberformat}{$price_unit_tail}</div>
+              </div><!-- //ap-category__info -->
             </a>
             <a href="/product/detail.html{$param}" class="ap-category__prod-item" id="anchorBoxId_{$product_no}">
-                <div class="ap-category__prod-thumb" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></div>
-                <div class="ap-category__info">
-                  <div class="ap-category__prod-desc">{$summary_desc}</div>
-                  <div class="ap-category__prod-name">{$product_name}</div>
-                  <div class="ap-category__prod-price">{$product_price|numberformat}{$price_unit_tail}</div>
-                </div><!-- //ap-category__info -->
+              <div class="ap-category__prod-thumb" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></div>
+              <div class="ap-category__info">
+                <div class="ap-category__prod-desc">{$summary_desc}</div>
+                <div class="ap-category__prod-name">{$product_name}</div>
+                <div class="ap-category__prod-price">{$product_price|numberformat}{$price_unit_tail}</div>
+              </div><!-- //ap-category__info -->
             </a>
-        </div><!-- //ap-category__products -->
-      </div><!-- //ap-category__body -->
-      <a href="/product/list.html?cate_no=24" class="ap-category__link">전체 제품 보기</a>
+          </div><!-- //ap-category__products -->
+        </div><!-- //ap-category__body -->
+        <a href="/product/list.html?cate_no=24" class="ap-category__link">전체 제품 보기</a>
+      </div>
     </div>
-  </div>
-
-  <!-- Camp & Rest -->
-  <div class="ap-category__col" data-col="camp">
-    <div class="ap-category__bg ap-category__bg--camp"></div>
-    <button type="button" class="ap-category__arrow"><!--@import(/svg/icon-chevron-right-th.html)--></button>
-    <div class="ap-category__indicator">Camp &amp; Rest</div>
-    <div class="ap-category__content">
-      <div class="ap-category__title ap-txt__title">Camp &amp; Rest</div>
-      <div class="ap-category__sub ap-txt__body">장비를 챙기는 수고는 줄이고<br>함께하는 시간을 더 길게</div>
-      <div class="ap-category__body">
-        <div module="product_listmain_6" class="ap-category__products">
-          <!--
-              $count = 3
-          -->
-          <a href="/product/detail.html{$param}" class="ap-category__prod-item" id="anchorBoxId_{$product_no}">
-            <div class="ap-category__prod-thumb" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></div>
-            <div class="ap-category__info">
-              <div class="ap-category__prod-desc">{$summary_desc}</div>
-              <div class="ap-category__prod-name">{$product_name}</div>
-              <div class="ap-category__prod-price">{$product_price|numberformat}{$price_unit_tail}</div>
-            </div><!-- //ap-category__info -->
-          </a>
-          <a href="/product/detail.html{$param}" class="ap-category__prod-item" id="anchorBoxId_{$product_no}">
-            <div class="ap-category__prod-thumb" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="" class="thumb" /></div>
-            <div class="ap-category__info">
-              <div class="ap-category__prod-desc">{$summary_desc}</div>
-              <div class="ap-category__prod-name">{$product_name}</div>
-              <div class="ap-category__prod-price">{$product_price|numberformat}{$price_unit_tail}</div>
-            </div><!-- //ap-category__info -->
-          </a>
-        </div><!-- //ap-category__products -->
-      </div><!-- //ap-category__body -->
-      <a href="/product/list.html?cate_no=24" class="ap-category__link">전체 제품 보기</a>
-    </div>
-  </div>
-</div><!-- //ap-category -->
+  </div><!-- //ap-category -->
+</div>
 <!-- ⑦ JOURNAL SWIPER (active card center scale) -->
 <div class="ap-journal ap-reveal">
   <div class="ap-container">
@@ -490,9 +492,9 @@
 </div><!-- //ap-shorts -->
 
 <!-- ⑩ mainCTA CTA -->
-<div class="ap-mainCTA ap-reveal">
+<div class="ap-mainCTA revealing-image">
   <div class="ap-mainCTA__img"><video autoplay="" muted="" loop="" playsinline=""> <source src="https://forb01.godohosting.com/insooth/renewal/video/video_membership.mp4" type="video/mp4">브라우저가 동영상을 지원하지 않습니다.</video></div>
-  <div class="ap-container">
+  <div class="ap-container revealing-image__overlay-box">
     <div class="ap-mainCTA__content">
       <div class="ap-mainCTA__eyebrow">MEMBERSHIP</div>
       <h2 class="ap-mainCTA__title ap-txt__title">인수스와 함께하는<br>여정의 시작</h2>
@@ -506,7 +508,31 @@
 </div><!-- //ap-mainCTA -->
 
 
+<script> 
+ //스크롤 요소 확대
+  function checkVisibility() {
+  const sections = document.querySelectorAll('.revealing-image');
+  const viewportHeight = window.innerHeight;
+  const triggerPoint = viewportHeight * .5;
 
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    const elementTop = rect.top;
+
+    if (elementTop < triggerPoint) {
+      section.classList.add('is-visible');
+    } else {
+      section.classList.remove('is-visible');
+    }
+  });
+  }
+
+  // 스크롤 이벤트
+  window.addEventListener('scroll', checkVisibility);
+
+  // 초기 체크
+  checkVisibility();
+</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -541,42 +567,135 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
+
 /* ------- CATEGORY ACCORDION ------- */
-const apCategoryCols = document.querySelectorAll('.ap-category__arrow');
-const apCategorySection = document.querySelector('.ap-category');
+const apCategoryStickyWrap = document.getElementById('apCategoryStickyWrap');
+const apCategorySection = document.getElementById('apCategorySection');
+const apColHike = document.querySelector('.ap-category__col[data-col="hike"]');
+const apColCamp = document.querySelector('.ap-category__col[data-col="camp"]');
 
-apCategoryCols.forEach(function (col) {
-  col.addEventListener('click', function () {
-    apCategoryCols.forEach(function (c) {
-      c.closest('.ap-category__col')?.classList.remove('ap-category__col--active');
+let apCategorySeen = false;
+let apCategoryTicking = false;
+let apCategoryRawProgress = 0;
+let apCategorySmoothProgress = 0;
+let apCategoryAnimating = false;
+
+let apCategoryStickyHeight = apCategorySection ? apCategorySection.offsetHeight : 0;
+let apCategoryScrollableDistance = apCategoryStickyWrap
+  ? apCategoryStickyWrap.offsetHeight - apCategoryStickyHeight
+  : 0;
+
+/* ── 버튼 클릭 아코디언 ── */
+document.querySelectorAll('.ap-category__arrow').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    apColHike?.style.removeProperty('flex');
+    apColCamp?.style.removeProperty('flex');
+
+    document.querySelectorAll('.ap-category__arrow').forEach(function (b) {
+      b.closest('.ap-category__col')?.classList.remove('ap-category__col--active');
     });
+    btn.closest('.ap-category__col')?.classList.add('ap-category__col--active');
 
-    col.closest('.ap-category__col')?.classList.add('ap-category__col--active');
+    apCategoryFinish();
   });
 });
 
-/* 섹션을 위로 빠져나갈 때 Camp 활성화 */
-if (apCategorySection) {
-  const apCategoryObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      const rect = entry.boundingClientRect;
+/* ── sticky → relative 전환 (점프 방지) ── */
+function apCategoryFinish() {
+  if (apCategorySeen || !apCategoryStickyWrap || !apCategorySection) return;
+  apCategorySeen = true;
 
-      // 화면 위로 빠져나가는 중인지 (스크롤 다운으로 섹션을 통과)
-      const leavingUpward = rect.top < 0 && !entry.isIntersecting;
+  const sectionDocTop = window.scrollY + apCategorySection.getBoundingClientRect().top;
+  const sectionH = apCategorySection.offsetHeight;
+  const wrapOffsetTop = apCategoryStickyWrap.offsetTop;
+  const neededWrapHeight = sectionDocTop - wrapOffsetTop + sectionH;
 
-      if (leavingUpward) {
-        document.querySelectorAll('.ap-category__col').forEach(function (c) {
-          c.classList.remove('ap-category__col--active');
-        });
+  // 1. wrap height를 섹션 현재 위치 기준으로 픽스
+  apCategoryStickyWrap.style.height = neededWrapHeight + 'px';
 
-        const campCol = document.querySelector('.ap-category__col[data-col="camp"]');
-        campCol?.classList.add('ap-category__col--active');
-      }
-    });
-  }, { threshold: 0 });
-
-  apCategoryObserver.observe(apCategorySection);
+  requestAnimationFrame(function () {
+    // 2. is-done: position 전환 + CSS의 height:auto가 적용됨
+    //apCategoryStickyWrap.classList.add('is-done');
+    // 3. 인라인 height 제거 → CSS의 height:auto가 최종 적용
+    apCategoryStickyWrap.style.height = '';
+  });
 }
+
+/* ── 스크롤 progress 계산 ── */
+function apCategoryUpdate() {
+  apCategoryTicking = false;
+  if (apCategorySeen || !apCategoryStickyWrap || apCategoryScrollableDistance <= 0) return;
+
+  const wrapRect = apCategoryStickyWrap.getBoundingClientRect();
+  apCategoryRawProgress = Math.max(0, Math.min(1, (-wrapRect.top) / apCategoryScrollableDistance));
+
+  if (!apCategoryAnimating) {
+    apCategoryAnimating = true;
+    requestAnimationFrame(apCategoryAnimate);
+  }
+}
+
+/* ── 보간 루프 ── */
+function apCategoryAnimate() {
+  apCategorySmoothProgress += (apCategoryRawProgress - apCategorySmoothProgress) * 0.12;
+
+  if (Math.abs(apCategoryRawProgress - apCategorySmoothProgress) < 0.001) {
+    apCategorySmoothProgress = apCategoryRawProgress;
+  }
+
+  apCategoryApplyProgress(apCategorySmoothProgress);
+
+  if (apCategorySmoothProgress !== apCategoryRawProgress) {
+    requestAnimationFrame(apCategoryAnimate);
+  } else {
+    apCategoryAnimating = false;
+    // progress가 1에 완전히 도달했을 때만 finish
+    if (apCategorySmoothProgress >= 1 && !apCategorySeen) {
+      apCategoryFinish();
+    }
+  }
+}
+
+/* ── flex 값 적용 ── */
+function apCategoryApplyProgress(progress) {
+  if (progress <= 0) {
+    apColHike?.style.removeProperty('flex');
+    apColCamp?.style.removeProperty('flex');
+    apColHike?.classList.add('ap-category__col--active');
+    apColCamp?.classList.remove('ap-category__col--active');
+    return;
+  }
+  if (progress >= 1) {
+    apColHike?.style.removeProperty('flex');
+    apColCamp?.style.removeProperty('flex');
+    apColHike?.classList.remove('ap-category__col--active');
+    apColCamp?.classList.add('ap-category__col--active');
+    return;
+  }
+
+  apColHike?.classList.add('ap-category__col--active');
+  apColCamp?.classList.remove('ap-category__col--active');
+
+  const hikeFlex = 2.5 - (1.5 * progress);
+  const campFlex = 1 + (1.5 * progress);
+  apColHike.style.flex = hikeFlex.toString();
+  apColCamp.style.flex = campFlex.toString();
+}
+
+/* ── 이벤트 ── */
+function apCategoryOnScroll() {
+  if (apCategoryTicking) return;
+  apCategoryTicking = true;
+  requestAnimationFrame(apCategoryUpdate);
+}
+
+window.addEventListener('scroll', apCategoryOnScroll, { passive: true });
+
+window.addEventListener('resize', function () {
+  if (!apCategoryStickyWrap || !apCategorySection || apCategorySeen) return;
+  apCategoryStickyHeight = apCategorySection.offsetHeight;
+  apCategoryScrollableDistance = apCategoryStickyWrap.offsetHeight - apCategoryStickyHeight;
+});
 
 /* ------- SHORTS SWIPER ------- */
 (function () {
