@@ -4,7 +4,14 @@
    HERO SWIPER
 =========================== */
 .ap-hero { position: relative; width: 100%; height: calc(95dvh - var(--ap-header-height)); min-height: 560px; max-height: 860px; background: var(--ap-color-black); }
-.ap-hero .swiper { width: 100%; height: 100%; }
+.ap-hero .swiper {position: relative; width: 100%; height: 100%; }
+.ap-hero .swiper .ap-hero__swiper-buttons{position: absolute; top: 50%; transform: translateY(-50%);z-index: 1; width: 100%;height: 36px;}
+.ap-hero .swiper .swiper-button{cursor: pointer;opacity: 0; transition: opacity 0.3s ease;}
+.ap-hero .swiper .swiper-button svg{color: var(--ap-color-orange);}
+
+.ap-hero .swiper:hover .swiper-button{opacity: 0.7;}
+.ap-hero .swiper .swiper-button-prev{position: absolute; left: var(--ap-gutter);}
+.ap-hero .swiper .swiper-button-next{position: absolute; right: var(--ap-gutter);}
 .ap-hero__slide {width: 100%; height: 100%; position: relative; display: flex; align-items: flex-end; padding: 0 64px 72px; }
 .ap-hero .swiper-slide{pointer-events: none;}
 .ap-hero .swiper-slide-active{pointer-events: auto;}
@@ -21,12 +28,12 @@
 .ap-hero__title em { font-style: normal; font-weight: 600; color: var(--ap-color-gray-200); }
 .ap-hero__sub { margin-top: 20px; margin-left: 4px; font-size: var(--ap-text-base); color: var(--ap-color-gray-200); letter-spacing: 0.01em; max-width: 400px; line-height: 1.75; font-weight: 500; }
 .ap-hero__actions { margin-top: 36px; display: flex; align-items: center; gap: 28px; }
-.ap-hero__cta { font-size: var(--ap-text-sm); letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.5); color: #fff; padding: 13px 30px; cursor: pointer; background: transparent; transition: all 0.25s; font-weight: 500; }
-.ap-hero__cta:hover { border-color: var(--ap-color-blue); color: var(--ap-color-blue); }
-.ap-hero .swiper-pagination { bottom: 32px; left: 64px; width: auto; display: flex; gap: 6px; justify-content: flex-start; }
-.ap-hero .swiper-pagination-bullet { width: 22px; height: 1.5px; border-radius: 0; background: rgba(255,255,255,0.25); opacity: 1; transition: background var(--ap-transition-base), width var(--ap-transition-base); }
-.ap-hero .swiper-pagination-bullet-active { background: var(--ap-color-orange); width: 40px; }
-.swiper-slide-active .ap-hero__content { animation: heroFade .8s ease forwards; animation-delay: .4s; }
+.ap-hero__cta { font-size: var(--ap-text-sm); letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid var(--ap-color-black); color: #fff; padding: 13px 30px; cursor: pointer; background:var(--ap-color-black); transition: all 0.25s; font-weight: 500; }
+.ap-hero__cta:hover { border-color: var(--ap-color-blue); color: #fff; background: var(--ap-color-blue)}
+.insooth .ap-hero .swiper-pagination { bottom: 32px; width: auto; display: flex; gap: 6px; justify-content: flex-start; }
+.insooth .ap-hero .swiper-pagination-bullet { width: 48px; border-radius: 0; background: rgba(255,255,255,0.5); opacity: 1; transition: background var(--ap-transition-base), width var(--ap-transition-base); }
+.insooth .ap-hero .swiper-pagination-bullet-active { background: var(--ap-color-orange); width: 72px; }
+.insooth .ap-hero .swiper-slide-active .ap-hero__content { animation: heroFade .8s ease forwards; animation-delay: .4s; }
 @keyframes heroFade {
   from {
     opacity: 0;
@@ -51,13 +58,13 @@
 /* ===========================
   MANIFESTO SECTION
 =========================== */
-.ap-manifesto { position: relative; height: 500vh; background: #fff; }
+.ap-manifesto { position: relative; height: 320vh; background: #fff; }
 .ap-manifesto__sticky { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .ap-manifesto__inner {padding-inline:var(--ap-gutter); position: relative; z-index: 1; text-align: center; }
 .ap-manifesto__headline { margin-bottom: 24px; transition: transform .3s ease, color .4s ease; will-change: transform; color: var(--ap-color-black); line-height: 1.5;}
 .ap-manifesto__texts { max-width: 480px; margin: 0 auto; }
 .ap-manifesto__line { line-height: 2; color: var(--ap-color-black); transition: opacity .4s ease, transform .4s ease, color .4s ease; }
-.ap-manifesto__visual { position: absolute; left: 50%; top: 50%; width: 100vw; height: 100%; transform: translate(-50%, calc(-50% + 120px)); opacity: 0; pointer-events: none; will-change: transform, opacity; }
+.ap-manifesto__visual { position: absolute; left: 50%; top: 50%; width: 100vw; height: 100%; transform: translate(-50%, calc(-50% + 120px)); opacity: 0; pointer-events: none; will-change: transform, opacity; background-color: #000;}
 .ap-manifesto__visual video { display: block; width: 100%; height: 100%; object-fit: cover; }
 /* ===========================
   CATEGORY ACCORDION
@@ -111,10 +118,9 @@
 }
 .ap-category-sticky-wrap {
   position: relative;
-  height: 300dvh;
+  height: 160dvh; /* 300dvh → 160dvh, 체감 스크롤 2~3번 정도 */
   transition: height 0.3s ease;
 }
-
 .ap-category-sticky-wrap.is-done {
   height: calc(100dvh - var(--ap-header-height))
 }

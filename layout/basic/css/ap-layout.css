@@ -283,8 +283,8 @@ h5, .ap-text--h5 { font-size: clamp(var(--ap-text-base), 1.8vw, var(--ap-text-md
 
 /* swiper */
 /* 슬라이드 표시 버튼 */
-.insooth .swiper-pagination{position: absolute; bottom: 36px; left: 50%;transform: translateX(-50%); z-index: 10; display: flex; align-items: center;gap: var(--ap-space-xs);}
-.insooth .swiper-pagination-bullet { width: 28px; height: 4px; background:var(--ap-color-gray-300); cursor: pointer; transition: all var(--ap-transition-base);border:none;padding: 0; opacity: 0.5;}
+.insooth .swiper-pagination{position: absolute; bottom: 36px; left: 50%;transform: translateX(-50%); z-index: 10; display: flex; align-items: center;gap: 6px;}
+.insooth .swiper-pagination-bullet { width: 28px; height: 5px; background:var(--ap-color-gray-300); cursor: pointer; transition: all var(--ap-transition-base);border:none;padding: 0; opacity: 0.5;}
 .insooth .swiper-pagination-bullet-active { background: var(--ap-color-orange); width: 48px; opacity: 1;}
 @media all and (max-width:1024px) {
   .insooth .swiper-pagination{position: absolute; bottom: 28px; gap:12px;}

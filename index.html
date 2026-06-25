@@ -61,8 +61,15 @@
         </a>
       </div>
 
-    </div>
-    <div class="swiper-pagination"></div>
+    </div><!-- 
+    <div class="swiper-pagination"></div> -->
+    <!-- 슬라이드 표시 버튼 -->
+    <div class="swiper-pagination ap-hero__pagination"></div><!-- //swiper-pagination -->
+    <!-- 슬라이드 이동 버튼 -->
+    <div class="ap-hero__swiper-buttons">
+      <div class="swiper-button swiper-button-prev"><!--@import(/svg/icon-chevron-left.html)--></div>
+      <div class="swiper-button swiper-button-next"><!--@import(/svg/icon-chevron-right.html)--></div>
+    </div><!-- //ap-hero__swiper-buttons -->
   </div>
 </section><!-- //ap-hero -->
 
@@ -162,7 +169,7 @@
 <div class="ap-journal ap-reveal">
   <div class="ap-container">
     <div class="ap-journal__header">
-      <h2 class="ap-journal__title ap-txt__title">Expedition Stories</h2>
+      <h2 class="ap-journal__title ap-txt__title">ABOUT US</h2>
       <p class="ap-journal__desc ap-txt__body">인수스가 생각하는 아웃도어의 가치와 철학을 전합니다.</p>
     </div>
   </div><!-- //ap-container -->
@@ -241,18 +248,27 @@
               $subject_cut = 999999
               $main_list_image = yes
           -->
-          <a href="{$link_board_detail}"
-            class="ap-mainCuration__card"
-            style="background-image:url('{$img_src}');">
+          <!-- <a href="{$link_board_detail}" class="ap-mainCuration__card" style="background-image:url('{$img_src}');">
             <div class="ap-mainCuration__body">
               <div class="ap-mainCuration__eyebrow">NEWSLETTER</div>
               <div class="ap-mainCuration__date">{$write_date|date:Y.m.d}</div>
               <div class="ap-mainCuration__tit">{$subject}</div>
               <span class="ap-mainCuration__cta">
+                자세히 보기
+              </span>
+            </div>
+          </a> -->
+          <a href="{$link_board_detail}" class="ap-mainCuration__card" style=" background-position: bottom center;background-image:url('https://forbmaster.cafe24.com/web/img/main/img_curation.jpg?ㅍ=1');">
+            <div class="ap-mainCuration__body">
+              <div class="ap-mainCuration__eyebrow">NEWSLETTER</div>
+              <div class="ap-mainCuration__date">{$write_date|date:Y.m.d}</div>
+              <div class="ap-mainCuration__tit">인수스의 미니멀 아웃도어</div>
+              <span class="ap-mainCuration__cta">
                 자세히 보기<!--@import(/svg/icon-arrow-right.html)-->
               </span>
             </div>
           </a>
+          
         </div>
       </div><!-- //ap-mainCuration -->
 
@@ -513,7 +529,7 @@
   function checkVisibility() {
   const sections = document.querySelectorAll('.revealing-image');
   const viewportHeight = window.innerHeight;
-  const triggerPoint = viewportHeight * .5;
+  const triggerPoint = viewportHeight * .9;
 
   sections.forEach(section => {
     const rect = section.getBoundingClientRect();
@@ -544,6 +560,10 @@ document.addEventListener('DOMContentLoaded', function () {
     /* autoplay: { delay: 5000, disableOnInteraction: false }, */
     effect: 'fade',
     fadeEffect: { crossFade: true },
+    navigation: {
+      nextEl: '.ap-hero .swiper-button-next',
+      prevEl: '.ap-hero .swiper-button-prev',
+    },
     pagination: {
       el: '.ap-hero .swiper-pagination',
       clickable: true,
@@ -666,23 +686,21 @@ function apCategoryApplyProgress(progress) {
     return;
   }
   if (progress >= 1) {
-    apColHike?.style.removeProperty('flex');
-    apColCamp?.style.removeProperty('flex');
-    apColHike?.classList.remove('ap-category__col--active');
-    apColCamp?.classList.add('ap-category__col--active');
+    // camp는 active 클래스 없이, flex만 인라인으로 고정
+    apColHike?.classList.add('ap-category__col--active');
+    apColCamp?.classList.remove('ap-category__col--active');
+    apColHike.style.flex = '2.5';
+    apColCamp.style.flex = '2.5';
     return;
   }
 
+  // 중간 구간: hike는 2.5 고정, camp만 1 → 2.5로 성장
   apColHike?.classList.add('ap-category__col--active');
   apColCamp?.classList.remove('ap-category__col--active');
 
-  const hikeFlex = 2.5 - (1.5 * progress);
-  const campFlex = 1 + (1.5 * progress);
-  apColHike.style.flex = hikeFlex.toString();
-  apColCamp.style.flex = campFlex.toString();
-}
-
-/* ── 이벤트 ── */
+  apColHike.style.flex = '2.5';
+  apColCamp.style.flex = (1 + 1.5 * progress).toString();
+}/* ── 이벤트 ── */
 function apCategoryOnScroll() {
   if (apCategoryTicking) return;
   apCategoryTicking = true;
@@ -825,7 +843,6 @@ function lerpColor(progress, startVal, endVal) {
   const v = Math.round(startVal + (endVal - startVal) * progress);
   return `rgb(${v}, ${v}, ${v})`;
 }
-
 document.addEventListener('scroll', () => {
   const rect = manifesto.getBoundingClientRect();
   const progress = Math.min(
@@ -836,10 +853,10 @@ document.addEventListener('scroll', () => {
   /* 헤드라인 확대 */
   headline.style.transform = `scale(${1 + progress * 0.15})`;
 
-  /* 문장 천천히 제거 */
-  const fade1 = Math.min(Math.max((progress - 0.15) / 0.25, 0), 1);
-  const fade2 = Math.min(Math.max((progress - 0.35) / 0.25, 0), 1);
-  const fade3 = Math.min(Math.max((progress - 0.55) / 0.25, 0), 1);
+  /* 문장 천천히 제거 — 구간 압축 (0.15~0.8 → 0.05~0.45) */
+  const fade1 = Math.min(Math.max((progress - 0.05) / 0.15, 0), 1);
+  const fade2 = Math.min(Math.max((progress - 0.18) / 0.15, 0), 1);
+  const fade3 = Math.min(Math.max((progress - 0.31) / 0.15, 0), 1);
 
   lines[0].style.opacity   = 1 - fade1;
   lines[0].style.transform = `translateY(${-30 * fade1}px)`;
@@ -848,17 +865,16 @@ document.addEventListener('scroll', () => {
   lines[2].style.opacity   = 1 - fade3;
   lines[2].style.transform = `translateY(${-30 * fade3}px)`;
 
-  /* 텍스트 색상: 검정(0) → 흰색(255), 비디오 등장 시점에 맞춰 전환 */
-  const colorProgress = Math.min(Math.max((progress - 0.5) / 0.3, 0), 1);
+  /* 텍스트 색상: 검정 → 흰색, 문구가 사라지는 시점에 맞춰 전환 (0.3~0.5) */
+  const colorProgress = Math.min(Math.max((progress - 0.3) / 0.2, 0), 1);
   const textColor = lerpColor(colorProgress, 0, 255);
   headline.style.color = textColor;
   lines.forEach(line => { line.style.color = textColor; });
 
-  /* 비디오 등장 */
-  const imageProgress = Math.min(Math.max((progress - 0.7) / 0.25, 0), 1);
+  /* 비디오 등장 — 더 일찍 시작, 노출 구간을 길게 (0.45~1.0) */
+  const imageProgress = Math.min(Math.max((progress - 0.45) / 0.2, 0), 1);
   const y = 120 - (120 * imageProgress);
   visual.style.opacity   = imageProgress;
   visual.style.transform = `translate(-50%, calc(-50% + ${y}px))`;
 });
-
 </script>
