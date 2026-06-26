@@ -5,7 +5,7 @@
 =========================== */
 .ap-hero { position: relative; width: 100%; height: calc(95dvh - var(--ap-header-height)); min-height: 560px; max-height: 860px; background: var(--ap-color-black); }
 .ap-hero .swiper {position: relative; width: 100%; height: 100%; }
-.ap-hero .swiper .ap-hero__swiper-buttons{position: absolute; top: 50%; transform: translateY(-50%);z-index: 1; width: 100%;height: 36px;}
+.ap-hero .swiper .ap-hero__swiper-buttons{position: absolute; top: 40%; transform: translateY(-50%);z-index: 1; width: 100%;height: 36px;}
 .ap-hero .swiper .swiper-button{cursor: pointer;opacity: 0; transition: opacity 0.3s ease;}
 .ap-hero .swiper .swiper-button svg{color: var(--ap-color-orange);}
 
@@ -60,7 +60,7 @@
 =========================== */
 .ap-manifesto { position: relative; height: 320vh; background: #fff; }
 .ap-manifesto__sticky { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.ap-manifesto__inner {padding-inline:var(--ap-gutter); position: relative; z-index: 1; text-align: center; }
+.ap-manifesto__inner {padding-inline:var(--ap-gutter); position: relative; z-index: 1; text-align: center; user-select: none;}
 .ap-manifesto__headline { margin-bottom: 24px; transition: transform .3s ease, color .4s ease; will-change: transform; color: var(--ap-color-black); line-height: 1.5;}
 .ap-manifesto__texts { max-width: 480px; margin: 0 auto; }
 .ap-manifesto__line { line-height: 2; color: var(--ap-color-black); transition: opacity .4s ease, transform .4s ease, color .4s ease; }
