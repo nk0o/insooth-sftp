@@ -1,6 +1,5 @@
 
 <!--@layout(/layout/basic/layout.html)-->
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <!--@css(/styleguide/styleguide.css)-->
 <!---------- CSS ------------>
 <!--@css(/layout/basic/css/ap-layout.css)--> <!-- 공통 -->
@@ -13,909 +12,322 @@
 <!--@css(/layout/basic/css/ap-service.css)--> <!-- 서비스 -->
 <!--@css(/layout/basic/css/ap-product.css)--> <!-- 제품목록/제품카드 -->
 
-<!-- HEADER -->
-<header class="sg-header">
-  <span class="sg-header__eyebrow">INSOOTH Brand Style Guide</span>
-  <h1 class="sg-header__title">인수스<br>스타일 가이드</h1>
-  <div class="sg-header__tags">
+<div class="guide">
+
+  <div class="doc-hero">
+    <h1 class="doc-hero__title">INSOOTH 스타일가이드</h1>
+    <p class="doc-hero__desc"><code>--ap</code> 변수 세트를 기준으로 정리한 인수스 공식몰 디자인 토큰입니다.</p>
   </div>
-</header>
+  <nav class="sg-toc" aria-label="목차">
+    <div class="sg-toc__inner">
+      <a href="#s01" class="sg-toc__link">01 Color System</a>
+      <a href="#s02" class="sg-toc__link">02 Typography</a>
+      <a href="#s03" class="sg-toc__link">03 Spacing & Layout</a>
+      <a href="#s04" class="sg-toc__link">04 Radius · Shadow · Transition</a>
+      <a href="#s05" class="sg-toc__link">05 Naming Convention</a>
+      <a href="#s06" class="sg-toc__link">06 Components</a>
+      <a href="#s07" class="sg-toc__link">07 Voice & Tone Reference</a>
+      <a href="#s08" class="sg-toc__link">08 Icons</a>
+    </div>
+  </nav>
+  <!-- 01. Color -->
+  <section class="doc-section">
+    <div class="doc-section__num" id="s00">00</div>
+    <h2 class="doc-section__title">INSOOTH UIUX 원칙</h2>
+    <p class="doc-section__desc"><strong>'여정을 방해하지 않는 디자인'</strong></p>
+    <p class="doc-section__desc">
+      <strong>모든 움직임에는 이유가 있어야 한다.</strong><br>
+      Design Rule:모든 애니메이션은 사용자의 여정을 방해하지 않고 자연스럽게 이어주는 역할만 수행<br>
+      - 부드러운 Fade<br>
+      - 최소한의 Motion<br>
+      - 스크롤 흐름 강화<br>
+      - 콘텐츠 집중도 향상
+    </p>
+    <p class="doc-section__desc">
+      <strong>자연이 가장 먼저 보여야 한다.</strong><br>
+      Design Rule: 효과보다 사진, 장식보다 소재, 그래픽보다 실제 필드 경험을 우선
+    </p>
+    <p class="doc-section__desc">
+      <strong>제품보다 여정을 먼저 보여준다.</strong><br>
+      Design Rule: 자연과 경험 중심의 비주얼, 제품은 경험을 완성하는 도구, 판매보다 브랜드 경험 우선
+    </p>
+    <p class="doc-section__desc">
+      <strong>조용한 자신감을 디자인한다.</strong><br>
+      Design Rule: 과한 장식이나 효과보다 절제된 레이아웃과 균형 있는 타이포그래피로 브랜드의 자신감을 표현<br>
+      - 넓은 여백<br>
+      - 절제된 컬러<br>
+      - 최소한의 인터랙션<br>
+      - 명확한 정보 구조
+    </p>
+    <p class="doc-section__desc">
+      <strong>모든 요소는 균형을 가져야 한다.</strong><br>
+      Design Rule: 레이아웃, 여백, 이미지, 타이포그래피, 인터랙션까지 모두 안정적인 균형을 유지합니다.<br>
+      - 일관된 Grid<br>
+      - 일정한 Spacing<br>
+    </p>
 
-<!-- TOC -->
-<nav class="sg-toc" aria-label="목차">
-  <div class="sg-toc__inner">
-    <a href="#s00" class="sg-toc__link">00 Variables</a>
-    <a href="#s01" class="sg-toc__link">01 Color</a>
-    <a href="#s02" class="sg-toc__link">02 Typography</a>
-    <a href="#s03" class="sg-toc__link">03 Button</a>
-    <a href="#s04" class="sg-toc__link">04 Badge & Tag</a>
-    <a href="#s05" class="sg-toc__link">05 Card</a>
-    <a href="#s06" class="sg-toc__link">06 Form</a>
-    <a href="#s07" class="sg-toc__link">07 GNB (2단)</a>
-    <a href="#s08" class="sg-toc__link">08 메가메뉴 ✦</a>
-    <a href="#s09" class="sg-toc__link">09 전체메뉴 드로어 ✦</a>
-    <a href="#s10" class="sg-toc__link">10 Hero 슬라이더</a>
-    <a href="#s11" class="sg-toc__link">11 Brand Card ✦</a>
-    <a href="#s12" class="sg-toc__link">12 Section / Grid</a>
-    <a href="#s13" class="sg-toc__link">13 Icons</a>
-  </div>
-</nav>
-<nav class="fix-toc" aria-label="목차">
-  <div class="sg-toc__inner">
-    <a href="#s00" class="sg-toc__link">00 Variables</a>
-    <a href="#s01" class="sg-toc__link">01 Color</a>
-    <a href="#s02" class="sg-toc__link">02 Typography</a>
-    <a href="#s03" class="sg-toc__link">03 Button</a>
-    <a href="#s04" class="sg-toc__link">04 Badge & Tag</a>
-    <a href="#s05" class="sg-toc__link">05 Card</a>
-    <a href="#s06" class="sg-toc__link">06 Form</a>
-    <a href="#s07" class="sg-toc__link">07 GNB (2단)</a>
-    <a href="#s08" class="sg-toc__link">08 메가메뉴 ✦</a>
-    <a href="#s09" class="sg-toc__link">09 전체메뉴 드로어 ✦</a>
-    <a href="#s10" class="sg-toc__link">10 Hero 슬라이더</a>
-    <a href="#s11" class="sg-toc__link">11 Brand Card ✦</a>
-    <a href="#s12" class="sg-toc__link">12 Section / Grid</a>
-    <a href="#s13" class="sg-toc__link">13 Icons</a>
-  </div>
-</nav>
-<div class="ap-container" style="padding-top:0;padding-bottom:80px;">
+    <!-- Voice & Tone -->
+    <h2 class="doc-section__title">Voice &amp; Tone Reference</h2>
+    <table class="vt-table">
+      <tr><th>톤 방향</th><td>단단함, 기능 중심, 성능 기반 — 과장 없이 담백하게</td></tr>
+      <tr><th>문장 구조</th><td>간결 → 핵심 → 이유 순서로 구성</td></tr>
+      <tr><th>어휘</th><td>견고함 · 안정성 · 기능을 나타내는 단어 위주, 수식어 최소화</td></tr>
+      <tr><th>균형</th><td>좌우 균형 / 여백균형 / 텍스트 균형 / 이미지 균형 </td></tr>
+      <tr><th>감정 강도</th><td>절제된 감성 — 소리치지 않고 확신을 전달(조용한 프리미엄/NO과시)</td></tr>
+      <tr><th>강조</th><td>UI 보다 제품이 먼저 강조</td></tr>
+      <tr><th>피해야 할 것</th><td>과장된 수식어, 금전적 혜택 강조, 불필요한 장식(카피)</td></tr>
+    </table>
 
-  <!-- 00. CSS VARIABLES -->
-  <section class="sg-section" id="s00">
-    <div class="sg-section__num">00 — CSS Variables</div>
-    <div class="sg-section__title">변수 선언</div>
-    <p class="sg-tip"></p>
-    <div class="sg-code">:root {
-  <span class="c">/* COLOR — Base */</span>
-  <span class="p">--ap-color-cream</span>:              <span class="v">#FFFDF9</span>;
-  <span class="p">--ap-color-ivory</span>:              <span class="v">#FAF6EF</span>;
-  <span class="p">--ap-color-beige</span>:              <span class="v">#F2EAE0</span>;
-  <span class="p">--ap-color-beige-mid</span>:          <span class="v">#E4D6C8</span>;
-  <span class="p">--ap-color-beige-deep</span>:         <span class="v">#CDB99F</span>;
-
-  <span class="c">/* COLOR — Gold (#FDD000 / #F3A700 믹스) */</span>
-  <span class="p">--ap-color-gold</span>:               <span class="v">#F3A700</span>;  
-  <span class="p">--ap-color-gold-light</span>:         <span class="v">#FDD000</span>;  
-  <span class="p">--ap-color-gold-pale</span>:          <span class="v">#FEF0A0</span>;  
-  <span class="p">--ap-color-warm-brown</span>:         <span class="v">#A07848</span>;
-  <span class="p">--ap-color-warm-brown-deep</span>:    <span class="v">#7A5A32</span>;
-
-  <span class="c">/* COLOR — Text */</span>
-  <span class="p">--ap-color-text-primary</span>:       <span class="v">#1A1410</span>;
-  <span class="p">--ap-color-text-secondary</span>:     <span class="v">#5A4E44</span>;
-  <span class="p">--ap-color-text-muted</span>:         <span class="v">#9A8A7A</span>;
-  <span class="p">--ap-color-text-disabled</span>:      <span class="v">#C8B8A8</span>;
-
-  <span class="c">/* COLOR — GrayScale */</span>
-  <span class="p">--ap-color-gray-950</span> : <span class="v">#1F1F1F</span>;
-  <span class="p">--ap-color-gray-900</span> : <span class="v">#303030</span>;
-  <span class="p">--ap-color-gray-800</span> : <span class="v">#404040</span>;
-  <span class="p">--ap-color-gray-700</span> : <span class="v">#525252</span>;
-  <span class="p">--ap-color-gray-600</span> : <span class="v">#5E5E5E</span>;
-  <span class="p">--ap-color-gray-500</span> : <span class="v">#666666</span>;
-  <span class="p">--ap-color-gray-400</span> : <span class="v">#868686</span>;
-  <span class="p">--ap-color-gray-300</span> : <span class="v">#999999</span>;
-  <span class="p">--ap-color-gray-200</span> : <span class="v">#BFBFBF</span>;
-  <span class="p">--ap-color-gray-100</span> : <span class="v">#DBDBDB</span>;
-  <span class="p">--ap-color-gray-50 </span> : <span class="v">#F0F0F0</span>;
-  <span class="p">--ap-color-gray-10 </span> : <span class="v">#FAFAFA</span>;
-
-
-  <span class="c">/* COLOR — Surface */</span>
-  <span class="p">--ap-color-bg-base</span>:            <span class="v">#FFFDF9</span>;
-  <span class="p">--ap-color-bg-section</span>:         <span class="v">#FAF6EF</span>;
-  <span class="p">--ap-color-bg-card</span>:            <span class="v">#FFFFFF</span>;
-  <span class="p">--ap-color-border</span>:             <span class="v">#EAE0D4</span>;
-  <span class="p">--ap-color-border-light</span>:       <span class="v">#F2EAE0</span>;
-
-  <span class="c">/* COLOR — Semantic */</span>
-  <span class="p">--ap-color-success</span>:            <span class="v">#7A9E7E</span>;
-  <span class="p">--ap-color-error</span>:              <span class="v">#EC2A1D</span>;
-  <span class="p">--ap-color-info</span>:               <span class="v">#7A96B4</span>;
-
-  <span class="c">/* FONT */</span>
-  <span class="p">--ap-font-serif</span>: <span class="v">'Cormorant Garamond', 'Noto Serif KR', serif</span>;
-  <span class="p">--ap-font-sans</span>:  <span class="v">'Pretendard Variable' 'Apple SD Gothic Neo', sans-serif</span>;
-
-  <span class="c">/* FONT SIZE */</span>
-  <span class="p">--ap-text-xs</span>: <span class="v">11px</span>;  <span class="p">--ap-text-sm</span>: <span class="v">13px</span>;  <span class="p">--ap-text-base</span>: <span class="v">15px</span>;  <span class="p">--ap-text-md</span>: <span class="v">17px</span>;
-  <span class="p">--ap-text-lg</span>: <span class="v">20px</span>;  <span class="p">--ap-text-xl</span>: <span class="v">26px</span>;  <span class="p">--ap-text-2xl</span>: <span class="v">34px</span>;  <span class="p">--ap-text-3xl</span>: <span class="v">44px</span>;
-  <span class="p">--ap-text-4xl</span>: <span class="v">58px</span>;
-
-  <span class="c">/* LINE HEIGHT */</span>
-  <span class="p">--ap-leading-tight</span>: <span class="v">1.2</span>;  <span class="p">--ap-leading-normal</span>: <span class="v">1.65</span>;  <span class="p">--ap-leading-loose</span>: <span class="v">1.9</span>;
-
-  <span class="c">/* LETTER SPACING */</span>
-  <span class="p">--ap-tracking-tight</span>: <span class="v">-0.02em</span>;  <span class="p">--ap-tracking-wide</span>: <span class="v">0.08em</span>;  <span class="p">--ap-tracking-wider</span>: <span class="v">0.18em</span>;
-
-  <span class="c">/* SPACING */</span>
-  <span class="p">--ap-space-xs</span>: <span class="v">4px</span>;   <span class="p">--ap-space-sm</span>: <span class="v">8px</span>;    <span class="p">--ap-space-md</span>: <span class="v">16px</span>;
-  <span class="p">--ap-space-lg</span>: <span class="v">24px</span>;  <span class="p">--ap-space-xl</span>: <span class="v">40px</span>;   <span class="p">--ap-space-2xl</span>: <span class="v">64px</span>;
-  <span class="p">--ap-space-3xl</span>: <span class="v">96px</span>; <span class="p">--ap-space-4xl</span>: <span class="v">128px</span>;
-
-  <span class="c">/* LAYOUT */</span>
-  <span class="p">--ap-max-width</span>: <span class="v">1280px</span>;  <span class="p">--ap-max-width-narrow</span>: <span class="v">840px</span>;  <span class="p">--ap-gutter</span>: <span class="v">32px</span>;
-
-  <span class="c">/* RADIUS — 버튼 포근함을 위해 6px 적용 */</span>
-  <span class="p">--ap-radius-sm</span>: <span class="v">4px</span>;  <span class="p">--ap-radius-md</span>: <span class="v">6px</span>;  <span class="p">--ap-radius-lg</span>: <span class="v">14px</span>;  <span class="p">--ap-radius-pill</span>: <span class="v">999px</span>;
-
-  <span class="c">/* SHADOW */</span>
-  <span class="p">--ap-shadow-sm</span>: <span class="v">0 1px 4px rgba(26,20,16,.05)</span>;
-  <span class="p">--ap-shadow-md</span>: <span class="v">0 4px 20px rgba(26,20,16,.07)</span>;
-  <span class="p">--ap-shadow-lg</span>: <span class="v">0 16px 48px rgba(26,20,16,.09)</span>;
-
-  <span class="c">/* TRANSITION */</span>
-  <span class="p">--ap-transition-fast</span>: <span class="v">150ms ease</span>;  <span class="p">--ap-transition-normal</span>: <span class="v">300ms ease</span>;  <span class="p">--ap-transition-slow</span>: <span class="v">600ms ease</span>;
-}</div>
   </section>
 
-  <!-- 01. COLOR -->
-  <section class="sg-section" id="s01">
-    <div class="sg-section__num">01 — Color</div>
-    <div class="sg-section__title">컬러 팔레트</div>
-    <div class="sg-color-grid">
-      <div class="sg-color-group">Primary — 배경/베이스</div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-cream);"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Cream</span><span class="sg-swatch__var">--ap-color-cream</span><span class="sg-swatch__hex">#FFFDF9</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-ivory)"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Ivory</span><span class="sg-swatch__var">--ap-color-ivory</span><span class="sg-swatch__hex">#FAF6EF</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-beige)"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Beige</span><span class="sg-swatch__var">--ap-color-beige</span><span class="sg-swatch__hex">#F2EAE0</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-beige-mid)"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Beige Mid</span><span class="sg-swatch__var">--ap-color-beige-mid</span><span class="sg-swatch__hex">#E4D6C8</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-beige-deep)"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Beige Deep</span><span class="sg-swatch__var">--ap-color-beige-deep</span><span class="sg-swatch__hex">#CDB99F</span></div></div>
+  <!-- 01. Color -->
+  <section class="doc-section">
+    <div class="doc-section__num" id="s01">01</div>
+    <h2 class="doc-section__title">Color System</h2>
+    <p class="doc-section__desc">Base(Black/White), GrayScale, Brand Accent(Blue/Orange), 텍스트·시맨틱 컬러로 구성됩니다. 두 포인트 컬러는 화면당 하나의 목적으로만 사용합니다.</p>
 
-      <div class="sg-color-group">Gold — 포인트 컬러</div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-gold)"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Gold</span><span class="sg-swatch__var">--ap-color-gold</span><span class="sg-swatch__hex">#F3A700</span><span class="sg-swatch__changed">변경</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-gold-light)"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Gold Light</span><span class="sg-swatch__var">--ap-color-gold-light</span><span class="sg-swatch__hex">#FDD000</span><span class="sg-swatch__changed">변경</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-gold-pale)"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Gold Pale</span><span class="sg-swatch__var">--ap-color-gold-pale</span><span class="sg-swatch__hex">#FEF0A0</span><span class="sg-swatch__changed">변경</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-warm-brown)"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Warm Brown</span><span class="sg-swatch__var">--ap-color-warm-brown</span><span class="sg-swatch__hex">#A07848</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-warm-brown-deep)"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Brown Deep</span><span class="sg-swatch__var">--ap-color-warm-brown-deep</span><span class="sg-swatch__hex">#7A5A32</span></div></div>
+    <div class="group-label"><span>Base</span><i></i></div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-black)"></div><div class="swatch__meta"><div class="swatch__name">Black</div><div class="swatch__hex">#1B1B1B</div><span class="swatch__var">--ap-color-black</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-white); border-bottom:1px solid var(--ap-color-border)"></div><div class="swatch__meta"><div class="swatch__name">White</div><div class="swatch__hex">#FFFFFF</div><span class="swatch__var">--ap-color-white</span></div></div>
+    </div>
 
-      <div class="sg-color-group">Text</div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-text-primary)"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Text Primary</span><span class="sg-swatch__var">--ap-color-text-primary</span><span class="sg-swatch__hex">#1A1410</span><span class="sg-swatch__changed">변경</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-text-secondary)"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Text Secondary</span><span class="sg-swatch__var">--ap-color-text-secondary</span><span class="sg-swatch__hex">#5A4E44</span><span class="sg-swatch__changed">변경</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-text-muted)"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Text Muted</span><span class="sg-swatch__var">--ap-color-text-muted</span><span class="sg-swatch__hex">#9A8A7A</span><span class="sg-swatch__changed">변경</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-text-disabled)"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Text Disabled</span><span class="sg-swatch__var">--ap-color-text-disabled</span><span class="sg-swatch__hex">#C8B8A8</span></div></div>
+    <div class="group-label"><span>GrayScale</span><i></i></div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-gray-10); border-bottom:1px solid var(--ap-color-border)"></div><div class="swatch__meta"><div class="swatch__name">Gray 10</div><div class="swatch__hex">#FAFAFA</div><span class="swatch__var">--ap-color-gray-10</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-gray-50); border-bottom:1px solid var(--ap-color-border)"></div><div class="swatch__meta"><div class="swatch__name">Gray 50</div><div class="swatch__hex">#F0F0F0</div><span class="swatch__var">--ap-color-gray-50</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-gray-100); border-bottom:1px solid var(--ap-color-border)"></div><div class="swatch__meta"><div class="swatch__name">Gray 100</div><div class="swatch__hex">#EDEDED</div><span class="swatch__var">--ap-color-gray-100</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-gray-200)"></div><div class="swatch__meta"><div class="swatch__name">Gray 200</div><div class="swatch__hex">#DEDEDE</div><span class="swatch__var">--ap-color-gray-200</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-gray-300)"></div><div class="swatch__meta"><div class="swatch__name">Gray 300</div><div class="swatch__hex">#C0C0C0</div><span class="swatch__var">--ap-color-gray-300</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-gray-400)"></div><div class="swatch__meta"><div class="swatch__name">Gray 400</div><div class="swatch__hex">#9D9D9D</div><span class="swatch__var">--ap-color-gray-400</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-gray-500)"></div><div class="swatch__meta"><div class="swatch__name">Gray 500</div><div class="swatch__hex">#828282</div><span class="swatch__var">--ap-color-gray-500</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-gray-600)"></div><div class="swatch__meta"><div class="swatch__name">Gray 600</div><div class="swatch__hex">#626262</div><span class="swatch__var">--ap-color-gray-600</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-gray-700)"></div><div class="swatch__meta"><div class="swatch__name">Gray 700</div><div class="swatch__hex">#4F4F4F</div><span class="swatch__var">--ap-color-gray-700</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-gray-800)"></div><div class="swatch__meta"><div class="swatch__name">Gray 800</div><div class="swatch__hex">#363636</div><span class="swatch__var">--ap-color-gray-800</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-gray-900)"></div><div class="swatch__meta"><div class="swatch__name">Gray 900</div><div class="swatch__hex">#111111</div><span class="swatch__var">--ap-color-gray-900</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-gray-950)"></div><div class="swatch__meta"><div class="swatch__name">Gray 950</div><div class="swatch__hex">= Black</div><span class="swatch__var">--ap-color-gray-950</span></div></div>
+    </div>
 
-      <div class="sg-color-group">Surface</div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-bg-base);border:1px solid #EAE0D4;"></div><div class="sg-swatch__info"><span class="sg-swatch__name">BG Base</span><span class="sg-swatch__var">--ap-color-bg-base</span><span class="sg-swatch__hex">#FFFDF9</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-bg-section);"></div><div class="sg-swatch__info"><span class="sg-swatch__name">BG Section</span><span class="sg-swatch__var">--ap-color-bg-section</span><span class="sg-swatch__hex">#FAF6EF</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-bg-card);border:1px solid #EAE0D4;"></div><div class="sg-swatch__info"><span class="sg-swatch__name">BG Card</span><span class="sg-swatch__var">--ap-color-bg-card</span><span class="sg-swatch__hex">#FFFFFF</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-border);"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Border</span><span class="sg-swatch__var">--ap-color-border</span><span class="sg-swatch__hex">#EAE0D4</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-border-light);"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Border Light</span><span class="sg-swatch__var">--ap-color-border-light</span><span class="sg-swatch__hex">#F2EAE0</span></div></div>
+    <div class="group-label"><span>Brand Accent</span><i></i></div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-blue)"></div><div class="swatch__meta"><div class="swatch__name">Blue</div><div class="swatch__hex">#4B91C5</div><span class="swatch__var">--ap-color-blue</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-blue-dark)"></div><div class="swatch__meta"><div class="swatch__name">Blue Dark</div><div class="swatch__hex">#356D9C</div><span class="swatch__var">--ap-color-blue-dark</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-blue-light); border-bottom:1px solid var(--ap-color-border)"></div><div class="swatch__meta"><div class="swatch__name">Blue Light</div><div class="swatch__hex">#EAF2F8</div><span class="swatch__var">--ap-color-blue-light</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-orange)"></div><div class="swatch__meta"><div class="swatch__name">Orange</div><div class="swatch__hex">#E85C1E</div><span class="swatch__var">--ap-color-orange</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-orange-dark)"></div><div class="swatch__meta"><div class="swatch__name">Orange Dark</div><div class="swatch__hex">#C24916</div><span class="swatch__var">--ap-color-orange-dark</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-orange-light); border-bottom:1px solid var(--ap-color-border)"></div><div class="swatch__meta"><div class="swatch__name">Orange Light</div><div class="swatch__hex">#FDECE3</div><span class="swatch__var">--ap-color-orange-light</span></div></div>
+    </div>
 
-      <div class="sg-color-group">Semantic</div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-success);"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Success</span><span class="sg-swatch__var">--ap-color-success</span><span class="sg-swatch__hex">#7A9E7E</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-error);"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Error</span><span class="sg-swatch__var">--ap-color-error</span><span class="sg-swatch__hex">#C27070</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-info);"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Info</span><span class="sg-swatch__var">--ap-color-info</span><span class="sg-swatch__hex">#7A96B4</span></div></div>
+    <div class="group-label"><span>Text / Surface / Semantic</span><i></i></div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-text-primary)"></div><div class="swatch__meta"><div class="swatch__name">Text Primary</div><span class="swatch__var">--ap-color-text-primary</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-text-secondary)"></div><div class="swatch__meta"><div class="swatch__name">Text Secondary</div><span class="swatch__var">--ap-color-text-secondary</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-text-muted)"></div><div class="swatch__meta"><div class="swatch__name">Text Muted</div><span class="swatch__var">--ap-color-text-muted</span></div></div>
 
-      <div class="sg-color-group">GrayScale</div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-gray-950);"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Gray 950</span><span class="sg-swatch__var">--ap-color-gray-950</span><span class="sg-swatch__hex">#1F1F1F</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-gray-900);"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Gray 900</span><span class="sg-swatch__var">--ap-color-gray-900</span><span class="sg-swatch__hex">#303030</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-gray-800);"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Gray 800</span><span class="sg-swatch__var">--ap-color-gray-800</span><span class="sg-swatch__hex">#404040</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-gray-700);"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Gray 700</span><span class="sg-swatch__var">--ap-color-gray-700</span><span class="sg-swatch__hex">#525252</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-gray-600);"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Gray 600</span><span class="sg-swatch__var">--ap-color-gray-600</span><span class="sg-swatch__hex">#5E5E5E</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-gray-500);"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Gray 500</span><span class="sg-swatch__var">--ap-color-gray-500</span><span class="sg-swatch__hex">#666666</span></div></div>
-      
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-gray-400);"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Gray 400</span><span class="sg-swatch__var">--ap-color-gray-400</span><span class="sg-swatch__hex">#868686</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-gray-300);"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Gray 300</span><span class="sg-swatch__var">--ap-color-gray-300</span><span class="sg-swatch__hex">#999999</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-gray-200);"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Gray 200</span><span class="sg-swatch__var">--ap-color-gray-200</span><span class="sg-swatch__hex">#BFBFBF</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-gray-100);"></div><div class="sg-swatch__info"><span class="sg-swatch__name">Gray 100</span><span class="sg-swatch__var">--ap-color-gray-100</span><span class="sg-swatch__hex">#DBDBDB</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-gray-50);"> </div><div class="sg-swatch__info"><span class="sg-swatch__name">Gray 50 </span><span class="sg-swatch__var">--ap-color-gray-50 </span><span class="sg-swatch__hex">#F0F0F0</span></div></div>
-      <div class="sg-swatch"><div class="sg-swatch__color" style="background:var(--ap-color-gray-10);"> </div><div class="sg-swatch__info"><span class="sg-swatch__name">Gray 10 </span><span class="sg-swatch__var">--ap-color-gray-10 </span><span class="sg-swatch__hex">#FAFAFA</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-bg); border-bottom:1px solid var(--ap-color-border)"></div><div class="swatch__meta"><div class="swatch__name">BG</div><div class="swatch__hex">#F5F5F3</div><span class="swatch__var">--ap-color-bg</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-bg-section); border-bottom:1px solid var(--ap-color-border)"></div><div class="swatch__meta"><div class="swatch__name">BG Section</div><div class="swatch__hex">#F2F2F0</div><span class="swatch__var">--ap-color-bg-section</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-bg-surface); border-bottom:1px solid var(--ap-color-border)"></div><div class="swatch__meta"><div class="swatch__name">BG Surface</div><div class="swatch__hex">#FCFCFA</div><span class="swatch__var">--ap-color-bg-surface</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-bg-card); border-bottom:1px solid var(--ap-color-border)"></div><div class="swatch__meta"><div class="swatch__name">BG Card</div><div class="swatch__hex">#FAFAF8</div><span class="swatch__var">--ap-color-bg-card</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-border); border-bottom:1px solid var(--ap-color-border)"></div><div class="swatch__meta"><div class="swatch__name">BG Border</div><div class="swatch__hex">#E2E2DD</div><span class="swatch__var">--ap-color-border</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-border-light); border-bottom:1px solid var(--ap-color-border)"></div><div class="swatch__meta"><div class="swatch__name">BG Border Light</div><div class="swatch__hex">#ECECE7</div><span class="swatch__var">--ap-color-border-light</span></div></div>
+
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-error)"></div><div class="swatch__meta"><div class="swatch__name">Error</div><div class="swatch__hex">#C0392B</div><span class="swatch__var">--ap-color-error</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-success)"></div><div class="swatch__meta"><div class="swatch__name">Success</div><div class="swatch__hex">#3F8A5C</div><span class="swatch__var">--ap-color-success</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-info)"></div><div class="swatch__meta"><div class="swatch__name">Info</div><div class="swatch__hex">#7A96B4</div><span class="swatch__var">--ap-color-info</span></div></div>
     </div>
   </section>
 
-  <!-- 02. TYPOGRAPHY -->
-  <section class="sg-section" id="s02">
-    <div class="sg-section__num">02 — Typography</div>
-    <div class="sg-section__title">타이포그래피</div>
-    <p class="sg-section__desc">산세리프(Pretendard) 위주 운용. 세리프(Cormorant Garamond)는 영문 장식 포인트에 제한적 사용.</p>
+  <!-- 02. Typography -->
+  <section class="doc-section">
+    <div class="doc-section__num" id="s02">02</div>
+    <h2 class="doc-section__title">Typography</h2>
+    <p class="doc-section__desc">한글 <code>--ap-font-sans</code>(Pretendard Variable), 영문/숫자 포인트 <code>--ap-font-serif</code>(Cormorant Garamond Italic)를 조합합니다. 사이즈는 xs~4xl 스케일, line-height / letter-spacing 토큰을 함께 사용합니다.</p>
 
-    <div class="sg-meta">Font Family</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px;">
-      <div style="padding:24px;background:var(--ap-color-ivory);border-radius:var(--ap-radius-md);">
-        <div style="font-family:var(--ap-font-sans);font-size:28px;font-weight:300;margin-bottom:8px;">한글 Pretendard Variable</div>
-        <div style="font-size:10px;color:var(--ap-color-gold);letter-spacing:0.1em;text-transform:uppercase;">--ap-font-sans · 메인 폰트</div>
-        <div style="font-family:var(--ap-font-sans);font-size:12px;color:var(--ap-color-text-muted);margin-top:8px;font-weight:300;">ABCDEFG abcdefg 0123456 가나다라마바사</div>
-      </div>
-      <div style="padding:24px;background:var(--ap-color-ivory);border-radius:var(--ap-radius-md);">
-        <div style="font-family:var(--ap-font-serif);font-size:28px;font-weight:300;margin-bottom:8px;font-style:italic;">Cormorant Garamond</div>
-        <div style="font-size:10px;color:var(--ap-color-gold);letter-spacing:0.1em;text-transform:uppercase;">--ap-font-serif · 포인트 전용</div>
-        <div style="font-family:var(--ap-font-serif);font-size:13px;color:var(--ap-color-text-muted);margin-top:8px;">For Baby, For Happiness</div>
-      </div>
-    </div>
+    <div class="type-row"><span class="type-row__label">--ap-text-4xl · 58px</span><div style="font-size:var(--ap-text-4xl);">--ap-text-4xl · 58px</div></div>
+    <div class="type-row"><span class="type-row__label">--ap-text-3xl · 44px</span><div style="font-size:var(--ap-text-3xl);">--ap-text-3xl · 44px</div></div>
+    <div class="type-row"><span class="type-row__label">--ap-text-2xl · 34px</span><div style="font-size:var(--ap-text-2xl);">--ap-text-2xl · 34px</div></div>
+    <div class="type-row"><span class="type-row__label">--ap-text-xl · 26px</span><div style="font-size:var(--ap-text-xl);">--ap-text-xl · 26px</div></div>
+    <div class="type-row"><span class="type-row__label">--ap-text-lg · 22px</span><div style="font-size:var(--ap-text-lg);">--ap-text-lg · 22px</div></div>
+    <div class="type-row"><span class="type-row__label">--ap-text-md · 18px</span><div style="font-size:var(--ap-text-md);">--ap-text-md · 18px</div></div>
+    <div class="type-row"><span class="type-row__label">--ap-text-base · 16px</span><div style="font-size:var(--ap-text-base);">--ap-text-base · 16px</div></div>
+    <div class="type-row"><span class="type-row__label">--ap-text-sm · 14px</span><div style="font-size:var(--ap-text-sm);">--ap-text-sm · 14px</div></div>
+    <div class="type-row"><span class="type-row__label">--ap-text-xs · 12px</span><div style="font-size:var(--ap-text-xs);">--ap-text-xs · 12px</div></div>
+    <div class="type-row"><span class="type-row__label">--ap-font-serif italic</span><div style="font-family:var(--ap-font-serif);">--ap-font-serif italic</div></div>
+    <div class="group-label"><span>Utility Classes (실코드 존재)</span><i></i></div>
+    <div class="type-row"><span class="type-row__label">.ap-text--display</span><div class="ap-text--display">나를 찾는 여정</div></div>
+    <div class="type-row"><span class="type-row__label">.ap-text--h1</span><div class="ap-text--h1">아웃도어</div></div>
+    <div class="type-row"><span class="type-row__label">.ap-text--h2</span><div class="ap-text--h2">Product Philosophy</div></div>
+    <div class="type-row"><span class="type-row__label">.ap-text--h3</span><div class="ap-text--h3">소재와 구조</div></div>
+    <div class="type-row"><span class="type-row__label">.ap-text--h4</span><div class="ap-text--h4">균형과 조화</div></div>
+    <div class="type-row"><span class="type-row__label">.ap-text--h5</span><div class="ap-text--h5">소재와 구조</div></div>
+    <div class="type-row"><span class="type-row__label">.ap-text--body</span><div class="ap-text--body">본문에 사용하는 기본 텍스트 스타일입니다.</div></div>
+    <div class="type-row"><span class="type-row__label">.ap-text--caption</span><div class="ap-text--caption">캡션용 작은 텍스트</div></div>
+    <div class="type-row"><span class="type-row__label">.ap-text--label</span><div class="ap-text--label">Section Label</div></div>
 
-    <div class="sg-meta">Type Scale — ap-text--*</div>
-    <div class="sg-type-row"><div class="sg-type-meta">ap-text--display<br>58px / weight 300</div><div class="ap-text--display" style="font-size:clamp(32px,4vw,58px);">Display</div></div>
-    <div class="sg-type-row"><div class="sg-type-meta">ap-text--h1<br>44px / weight 300</div><div class="ap-text--h1" style="font-size:clamp(28px,3vw,44px);">Heading 1</div></div>
-    <div class="sg-type-row"><div class="sg-type-meta">ap-text--h2<br>34px / weight 300</div><div class="ap-text--h2" style="font-size:clamp(24px,2.5vw,34px);">Heading 2</div></div>
-    <div class="sg-type-row"><div class="sg-type-meta">ap-text--h3<br>26px / weight 400</div><div class="ap-text--h3">Heading 3</div></div>
-    <div class="sg-type-row"><div class="sg-type-meta">ap-text--body<br>15px / weight 300</div><div class="ap-text--body">아이와 함께하는 모든 순간을 더 편안하고 안전하게 만들기 위해 시작되었습니다.</div></div>
-    <div class="sg-type-row"><div class="sg-type-meta">ap-text--caption<br>11px / muted</div><div class="ap-text--caption">*무상 교환 서비스는 구매 후 3년 이내 적용됩니다.</div></div>
-    <div class="sg-type-row"><div class="sg-type-meta">ap-text--label<br>11px / gold / uppercase</div><div class="ap-text--label">New Collection 2026</div></div>
   </section>
 
-  <!-- 03. BUTTON -->
-  <section class="sg-section" id="s03">
-    <div class="sg-section__num">03 — Button</div>
-    <div class="sg-section__title">버튼 </div>
-    <p class="sg-section__desc">각지지 않고 포근하게, 과하지 않게.</p>
+  <!-- 03. Spacing / Layout -->
+  <section class="doc-section">
+    <div class="doc-section__num" id="s03">03</div>
+    <h2 class="doc-section__title">Spacing &amp; Layout</h2>
+    <div class="group-label"><span>Spacing</span><i></i></div>
+    <div class="scale-row"><span class="scale-row__label">--ap-space-xs · 4px</span><div class="scale-row__bar" style="width:4px"></div></div>
+    <div class="scale-row"><span class="scale-row__label">--ap-space-sm · 8px</span><div class="scale-row__bar" style="width:8px"></div></div>
+    <div class="scale-row"><span class="scale-row__label">--ap-space-md · 16px</span><div class="scale-row__bar" style="width:16px"></div></div>
+    <div class="scale-row"><span class="scale-row__label">--ap-space-lg · 24px</span><div class="scale-row__bar" style="width:24px"></div></div>
+    <div class="scale-row"><span class="scale-row__label">--ap-space-xl · 40px</span><div class="scale-row__bar" style="width:40px"></div></div>
+    <div class="scale-row"><span class="scale-row__label">--ap-space-2xl · 64px</span><div class="scale-row__bar" style="width:64px"></div></div>
+    <div class="scale-row"><span class="scale-row__label">--ap-space-3xl · 96px</span><div class="scale-row__bar" style="width:96px"></div></div>
+    <div class="scale-row"><span class="scale-row__label">--ap-space-4xl · 128px</span><div class="scale-row__bar" style="width:128px"></div></div>
 
-    <div class="sg-meta">Variants — ap-btn ap-btn--{variant}</div>
-    <div class="sg-row">
-      <button class="ap-btn ap-btn--primary">Primary</button>
-      <button class="ap-btn ap-btn--gold">Gold</button>
-      <button class="ap-btn ap-btn--outline">Outline</button>
-      <button class="ap-btn ap-btn--outline-gold">Outline Gold</button>
-      <a href="#" class="ap-btn ap-btn--ghost">Ghost →</a>
-    </div>
+    <div class="group-label"><span>Layout</span><i></i></div>
+    <div class="code-block">--ap-max-width:            1920px;   <span class="cm">/* 전체 래퍼 최대폭 */</span>
+--ap-max-width-narrow:     1440px;   <span class="cm">/* 콘텐츠 컨테이너 */</span>
+--ap-max-width-form:       420px;    <span class="cm">/* 폼 기본폭 */</span>
+--ap-max-width-form--wide: 600px;
+--ap-gutter:               40px;    <span class="cm">/* 좌우 여백, 1024↓ 28px / 768↓ 20px */</span>
+--ap-nav-height:           60px;
+--ap-header-height:        98px;
+--ap-fix-header-height:    62px;    <span class="cm">/* 스크롤 고정 시 축소 헤더 */</span>
+--ap-top-banner-height:    32px;
+--ap-notice-height:        38px;</div>
+  </section>
 
-    <div class="sg-meta">Sizes — ap-btn--sm / (default) / ap-btn--lg</div>
-    <div class="sg-row">
+  <!-- 04. Radius / Shadow / Transition -->
+  <section class="doc-section">
+    <div class="doc-section__num" id="s04">04</div>
+    <h2 class="doc-section__title">Radius · Shadow · Transition</h2>
+    <p class="doc-section__desc">기본 컴포넌트는 sm/md(2~4px)로 절제하고, lg(14px)·pill(999px)은 카드 이미지 강조나 뱃지·필터 칩처럼 의도적으로 둥근 형태가 필요할 때만 사용합니다.</p>
+
+    <div class="group-label"><span>Radius</span><i></i></div>
+    <div class="scale-row"><span class="scale-row__label">--ap-radius-sm · 2px</span><div class="scale-row__box" style="border-radius:2px"></div></div>
+    <div class="scale-row"><span class="scale-row__label">--ap-radius-md · 4px</span><div class="scale-row__box" style="border-radius:4px"></div></div>
+    <div class="scale-row"><span class="scale-row__label">--ap-radius-lg · 14px</span><div class="scale-row__box" style="border-radius:14px"></div></div>
+    <div class="scale-row"><span class="scale-row__label">--ap-radius-pill · 99999px</span><div class="scale-row__box" style="border-radius:99999px; width:80px"></div></div>
+
+    <div class="group-label"><span>Shadow</span><i></i></div>
+    <div class="scale-row"><span class="scale-row__label">--ap-shadow-sm</span><div class="scale-row__box" style="box-shadow:var(--ap-shadow-sm); border:none"></div></div>
+    <div class="scale-row"><span class="scale-row__label">--ap-shadow-md</span><div class="scale-row__box" style="box-shadow:var(--ap-shadow-md); border:none"></div></div>
+    <div class="scale-row"><span class="scale-row__label">--ap-shadow-lg</span><div class="scale-row__box" style="box-shadow:var(--ap-shadow-lg); border:none"></div></div>
+
+    <div class="group-label"><span>Transition</span><i></i></div>
+    <div class="code-block">--ap-transition-fast: 150ms ease;                                <span class="cm">/* 호버, 포커스 */</span>
+--ap-transition-base: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);     <span class="cm">/* 일반 UI 전환 */</span>
+--ap-transition-slow: 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);   <span class="cm">/* 스크롤 연동, 아코디언 */</span></div>
+  </section>
+
+  <!-- 05. Naming Convention -->
+  <section class="doc-section">
+    <div class="doc-section__num" id="s05">05</div>
+    <h2 class="doc-section__title">Naming Convention</h2>
+    <p class="doc-section__desc">카페24 마스터 테마 및 FORB 클래스와 충돌하지 않도록 변수는 <code>--ap</code>, 클래스는 <code>ap-</code> 접두어 + BEM을 사용합니다.</p>
+    <div class="code-block"><span class="cm">/* Block__Element--Modifier */</span>
+<span class="kw">.ap-btn</span> { ... }
+<span class="kw">.ap-btn__icon</span> { ... }
+<span class="kw">.ap-btn--orange</span> { ... }
+
+<span class="cm">/* 기존 작업 규칙과 동일하게 유지 */</span>
+<span class="kw">.ap-category-accordion</span>{}
+<span class="kw">.ap-category-accordion__column--active</span>{}
+<span class="kw">.ap-search-live</span>{}   <span class="cm">/* JS 전역 클래스도 Ap 접두어 유지, IIFE + window.onload 패턴 */</span></div>
+  </section>
+
+  <!-- 06. Components -->
+  <section class="doc-section">
+    <div class="doc-section__num" id="s06">06</div>
+    <h2 class="doc-section__title">Components</h2>
+
+    <div class="group-label"><span>Button</span><i></i></div>
+    <div class="demo-box">
+      <button class="ap-btn ap-btn--primary">장바구니 담기</button>
+      <button class="ap-btn ap-btn--blue">자세히 보기</button>
+      <button class="ap-btn ap-btn--outline ap-btn--blue">자세히 보기</button>
+      <button class="ap-btn ap-btn--orange">지금 구매하기</button>
+      <button class="ap-btn ap-btn--outline ap-btn--orange">지금 구매하기</button>
+      <button class="ap-btn ap-btn--outline">위시리스트</button>
+      <button class="ap-btn ap-btn--disabled" disabled>품절</button>
       <button class="ap-btn ap-btn--primary ap-btn--sm">Small</button>
-      <button class="ap-btn ap-btn--primary">Default</button>
-      <button class="ap-btn ap-btn--primary ap-btn--lg">Large</button>
     </div>
 
-    <div class="sg-meta">States</div>
-    <div class="sg-row">
-      <button class="ap-btn ap-btn--primary">Normal</button>
-      <button class="ap-btn ap-btn--primary ap-btn--disabled">Disabled</button>
-      <button class="ap-btn ap-btn--gold">Gold</button>
-      <button class="ap-btn ap-btn--gold ap-btn--disabled">Disabled</button>
+    <div class="group-label"><span>Badge</span><i></i></div>
+    <div class="demo-box">
+      <span class="ap-badge ap-badge--blue">정품인증</span>
+      <span class="ap-badge ap-badge--orange">한정수량</span>
+      <span class="ap-badge ap-badge--dark">NEW</span>
+      <span class="ap-badge ap-badge--outline">outline</span>
+      <span class="ap-badge ap-badge--success">주문완료</span>
+      <span class="ap-badge ap-badge--error">품절</span>
     </div>
 
-    <div class="sg-code"><span class="e">&lt;button</span> class=<span class="v">"ap-btn ap-btn--primary"</span><span class="e">&gt;</span>자세히 보기<span class="e">&lt;/button&gt;</span>
-<span class="e">&lt;button</span> class=<span class="v">"ap-btn ap-btn--gold ap-btn--lg"</span><span class="e">&gt;</span>지금 구매하기<span class="e">&lt;/button&gt;</span>
-<span class="e">&lt;a</span> href=<span class="v">"#"</span> class=<span class="v">"ap-btn ap-btn--ghost"</span><span class="e">&gt;</span>인수스 스토리 →<span class="e">&lt;/a&gt;</span></div>
-  </section>
-
-  <!-- 04. BADGE & TAG -->
-  <section class="sg-section" id="s04">
-    <div class="sg-section__num">04 — Badge & Tag</div>
-    <div class="sg-section__title">뱃지 & 태그</div>
-    <p class="sg-section__desc">어드민 이외의 커스텀이 가능한 경우</p>
-
-    <div class="sg-meta">ap-badge ap-badge--{variant}</div>
-    <div class="sg-badge-row">
-      <span class="ap-badge ap-badge--primary">New Arrival</span>
-      <span class="ap-badge ap-badge--gold">Best Seller</span>
-      <span class="ap-badge ap-badge--beige">Premium</span>
-      <span class="ap-badge ap-badge--outline">한정수량</span>
-      <span class="ap-badge ap-badge--success">재입고</span>
-      <span class="ap-badge ap-badge--error">품절임박</span>
+    <div class="group-label"><span>Tag</span><i></i></div>
+    <div class="demo-box">
+      <span class="ap-tag">전체</span>
+      <span class="ap-tag ap-tag--active">Hike</span>
+      <span class="ap-tag">Camp</span>
+      <span class="ap-tag">Accessory</span>
     </div>
 
-    <div class="sg-meta">ap-tag / ap-tag--active</div>
-    <div class="sg-badge-row">
-      <span class="ap-tag ap-tag--active">전체</span>
-      <span class="ap-tag">카시트</span>
-      <span class="ap-tag">아기띠</span>
-      <span class="ap-tag">아웃도어캐리어</span>
-      <span class="ap-tag">기저귀가방</span>
-      <span class="ap-tag">액세서리</span>
-    </div>
-  </section>
-
-  <!-- 05. CARD -->
-  <section class="sg-section" id="s05">
-    <div class="sg-section__num">05 — Card</div>
-    <div class="sg-section__title">상품 카드</div>
-    <p class="sg-section__desc">border-radius: 0 (카드는 각지게 유지 — 이미지 중심 레이아웃과 정합성). 뱃지는 #FDD000 배경.</p>
-
-    <ul class="sg-card-grid" style="background-color: var(--ap-color-beige);padding: 20px;">
-      <li id="anchorBoxId_18" class="reveal xans-record- visible">
-        <div class="prdList__item ap-prdItem">
-          <div class="thumbnail ap-prdItem__thumbnail">
-            <a href="/skin-skin15/product/리니2/18/category/43/display/1/">
-              <img src="//INSOOTHmaster.cafe24.com/web/product/medium/202307/0c4928e466079cf64eed8fd89ae8c8c6.jpg" id="eListPrdImage18_1" class="ap-prdItem__thumbnail-img" alt="리니2 - 유아 외출 솔루션 제품 이미지" loading="lazy" onmouseover="this.src='//INSOOTHmaster.cafe24.com/web/product/small/202307/e3dbc288a57626168943ecd2cb4d5fee.jpg'" onmouseout="this.src='//INSOOTHmaster.cafe24.com/web/product/medium/202307/0c4928e466079cf64eed8fd89ae8c8c6.jpg'">      </a>
-            <div class="badge"><span></span></div>     
-          </div>
-          <!-- //ap-prdItem__img.thumbnail -->
-          <div class="ap-prdItem__body" ec-data-custom="" ec-data-price="340000">
-            <a href="/skin-skin15/product/리니2/18/category/43/display/1/">
-              <!-- 단독상품일때 -->
-              <p class="ap-prdItem__notice displaynone">단독구매상품</p>
-              <!-- 상품 간단요약 -->
-              <div class="ap-prdItem__cate">카시트</div>
-              <!-- 상품명 -->
-              <div class="name ap-prdItem__name "><span class="" style="font-size:12px;color:#555555;">리니2</span></div>
-              <!-- 상품 요약정보 -->
-              <div class="ap-prdItem__desc">알루미늄 프레임 · 3점식 · 9~18kg</div>
-              <!-- 컬러칩 -->
-              <div class="ap-prdItem__colorchip color">
-                <div class="color-chip"><span class="chips" style="background:#A07848"></span></div>
-                <div class="color-chip"><span class="chips" style="background:#1a1a1a"></span></div>
-                <div class="color-chip"><span class="chips" style="background:#4a6fa5"></span></div>
-                <div class="color-chip"><span class="chips" style="background:#6b6b6b"></span></div>
-              </div>
-              <!-- 상품 가격 -->
-              <div class="ap-prdItem__price-row">
-                <span class="ap-prdItem__price displaynone">원</span>
-                <span class="ap-prdItem__price--sale ">340,000원</span>
-              </div><!-- //ap-prdItem__price-row -->
-              <!-- 아이콘 -->
-              <div class="ap-prdItem__icon">        </div>
-            </a>
-            <div class="cart ap-prdItem__buy"><img src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_list_cart.gif" onclick="CAPP_SHOP_NEW_PRODUCT_OPTIONSELECT.selectOptionCommon(18,  43, 'basket', '')" alt="장바구니 담기" class="ec-admin-icon cart"><span>구매하기</span>
-            </div>
-          </div><!-- //ap-prdItem__body -->
-        </div><!-- //prdList__item -->
-      </li>
-    </ul>
-
-
-    <div class="sg-card-grid">      
-      <div class="ap-prdItem">
-        <div class="ap-prdItem__img">
-          <span class="ap-prdItem__badge">New</span>이미지
+    <div class="group-label"><span>Category Tab / Tab</span><i></i></div>
+    <div class="demo-box" style="flex-direction:column; align-items:stretch;">
+      <div class="ap-tabs ap-tabs--pill">
+        <div class="ap-tabs__list">
+          <button class="ap-tabs__item is-active" data-target="pole">등산폴</button>
+          <button class="ap-tabs__item" data-target="chair">체어</button>
+          <button class="ap-tabs__item" data-target="bag">백팩</button>
         </div>
-        <div class="ap-prdItem__body">
-          <span class="ap-prdItem__category">아기띠</span>
-          <div class="ap-prdItem__name">프리아핏 에어</div>
-          <div class="ap-prdItem__desc">신생아부터 올인원, 4계절 메쉬</div>
-          <div class="ap-prdItem__footer">
-            <span class="ap-prdItem__price">298,000원</span>
-          </div>
+        <div class="ap-tabs__panel is-active" id="pole">panel-1</div>
+        <div class="ap-tabs__panel" id="chair">panel-2</div>
+        <div class="ap-tabs__panel" id="bag">panel-3</div>
+      </div><!-- //ap-tabs -->
+
+      <div class="ap-tabs ap-tabs--line">
+        <div class="ap-tabs__list">
+          <button class="ap-tabs__item is-active" data-target="panel-1">상품정보</button>
+          <button class="ap-tabs__item" data-target="panel-2">리뷰</button>
+          <button class="ap-tabs__item" data-target="panel-3">Q&A</button>
         </div>
+        <div class="ap-tabs__panel is-active" id="panel-1">panel-1</div>
+        <div class="ap-tabs__panel" id="panel-2">panel-2</div>
+        <div class="ap-tabs__panel" id="panel-3">panel-3</div>
+      </div><!-- //ap-tabs -->
+
+      <div class="ap-tabs ap-tabs--contain">
+        <div class="ap-tabs__list">
+          <button class="ap-tabs__item is-active" data-target="panel-1">상품정보</button>
+          <button class="ap-tabs__item" data-target="panel-2">리뷰</button>
+          <button class="ap-tabs__item" data-target="panel-3">Q&A</button>
+        </div>
+        <div class="ap-tabs__panel is-active" id="panel-1">panel-1</div>
+        <div class="ap-tabs__panel" id="panel-2">panel-2</div>
+        <div class="ap-tabs__panel" id="panel-3">panel-3</div>
+      </div><!-- //ap-tabs -->
+    </div>
+
+    <div class="group-label"><span>Form / Select</span><i></i></div>
+    <div class="demo-box">
+      <div class="ap-form__row"> <label class="ap-form__label" for="input-10">이메일</label> <input class="ap-form__input" id="input-10" placeholder="you@example.com"> </div>
+      <div class="ap-form__row ap-form__row--error"> <label class="ap-form__label" for="input-11">주문번호</label> <input class="ap-form__input" id="input-11" value="12345"><span class="ap-form__msg">주문번호를 다시 확인해 주세요.</span> </div>
+      <div class="ap-select__wrapper">
+        <select class="ap-select"><option>수량 선택</option><option>1개</option><option>2개</option></select>
+        <span class="ap-select__arrow">▾</span>
       </div>
-      <div class="ap-prdItem">
-        <div class="ap-prdItem__img">
-          <span class="ap-prdItem__badge ap-prdItem__badge--gold">Best</span>이미지
-        </div>
-        <div class="ap-prdItem__body">
-          <span class="ap-prdItem__category">카시트</span>
-          <div class="ap-prdItem__name">보네떼 360</div>
-          <div class="ap-prdItem__desc">360° 회전, ISOFIX, 신생아~4세</div>
-          <div class="ap-prdItem__footer">
-            <div><span class="ap-prdItem__price--original">1,490,000</span><span class="ap-prdItem__price">1,290,000원</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="ap-prdItem">
-        <div class="ap-prdItem__img">이미지</div>
-        <div class="ap-prdItem__body">
-          <span class="ap-prdItem__category">기저귀가방</span>
-          <div class="ap-prdItem__name">토드백 미니</div>
-          <div class="ap-prdItem__desc">경량 방수, 스냅 탈착, 다용도</div>
-          <div class="ap-prdItem__footer">
-            <span class="ap-prdItem__price">158,000원</span>
-          </div>
-        </div>
-      </div>
+    </div>
+
+    <div class="group-label"><span>Card</span><i></i></div>
+    <div class="ap-card-grid">
+      <div class="ap-card"><div class="ap-card__media"></div><div class="ap-card__body"><div class="ap-card__eyebrow">Hike Collection</div><div class="ap-card__title">트레일 재킷</div><div class="ap-card__desc">방수 · 투습 소재, 4계절 대응</div></div></div>
+      <div class="ap-card"><div class="ap-card__media"></div><div class="ap-card__body"><div class="ap-card__eyebrow">Camp Collection</div><div class="ap-card__title">인슐레이션 자켓</div><div class="ap-card__desc">경량 충전재, 압축 수납</div></div></div>
+      <div class="ap-card"><div class="ap-card__media"></div><div class="ap-card__body"><div class="ap-card__eyebrow">Accessory</div><div class="ap-card__title">트레킹 폴</div><div class="ap-card__desc">알루미늄 합금, 3단 접이식</div></div></div>
     </div>
   </section>
 
-  <!-- 06. FORM -->
-  <section class="sg-section" id="s06">
-    <div class="sg-section__num">06 — Form</div>
-    <div class="sg-section__title">폼</div>
-    <!-- 인풋 UI -->
-    <div style="max-width:520px;">
-      <div class="sg-form-2col">
-        <div class="ap-form__group">
-          <label class="ap-form__label">이름</label>
-          <input class="ap-form__input" type="text" placeholder="홍길동">
-        </div>
-        <div class="ap-form__group">
-          <label class="ap-form__label">연락처</label>
-          <input class="ap-form__input" type="text" placeholder="010-0000-0000">
-        </div>
-      </div>
-      <div class="ap-form__group">
-        <label class="ap-form__label">이메일</label>
-        <input class="ap-form__input" type="email" placeholder="your@email.com">
-        <span class="ap-form__hint">주문 확인 메일이 발송됩니다</span>
-      </div>
-      <div class="ap-form__group">
-        <select name="" id="">
-          <option value="">선택하세요</option>
-          <option value="">옵션 1</option>
-          <option value="">옵션 2</option>
-        </select>
-      </div>
-      <div class="ap-form__group">
-        <label class="ap-form__label">에러 상태</label>
-        <input class="ap-form__input ap-form__input--error" type="text" placeholder="필수 입력 항목">
-        <span class="ap-form__error-msg">이메일 형식을 확인해 주세요</span>
-      </div>
-    </div>
-    <!-- 탭 UI -->
-    <div>
-      <div class="ap-tab">
-        <button class="ap-tab__item is-active" onclick="switchTab('panel-1', this)">아이디 찾기</button>
-        <button class="ap-tab__item" onclick="switchTab('panel-2', this)">비밀번호 찾기</button>
-      </div>
-      <div class="ap-tab__panel is-active" id="panel-1">tab content - 1</div>
-      <div class="ap-tab__panel" id="panel-2">tab content - 2</div>
-    </div>
-    <!-- 탭 UI - 2 -->
-    <div>
-      <div class="ap-tabs ap-tabs--category">
-        <button class="ap-tab ap-cate__tab active">전체</button>
-        <button class="ap-tab ap-cate__tab">아기띠</button>
-        <button class="ap-tab ap-cate__tab">카시트</button>
-      </div><!-- //ap-tabs--category -->
-    </div>
-    
-  </section>
 
-  <!-- 07. GNB 2단 -->
-  <!-- <section class="sg-section" id="s07">
-    <div class="sg-section__num">07 — GNB</div>
-    <div class="sg-section__title">네비게이션 2단 구조 <span class="sg-diff">신규</span></div>
-    <p class="sg-section__desc">1단(56px): 햄버거 — 로고(중앙) — 아이콘. &nbsp;2단(44px): 카테고리 메뉴 중앙 정렬. &nbsp;sticky, backdrop-filter blur.</p>
-    <div class="sg-nav-demo">
-      <nav class="ap-nav" style="position:relative;">
-        <div class="ap-nav__top" style="position:relative;">
-          <button class="ap-nav__hamburger" aria-label="전체메뉴">
-            <span></span><span></span><span></span>
-          </button>
-          <a href="#" class="ap-nav__logo" style="position:static;transform:none;">INSOOTH</a>
-          <div class="ap-nav__actions">
-            <button class="ap-nav__icon-btn"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
-            <button class="ap-nav__icon-btn"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></button>
-            <button class="ap-nav__icon-btn"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>
-          </div>
-        </div>
-        <div class="ap-nav__bar">
-          <ul class="ap-nav__links">
-            <li class="ap-nav__item is-open"><a class="ap-nav__link" href="#">카시트 <span class="ap-nav__chevron">▾</span></a></li>
-            <li class="ap-nav__item"><a class="ap-nav__link" href="#">아기띠 <span class="ap-nav__chevron">▾</span></a></li>
-            <li class="ap-nav__item"><a class="ap-nav__link" href="#">아웃도어캐리어 <span class="ap-nav__chevron">▾</span></a></li>
-            <li class="ap-nav__item"><a class="ap-nav__link" href="#">기저귀가방 <span class="ap-nav__chevron">▾</span></a></li>
-            <li class="ap-nav__item"><a class="ap-nav__link" href="#">액세서리 <span class="ap-nav__chevron">▾</span></a></li>
-            <li class="ap-nav__item"><a class="ap-nav__link" href="#">인수스소개 <span class="ap-nav__chevron">▾</span></a></li>
-            <li class="ap-nav__item"><a class="ap-nav__link" href="#">서비스 <span class="ap-nav__chevron">▾</span></a></li>
-            <li class="ap-nav__item"><a class="ap-nav__link" href="#">매장안내</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <div class="sg-code"><span class="c">&lt;!-- 1단: 햄버거 / 로고(중앙) / 아이콘 --&gt;</span>
-<span class="e">&lt;div</span> class=<span class="v">"ap-nav__top"</span><span class="e">&gt;</span>
-  <span class="e">&lt;button</span> class=<span class="v">"ap-nav__hamburger"</span> id=<span class="v">"hamburgerBtn"</span><span class="e">&gt;</span>
-    <span class="e">&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;</span>
-  <span class="e">&lt;/button&gt;</span>
-  <span class="e">&lt;a</span> href=<span class="v">"#"</span> class=<span class="v">"ap-nav__logo"</span><span class="e">&gt;</span>INSOOTH<span class="e">&lt;/a&gt;</span>
-  <span class="e">&lt;div</span> class=<span class="v">"ap-nav__actions"</span><span class="e">&gt;</span>...<span class="e">&lt;/div&gt;</span>
-<span class="e">&lt;/div&gt;</span>
-
-<span class="c">&lt;!-- 2단: 카테고리 메뉴 --&gt;</span>
-<span class="e">&lt;div</span> class=<span class="v">"ap-nav__bar"</span><span class="e">&gt;</span>
-  <span class="e">&lt;ul</span> class=<span class="v">"ap-nav__links"</span><span class="e">&gt;</span>
-    <span class="e">&lt;li</span> class=<span class="v">"ap-nav__item"</span> data-menu=<span class="v">"carseat"</span><span class="e">&gt;</span>
-      <span class="e">&lt;a</span> class=<span class="v">"ap-nav__link"</span> href=<span class="v">"#"</span><span class="e">&gt;</span>카시트 <span class="e">&lt;span</span> class=<span class="v">"ap-nav__chevron"</span><span class="e">&gt;</span>▾<span class="e">&lt;/span&gt;&lt;/a&gt;</span>
-    <span class="e">&lt;/li&gt;</span>
-  <span class="e">&lt;/ul&gt;</span>
-<span class="e">&lt;/div&gt;</span></div>
-  </section>
- -->
-  <!-- 08. 메가메뉴 -->
-  <!-- <section class="sg-section" id="s08">
-    <div class="sg-section__num">08 — Mega Menu</div>
-    <div class="sg-section__title">메가메뉴 드롭다운 <span class="sg-diff">신규</span></div>
-    <p class="sg-section__desc">2단 GNB 메뉴 hover/click 시 펼쳐지는 드롭다운. 좌: 카테고리 이미지 + 캡션. 우: 링크 그리드(1~3열 가변). JS로 콘텐츠 동적 교체.</p>
-    <div class="sg-mega-demo">
-      <div class="mega-menu" style="position:static;opacity:1;pointer-events:all;transform:none;box-shadow:none;border:none;">
-        <div class="mega-menu__inner" style="position:relative;">
-          <div class="mega-menu__visual">
-            <div class="mega-menu__img">이미지 — 카시트</div>
-            <div class="mega-menu__visual-caption">Car Seat</div>
-            <div class="mega-menu__visual-title">안전을 위한 최선의 선택</div>
-          </div>
-          <div class="mega-menu__content">
-            <div class="mega-menu__heading">카시트</div>
-            <div class="mega-menu__grid">
-              <a href="#" class="mega-menu__link">신생아용 카시트 <span class="mega-menu__link-badge">New</span></a>
-              <a href="#" class="mega-menu__link">0~4세 카시트</a>
-              <a href="#" class="mega-menu__link">4~12세 카시트</a>
-              <a href="#" class="mega-menu__link">360° 회전형</a>
-              <a href="#" class="mega-menu__link">ISOFIX 장착형</a>
-              <a href="#" class="mega-menu__link">전체 카시트 보기</a>
-            </div>
-          </div>
-          <button class="mega-menu__close">✕</button>
-        </div>
-      </div>
-    </div>
-    <div class="sg-code"><span class="c">&lt;!-- mega-menu: JS로 .is-open 토글 --&gt;</span>
-<span class="e">&lt;div</span> class=<span class="v">"mega-menu"</span> id=<span class="v">"megaMenu"</span><span class="e">&gt;</span>
-  <span class="e">&lt;div</span> class=<span class="v">"mega-menu__inner"</span><span class="e">&gt;</span>
-    <span class="c">&lt;!-- 좌: 이미지 --&gt;</span>
-    <span class="e">&lt;div</span> class=<span class="v">"mega-menu__visual"</span><span class="e">&gt;</span>
-      <span class="e">&lt;div</span> class=<span class="v">"mega-menu__img"</span><span class="e">&gt;&lt;img&gt;&lt;/div&gt;</span>
-      <span class="e">&lt;div</span> class=<span class="v">"mega-menu__visual-caption"</span><span class="e">&gt;</span>Car Seat<span class="e">&lt;/div&gt;</span>
-    <span class="e">&lt;/div&gt;</span>
-    <span class="c">&lt;!-- 우: 링크 --&gt;</span>
-    <span class="e">&lt;div</span> class=<span class="v">"mega-menu__content"</span><span class="e">&gt;</span>
-      <span class="e">&lt;div</span> class=<span class="v">"mega-menu__heading"</span><span class="e">&gt;</span>카시트<span class="e">&lt;/div&gt;</span>
-      <span class="e">&lt;div</span> class=<span class="v">"mega-menu__grid"</span><span class="e">&gt;</span>
-        <span class="e">&lt;a</span> href=<span class="v">"#"</span> class=<span class="v">"mega-menu__link"</span><span class="e">&gt;</span>신생아용 카시트<span class="e">&lt;/a&gt;</span>
-      <span class="e">&lt;/div&gt;</span>
-    <span class="e">&lt;/div&gt;</span>
-    <span class="e">&lt;button</span> class=<span class="v">"mega-menu__close"</span><span class="e">&gt;</span>✕<span class="e">&lt;/button&gt;</span>
-  <span class="e">&lt;/div&gt;</span>
-<span class="e">&lt;/div&gt;</span></div>
-  </section> -->
-
-  <!-- 09. 전체메뉴 드로어 -->
-<!--   <section class="sg-section" id="s09">
-    <div class="sg-section__num">09 — All Menu Drawer</div>
-    <div class="sg-section__title">전체메뉴 드로어 <span class="sg-diff">신규</span></div>
-    <p class="sg-section__desc">햄버거 버튼 클릭 시 좌측에서 슬라이드인(400px). GNB에 없는 페이지(인수스소개, 고객지원, 회원 등) 포함. ESC / dim 클릭으로 닫힘.</p>
-    <div class="sg-drawer-demo">
-      <div class="all-menu-drawer" style="position:static;transform:none;box-shadow:none;width:100%;max-height:420px;">
-        <div class="all-menu-drawer__header">
-          <span class="all-menu-drawer__logo">INSOOTH</span>
-          <button class="all-menu-drawer__close">✕</button>
-        </div>
-        <div class="all-menu-drawer__body">
-          <div class="all-menu-drawer__section">
-            <span class="all-menu-drawer__section-title">제품</span>
-            <a href="#" class="all-menu-drawer__link">카시트 <span style="color:var(--ap-color-text-muted);">→</span></a>
-            <a href="#" class="all-menu-drawer__link">아기띠 <span style="color:var(--ap-color-text-muted);">→</span></a>
-            <a href="#" class="all-menu-drawer__link">아웃도어캐리어 <span style="color:var(--ap-color-text-muted);">→</span></a>
-          </div>
-          <div class="all-menu-drawer__section">
-            <span class="all-menu-drawer__section-title">고객지원</span>
-            <a href="#" class="all-menu-drawer__link">A/S 신청 <span style="color:var(--ap-color-text-muted);">→</span></a>
-            <a href="#" class="all-menu-drawer__link">공지사항 <span style="color:var(--ap-color-text-muted);">→</span></a>
-          </div>
-        </div>
-        <div class="all-menu-drawer__footer">
-          <div class="all-menu-drawer__footer-links">
-            <a href="#" class="all-menu-drawer__footer-link">이용약관</a>
-            <a href="#" class="all-menu-drawer__footer-link">개인정보처리방침</a>
-            <a href="#" class="all-menu-drawer__footer-link">고객센터</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="sg-code"><span class="c">&lt;!-- 햄버거 버튼 --&gt;</span>
-<span class="e">&lt;button</span> class=<span class="v">"ap-nav__hamburger"</span> id=<span class="v">"hamburgerBtn"</span><span class="e">&gt;</span>
-  <span class="e">&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;</span>
-<span class="e">&lt;/button&gt;</span>
-
-<span class="c">&lt;!-- 드로어 (JS로 .is-open 토글) --&gt;</span>
-<span class="e">&lt;aside</span> class=<span class="v">"all-menu-drawer"</span> id=<span class="v">"allMenuDrawer"</span><span class="e">&gt;</span>
-  <span class="e">&lt;div</span> class=<span class="v">"all-menu-drawer__header"</span><span class="e">&gt;</span>...<span class="e">&lt;/div&gt;</span>
-  <span class="e">&lt;div</span> class=<span class="v">"all-menu-drawer__body"</span><span class="e">&gt;</span>
-    <span class="e">&lt;div</span> class=<span class="v">"all-menu-drawer__section"</span><span class="e">&gt;</span>
-      <span class="e">&lt;span</span> class=<span class="v">"all-menu-drawer__section-title"</span><span class="e">&gt;</span>제품<span class="e">&lt;/span&gt;</span>
-      <span class="e">&lt;a</span> class=<span class="v">"all-menu-drawer__link"</span><span class="e">&gt;</span>카시트<span class="e">&lt;/a&gt;</span>
-    <span class="e">&lt;/div&gt;</span>
-  <span class="e">&lt;/div&gt;</span>
-  <span class="e">&lt;div</span> class=<span class="v">"all-menu-drawer__footer"</span><span class="e">&gt;</span>...<span class="e">&lt;/div&gt;</span>
-<span class="e">&lt;/aside&gt;</span></div>
-  </section> -->
-
-
-  <!-- 12. SECTION / GRID -->
-  <section class="sg-section" id="s12">
-    <div class="sg-section__num">12 — Section & Grid</div>
-    <div class="sg-section__title">섹션 & 그리드</div>
-
-    <div class="sg-meta">ap-section modifiers</div>
-    <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:32px;">
-      <div style="padding:20px 24px;background:var(--ap-color-bg-base);border:1px solid var(--ap-color-border-light);border-radius:var(--ap-radius-sm);font-size:12px;font-family:monospace;color:var(--ap-color-text-muted);">ap-section (기본) — padding 96px 0</div>
-      <div style="padding:20px 24px;background:var(--ap-color-bg-section);border:1px solid var(--ap-color-border-light);border-radius:var(--ap-radius-sm);font-size:12px;font-family:monospace;color:var(--ap-color-text-muted);">ap-section--bg — ivory 배경</div>
-      <div style="padding:20px 24px;background:var(--ap-color-beige);border:1px solid var(--ap-color-border-light);border-radius:var(--ap-radius-sm);font-size:12px;font-family:monospace;color:var(--ap-color-text-muted);">ap-section--beige — beige 배경</div>
-      <div style="padding:12px 24px;background:var(--ap-color-bg-base);border:1px solid var(--ap-color-border-light);border-radius:var(--ap-radius-sm);font-size:12px;font-family:monospace;color:var(--ap-color-text-muted);">ap-section--sm — padding 64px 0</div>
-    </div>
-
-    <div class="sg-meta">ap-grid (4col → 3col tablet → 2col mobile)</div>
-    <div class="ap-grid" style="margin-bottom:16px;">
-      <div style="background:var(--ap-color-beige);border-radius:var(--ap-radius-sm);height:48px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ap-color-text-muted);font-family:monospace;">1</div>
-      <div style="background:var(--ap-color-beige);border-radius:var(--ap-radius-sm);height:48px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ap-color-text-muted);font-family:monospace;">2</div>
-      <div style="background:var(--ap-color-beige);border-radius:var(--ap-radius-sm);height:48px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ap-color-text-muted);font-family:monospace;">3</div>
-      <div style="background:var(--ap-color-beige);border-radius:var(--ap-radius-sm);height:48px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ap-color-text-muted);font-family:monospace;">4</div>
-    </div>
-    <div class="sg-meta">ap-grid--3col</div>
-    <div class="ap-grid ap-grid--3col">
-      <div style="background:var(--ap-color-gold-pale);border-radius:var(--ap-radius-sm);height:40px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ap-color-text-muted);font-family:monospace;">1</div>
-      <div style="background:var(--ap-color-gold-pale);border-radius:var(--ap-radius-sm);height:40px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ap-color-text-muted);font-family:monospace;">2</div>
-      <div style="background:var(--ap-color-gold-pale);border-radius:var(--ap-radius-sm);height:40px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ap-color-text-muted);font-family:monospace;">3</div>
-    </div>
-
-    <div class="sg-code"><span class="e">&lt;section</span> class=<span class="v">"ap-section ap-section--bg"</span><span class="e">&gt;</span>
-  <span class="e">&lt;div</span> class=<span class="v">"ap-container"</span><span class="e">&gt;</span>
-    <span class="e">&lt;span</span> class=<span class="v">"ap-section__eyebrow"</span><span class="e">&gt;</span>Category<span class="e">&lt;/span&gt;</span>
-    <span class="e">&lt;h2</span> class=<span class="v">"ap-section__title"</span><span class="e">&gt;</span>섹션 제목<span class="e">&lt;/h2&gt;</span>
-    <span class="e">&lt;div</span> class=<span class="v">"ap-grid ap-grid--3col"</span><span class="e">&gt;</span>
-      <span class="e">&lt;div</span> class=<span class="v">"ap-card"</span><span class="e">&gt;</span>...<span class="e">&lt;/div&gt;</span>
-    <span class="e">&lt;/div&gt;</span>
-  <span class="e">&lt;/div&gt;</span>
-<span class="e">&lt;/section&gt;</span></div>
-  </section>
-
-
-  <!-- 13. ICON SET -->
-  <section class="sg-section" id="s13">
-    <div class="ap-container">
-      <div class="sg-section__num">13 — Icon Set</div>
-      <div class="sg-section__title">아이콘 세트</div>
-      <!-- ────────────────────────────────────── -->
-      <!-- 기존 GNB 아이콘 (참조 기준) -->
-      <!-- ────────────────────────────────────── -->
-      <span class="sg-iconlabel">기존 GNB 아이콘 — 참조 기준</span>
-      <div class="sg-icongrid">
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-search.html)-->
-          <span class="sg-iconcard__name">search</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-user.html)-->
-          <span class="sg-iconcard__name">user</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-cart.html)-->
-          <span class="sg-iconcard__name">cart</span>
-        </div>
-    
-      </div>
-    
-      <!-- ────────────────────────────────────── -->
-      <!-- 네비게이션 -->
-      <!-- ────────────────────────────────────── -->
-      <span class="sg-iconlabel">Navigation — 이동·탐색</span>
-      <div class="sg-icongrid">
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-hamburger.html)-->
-          <span class="sg-iconcard__name">hamburger</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-close.html)-->
-          <span class="sg-iconcard__name">close</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-chevron-left.html)-->
-          <span class="sg-iconcard__name">chevron-left</span>
-        </div>
-
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-chevron-right.html)-->
-          <span class="sg-iconcard__name">chevron-right</span>
-        </div>
-
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-chevron-down.html)-->
-          <span class="sg-iconcard__name">chevron-down</span>
-        </div>
-
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-chevron-up.html)-->
-          <span class="sg-iconcard__name">chevron-up</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-arrow-right.html)-->
-          <span class="sg-iconcard__name">arrow-right</span>
-        </div>
-
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-arrow-left.html)-->
-          <span class="sg-iconcard__name">arrow-left</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-home.html)-->
-          <span class="sg-iconcard__name">home</span>
-        </div>
-    
-      </div>
-    
-      <!-- ────────────────────────────────────── -->
-      <!-- 쇼핑 -->
-      <!-- ────────────────────────────────────── -->
-      <span class="sg-iconlabel">Shopping — 상품·구매</span>
-      <div class="sg-icongrid">
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-heart.html)-->
-          <span class="sg-iconcard__name">heart</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="9" cy="21" r="1"/>
-            <circle cx="20" cy="21" r="1"/>
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-          </svg>
-          <span class="sg-iconcard__name">cart-alt</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-star.html)-->
-          <span class="sg-iconcard__name">star</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-add.html)-->
-          <span class="sg-iconcard__name">add</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-minus.html)-->
-          <span class="sg-iconcard__name">minus</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-check.html)-->
-          <span class="sg-iconcard__name">check</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-credit-card.html)-->
-          <span class="sg-iconcard__name">credit-card</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-zoom-in.html)-->
-          <span class="sg-iconcard__name">zoom-in</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-gift.html)-->
-          <span class="sg-iconcard__name">gift</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-product.html)-->
-          <span class="sg-iconcard__name">product</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-order-list.html)-->
-          <span class="sg-iconcard__name">order-list</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-history.html)-->
-          <span class="sg-iconcard__name">history</span>
-        </div>
-    
-      </div>
-    
-      <!-- ────────────────────────────────────── -->
-      <!-- 배송 & 서비스 -->
-      <!-- ────────────────────────────────────── -->
-      <span class="sg-iconlabel">Delivery & Service — 배송·A/S·인증</span>
-      <div class="sg-icongrid">
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-delivery.html)-->
-          <span class="sg-iconcard__name">delivery</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-warranty.html)-->
-          <span class="sg-iconcard__name">warranty</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-certified.html)-->
-          <span class="sg-iconcard__name">certified</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-exchange.html)-->
-          <span class="sg-iconcard__name">exchange</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-repair.html)-->
-          <span class="sg-iconcard__name">repair</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-location.html)-->
-          <span class="sg-iconcard__name">location</span>
-        </div>
-    
-      </div>
-    
-      <!-- ────────────────────────────────────── -->
-      <!-- 고객지원 & 커뮤니티 -->
-      <!-- ────────────────────────────────────── -->
-      <span class="sg-iconlabel">Support & Community — 고객지원·게시판</span>
-      <div class="sg-icongrid">
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-call.html)-->
-          <span class="sg-iconcard__name">call</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-chat.html)-->
-          <span class="sg-iconcard__name">chat</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-notification.html)-->
-          <span class="sg-iconcard__name">notification</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-info.html)-->
-          <span class="sg-iconcard__name">info</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-help.html)-->
-          <span class="sg-iconcard__name">help</span>
-        </div>
-
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-help.html)-->
-          <span class="sg-iconcard__name">gift</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-write.html)-->
-          <span class="sg-iconcard__name">write</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-delete.html)-->
-          <span class="sg-iconcard__name">delete</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-share.html)-->
-          <span class="sg-iconcard__name">share</span>
-        </div>
-    
-        <div class="sg-iconcard">
-          <!--@import(/svg/icon-bookmark.html)-->
-          <span class="sg-iconcard__name">bookmark</span>
-        </div>
-    
-      </div>
-    </div>
-  </section><!-- /icon section -->
-
-
-  <!-- 13. ICONS -->
-  <div class="sg-section">
-    <div class="sg-section__num">13 — Icons</div>
-    <div class="sg-section__title">헤더 / 메인 SVG 아이콘</div>
-    <p class="sg-section__desc">쇼핑몰에서 사용하는 필수 아이콘 SVG를 모아둔 목록입니다.</p>
-
+  
+  <!-- 08. ICON -->
+  <section class="doc-section">
+    <div class="doc-section__num" id="s08">08</div>
+    <h2 class="doc-section__title">Icons</h2>
     <div class="sg-icon-grid">
-      <div class="sg-icon-card">
-        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-search.html)--></div>
-        <div class="sg-icon-name">icon-search</div>
-        <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-search.html)--&gt;</code></div>
-      </div>
-
-      <div class="sg-icon-card">
-        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-user.html)--></div>
-        <div class="sg-icon-name">icon-user</div>
-        <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-user.html)--&gt;</code></div>
-      </div>
-
-      <div class="sg-icon-card">
-        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-cart.html)--></div>
-        <div class="sg-icon-name">icon-cart</div>
-        <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-cart.html)--&gt;</code></div>
-      </div>
-
-      <div class="sg-icon-card">
-        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-heart.html)--></div>
-        <div class="sg-icon-name">icon-heart</div>
-        <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-heart.html)--&gt;</code></div>
-      </div>
-
-      <div class="sg-icon-card">
-        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-home.html)--></div>
-        <div class="sg-icon-name">icon-home</div>
-        <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-home.html)--&gt;</code></div>
-      </div>
 
       <div class="sg-icon-card">
         <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-go-back.html)--></div>
@@ -924,23 +336,23 @@
       </div>
 
       <div class="sg-icon-card">
-        <div class="sg-icon-preview sg-icon-preview--hamburger" aria-hidden="true">
-          <button type="button" class="sg-hamburger-btn" aria-label="전체메뉴">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-        <div class="sg-icon-name">ap-nav__hamburger</div>
-        <div class="sg-icon-import"> <code>&lt;button class="ap-nav__hamburger"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/button&gt;</code> </div>
-      </div>
-
-      <div class="sg-icon-card">
         <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-hamburger.html)--></div>
         <div class="sg-icon-name">icon-hamburger</div>
         <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-hamburger.html)--&gt;</code></div>
       </div>
 
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-QRcode.html)--></div>
+        <div class="sg-icon-name">icon-QRcode.html</div>
+        <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-QRcode.html)--&gt;</code></div>
+      </div>
 
-<!-- 수정해야할 svg -->
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-copy.html)--></div>
+        <div class="sg-icon-name">icon-copy</div>
+        <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-copy.html)--&gt;</code></div>
+      </div>
+
       <div class="sg-icon-card">
         <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-blog.html)--></div>
         <div class="sg-icon-name">icon-blog</div>
@@ -954,9 +366,21 @@
       </div>
 
       <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-check-circle.html)--></div>
+        <div class="sg-icon-name">icon-check-circle</div>
+        <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-check-circle.html)--&gt;</code></div>
+      </div>
+
+      <div class="sg-icon-card">
         <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-coupon.html)--></div>
         <div class="sg-icon-name">icon-coupon</div>
         <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-coupon.html)--&gt;</code></div>
+      </div>
+      
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-discount.html)--></div>
+        <div class="sg-icon-name">icon-discount</div>
+        <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-discount.html)--&gt;</code></div>
       </div>
 
       <div class="sg-icon-card">
@@ -964,17 +388,17 @@
         <div class="sg-icon-name">icon-empty</div>
         <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-empty.html)--&gt;</code></div>
       </div>
-
-      <div class="sg-icon-card">
-        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-facebook.html)--></div>
-        <div class="sg-icon-name">icon-facebook</div>
-        <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-facebook.html)--&gt;</code></div>
-      </div>
-
+      
       <div class="sg-icon-card">
         <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-file.html)--></div>
         <div class="sg-icon-name">icon-file</div>
         <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-file.html)--&gt;</code></div>
+      </div>
+      
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-facebook.html)--></div>
+        <div class="sg-icon-name">icon-facebook</div>
+        <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-facebook.html)--&gt;</code></div>
       </div>
 
       <div class="sg-icon-card">
@@ -996,9 +420,9 @@
       </div>
 
       <div class="sg-icon-card">
-        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-oreder.html)--></div>
-        <div class="sg-icon-name">icon-oreder</div>
-        <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-oreder.html)--&gt;</code></div>
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-order.html)--></div>
+        <div class="sg-icon-name">icon-order</div>
+        <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-order.html)--&gt;</code></div>
       </div>
 
       <div class="sg-icon-card">
@@ -1032,12 +456,6 @@
       </div>
 
       <div class="sg-icon-card">
-        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-user.html)--></div>
-        <div class="sg-icon-name">icon-user</div>
-        <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-user.html)--&gt;</code></div>
-      </div>
-
-      <div class="sg-icon-card">
         <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-user-thumb.html)--></div>
         <div class="sg-icon-name">icon-user-thumb</div>
         <div class="sg-icon-import"><code>&lt;!--@import(/svg/icon-user-thumb.html)--&gt;</code></div>
@@ -1063,7 +481,511 @@
         </div>
       </div>
 
-    </div><!-- //sg-icon-grid -->
-  </div>
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-search.html)--></div>
+        <div class="sg-icon-name">icon-search</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-search.html)&gt;</code>
+        </div>
+      </div>
 
-</div><!-- /ap-container -->
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-user.html)--></div>
+        <div class="sg-icon-name">icon-user</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-user.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-cart.html)--></div>
+        <div class="sg-icon-name">icon-cart</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-cart.html)&gt;</code>
+        </div>
+      </div>
+    </div><!-- //sg-icon-grid -->
+    <!-- ────────────────────────────────────── -->
+    <!-- 네비게이션 -->
+    <!-- ────────────────────────────────────── -->
+    <p class="sg-iconlabel">Navigation — 이동·탐색</p>
+
+    <div class="sg-icon-grid">
+      
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-hamburger.html)--></div>
+        <div class="sg-icon-name">icon-hamburger</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-hamburger.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-close.html)--></div>
+        <div class="sg-icon-name">icon-close</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-close.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-chevron-left.html)--></div>
+        <div class="sg-icon-name">icon-chevron-left</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-chevron-left.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-chevron-right.html)--></div>
+        <div class="sg-icon-name">icon-chevron-right</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-chevron-right.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-chevron-left-th.html)--></div>
+        <div class="sg-icon-name">icon-chevron-left-th</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-chevron-left-th.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-chevron-right-th.html)--></div>
+        <div class="sg-icon-name">icon-chevron-right-th</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-chevron-right-th.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-chevron-down.html)--></div>
+        <div class="sg-icon-name">icon-chevron-down</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-chevron-down.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-chevron-up.html)--></div>
+        <div class="sg-icon-name">icon-chevron-up</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-chevron-up.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-arrow-right.html)--></div>
+        <div class="sg-icon-name">icon-arrow-right</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-arrow-right.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-arrow-left.html)--></div>
+        <div class="sg-icon-name">icon-arrow-left</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-arrow-left.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-arrow-up.html)--></div>
+        <div class="sg-icon-name">icon-arrow-up</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-arrow-up.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-arrow-down.html)--></div>
+        <div class="sg-icon-name">icon-arrow-down</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-arrow-down.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-home.html)--></div>
+        <div class="sg-icon-name">icon-home</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-home.html)&gt;</code>
+        </div>
+      </div>
+      
+    </div><!-- //sg-icon-grid -->
+
+    <!-- ────────────────────────────────────── -->
+    <!-- 쇼핑 -->
+    <!-- ────────────────────────────────────── -->
+    <p class="sg-iconlabel">Shopping — 상품·구매</p>
+    <div class="sg-icon-grid">
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-heart.html)--></div>
+        <div class="sg-icon-name">icon-heart</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-heart.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-star.html)--></div>
+        <div class="sg-icon-name">icon-star</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-star.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-add.html)--></div>
+        <div class="sg-icon-name">icon-add</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-add.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-minus.html)--></div>
+        <div class="sg-icon-name">icon-minus</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-minus.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-check.html)--></div>
+        <div class="sg-icon-name">icon-check</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-check.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-card.html)--></div>
+        <div class="sg-icon-name">icon-card</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-card.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-zoom-in.html)--></div>
+        <div class="sg-icon-name">icon-zoom-in</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-zoom-in.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-product.html)--></div>
+        <div class="sg-icon-name">icon-product</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-product.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-shopping-bag.html)--></div>
+        <div class="sg-icon-name">icon-shopping-bag</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-shopping-bag.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-list.html)--></div>
+        <div class="sg-icon-name">icon-list</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-list.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-layout.html)--></div>
+        <div class="sg-icon-name">icon-layout</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-layout.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-time.html)--></div>
+        <div class="sg-icon-name">icon-time</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-time.html)&gt;</code>
+        </div>
+      </div>
+      
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-location.html)--></div>
+        <div class="sg-icon-name">icon-location</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-location.html)&gt;</code>
+        </div>
+      </div>
+      
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-delivery.html)--></div>
+        <div class="sg-icon-name">icon-delivery</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-delivery.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-certified.html)--></div>
+        <div class="sg-icon-name">icon-certified</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-certified.html)&gt;</code>
+        </div>
+      </div>
+      
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-exchange.html)--></div>
+        <div class="sg-icon-name">icon-exchange</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-exchange.html)&gt;</code>
+        </div>
+      </div>
+      
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-repair.html)--></div>
+        <div class="sg-icon-name">icon-repair</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-repair.html)&gt;</code>
+        </div>
+      </div>
+
+    </div><!-- //sg-icon-grid -->
+      
+    <!-- ────────────────────────────────────── -->
+    <!-- 고객지원 & 커뮤니티 -->
+    <!-- ────────────────────────────────────── -->
+    <p class="sg-iconlabel">Support & Community — 고객지원·게시판</p>
+    <div class="sg-icon-grid">
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-call.html)--></div>
+        <div class="sg-icon-name">icon-call</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-call.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-chat.html)--></div>
+        <div class="sg-icon-name">icon-chat</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-chat.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-notification.html)--></div>
+        <div class="sg-icon-name">icon-notification.html</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-notification.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-info.html)--></div>
+        <div class="sg-icon-name">icon-info</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-info.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-alert.html)--></div>
+        <div class="sg-icon-name">icon-alert</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-alert.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-help.html)--></div>
+        <div class="sg-icon-name">icon-help</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-help.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-gift.html)--></div>
+        <div class="sg-icon-name">icon-gift</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-gift.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-write.html)--></div>
+        <div class="sg-icon-name">icon-write</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-write.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-trashcan.html)--></div>
+        <div class="sg-icon-name">icon-trashcan</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-trashcan.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-share.html)--></div>
+        <div class="sg-icon-name">icon-share</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-share.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-bookmark.html)--></div>
+        <div class="sg-icon-name">icon-bookmark</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-bookmark.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-cancel.html)--></div>
+        <div class="sg-icon-name">icon-cancel</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-cancel.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-date.html)--></div>
+        <div class="sg-icon-name">icon-date</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-date.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-image.html)--></div>
+        <div class="sg-icon-name">icon-image</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-image.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-link.html)--></div>
+        <div class="sg-icon-name">icon-link</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-link.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-login.html)--></div>
+        <div class="sg-icon-name">icon-login</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-login.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-logout.html)--></div>
+        <div class="sg-icon-name">icon-logout</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-logout.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-return.html)--></div>
+        <div class="sg-icon-name">icon-return</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-return.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-security.html)--></div>
+        <div class="sg-icon-name">icon-security</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-security.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-settings.html)--></div>
+        <div class="sg-icon-name">icon-settings</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-settings.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-tag.html)--></div>
+        <div class="sg-icon-name">icon-tag</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-tag.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-upload.html)--></div>
+        <div class="sg-icon-name">icon-upload</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-upload.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-view.html)--></div>
+        <div class="sg-icon-name">icon-view</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-view.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-wallet.html)--></div>
+        <div class="sg-icon-name">icon-wallet</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-wallet.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-email.html)--></div>
+        <div class="sg-icon-name">icon-email</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-email.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-add-circle.html)--></div>
+        <div class="sg-icon-name">icon-add-circle</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-add-circle.html)&gt;</code>
+        </div>
+      </div>
+
+      <div class="sg-icon-card">
+        <div class="sg-icon-preview" aria-hidden="true"><!--@import(/svg/icon-remove-circle.html)--></div>
+        <div class="sg-icon-name">icon-remove-circle</div>
+        <div class="sg-icon-import">
+          <code>&lt;@import(/svg/icon-remove-circle.html)&gt;</code>
+        </div>
+      </div>
+
+
+    </div><!-- //sg-icon-grid -->
+  </section>
+
+</div><!-- //guide -->

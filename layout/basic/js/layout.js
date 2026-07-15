@@ -546,3 +546,23 @@ function ifmore(){
 		}
 	});
 }
+
+
+// ── 탭 전환 ──
+const tabs = document.querySelectorAll('.ap-tabs');
+tabs.forEach(tab => {
+  const buttons = tab.querySelectorAll('.ap-tabs__item');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const panels = tab.querySelectorAll('.ap-tabs__panel');
+      if (!panels.length) return;
+      panels.forEach(panel => panel.classList.remove('is-active'));
+      const target = tab.querySelector(`#${btn.dataset.target}`);
+      if (target) {
+          target.classList.add('is-active');
+      }
+  });
+  });
+});
