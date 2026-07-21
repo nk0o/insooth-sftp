@@ -64,11 +64,9 @@
 }
 
 
-
-
 .insooth .bottom-nav--hide{transform:none}
 .insooth .bottom-nav{position: fixed; display: block !important;height: auto;right: 8px;bottom: 20px;right: 8px;z-index: 100;width: auto;} 
-.ap-floating.bottom-nav__top{opacity: 1;visibility: visible; position: static; inset: auto; background-color: transparent;  height: auto;}
+.ap-floating.bottom-nav__top{opacity: 1;visibility: visible; position: static; inset: auto; background-color: transparent;  height: auto; width: auto;}
 .ap-floating.bottom-nav__top--show{display:block}
 .ap-floating a{display: flex;align-items: center; justify-content: center;width:40px; height:40px;background:rgb(233, 230, 225, 0.8); border: 0 !important;border-radius: 0;box-shadow:var(--ap-shadow-md); font-size: var(--ap-text-xs);}
 

@@ -17,7 +17,7 @@
       data-ez-role="style.color" data-ez-display="visible" data-ez="contents-0ufi8ba-1">
       <div class="top_banner_box_inner">
         <div class="top_banner_text">
-          <a data-ez-role="a" href="#" data-href="#" target="_self">첫 쇼핑을 지원하는 <span class="ap-notice__highlight">3,000원</span> 할인 회원가입 쿠폰</a>
+          <a data-ez-role="a" href="#" data-href="#" target="_self"><span class="ap-notice__highlight">신규회원</span>즉시 사용가능한 적립금 지급</a>
         </div><!-- //top_banner_text -->
         <div class="top_banner_close" data-ez-role="close">
           <input type="checkbox" name="chkbox" id="top_banner_box_cloase" value="1"
@@ -62,11 +62,11 @@
           </a>
         </div>
         <ul class="ap-nav__links">
-          <li><a href="#">Brand</a></li>
-          <li><a href="#">Hike&amp;Trek</a></li>
-          <li><a href="#">Camp&amp;Rest</a></li>
-          <li><a href="#">Journal</a></li>
-          <li><a href="#">Support</a></li>
+          <li><a href="/about/history.html">Brand</a></li>
+          <li><a href="/category/backpack/24/">Hike&amp;Trek</a></li>
+          <li><a href="/category/chair/26/">Camp&amp;Rest</a></li>
+          <li><a href="/board/free/list.html?board_no=1">Journal</a></li>
+          <li><a href="/board/free/list.html?board_no=3">Support</a></li>
         </ul>
         <div class="ap-nav__actions">
           <a href="javascript:void(0);" class="eSearch ap-nav__icon-btn" aria-label="검색"><!--@import(/svg/icon-search.html)--></a><!-- 검색 -->
@@ -75,7 +75,10 @@
             <!--@import(/svg/icon-shopping-bag.html)-->
               <span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span>
           </div></a>
-          <a href="javascript:void(0);" class="eNavFold ap-nav__icon-btn ap-nav__menu"><!--@import(/svg/icon-hamburger.html)--></a>
+          <a href="javascript:void(0);" class="eNavFold ap-nav__icon-btn ap-nav__menu">
+            <span class="is-closed"><!--@import(/svg/icon-hamburger.html)--></span>
+            <span class="is-open"><!--@import(/svg/icon-close.html)--></span>
+          </a>
         </div>
 
         <!-- Full-width mega panel: shown on hover of ANY nav item -->
@@ -95,10 +98,10 @@
             <div class="ap-nav__mega-col">
               <div class="ap-nav__mega-group">
                 <ul>
-                  <li><a href="#">전체</a></li>
-                  <li><a href="#">배낭</a></li>
-                  <li><a href="#">등산스틱</a></li>
-                  <li><a href="#">액세서리</a></li>
+                  <li><a href="/product/list.html?cate_no=49">전체</a></li>
+                  <li><a href="/category/backpack/24/">배낭</a></li>
+                  <li><a href="/category/trekking-pole/25/">등산스틱</a></li>
+                  <li><a href="/category/accessory/51/">액세서리</a></li>
                 </ul>
               </div>
             </div><!-- //ap-nav__mega-col -->
@@ -106,28 +109,28 @@
             <div class="ap-nav__mega-col">
               <div class="ap-nav__mega-group">
                 <ul>
-                  <li><a href="#">전체</a></li>
-                  <li><a href="#">체어</a></li>
-                  <li><a href="#">테이블</a></li>
-                  <li><a href="#">액세서리</a></li>
+                  <li><a href="/product/list.html?cate_no=49">전체</a></li>
+                  <li><a href="/category/chair/26/">체어</a></li>
+                  <li><a href="/category/table/67/">테이블</a></li>
+                  <li><a href="/category/accessory/51/">액세서리</a></li>
                 </ul>
               </div>
             </div><!-- //ap-nav__mega-col -->
             <!-- Journal -->
             <div class="ap-nav__mega-col">
               <ul>
-                <li><a href="#">큐레이션</a></li>
-                <li><a href="#">제품 가이드</a></li>
-                <li><a href="#">새소식</a></li>
+                <li><a href="/board/free/list.html?board_no=1">큐레이션</a></li>
+                <li><a href="/board/free/list.html?board_no=1">제품 가이드</a></li>
+                <li><a href="/board/free/list.html?board_no=1">새소식</a></li>
               </ul>
             </div><!-- //ap-nav__mega-col -->
             <!-- Support -->
             <div class="ap-nav__mega-col">
               <ul>
-                <li><a href="#">A/S</a></li>
-                <li><a href="#">정품 등록</a></li>
-                <li><a href="#">매장 안내</a></li>
-                <li><a href="#">FAQ</a></li>
+                <li><a href="/support/warranty.html">A/S</a></li>
+                <li><a href="/support/authentication/index.html">정품 등록</a></li>
+                <li><a href="/support/where-to-buy.html">매장 안내</a></li>
+                <li><a href="/support/faq.html">FAQ</a></li>
               </ul>
             </div><!-- //ap-nav__mega-col -->
           </div><!-- //ap-nav__mega-panel__inner -->
@@ -198,8 +201,11 @@ const ApSearchLive = (() => {
           <span class="ap-search-live__count"></span>
         </div>
         <ul class="ap-search-live__list"></ul>
-        <div class="ap-search-live__empty" style="display:none">
-          검색 결과가 없습니다.
+        <div class="ap-empty ap-search-live__empty" style="display:none">
+          <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+          <div class="ap-empty__title">검색 결과가 없습니다.</div>
+          <div class="ap-empty__desc">다른 키워드로 다시 검색해보세요.</div>
+          <a href="#" class="ap-btn ap-btn--outline ap-btn--sm">전체 상품 보기</a>
         </div>
         <a class="ap-search-live__more" href="#">전체 결과 보기</a>
       </div>`;
@@ -250,7 +256,7 @@ const ApSearchLive = (() => {
     list.innerHTML = '';
 
     if (!items.length) {
-      empty.style.display = 'block';
+      empty.style.display = 'flex';
       list.style.display  = 'none';
       count.textContent   = '';
       more.style.display  = 'none';

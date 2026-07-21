@@ -66,7 +66,12 @@
 				</tbody>
 				<tbody class="{$nodata_display|display}">
 					<tr>
-						<td colspan="8" class="message"><!--@import(/svg/icon-empty.html)-->등록된 주소가 없습니다.</td>
+						<td colspan="8" class="message">
+              <div class="ap-empty {$empty_display|display}">
+                <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+                <div class="ap-empty__title">등록된 주소가 없습니다.</div>
+              </div>
+            </td>
 					</tr>
 				</tbody>
 			</table>

@@ -1,0 +1,79 @@
+<!--
+※ 상품진열 공통소스
+-->
+<li id="anchorBoxId_{$product_no}">
+  <div class="prdList__item ap-prdItem">
+    <div class="thumbnail ap-prdItem__thumbnail">
+      <a href="{$link_product_detail}">
+        <img src="{$image_medium}" id="{$image_medium_id}" class="ap-prdItem__thumbnail-img" alt="{$seo_alt_tag}" loading="lazy" onmouseover="this.src='{$image_small}'" onmouseout="this.src='{$image_medium}'"><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span>
+      </a>
+      <div class="badge"><span></span></div>     
+    </div><!-- //ap-prdItem__img.thumbnail -->
+
+    <div class="ap-prdItem__body" ec-data-custom="{$product_custom|default:0}" ec-data-price="{$product_price}">
+      <a href="{$link_product_detail}">
+        <!-- 단독상품일때 -->
+        <p class="ap-prdItem__notice {$exclusive_purchase_olny|display}">단독구매상품</p>
+        <!-- 상품 간단요약 -->
+        <!-- <div class="ap-prdItem__cate">{$simple_desc}</div> -->
+        <!-- 상품명 -->
+        <div class="name ap-prdItem__name {$product_name_display|display}">{$product_name}</div>
+        <!-- 상품 요약정보 -->
+        <div class="ap-prdItem__desc">{$summary_desc}</div>
+        <!-- 컬러칩 -->
+        <div class="ap-prdItem__colorchip color {$colorchip_display|display}">
+          <div module="product_Colorchip">
+            <div class="color-chip"><span class="chips" style="background-color:{$color}" {$color_image}></span></div>
+            <div class="color-chip"><span class="chips" style="background-color:{$color}" {$color_image}></span></div>
+          </div>
+        </div>
+        <!-- 상품 가격 -->
+        <div class="ap-prdItem__price-row">
+          <span class="ap-prdItem__price {$prd_price_sale|display}">{$prd_price_sale|numberformat}{$price_unit_tail}</span>
+          <span class="ap-prdItem__price--sale {$product_price|display}">{$product_price|numberformat}{$price_unit_tail}</span>
+        </div><!-- //ap-prdItem__price-row -->
+      </a>
+      <div class="cart ap-prdItem__buy">{$soldout_icon} {$basket_icon}<span>장바구니 담기</span></div>
+      <!-- 아이콘 -->
+      <div class="ap-prdItem__icon">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$regular_delivery_icon}</div>
+    </div><!-- //ap-prdItem__body -->
+  </div><!-- //prdList__item -->
+</li>
+<li id="anchorBoxId_{$product_no}">
+  <div class="prdList__item ap-prdItem">
+    <div class="thumbnail ap-prdItem__thumbnail">
+      <a href="{$link_product_detail}">
+        <img src="{$image_medium}" id="{$image_medium_id}" class="ap-prdItem__thumbnail-img" alt="{$seo_alt_tag}" loading="lazy" onmouseover="this.src='{$image_small}'" onmouseout="this.src='{$image_medium}'"><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span>
+      </a>
+      <div class="badge"><span></span></div>     
+    </div><!-- //ap-prdItem__img.thumbnail -->
+
+    <div class="ap-prdItem__body" ec-data-custom="{$product_custom|default:0}" ec-data-price="{$product_price}">
+      <a href="{$link_product_detail}">
+        <!-- 단독상품일때 -->
+        <p class="ap-prdItem__notice {$exclusive_purchase_olny|display}">단독구매상품</p>
+        <!-- 상품 간단요약 -->
+        <!-- <div class="ap-prdItem__cate">{$simple_desc}</div> -->
+        <!-- 상품명 -->
+        <div class="name ap-prdItem__name {$product_name_display|display}">{$product_name}</div>
+        <!-- 상품 요약정보 -->
+        <div class="ap-prdItem__desc">{$summary_desc}</div>
+        <!-- 컬러칩 -->
+        <div class="ap-prdItem__colorchip color {$colorchip_display|display}">
+          <div module="product_Colorchip">
+            <div class="color-chip"><span class="chips" style="background-color:{$color}" {$color_image}></span></div>
+            <div class="color-chip"><span class="chips" style="background-color:{$color}" {$color_image}></span></div>
+          </div>
+        </div>
+        <!-- 상품 가격 -->
+        <div class="ap-prdItem__price-row">
+          <span class="ap-prdItem__price {$prd_price_sale|display}">{$prd_price_sale|numberformat}{$price_unit_tail}</span>
+          <span class="ap-prdItem__price--sale {$product_price|display}">{$product_price|numberformat}{$price_unit_tail}</span>
+        </div><!-- //ap-prdItem__price-row -->
+      </a>
+      <div class="cart ap-prdItem__buy">{$soldout_icon} {$basket_icon}<span>장바구니 담기</span></div>
+      <!-- 아이콘 -->
+      <div class="ap-prdItem__icon">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$regular_delivery_icon}</div>
+    </div><!-- //ap-prdItem__body -->
+  </div><!-- //prdList__item -->
+</li>

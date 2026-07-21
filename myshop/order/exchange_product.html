@@ -96,7 +96,11 @@
             <a href="#none" onclick="{$action_move_item}" class="btnDelete">삭제</a>
         </div>
     </div>
-    <p class="message ec-base-prdEmpty" id="{$empty_message}"><!--@import(/svg/icon-empty.html)-->선택된 교환상품이 없습니다.<br /> 교환상품 선택없이 교환신청은 가능합니다.</p>
+    <div class="ap-empty" id="{$empty_message}">
+      <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+      <div class="ap-empty__title">선택된 교환상품이 없습니다.</div>
+      <div class="ap-empty__desc">교환상품 선택없이 교환신청은 가능합니다.</div>
+    </div>
 
     <div class="ec-base-button {$delete_button_display|display}">
         <span class="gRight">

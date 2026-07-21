@@ -75,7 +75,10 @@
 						</tr>
 					</tbody>
 				</table>
-				<p class="message {$display_history_none|display}"><!--@import(/svg/icon-empty.html)-->{$deposit_name} 내역이 없습니다.</p>
+        <div class="ap-empty {$display_history_none|display}">
+          <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+          <div class="ap-empty__title">{$deposit_name} 내역이 없습니다.</div>
+        </div>
 			</div>
 		</div>
 
@@ -132,7 +135,10 @@
 					</div>
 				</div>
 			</div>
-			<p class="message {$display_history_none|display}"><!--@import(/svg/icon-empty.html)-->{$deposit_name} 내역이 없습니다.</p>
+      <div class="ap-empty {$display_history_none|display}">
+        <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+        <div class="ap-empty__title">{$deposit_name} 내역이 없습니다.</div>
+      </div>
 		</div>
 
 		<div module="myshop_DepositHistoryPaging" class="ec-base-paginate typeList">

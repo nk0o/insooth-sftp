@@ -110,12 +110,13 @@
 
     <div class="group-label"><span>Brand Accent</span><i></i></div>
     <div class="swatch-grid">
-      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-blue)"></div><div class="swatch__meta"><div class="swatch__name">Blue</div><div class="swatch__hex">#4B91C5</div><span class="swatch__var">--ap-color-blue</span></div></div>
-      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-blue-dark)"></div><div class="swatch__meta"><div class="swatch__name">Blue Dark</div><div class="swatch__hex">#356D9C</div><span class="swatch__var">--ap-color-blue-dark</span></div></div>
-      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-blue-light); border-bottom:1px solid var(--ap-color-border)"></div><div class="swatch__meta"><div class="swatch__name">Blue Light</div><div class="swatch__hex">#EAF2F8</div><span class="swatch__var">--ap-color-blue-light</span></div></div>
-      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-orange)"></div><div class="swatch__meta"><div class="swatch__name">Orange</div><div class="swatch__hex">#E85C1E</div><span class="swatch__var">--ap-color-orange</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-orange)"></div><div class="swatch__meta"><div class="swatch__name">Orange</div><div class="swatch__hex">#E85C1E</div><span class="swatch__var">--ap-color-orange</span><br><span>Orange는 브랜드 경험과 주요 행동(CTA)을 위한 Primary Accent.</span><br><span>버튼, hover, active, link, highlight</span></div></div>
       <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-orange-dark)"></div><div class="swatch__meta"><div class="swatch__name">Orange Dark</div><div class="swatch__hex">#C24916</div><span class="swatch__var">--ap-color-orange-dark</span></div></div>
       <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-orange-light); border-bottom:1px solid var(--ap-color-border)"></div><div class="swatch__meta"><div class="swatch__name">Orange Light</div><div class="swatch__hex">#FDECE3</div><span class="swatch__var">--ap-color-orange-light</span></div></div>
+
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-blue)"></div><div class="swatch__meta"><div class="swatch__name">Blue</div><div class="swatch__hex">#4B91C5</div><span class="swatch__var">--ap-color-blue</span><br><span>Blue는 제품 기술과 기능 정보를 전달하기 위한 Secondary Accent.</span><br><span>기술력뱃지, 아이콘강조, 정보성그래픽, 다이어그램</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-blue-dark)"></div><div class="swatch__meta"><div class="swatch__name">Blue Dark</div><div class="swatch__hex">#356D9C</div><span class="swatch__var">--ap-color-blue-dark</span></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--ap-color-blue-light); border-bottom:1px solid var(--ap-color-border)"></div><div class="swatch__meta"><div class="swatch__name">Blue Light</div><div class="swatch__hex">#EAF2F8</div><span class="swatch__var">--ap-color-blue-light</span></div></div>
     </div>
 
     <div class="group-label"><span>Text / Surface / Semantic</span><i></i></div>
@@ -239,24 +240,24 @@
 
     <div class="group-label"><span>Button</span><i></i></div>
     <div class="demo-box">
-      <button class="ap-btn ap-btn--primary">장바구니 담기</button>
-      <button class="ap-btn ap-btn--blue">자세히 보기</button>
-      <button class="ap-btn ap-btn--outline ap-btn--blue">자세히 보기</button>
-      <button class="ap-btn ap-btn--orange">지금 구매하기</button>
-      <button class="ap-btn ap-btn--outline ap-btn--orange">지금 구매하기</button>
+      <button class="ap-btn ap-btn--primary">구매하기</button>
+      <button class="ap-btn ap-btn--secondary">장바구니 담기</button>
       <button class="ap-btn ap-btn--outline">위시리스트</button>
+      <button class="ap-btn ap-btn--orange">지금 구매하기</button>
       <button class="ap-btn ap-btn--disabled" disabled>품절</button>
       <button class="ap-btn ap-btn--primary ap-btn--sm">Small</button>
+      <button class="ap-btn--icon"><!--@import(/svg/icon-heart.html)--></button>
     </div>
 
     <div class="group-label"><span>Badge</span><i></i></div>
     <div class="demo-box">
-      <span class="ap-badge ap-badge--blue">정품인증</span>
-      <span class="ap-badge ap-badge--orange">한정수량</span>
-      <span class="ap-badge ap-badge--dark">NEW</span>
-      <span class="ap-badge ap-badge--outline">outline</span>
-      <span class="ap-badge ap-badge--success">주문완료</span>
-      <span class="ap-badge ap-badge--error">품절</span>
+        <span class="ap-badge ap-badge--dark">NEW</span>
+        <span class="ap-badge ap-badge--orange">한정수량</span>
+        <span class="ap-badge ap-badge--blue">VTS™</span>
+        <span class="ap-badge ap-badge--info">RBS™</span>
+        <span class="ap-badge ap-badge--success">배송완료</span>
+        <span class="ap-badge ap-badge--error">품절</span>
+        <span class="ap-badge ap-badge--outline">Roll Top</span>
     </div>
 
     <div class="group-label"><span>Tag</span><i></i></div>
@@ -303,15 +304,90 @@
       </div><!-- //ap-tabs -->
     </div>
 
-    <div class="group-label"><span>Form / Select</span><i></i></div>
-    <div class="demo-box">
-      <div class="ap-form__row"> <label class="ap-form__label" for="input-10">이메일</label> <input class="ap-form__input" id="input-10" placeholder="you@example.com"> </div>
-      <div class="ap-form__row ap-form__row--error"> <label class="ap-form__label" for="input-11">주문번호</label> <input class="ap-form__input" id="input-11" value="12345"><span class="ap-form__msg">주문번호를 다시 확인해 주세요.</span> </div>
-      <div class="ap-select__wrapper">
-        <select class="ap-select"><option>수량 선택</option><option>1개</option><option>2개</option></select>
-        <span class="ap-select__arrow">▾</span>
+    <div class="group-label"><span>Form</span><i></i></div>
+    <div class="demo-box flex-column">
+      <div>
+            <p><strong>인풋 텍스트(로그인-라벨x)</strong></p>
+            <code>
+              &lt;label class="id ePlaceholder" title="{$login_id_type_text}"&gt;&nbsp;{$form.member_id}&nbsp;&lt;/label&gt;
+            </code>
+            <br><br>
+            <label class="id ePlaceholder" title="아이디">
+              <input id="member_id" name="member_id" fw-filter="isFill" fw-label="아이디" fw-msg="" class="inputTypeText" placeholder="아이디" value="" type="text" data-gtm-form-interact-field-id="0">
+            </label>
+            <label class="id ePlaceholder" title="아이디">
+              <input id="member_pw" name="member_id" fw-filter="isFill" fw-label="아이디" fw-msg="" class="inputTypeText" placeholder="아이디" value="" type="text" disabled>
+            </label>
+            
+            <br><br>
+            <p><strong>인풋 텍스트(회원가입)</strong></p>
+            <code>
+              &lt;span class="id ePlaceholder" title="이메일"&gt;&lt;/span&gt;&nbsp;{$form.email}
+            </code>
+            <br><br>
+            <code>
+              &lt;div class="ap-form__group"&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ap-form__label"&gt;이메일&lt;em class="ap-form__required"&gt;&lt;/em&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;{$form.email}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="txtInfo" id="{$emailMsg_id}"&gt;&lt;/p&gt;&lt;/div&gt;<br>
+              &lt;/div&gt;
+            </code>
+            <br><br>
+            <div class="ap-form__group">
+              <div class="ap-form__label">이메일<em class="ap-form__required"></em></div>
+              <div><span class="id ePlaceholder" title="이메일"></span><input id="email1" name="email1" fw-filter="isFill&amp;isEmail" fw-label="이메일" fw-alone="N" fw-msg="" placeholder="이메일" value="" type="text"><p class="txtInfo" id="emailMsg"></p></div>
+            </div>
       </div>
-    </div>
+      <div>
+            <p><strong>셀렉트 버튼(제품리스트)</strong></p>
+            <div class="ap-select__wrapper">
+              <select class="ap-select"><option>수량 선택</option><option>1개</option><option>2개</option></select>
+            </div>
+            <div class="ap-select__wrapper">
+              <select class="ap-select" disabled><option>수량 선택</option><option>1개</option><option>2개</option></select>
+            </div>
+      </div>
+      <div>
+            <p><strong>라디오버튼(회원가입)</strong></p>
+            <code>
+              {$form.member_type}
+            </code>
+      </div>
+      <div>
+            <input id="member_type2" name="member_type" type="radio">
+            <label for="member_type2">외국인회원(foreigner)</label>
+      </div>
+      <div>
+            <p><strong>체스박스(회원가입)</strong></p>
+            <code>
+              &lt;h3&gt;{$form.agree_service_check}&lt;label for="agree_service_check0" class="check"&gt;이용약관 동의 (필수)&lt;/label&gt;&lt;i aria-hidden="true" class="icon icoArrowBottom btnToggle"&gt;&lt;/i&gt;&lt;/h3&gt;
+            </code>
+            <br><br>
+            <input id="agree_service_check0" name="agree_service_check[]" fw-filter="/1/" fw-label="이용약관 동의" fw-msg="이용약관에 동의 하세요" class="ec-base-chk" value="1" type="checkbox"><label for="agree_service_check0" class="check">이용약관 동의 (필수)</label>
+      </div>
+      <div>
+            <p><strong>수량 스텝퍼(장바구니)</strong></p>
+            <code>
+              &lt;span class="ec-base-qty"&gt;
+                  {$form.quantity}
+                  &lt;a href="javascript:;" class="up" onclick="{$add_shortcut}"&gt;수량증가&lt;/a&gt;
+                  &lt;a href="javascript:;" class="down" onclick="{$out_shortcut}"&gt;수량감소&lt;/a&gt;
+              &lt;/span&gt;
+            </code>
+            <br><br>
+            <span class="ec-base-qty"> <input id="quantity_id_0" name="quantity_name_0" size="2" value="10" type="text"><a href="javascript:;" class="up" onclick="Basket.addQuantityShortcut('quantity_id_0', 0);">수량증가</a><a href="javascript:;" class="down" onclick="Basket.outQuantityShortcut('quantity_id_0', 0);">수량감소</a> </span>
+      </div>
+
+      <div>
+            <p><strong>Textarea</strong></p>
+            <div class="ap-form__row">
+              <label class="ap-form__label">메모</label>
+              <textarea class="ap-form__textarea" placeholder="배송 메모를 남겨주세요"></textarea>
+            </div>
+      </div>
+
+    </div><!-- //demo-box -->
 
     <div class="group-label"><span>Card</span><i></i></div>
     <div class="ap-card-grid">
@@ -319,9 +395,62 @@
       <div class="ap-card"><div class="ap-card__media"></div><div class="ap-card__body"><div class="ap-card__eyebrow">Camp Collection</div><div class="ap-card__title">인슐레이션 자켓</div><div class="ap-card__desc">경량 충전재, 압축 수납</div></div></div>
       <div class="ap-card"><div class="ap-card__media"></div><div class="ap-card__body"><div class="ap-card__eyebrow">Accessory</div><div class="ap-card__title">트레킹 폴</div><div class="ap-card__desc">알루미늄 합금, 3단 접이식</div></div></div>
     </div>
-  </section>
+    
+    <div class="group-label"><span>Grid</span><i></i></div>
+    <div class="ap-recommendPrd__grid">
+      <div class="ap-recommendPrd__item"><div class="box"><div class="thumb"></div><div class="name">ACTIVE 15</div><div class="prd-info">89,000원</div><div class="btn_basket">담기</div></div></div>
+      <div class="ap-recommendPrd__item"><div class="box"><div class="thumb"></div><div class="name">Z-Pole</div><div class="prd-info">49,000원</div><div class="btn_basket">담기</div></div></div>
+      <div class="ap-recommendPrd__item"><div class="box"><div class="thumb"></div><div class="name">CX-295</div><div class="prd-info">99,000원</div><div class="btn_basket">담기</div></div></div>
+      <div class="ap-recommendPrd__item"><div class="box"><div class="thumb"></div><div class="name">TX-350</div><div class="prd-info">69,000원</div><div class="btn_basket">담기</div></div></div>
+    </div>
+
+    <div class="group-label"><span>Pagination</span><i></i></div>
+    <div class="demo-box">
+      <p>제품리스트 & 검색결과</p>
+      <div class="xans-element- xans-product xans-product-normalpaging ec-base-paginate typeList">
+          <a href="#none" class="first">첫 페이지</a>
+          <a href="#none">이전 페이지</a>
+          <ol>
+            <li class="xans-record-"><a href="?cate_no=49&amp;page=1" class="this">1</a></li>
+            <li class="xans-record-"><a href="?cate_no=49&amp;page=2" class="other">2</a></li>
+          </ol>
+          <a href="?cate_no=49&amp;page=2">다음 페이지</a>
+          <a href="?cate_no=49&amp;page=2" class="last">마지막 페이지</a>
+      </div>
+    </div><!-- //demo-box -->
+    <div class="demo-box">
+      <p>게시판</p>
+      <div class="xans-element- xans-board xans-board-paging-1002 xans-board-paging xans-board-1002 section ec-base-paginate typeList">
+          <a href="?board_no=1&amp;page=1">이전 페이지</a>
+          <ol>
+            <li class="xans-record-"><a href="?board_no=1&amp;page=1" class="this">1</a></li>
+            <li class="xans-record-"><a href="?board_no=1&amp;page=2" class="other">2</a></li>
+            <li class="xans-record-"><a href="?board_no=1&amp;page=3" class="other">3</a></li>
+          </ol>
+          <a href="?board_no=1&amp;page=2">다음 페이지</a>
+      </div>
+    </div><!-- //demo-box -->
+    <div class="demo-box">
+      <div class="xans-element- xans-board xans-board-paging-8 xans-board-paging xans-board-8 section ec-base-paginate typeList">
+        <a href="?board_no=8&amp;page=1">이전 페이지</a>
+        <ol>
+          <li class="xans-record-"><a href="?board_no=8&amp;page=1" class="this">1</a></li>
+        </ol>
+        <a href="?board_no=8&amp;page=1">다음 페이지</a>
+      </div>
+    </div><!-- //demo-box -->
 
 
+    <div class="demo-box">
+        <div class="ap-empty">
+          <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+          <div class="ap-empty__title">검색 결과가 없습니다</div>
+          <div class="ap-empty__desc">다른 키워드로 다시 검색해보세요.</div>
+          <a href="#" class="ap-btn ap-btn--outline ap-btn--sm">전체 상품 보기</a>
+        </div>
+    </div><!-- //demo-box -->
+  </section> 
+  
   
   <!-- 08. ICON -->
   <section class="doc-section">

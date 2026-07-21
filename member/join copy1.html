@@ -1,0 +1,257 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/layout/basic/css/ap-member.css)-->
+<div class="ap-member">
+  <div class="ap-form__wrap ap-form__wrap--wide">
+    <div class="section path blind">
+      <span>현재 위치</span>
+      <ol>
+        <li><a href="/">홈</a></li>
+        <li title="현재 위치"><strong>회원 가입</strong></li>
+      </ol>
+    </div><!-- //path -->
+    <div class="ap-member__titArea">
+      <h2 class="ap-member__title">회원 가입</h2>
+      <p class="ap-member__desc">포브의 가족에게 특별한 혜택이 기다리고 있습니다.</p>
+    </div><!-- //ap-member__titArea -->
+    <div class="section ec-base-step">
+      <ol class="step">
+        <li>1. 약관동의</li>
+        <li class="selected">2. 정보입력</li>
+        <li>3. 가입완료</li>
+      </ol>
+    </div><!-- //ec-base-step -->
+
+    <div module="member_join" class="memberArea">
+      <!--@css(/css/module/member/join.css)-->
+      <!--
+          $returnUrl = /member/join_result.html
+          $checkIdUrl = /member/check_id.html
+          $personalName = 이름
+          $companyName = 법인명
+          $companySsn = 법인번호
+          $foreignerSsn1 = 외국인 등록번호
+          $foreignerSsn2 = 여권번호
+          $foreignerSsn3 = 국제운전면허증번호
+          $isRuleBasedAddrForm = T
+       -->
+      <div class="titleArea titleArea--middle {$display_base_column_title|display}">
+        <h3>회원인증</h3>
+      </div>
+      <div class="ec-base-table typeWrite {$display_base_column_title|display}">
+        <table border="1">
+          <caption>회원가입</caption>
+          <colgroup>
+            <col style="width:190px;">
+            <col style="width:auto;">
+          </colgroup>
+          <tbody>
+            <tr class="{$display_member_type|display}">
+              <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired"
+                  alt="필수">회원구분</th>
+              <td>{$form.member_type}</td>
+            </tr>
+            <tr id="companyWrap">
+              <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired"
+                  alt="필수">사업자구분</th>
+              <td>{$form.company_type}</td>
+            </tr>
+            <tr id="authMember">
+              <th scope="row"><img src="/SkinImg/img/ico_required.svg" class="icon icoRequired"
+                  alt="필수">회원인증</th>
+              <td class="formMultiple">
+                <div id="authWrap" style="display:none;">
+
+                  <div id="personAuth">
+                    <div id="personalTypeWrap">{$form.personal_type}</div>
+                    <div id="ipinWrap">
+                      <a href="#none" class="btnNormal sizeS"
+                        onclick="{$action_ipin_open}">아이핀인증</a>
+                      <p class="gBlank5">아이핀이란, 회원님의 개인정보 보호를 위해 웹사이트에 주민등록번호를 제공하지 않고 본인임을 확인하는
+                        인터넷상의 개인식별번호 서비스입니다. <br>아이핀을 통한 가입을 원하시면 아이핀 인증 버튼을 눌러 진행해 주십시오.</p>
+                    </div>
+                    <div id="mobileWrap">
+                      <a href="#none" class="btnNormal sizeS"
+                        onclick="{$action_mobile_open}">휴대폰인증</a>
+                      <p class="gBlank5">본인 명의의 휴대폰으로 본인인증을 진행합니다.</p>
+                    </div>
+                    <div id="emailWrap">
+                      <ul class="txtInfo">
+                        <li>기본정보 &gt; 이메일 항목에 입력하신 정보로 본인인증을 진행합니다.</li>
+                        <li>회원가입 후에 입력하신 이메일 주소로 인증 메일이 발송되오니, 확인해 주시기 바랍니다.</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div id="businessAuth">
+                    <dl>
+                      <dt>법인명</dt>
+                      <dd>{$form.bname}</dd>
+                      <dt>법인번호</dt>
+                      <dd class="formGroup code">{$form.bssn1} - {$form.bssn2} <a href="#none"
+                          class="btnNormal" onclick="{$action_business_dupl}">중복확인</a></dd>
+                    </dl>
+                  </div>
+
+                  <div id="foreignerAuth">
+                    <dl>
+                      <dt>이름(Name)</dt>
+                      <dd>{$form.foreigner_name}</dd>
+                      <dt>{$form.foreigner_type}</dt>
+                      <dd class="formGroup">{$form.foreigner_ssn} <a href="#none" class="btnNormal"
+                          onclick="{$action_foreigner_check}">중복확인</a></dd>
+                      <div id="foreignerPersonWrap">
+                        <p class="txtInfo"></p>
+                        <div class="content">{$desc_id_info_consent}</div>
+                        <p>{$form.f_identification_check}</p>
+                      </div>
+                      <div id="foreignerEmailWrap">
+                        <ul class="txtInfo">
+                          <li>기본정보 &gt; 이메일 항목에 입력하신 정보로 본인인증을 진행합니다.</li>
+                          <li>회원가입 후에 입력하신 이메일 주소로 인증 메일이 발송되오니, 확인해 주시기 바랍니다.</li>
+                        </ul>
+                      </div>
+                    </dl>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ap-member__section">
+        <!-- 아이디 -->
+        <div class="ap-form__group">
+          <div class="ap-form__label">아이디<em class="ap-form__required"></em></div>
+            <span class="id ePlaceholder" title="영문소문자+숫자 포함 4~16자">{$form.member_id}</span>
+            <div class="txtInfo">(영문소문자/숫자, 4~16자)</div>
+            <p id="{$idMsg_id}" class="txtInfo txtSuccess"></p>
+        </div><!-- //ap-form__group -->
+        <!-- 비밀번호 -->
+        <div class="ap-form__group">
+          <div class="ap-form__label">비밀번호<em class="ap-form__required"></em></div>
+          <div class="eTooltip">
+            <label class="id ePlaceholder" title="영문+숫자+특수문자 포함 8~20자">{$form.passwd}</label>
+            <div class="ec-base-tooltip typeUpper">
+              <div class="content">
+                <strong>※ {$passwd_terms}</strong>
+                <ul class="typeDash txtInfo">
+                  {$passwd_chk_info}
+                </ul>
+              </div>
+              <a href="#none" class="btnClose">닫기</a>
+              <span class="edge"></span>
+            </div>
+          </div>
+          <div class="txtInfo">{$passwd_type_desc}</div>
+        </div><!-- //ap-form__group -->
+        <!-- 비밀번호 확인 -->
+        <div class="ap-form__group">
+          <div class="ap-form__label">비밀번호 확인<em class="ap-form__required"></em></div>
+          <span class="id ePlaceholder" title="비밀번호를 입력해주세요.">{$form.user_passwd_confirm}</span>
+          <p class="txtInfo" id="{$pwConfirmMsg_id}"></p>
+        </div><!-- //ap-form__group -->
+        <!-- 비밀번호 확인 질문 -->
+        <div class="ap-form__group {$display_hint|display}">
+          <div class="ap-form__label">비밀번호 확인 질문<em class="ap-form__required"></em></div>
+          {$form.hint}
+        </div><!-- //ap-form__group -->
+        <!-- 비밀번호 확인 답변 -->
+        <div class="ap-form__group {$display_hint|display}">
+          <div class="ap-form__label">비밀번호 확인 답변<em class="ap-form__required"></em></div>
+          {$form.hint_answer}
+        </div><!-- //ap-form__group -->
+        <!-- 이름 -->
+        <div class="ap-form__group">
+          <div class="ap-form__label">이름<em class="ap-form__required"></em></div>
+          <span id="{$name_contents}" class="id ePlaceholder" title="이름을 입력해주세요.">{$form.name}</span>
+          <p id="under14Msg" class="txtInfo displaynone">14세 미만 사용자는 법정대리인 동의가 필요합니다.</p>
+        </div><!-- //ap-form__group -->
+        <!-- 영문이름 -->
+        <div class="ap-form__group {$display_eng_name|display}">
+          <div class="ap-form__label">영문이름<em class="ap-form__required {$display_required_name_en|display}"></em></div>
+          <span class="id ePlaceholder" title="영문이름을 입력해주세요.">{$form.name_en}</span><span
+          class="txtInfo">(이름 - 성 형식으로 입력해 주세요.)</span>
+        </div><!-- //ap-form__group -->
+        <!-- 상호명 -->
+        <div class="ap-form__group" id="{$companyRow}">
+          <div class="ap-form__label">상호명<em class="ap-form__required"></em></div>
+          <div id="companyName"><span class="id ePlaceholder" title="상호명을 입력해주세요.">{$form.cname}</span></div>
+        </div><!-- //ap-form__group -->
+        <!-- 사업자번호 -->
+        <div class="ap-form__group" id="{$companyNoRow}">
+          <div class="ap-form__label">사업자번호<em class="ap-form__required"></em></div>
+          <div id="companySsn">
+            <span class="id ePlaceholder" title="사업자번호를 입력해주세요.">{$form.cssn}</span>
+            <a href="#none" class="btnNormal {$display_cssn_dupl|display}"
+              onclick="{$action_cssn_dupl}">중복확인</a>
+            <p id="{$cssnMsg_id}"></p>
+          </div>
+        </div><!-- //ap-form__group -->
+        <!-- 국적 -->
+        <div class="ap-form__group" id="nation">
+          <div class="ap-form__label">국적<em class="ap-form__required"></em></div>
+          {$form.citizenship}
+        </div><!-- //ap-form__group -->
+        <!-- 주소 -->
+        <div class="ap-form__group {$display_addr|display}">
+          <div class="ap-form__label">주소<em class="ap-form__required {$display_required_address|display}"></em></div>
+          <div class="formMultiple">{$form.address}</div>
+        </div><!-- //ap-form__group -->
+        <!-- 일반전화 -->
+        <div class="ap-form__group {$display_phone|display}">
+          <div class="ap-form__label">일반전화<em class="ap-form__required {$display_required_phone|display}"></em></div>
+          <div class="formGroup code">{$form.phone}</div>
+        </div><!-- //ap-form__group -->
+        <!-- 휴대전화 -->
+        <div class="ap-form__group {$display_mobile|display}">
+          <div class="ap-form__label">휴대전화<em class="ap-form__required {$display_required_cell|display}"></em></div>
+          <div class="formGroup code">
+            {$form.mobile}<button type="button" id="{$btn_action_verify_mobile}"
+              class="btnNormal {$display_verify_mobile|display}"
+              onclick="{$action_verify_mobile}">인증번호받기</button>
+            <p class="txtInfo {$bDisplayMobileVerifyInfoDefault|display} error" id="{$result_send_verify_mobile_fail}"></p>
+            <ul class="txtInfo {$bDisplayMobileVerifyInfoDefault|display}" id="{$result_send_verify_mobile_success}">
+              <li>인증번호가 발송되었습니다.</li>
+              <li>인증번호를 받지 못하셨다면 휴대폰 번호를 확인해 주세요.</li>
+            </ul>
+          </div>
+        </div><!-- //ap-form__group -->
+        <!-- 인증번호 -->
+        <div class="ap-form__group {$display_verify_mobile_confirm|display}" id="{$confirm_verify_mobile}">
+          <div class="ap-form__label">인증번호<em class="ap-form__required"></em></div>
+          <div class="formGroup">
+            <div class="verify">
+              <div>{$form.verify_sms_number}</div>
+              <span class="time" id="{$expiryTime}"></span>
+            </div>
+            <button type="button" class="btnNormal" id="{$btn_verify_mobile_confirm}" onclick="{$action_verify_mobile_confirm}">확인</button>
+          </div>
+        </div><!-- //ap-form__group -->
+        <!-- 이메일 -->
+        <div class="ap-form__group">
+          <div class="ap-form__label">이메일<em class="ap-form__required"></em></div>
+          <div>{$form.email} <p class="txtInfo" id="{$emailMsg_id}"></p></div>
+        </div><!-- //ap-form__group -->
+        <!-- 평생회원 -->
+        <div class="ap-form__group {$display_is_lifetime|display}">
+          <div class="ap-form__label">평생회원<em class="ap-form__required"></em></div>
+          <div>
+            {$form.is_lifetime}
+            <ul class="txtInfo">
+              <li>평생회원으로 가입하시면 <strong>{$mall_name}</strong> 회원 탈퇴시까지는 휴면회원으로 전환되지 않으며, 고객님의
+                개인정보가 탈퇴시까지 안전하게 보관됩니다.</li>
+              <li class="{$display_is_lifetime_benefit|display}">지금 평생회원으로 가입하시면 쿠폰혜택을 드립니다.
+                (쿠폰혜택을 받으신 경우, 3개월간 평생회원을 유지하셔야 합니다.)</li>
+            </ul>
+          </div>
+        </div><!-- //ap-form__group -->
+        <div class="ec-base-button gBottom">
+          <a href="#none" class="ap-btn ap-btn--outline" onclick="history.go(-1); return false;">취소</a>
+          <a href="#none" class="ap-btn ap-btn--primary" onclick="{$action_func_join}">가입하기</a>
+        </div><!-- //ec-base-button -->
+      </div><!-- //ap-member__section -->
+      <!--@import(/member/join_confirm.html)-->
+    </div><!-- //memberArea -->
+  </div><!-- //ap-form__wrap -->
+</div><!-- //ap-member -->

@@ -1,0 +1,159 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div class="section" module="Board_ListPackage_3">
+  <!--@css(/css/module/board/listPackage.css)-->
+  <div module="board_title_3">
+      <div class="ap-titleArea displaynone">
+        <div class="ap-container--narrow">
+          <!-- 브래드크럼 -->
+          <div class="ap-list-path path section" module="product_headcategory">
+            <span>현재 위치</span>
+            <ol>
+              <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
+              <li>{$board_title}</li>
+            </ol>
+          </div><!-- //ap-path -->
+        </div><!-- //ap-container--narrow -->
+      </div><!-- //ap-titleArea -->
+
+      <div class="titleArea">
+          <h2>{$board_title} {$board_adult_icon}</h2>
+          <p>{$board_info}</p>
+      </div>
+      <p class="imgArea">{$board_top_image}</p>
+  </div>
+
+  <div module="Layout_BoardInfo" class="ec-base-tab typeMenu gScroll">
+      <ul class="menu">
+          <li><a href="{$board_list_url}" class="button">{$board_name}</a></li>
+          <li><a href="{$board_list_url}" class="button">{$board_name}</a></li>
+      </ul>
+  </div>
+
+  <div class="boardSort">
+      <span module="board_category_3">{$form.board_category}</span>
+      <span module="board_ReplySort_3">{$reply_sort}</span>
+  </div>
+
+  <div class="ec-base-table typeList">
+      <table border="1" >
+          <caption>게시판 목록</caption>
+          <colgroup module="board_listheader_3">
+              <col style="width:80px;" />
+              <col style="width:300px;" class="{$config.is_category|display}" />
+              <col style="width:auto;" />
+          </colgroup>
+          <thead module="board_listheader_3">
+              <tr style="{$list_bg_color} {$list_char_color}" class="{$block_target_class}" {$block_data_attr}>
+                  <th scope="col" class="chk">{$checkbox} 번호</th>
+                  <th scope="col" class="{$config.is_category|display}">카테고리</th>
+                  <th scope="col">제목</th>
+              </tr>
+          </thead>
+          <tbody module="board_notice_3" class="center">
+              <!--
+                  $count = 10
+                  $login_page_url = /member/login.html
+                  $deny_access_url = /index.html
+              -->
+              <tr style="{$list_bg_color} {$list_char_color}" class="{$block_target_class}" {$block_data_attr}>
+                  <td class="chk">{$checkbox}<span class="RW">{$notice_icon}</span></td>
+                  <td class="{$category_display|display}">{$category_name}</td>
+                  <td class="subject left txtBreak">
+                      <span class="badge">{$notice_icon}</span> <strong>{$icon_re}{$icon_lock}<a href="{$link_board_detail}" style="{$link_color}" class="{$block_content_class}">{$subject}</a>{$icon_file}<span class="comment">{$comment_count}</span>{$icon_mobile}{$icon_new}{$icon_hit}</strong>
+                  </td>
+              </tr>
+              <tr style="{$list_bg_color} {$list_char_color}" class="{$block_target_class}" {$block_data_attr}>
+                  <td class="chk">{$checkbox}<span class="RW">{$notice_icon}</span></td>
+                  <td class="subject left txtBreak">
+                      <span class="badge">{$notice_icon}</span> <strong>{$icon_re}{$icon_lock}<a href="{$link_board_detail}" style="{$link_color}" class="{$block_content_class}">{$subject}</a>{$icon_file}<span class="comment">{$comment_count}</span>{$icon_mobile}{$icon_new}{$icon_hit}</strong>
+                  </td>
+                  <td class="{$category_display|display}">{$category_name}</td>
+              </tr>
+          </tbody>
+          <tbody module="board_fixed_3" class="center">
+              <!--
+                  $count = 10
+                  $login_page_url = /member/login.html
+                  $deny_access_url = /index.html
+              -->
+              <tr style="{$list_bg_color} {$list_char_color}" class="{$block_target_class}" {$block_data_attr}>
+                  <td class="chk">{$checkbox}<span class="RW">{$fixed_icon}</span></td>
+                  <td class="{$category_display|display}">{$category_name}</td>
+                  <td class="subject left txtBreak">
+                      <span class="badge">{$fixed_icon}</span> <strong>{$icon_re}{$icon_lock}<a href="{$link_board_detail}" style="{$link_color}" class="{$block_content_class}">{$subject}</a>{$icon_file}<span class="comment">{$comment_count}</span>{$icon_new}{$icon_hit}</strong>
+                  </td>
+              </tr>
+              <tr style="{$list_bg_color} {$list_char_color}" class="{$block_target_class}" {$block_data_attr}>
+                  <td class="chk">{$checkbox}<span class="RW">{$fixed_icon}</span></td>
+                  <td class="subject left txtBreak">
+                      <span class="badge">{$fixed_icon}</span> <strong>{$icon_re}{$icon_lock}<a href="{$link_board_detail}" style="{$link_color}" class="{$block_content_class}">{$subject}</a>{$icon_file}<span class="comment">{$comment_count}</span>{$icon_new}{$icon_hit}</strong>
+                  </td>
+                  <td class="{$category_display|display}">{$category_name}</td>
+              </tr>
+          </tbody>
+          <tbody module="board_list_3" class="center">
+              <!--
+                  $login_page_url = /member/login.html
+                  $deny_access_url = /index.html
+              -->
+              <tr style="{$list_bg_color} {$list_char_color}" class="{$block_target_class}" {$block_data_attr}>
+                  <td class="chk no">{$checkbox}<span class="RW">{$no}</span></td>
+                  <td class="{$category_display|display}">{$category_name}</td>
+                  <td class="subject left txtBreak">
+                      {$icon_re}{$icon_lock}<a href="{$link_board_detail}" style="{$link_color}" class="{$block_content_class}">{$subject}</a>{$icon_file}<span class="comment">{$comment_count}</span>{$icon_mobile}{$icon_new}{$icon_hit}
+                  </td>
+              </tr>
+              <tr style="{$list_bg_color} {$list_char_color}" class="{$block_target_class}" {$block_data_attr}>
+                  <td class="chk no">{$checkbox}<span class="RW">{$no}</span></td>
+                  <td class="{$category_display|display}">{$category_name}</td>
+                  <td class="subject left txtBreak">
+                      {$icon_re}{$icon_lock}<a href="{$link_board_detail}" style="{$link_color}" class="{$block_content_class}">{$subject}</a>{$icon_file}<span class="comment">{$comment_count}</span>{$icon_mobile}{$icon_new}{$icon_hit}
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+      <div class="ap-empty {$empty_display|display}" module="board_empty_3">
+        <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+        <div class="ap-empty__title">{$empty_message}</div>
+      </div>
+  </div>
+  <div module="board_ButtonList_3" class="ec-base-button gBottom {$write_display|display}">
+      <span class="gRight">
+          <a href="/board/free/write.html{$param_write}" class="btnSubmitFix sizeM {$write_display|display}">글쓰기</a>
+      </span>
+  </div>
+  <div module="board_search_3">
+      <!--@css(/css/module/board/search.css)-->
+      <fieldset class="boardSearch">
+          <legend>게시물 검색</legend>
+          <div class="form">{$form.search_date} {$form.search_key} {$form.search} <a href="#none" class="ap-btn ap-btn--sm ap-btn--outline" onclick="{$action_search}">찾기</a></div>
+      </fieldset>
+  </div>
+</div>
+
+<div module="board_paging_3" class="section ec-base-paginate typeList">
+  <a href="{$param_prev}">이전 페이지</a>
+  <ol>
+      <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+      <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+  </ol>
+  <a href="{$param_next}">다음 페이지</a>
+</div>
+
+<!-- Admin only -->
+<div class="section" module="board_catemove_3">
+  <!--@css(/css/module/board/catemove.css)-->
+  <span class="gColumn">{$board_catemove_selectbox}</span>
+  <span class="gColumn"><a href="#none" class="btnNormal sizeS" onclick="{$action_category_move}">{$category_move}</a></span>
+</div>
+
+<div class="section" module="board_function_3">
+  <!--@css(/css/module/board/function.css)-->
+  <span class="gColumn">{$board_function_selectbox}</span>
+  <span class="gColumn">
+      <a href="#none" class="btnNormal sizeS" onclick="{$action_article_move}">{$article_move}</a>
+      <a href="#none" class="btnNormal sizeS" onclick="{$action_article_copy}">{$article_copy}</a>
+  </span>
+  <span class="ec-base-help">{$board_function_help|replace:*,}</span>
+</div>
+<!-- // Admin only -->

@@ -140,7 +140,10 @@
                 </tr>
             </tbody>
         </table>
-        <p class="message {$empty_display|display}" module="board_empty_1002">{$empty_message}</p>
+        <div class="ap-empty {$empty_display|display}" module="board_empty_1002">
+          <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+          <div class="ap-empty__title">{$empty_message}</div>
+        </div>
     </div>
     <div module="board_ButtonList_1002" class="ec-base-button gBottom {$write_display|display}">
         <span class="gRight">

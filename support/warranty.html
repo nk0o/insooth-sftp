@@ -1,0 +1,117 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/layout/basic/css/ap-service.css)-->
+<div class="ap-service ap-howto ap-as">
+  <div class="ap-service__top">
+    <div class="ap-titleArea">
+      <div class="ap-container--narrow">
+        <!-- 브래드크럼 -->
+        <div class="ap-list-path path section">
+          <span>현재 위치</span>
+          <ol>
+            <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
+            <li title="현재 위치"><strong>제품케어서비스(A/S)</strong></li>
+          </ol>
+        </div><!-- //ap-list-path -->
+      </div><!-- //ap-container--narrow -->
+    </div><!-- //ap-titleArea -->
+    
+    <div class="ap-container--narrow">
+      <div class="ap-service__hero ap-service__hero--center">
+        <div class="ap-service__left">
+          <div class="ap-service__eyebrow">CARE SERVICE</div>
+          <h2 class="ap-service__title">제품케어서비스(A/S)</h2>
+          <p class="ap-service__desc">구매 후에도 포브가 함께합니다</p>
+        </div><!-- //ap-hero-left -->
+      </div><!-- //ap-service__hero -->
+    </div><!-- //ap-container--narrow -->
+  </div><!-- //ap-service__top -->
+  
+  <!-- 사용방법내용 -->
+  <div class="howto-body">
+    <div class="ap-container--narrow">
+      <main class="howto-main">
+        <div class="ec-base-tab typeMenu ap-tab">
+          <ul class="menu">
+            <li class="is-active ap-tab__item" onclick="switchTab('panel-1', this)"><a href="javascript:void(0)">제품케어 접수안내</a></li>
+            <li class="ap-tab__item" onclick="switchTab('panel-2', this)"><a href="javascript:void(0)">제품케어 기준</a></li>
+          </ul>
+        </div>
+        <!------------ 제품케어 접수안내 ------------>
+        <div class="ap-tab__panel is-active" id="panel-1">
+            <div class="howto-header">
+              <div class="howto-header__text">
+                <h2>케어 접수안내</h2>
+                <p>구입하신 제품에 이상이 있을 시, 소비자 피해보상 규정에 따라 진행됩니다. <br>
+                  소비자 부주의에 의한 제품훼손 및 세탁 등으로 인하여 변형된 제품에 대해서는 보상의 책임을 지지않으며, 수선시에는 실비로 진행됩니다.</p>
+              </div>
+            </div><!-- //howto-header -->
+            <div class="ap-as__body">
+                <h3 class="ap-as__title">[필요 정보]</h3>
+                <p class="ap-as__desc">포브 A/S의 경우 제품에 따라 다르게 적용됩니다.<br>접수전, 다음 정보를 확인하여 준비해주세요.</p>
+                <ul class="ap-as__list">
+                  <li>1. 구매 일자</li>
+                  <li>2. 구매처</li>
+                  <li>3. 구매자 성함</li>
+                  <li>4. 구매자 연락처</li>
+                  <li>5. 주소</li>
+                  <li>6. 제품 정보(제품명/제품색상/사이즈 등)</li>
+                  <li>7. A/S 필요 사진 (제품 사진 및 확대 사진)</li>
+                </ul>
+                <h3 class="ap-as__title">[케어 접수 절차]</h3>
+                <p class="ap-as__desc">포브 A/S의 경우 카카오톡 1:1 문의를 통해 접수가 가능합니다.<br>필요 정보(1~7번)를 정리하여 채팅창을 통해 접수해주세요.</p>
+                <div class="ap-as__list">
+                  <a href="https://pf.kakao.com/_Rkfld/chat" class="ap-btn ap-btn--gold">카카오톡 A/S 접수</a>
+                </div>
+            </div><!-- //ap-as__body -->
+        </div><!-- //ap-tab__panel -->
+        <!------------ 제품케어 기준 ------------>
+        <div class="ap-tab__panel" id="panel-2">
+            <div class="howto-header">
+              <div class="howto-header__text">
+                <h2>케어 적용 기준</h2>
+                <p>포브 A/S의 경우 제품에 따라 다르게 적용됩니다. 제품의 구매일과 카테고리를 확인해주세요.</p>
+              </div>
+            </div><!-- //howto-header -->
+            <div class="ap-as__body">
+              <h3 class="ap-as__title">[하드 제품 (카시트 / 프레임 캐리어)]</h3>
+              <p class="ap-as__desc">유상 A/S의 경우에는 비용이 상이하여 1:1문의 접수 부탁드립니다.</p>
+              <ul class="ap-as__list">
+                <li>· 구매일로부터 2년 이내 원천 불량의 경우 무상 A/S</li>
+                <li>· 구매일로부터 2년 이상 원천 불량의 경우 유상 A/S(비용 별도 문의)</li>
+                <li>· 고객 과실일 경우 유상 A/S(비용 별도 문의)</li>
+              </ul>
+              <h3 class="ap-as__title">[소프트 제품 (아기띠 / 슬링 / 기저귀가방 등)]</h3>
+              <p class="ap-as__desc">유상 A/S의 경우에는 비용이 상이하여 1:1문의 접수 부탁드립니다.</p>
+              <ul class="ap-as__list">
+                <li>· 구매일로부터 1년 이내 원천 불량의 경우 무상 A/S</li>
+                <li>· 구매일로부터 1년 이상 원천 불량의 경우 유상 A/S(비용 별도 문의)</li>
+                <li>· 고객 과실일 경우 유상 A/S(비용 별도 문의)</li>
+              </ul>
+            </div><!-- //ap-as__body -->
+        </div><!-- //ap-tab__panel -->
+      </main>
+    </div><!-- //ap-container--narrow -->
+  </div><!-- //howto-body -->
+
+  <div class="ap-as-center">
+    <div class="ap-container--narrow">
+      <div class="howto-header">
+        <div class="howto-header__text">
+          <h2>고객센터 안내</h2>
+          <p>공식매장에 방문하시면, 친절하고 전문적인 상담이 가능합니다.</p>
+        </div>
+      </div><!-- //howto-header -->
+      <div class="ap-as-center__cont">
+        <p><em>전화:</em> <a href="tel:0507-1323-5790">0507-1323-5790</a></p>
+        <p><em>주소:</em> 서울특별시 강서구 양천로 108 한원빌딩 B1 아토판지아 매장</p>
+        <p><em>영업시간:</em><br>&nbsp;&nbsp;- 평일 09:00~17:00<br>&nbsp;&nbsp;- 점심시간 12:30~13:30</p>
+        <p><em>오시는 길:</em>
+          <br>&nbsp;&nbsp;- 신방화 사거리 하나은행 건물 지하 1층
+          <br>&nbsp;&nbsp;- 5호선 방화역에서 12분
+          <br>&nbsp;&nbsp;- 9호선 신방화역에서 12분
+          <br>&nbsp;&nbsp;- 주차 가능 (건물 주차타워 이용)
+        </p>
+      </div><!-- //ap-as-center__cont -->
+    </div><!-- //ap-container--narrow -->
+  </div><!-- //ap-as-center -->
+</div><!-- //ap-service -->

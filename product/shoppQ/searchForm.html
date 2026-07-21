@@ -77,5 +77,10 @@
             <li><a href="{$param}" {$style}>{$sort_name}</a></li>
         </ul>
     </div>
-    <p class="noData {$search_fail_display|display}">검색 결과가 없습니다.</p>
+    <div class="ap-empty {$search_fail_display|display}">
+      <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+      <div class="ap-empty__title">검색 결과가 없습니다</div>
+      <div class="ap-empty__desc">다른 키워드로 다시 검색해보세요.</div>
+      <a href="/product/list.html?cate_no=49" class="ap-btn ap-btn--outline ap-btn--sm">전체 상품 보기</a>
+    </div>
 </div>

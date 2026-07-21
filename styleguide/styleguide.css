@@ -1,6 +1,6 @@
 
 /* ====================================================
-   STYLE GUIDE PAGE — 문서 전용 스타일
+  STYLE GUIDE PAGE — 문서 전용 스타일
    ==================================================== */
 
 /* ============================================================
@@ -61,6 +61,7 @@
 .code-block .kw { color: #7FB4DD; }
 
 .demo-box { background: var(--ap-color-bg-card); border: 1px solid var(--ap-color-border); padding: var(--ap-space-lg); display: flex; flex-wrap: wrap; gap: var(--ap-space-md); align-items: center; margin-bottom: var(--ap-space-lg); }
+.demo-box.flex-column { flex-direction: column; align-items: flex-start; }
 
 .vt-table { width: 100%; border-collapse: collapse; font-size: var(--ap-text-sm); }
 .vt-table th, .vt-table td { border: 1px solid var(--ap-color-border); padding: 12px 16px; text-align: left; vertical-align: top; }

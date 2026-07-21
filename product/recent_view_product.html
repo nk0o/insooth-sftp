@@ -99,7 +99,10 @@
                 </div>
             </li>
         </ul>
-        <p class="ec-base-prdEmpty {$empty_display|display}">최근본 상품 내역이 없습니다.</p>
+        <div class="ap-empty {$empty_display|display}">
+          <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+          <div class="ap-empty__title">최근 본 상품 내역이 없습니다.</div>
+        </div>
     </div>
 
     <div module="product_recentlistpaging" class="ec-base-paginate typeList">

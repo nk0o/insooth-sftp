@@ -113,9 +113,10 @@
 				</li>
 			</ul>
 		</div>
-		<div class="boardListEmpty {$empty_display|display}" module="board_empty_8">
-			<p>{$empty_message}</p>
-		</div>
+    <div class="ap-empty {$empty_display|display}" module="board_empty_8">
+      <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+      <div class="ap-empty__title">{$empty_message}</div>
+    </div>
 	</div>
 
     <div module="board_ButtonList_8" class="{$write_display|display} ec-base-button gBottom">

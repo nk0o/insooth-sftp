@@ -1,0 +1,158 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/layout/basic/css/ap-wheretobuy.css)-->
+<div class="wheretobuy">
+  <div class="ap-titleArea">
+    <div class="ap-container--narrow">
+      <!-- 브래드크럼 -->
+      <div class="ap-list-path path section">
+        <span>현재 위치</span>
+        <ol>
+          <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
+          <li title="현재 위치"><strong>매장안내</strong></li>
+        </ol>
+      </div><!-- //ap-path -->
+    </div><!-- //ap-container--narrow -->
+  </div><!-- //ap-titleArea -->
+
+  <div class="ap-container--narrow">
+    <div class="wheretobuy__hero">
+      <h2 class="wheretobuy__title">매장안내</h2>
+    </div><!-- //wheretobuy__hero -->
+    <div class="store-wrap">
+      <div class="store-filter"><select id="storeRegion"><option value="">전체 지역</option></select>
+        <select id="storeType"><option value="">전체 매장</option></select><input type="text" id="storeKeyword" placeholder="매장명 검색" /></div>
+      <p class="wheretobuy__notice">매장별 재고 보유 여부는 상이하오니, 전화 후 방문 부탁드립니다.</p>
+      <div class="store-content">
+        <ul id="storeList"></ul>
+        <div id="map"></div>
+      </div>
+    </div><!-- //store-wrap -->
+  </div><!-- //ap-container--narrow -->
+</div><!-- //wheretobuy -->
+
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1c2339c2dc10c5bb4d9dbd04a5a79d65"></script>
+<script>
+(function () {
+  let _storeData = [];
+  let _markers = [];
+  let _map = null;
+
+  function render(data) {
+    const list = document.querySelector("#storeList");
+    list.innerHTML = "";
+
+    _markers.forEach((m) => m.setMap(null));
+    _markers = [];
+
+    if (data.length === 0) {
+      list.innerHTML =
+        `<div style="padding:0">
+          <div class="ap-empty">
+            <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+            <div class="ap-empty__title">검색 결과가 없습니다.</div>
+          </div>
+        </div>`;
+      return;
+    }
+    console.log(data)
+    data.forEach((store) => {
+    
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <div class="store-info">
+          <img src="${store.img}" alt="${store.name}" class="store-img" 
+          onerror="this.style.background='#f0f0f0'; this.removeAttribute('src')"><div class="store-detail">
+            <span class="store-tag">${store.type}</span>
+            <strong class="store-name">${store.name}</strong>
+            <p class="store-address">${store.address}</p>
+            <a href="tel:${store.tel}" class="store-tel" target="_blank">Tel. ${store.tel}</a>
+            <p class="store-time">${store.time}</p>
+          </div>
+        </div>
+      `;
+      list.appendChild(li);
+
+      const marker = new kakao.maps.Marker({
+        map: _map,
+        position: new kakao.maps.LatLng(store.lat, store.lng),
+      });
+
+      li.addEventListener("click", () => {
+        _map.setCenter(marker.getPosition());
+        document.querySelectorAll("#storeList li").forEach((el) => el.classList.remove("active"));
+        li.classList.add("active");
+      });
+
+      _markers.push(marker);
+    });
+
+    if (data.length > 0) {
+      list.querySelector("li").classList.add("active");
+      _map.setCenter(new kakao.maps.LatLng(data[0].lat, data[0].lng));
+      _map.setLevel(4);
+    }
+  }
+  // fetch 이후 동적 셀렉트 생성 함수
+  function populateSelects(data) {
+    const regions = [...new Set(data.map((s) => s.region))];
+    const types = [...new Set(data.map((s) => s.type))];
+
+    const regionSelect = document.querySelector("#storeRegion");
+    const typeSelect = document.querySelector("#storeType");
+
+    regions.forEach((r) => {
+      const opt = document.createElement("option");
+      opt.value = r;
+      opt.textContent = r;
+      regionSelect.appendChild(opt);
+    });
+
+    types.forEach((t) => {
+      const opt = document.createElement("option");
+      opt.value = t;
+      opt.textContent = t;
+      typeSelect.appendChild(opt);
+    });
+  }
+  function applyFilter() {
+    const region  = document.querySelector("#storeRegion").value;
+    const type    = document.querySelector("#storeType").value;
+    const keyword = document.querySelector("#storeKeyword").value.toLowerCase();
+
+    const filtered = _storeData.filter((s) =>
+      (!region  || s.region === region) &&
+      (!type    || s.type   === type)   &&
+      (!keyword ||
+        s.name.toLowerCase().includes(keyword)    ||
+        s.address.toLowerCase().includes(keyword) ||
+        s.tel.toLowerCase().includes(keyword)     ||
+        s.type.toLowerCase().includes(keyword)
+      )
+    );
+    render(filtered);
+  }
+
+  window.addEventListener("load", function () {
+    _map = new kakao.maps.Map(document.querySelector("#map"), {
+      center: new kakao.maps.LatLng(37.5, 127),
+      level: 8,
+    });
+
+    // JSON 파일 fetch
+    fetch("/web/data/storeData.json?v=3")
+    .then((res) => res.json())
+    .then((data) => {
+      _storeData = data;
+      populateSelects(_storeData); // ← 추가
+      render(_storeData);
+    })
+    .catch((err) => {
+      console.error("매장 데이터를 불러오지 못했습니다.", err);
+    });
+    document.querySelector("#storeRegion").addEventListener("change", applyFilter);
+    document.querySelector("#storeType").addEventListener("change", applyFilter);
+    document.querySelector("#storeKeyword").addEventListener("input", applyFilter);
+  });
+})();
+</script>

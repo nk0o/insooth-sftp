@@ -58,8 +58,11 @@
 							</td>
 						</tr>
 					</tbody>
-				</table>
-				<p class="message {$empty_display|display}"><!--@import(/svg/icon-empty.html)-->좋아요 상품 내역이 없습니다.</p>
+				</table>        
+        <div class="ap-empty {$empty_display|display}">
+          <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+          <div class="ap-empty__title">좋아요 상품 내역이 없습니다.</div>
+        </div>
 			</div>
 		</div>
 

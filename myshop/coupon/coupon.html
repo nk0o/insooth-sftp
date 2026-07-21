@@ -108,10 +108,10 @@
                 </table>
             </div>
 
-            <p class="ec-base-prdEmpty {$display_no_coupon_list|display}">
-				<!--@import(/svg/icon-empty.html)-->
-                보유하고 계신 쿠폰 내역이 없습니다.
-            </p>
+            <div class="ap-empty {$display_no_coupon_list|display}">
+              <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+              <div class="ap-empty__title">보유하고 계신 쿠폰 내역이 없습니다.</div>
+            </div>
 
             <div class="ec-base-button gCenter {$coupon_mileage_display|display}">
                 <button type="button" class="btnStrong" onclick="COUPON.useCoupon()">사용하기</button>

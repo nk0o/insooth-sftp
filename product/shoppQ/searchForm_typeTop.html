@@ -117,13 +117,12 @@
             </div>
         </div>
     </div>
-    <div class="noData {$search_fail_display|display}">
-        <!--@import(/svg/icon-warning.html)-->
-        <h3 class="title">검색결과가 없습니다.</h3>
-        <p class="desc">정확한 검색어 인지 확인하시고 다시 검색해 주세요.</p>
-        <p class="subDesc">
-        	검색어/제외검색어의 입력이 정확한지 확인해 보세요.<br />
-            두 단어 이상의 검색어인 경우, 띄어쓰기를 확인해 보세요.
-        </p>
+    <div class="ap-empty {$search_fail_display|display}">
+      <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+      <div class="ap-empty__title">검색 결과가 없습니다</div>
+      <div class="ap-empty__desc">다른 키워드로 다시 검색해보세요.<br />
+        두 단어 이상의 검색어인 경우, 띄어쓰기를 확인해 보세요.
+      </div>
+      <a href="/product/list.html?cate_no=49" class="ap-btn ap-btn--outline ap-btn--sm">전체 상품 보기</a>
     </div>
 </div>

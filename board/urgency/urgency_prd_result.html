@@ -44,7 +44,10 @@
                     </tr>
                 </tbody>
             </table>
-            <p class="message {$displayEmpty | display}">검색 결과가 없습니다.</p>
+            <div class="ap-empty {$displayEmpty|display}">
+              <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+              <div class="ap-empty__title">검색 결과가 없습니다.</div>
+            </div>
         </div>
     </div>
 </div>

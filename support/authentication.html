@@ -1,0 +1,388 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/layout/basic/css/ap-service.css)-->
+<div module="layout_logincheck" data-ez="contents-0n78ilv-1">
+  <!--
+    $url = /member/login.html
+-->
+</div>
+<div class="ap-service ap-auth">
+  <div class="ap-service__top">
+    <div class="ap-titleArea">
+      <div class="ap-container--narrow">
+        <!-- 브래드크럼 -->
+        <div class="ap-list-path path section">
+          <span>현재 위치</span>
+          <ol>
+            <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
+            <li title="현재 위치"><strong>정품인증</strong></li>
+          </ol>
+        </div><!-- //ap-path -->
+      </div><!-- //ap-container--narrow -->
+    </div><!-- //ap-titleArea -->
+    
+    <div class="ap-container--narrow">
+      <div class="ap-service__hero">
+        <div class="ap-service__left">
+          <h2 class="ap-service__title">정품 인증</h2>
+          <p class="ap-service__desc">
+            포브가 직접 만들고 관리하는 제품,<br>정품 인증으로 확인하세요.            
+          </p>
+        </div><!-- //auto-hero-left -->
+        <div class="ap-service__badges">
+          <div class="ap-service-badge">
+            <div class="ap-service-badge__icon"><!--@import(/svg/icon-certified.html)--></div>
+            <div class="ap-service-badge__content">
+              <div class="ap-service-badge__label">공식 정품 보증</div>
+              <div class="ap-service-badge__desc">정식 유통 제품만 보증</div>
+            </div>
+          </div>
+          <div class="ap-service-badge">
+            <div class="ap-service-badge__icon"><!--@import(/svg/icon-file-text.html)--></div>
+            <div class="ap-service-badge__content">
+              <div class="ap-service-badge__label">제품 이력 관리</div>
+              <div class="ap-service-badge__desc">내 구매 제품을 한눈에 관리</div>
+            </div>
+          </div>
+          <div class="ap-service-badge">
+            <div class="ap-service-badge__icon"><!--@import(/svg/icon-exchange.html)--></div>
+            <div class="ap-service-badge__content">
+              <div class="ap-service-badge__label">교환/AS 지원</div>
+              <div class="ap-service-badge__desc">등록 제품은 바로 접수</div>
+            </div>
+          </div>
+        </div>
+      </div><!-- //ap-service__hero -->
+    </div><!-- //ap-container--narrow -->
+  </div><!-- //ap-service__top -->
+  
+  <main class="ap-auth__main ap-container--narrow">  
+    <!-- AUTH FORM -->
+    <section class="auth-section ap-grid">
+      <div class="auth-card">
+        <div class="auth-card__body">
+          <div class="auth-section__header">
+            <h2 class="auth-section__title"><em>01</em> 제품 등록</h2>
+          </div><!-- //auth-section__header -->
+  
+          <!-- Serial -->
+          <div class="auth-card__field">
+            <label for="serialInput">시리얼 번호</label>
+            <input type="text" id="serialInput" placeholder="예: FB-2024-AERO-8812" autocomplete="off" spellcheck="false" />
+            <p class="auth-card__hint">
+              제품 태그 또는 보증서에서 시리얼 번호를 확인하세요.(시리얼 번호 부착 위치 안내)
+            </p>
+          </div>
+  
+          <!-- Button -->
+          <button class="auth-btn ap-btn-primary ap-btn--lg" id="authBtn" disabled>
+            <span id="btnText">정품 등록하기</span>
+            <span class="arrow">→</span>
+          </button>
+
+          <!-- Status -->
+          <div id="statusMsg" class="auth-status"></div>
+
+        </div><!-- //auth-card__body -->
+      </div><!-- //auth-card -->
+      <div class="auth-info__card">
+        <div class="auth-info__img"><img src="/web/img/icon-auth.png?v=3" alt></div>
+        <h3 class="auth-info__title">정품 등록을 하시면<br>이런 혜택을 누릴 수 있어요.</h3>
+        <p class="auth-info__subtitle"></p>
+        
+        <div class="auth-info__checklist">
+          <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>공식 정품 보증 서비스</div>
+          <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>제품 이력 및 보유 관리</div>
+          <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>교환/AS 등 고객 서비스 지원</div>
+          <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>이벤트 및 신제품 소식 우선 안내</div>
+        </div>
+      </div><!-- //auth-info__card -->
+    </section>
+  
+    <!-- RECORDS -->
+    <section class="auth-section auth-section--record">
+      <div class="auth-section__header">
+        <h2 class="auth-section__title"><em>02</em>인증 내역
+          <span class="auth-record__count" id="recordsCount" style="display:none;"></span>
+        </h2>
+      </div>
+      <div id="recordsList"></div>
+    </section>
+  
+  </main>
+</div><!-- //ap-auth -->
+
+<script>
+  // ===== Cafe24 연동 설정 =====
+  const API_BASE = 'https://wbpn.dong-in.com/dongin'; 
+
+  function getCookie(name) {
+    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? decodeURIComponent(match[2]) : null;
+  }
+
+  function getMemberId(callback) {
+    if (window.CAFE24API) {
+      CAFE24API.getMemberID(function (memberId) {
+        callback(memberId);
+      });
+    } else if (typeof CAPP_ASYNC_METHODS !== 'undefined' && CAPP_ASYNC_METHODS.AppCommon) {
+      callback(CAPP_ASYNC_METHODS.AppCommon.getMemberID());
+    } else {
+      const memberId = getCookie('EncMemberId') || getCookie('member_id');
+      callback(memberId || null);
+    }
+  }
+
+  // 밀리초 timestamp -> "2025년 3월 2일 10:24" 포맷
+  function formatTimestamp(ms) {
+    const d = new Date(Number(ms));
+    const dateStr = d.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
+    const timeStr = d.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit', hour12: false });
+    return { dateStr, timeStr };
+  }
+
+  // ===== 시리얼 인증 등록 (POST) =====
+  function requestVerify(wid, sid) {
+    return fetch(`${API_BASE}/api/v3/verify`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ wid, sid }),
+    }).then(res => {
+      if (!res.ok) throw { status: res.status };
+      return res.json();
+    });
+  }
+
+  // ===== 인증 내역 조회 (GET) =====
+  function fetchVerifyHistory(wid) {
+    return fetch(`${API_BASE}/api/v3/verify/${wid}`, {
+      method: 'GET',
+    }).then(res => {
+      //console.log('status:', res.status); // 임시 디버깅
+      if (res.status === 404) return [];
+      if (!res.ok) throw { status: res.status };
+      return res.json();
+    });
+  }
+
+  // ===== UI 바인딩 =====
+  const serialInput = document.getElementById('serialInput');
+  const authBtn = document.getElementById('authBtn');
+  const statusMsg = document.getElementById('statusMsg');
+  const recordsList = document.getElementById('recordsList');
+  const recordsCount = document.getElementById('recordsCount');
+
+  let currentMemberId = null;
+
+  function validateForm() {
+    authBtn.disabled = !serialInput.value.trim();
+  }
+
+  serialInput.addEventListener('input', () => {
+    hideStatus();
+    serialInput.classList.remove('error');
+    validateForm();
+  });
+
+  serialInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !authBtn.disabled) {
+      handleAuth();
+    }
+  });
+
+  function hideStatus() {
+    statusMsg.classList.remove('show');
+  }
+
+  function showStatus(type, title, desc) {
+    const icons = { success: '✓', error: '✕', warning: '!' };
+    statusMsg.className = `auth-status ${type} show`;
+    statusMsg.innerHTML = `
+      <div class="auth-status__icon">${icons[type]}</div>
+      <div class="auth-status__content">
+        <div class="auth-status__title">${title}</div>
+        <div class="auth-status__desc">${desc}</div>
+      </div>
+    `;
+  }
+
+  function setLoading(loading) {
+    if (loading) {
+      authBtn.innerHTML = '<div class="auth-btn__spinner"></div>';
+      authBtn.disabled = true;
+    } else {
+      authBtn.innerHTML = '<span id="btnText">정품 인증하기</span><span class="arrow">→</span>';
+      validateForm();
+    }
+  }
+
+  function handleAuth() {
+    const sid = serialInput.value.trim().toUpperCase();
+
+    if (!sid) return;
+    if (!currentMemberId) {
+      showStatus('error', '로그인이 필요합니다', '회원 정보를 확인할 수 없습니다.');
+      return;
+    }
+
+    hideStatus();
+    setLoading(true);
+
+    requestVerify(currentMemberId, sid)
+      .then(data => {
+        setLoading(false);
+
+        switch (data.code) {
+          case '0':
+            showStatus('success', '정품 인증 완료', '제품이 인증 내역에 등록되었습니다.');
+            serialInput.value = '';
+            loadRecords();
+            break;
+
+          case '-2':
+            showStatus('warning', '이미 인증된 제품', data.message || '동일한 시리얼 번호로 중복 인증할 수 없습니다.');
+            serialInput.classList.add('error');
+            break;
+
+          case '-1':
+          default:
+            showStatus('error', '유효하지 않은 시리얼 번호', data.message || '카테고리와 시리얼 번호를 다시 확인해 주세요.');
+            serialInput.classList.add('error');
+            break;
+        }
+      })
+      .catch(err => {
+        // 네트워크 오류, 서버 다운 등 진짜 HTTP 에러일 때만
+        setLoading(false);
+        showStatus('error', '오류가 발생했습니다', '잠시 후 다시 시도해 주세요.');
+        serialInput.classList.add('error');
+      });
+  }
+  authBtn.addEventListener('click', handleAuth);
+
+  function renderRecords(records) {
+    if (!records || records.length === 0) {
+      recordsCount.style.display = 'none';
+      recordsList.innerHTML = `
+        <div class="ap-empty">
+          <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+          <div class="ap-empty__title">아직 인증된 제품이 없습니다</div>
+          <div class="ap-empty__desc"> 첫 번째 제품을 인증해보세요.</div>
+        </div>
+      `;
+      return;
+    }
+
+    const sorted = [...records].sort((a, b) => Number(b.AUT_DT) - Number(a.AUT_DT));
+
+    recordsCount.style.display = 'inline-flex';
+    recordsCount.textContent = `총 ${sorted.length}건`;
+
+    recordsList.innerHTML = `
+      <div class="auth-record__list swiper">
+        <div class="auth-record__inner swiper-wrapper">
+          ${sorted.map((r, i) => {
+            const { dateStr, timeStr } = formatTimestamp(r.AUT_DT);
+            const displayName = getDisplayName(r.MATNR, r.MAKTX); // 매핑 적용
+            return `
+              <div class="swiper-slide auth-record__card" style="animation-delay: ${i * 0.05}s">
+                <div class="auth-record__icon"><!--@import(/svg/icon-certified.html)--></div>
+                <div class="auth-record__main">
+                  <div class="auth-record__product">${displayName}</div>
+                  <span class="auth-record__serial">시리얼번호: ${r.SID}</span><br>
+                  <span class="auth-record__serial">제품코드: ${r.MATNR}</span>
+                  <div class="auth-record__date">${dateStr} ${timeStr}</div>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+        <div class="swiper-buttons">
+          <div class="swiper-button-prev"><!--@import(/svg/icon-chevron-left.html)--></div>
+          <div class="swiper-button-next"><!--@import(/svg/icon-chevron-right.html)--></div>
+        </div>
+      </div>
+    `;
+
+    initSwiper();
+  }
+  
+  let recordsSwiper = null;
+  function initSwiper() {
+    if (recordsSwiper) recordsSwiper.destroy(true, true);
+    recordsSwiper = new Swiper('.auth-record__list.swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 12,
+      loop: false,
+      navigation: {
+        nextEl: '.auth-record__list .swiper-button-next',
+        prevEl: '.auth-record__list .swiper-button-prev',
+      },
+    });
+  }
+
+function loadRecords() {
+  //console.log('loadRecords:', currentMemberId);
+  if (!currentMemberId) {
+    //console.warn('memberId 없음');
+    return;
+  }
+
+  fetchVerifyHistory(currentMemberId)
+    .then(data => {
+      const list = Array.isArray(data) ? data : [];
+      renderRecords(list);
+      console.log(list)
+    })
+    .catch(() => renderRecords([]));
+}
+
+/* 
+{
+  AUT_DT: 1782353382000
+  ERDAT: "20260624"
+  MAKTX: "HANDS-FREE LEASH,ORANGE"
+  MATNR: "GW24FWLE0006"
+  POSNR_VA: "000010"
+  POSNR_VL: "000010"
+  SERNO: "0001"
+  SID: "GW2606V5499"
+  VBELN_VA: "0000335786"
+  VBELN_VL: "0080427078"
+  WID: "forbmaster"
+}
+*/
+
+/* 자재코드 자재명 한글제품명  */
+  let productNameMap = {};
+
+  async function loadProductNameMap() {
+    try {
+      const res = await fetch('/web/data/fb-product-data-260625.json');
+      productNameMap = await res.json();
+      //console.log('상품명 매핑 로드 완료', productNameMap);
+    } catch (e) {
+      //console.error('상품명 매핑 파일 로드 실패', e);
+      productNameMap = {};
+    }
+  }
+
+  // 자재코드(MATNR) -> 한글명 변환, 없으면 원본 자재명(MAKTX) 그대로 노출
+  function getDisplayName(matnr, fallbackName) {
+    const entry = productNameMap[matnr];
+    return entry ? entry.MAKTXKO : (fallbackName || matnr);
+  }
+
+  // ===== Init =====
+  document.addEventListener('DOMContentLoaded', async () => {
+    await loadProductNameMap(); // 매핑 파일 먼저 완료
+    getMemberId(memberId => {
+      //console.log('memberId:', memberId);
+      currentMemberId = memberId;
+      loadRecords();
+    });
+  });
+
+
+  
+</script>

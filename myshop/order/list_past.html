@@ -112,7 +112,11 @@
                 </div>
             </div>
         </div>
-        <p class="ec-base-prdEmpty {$empty_display|display}"><!--@import(/svg/icon-empty.html)-->주문 내역이 없습니다.</p>
+        
+        <div class="ap-empty {$empty_display|display}">
+          <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
+          <div class="ap-empty__title">주문 내역이 없습니다.</div>
+        </div>
     </div>
 
     <div module="Myshop_OrderHistoryPaging" class="ec-base-paginate typeList">
