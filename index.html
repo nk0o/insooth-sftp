@@ -70,8 +70,8 @@
 
 <!-- GPT_TEST_0611 -->
 <!-- ⑥ CATEGORY ACCORDION (Hike & Trek / Camp & Rest) -->
-<section class="ap-category-sticky-wrap ap-reveal" id="apCategoryStickyWrap">
-  <div class="ap-category ap-reveal ap-category--initial" id="apCategorySection">
+<section class="ap-category-sticky-wrap" id="apCategoryStickyWrap">
+  <div class="ap-category ap-category--initial" id="apCategorySection">
 
     <!-- Hike & Trek -->
     <div class="ap-category__col" data-col="hike">
@@ -146,7 +146,7 @@
 </section>
 
 <!-- ⑦ JOURNAL SWIPER (active card center scale) -->
-<div class="ap-journal ap-reveal">
+<div class="ap-journal">
   <div class="ap-container">
     <div class="ap-journal__header ap-text--center">
       <h2 class="ap-journal__title ap-text--h1">THE JOURNEY</h2>
@@ -191,7 +191,7 @@
   
     </div><!-- //ap-journal__cards -->
   </div><!-- //ap-container -->
-</div><!-- //ap-journal ap-reveal -->
+</div><!-- //ap-journal -->
 
 <!-- ⑨ Notice -->
 <div class="ap-mainNotice">
@@ -236,7 +236,7 @@
 </div>
 
 <!-- ⑨ SHORTS PICKS -->
-<div class="ap-shorts ap-reveal">
+<div class="ap-shorts">
   <div class="ap-container">
     <div class="ap-shorts__header">
       <div class="ap-shorts__title ap-text--h1">INSOOTH MOMENTS</div>
@@ -441,37 +441,12 @@
         회원가입 후 5,000원 혜택과 함께,<br>
         완벽한 프리미엄 아웃도어를 경험해보세요.
       </p>
-      <button class="ap-mainCTA__cta ap-btn ap-btn--outline ap-btn--orange">첫 여정 함께하기</button>
+      <a href="/member/login.html" class="ap-mainCTA__cta ap-btn ap-btn--outline ap-btn--orange">첫 여정 함께하기</a>
     </div><!-- //ap-mainCTA__content -->
   </div><!-- //ap-container -->
 </div><!-- //ap-mainCTA -->
 
 
-<script>
- //스크롤 요소 확대
-  function checkVisibility() {
-  const sections = document.querySelectorAll('.revealing-image');
-  const viewportHeight = window.innerHeight;
-  const triggerPoint = viewportHeight * .9;
-
-  sections.forEach(section => {
-    const rect = section.getBoundingClientRect();
-    const elementTop = rect.top;
-
-    if (elementTop < triggerPoint) {
-      section.classList.add('is-visible');
-    } else {
-      section.classList.remove('is-visible');
-    }
-  });
-  }
-
-  // 스크롤 이벤트
-  window.addEventListener('scroll', checkVisibility);
-
-  // 초기 체크
-  checkVisibility();
-</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {

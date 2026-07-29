@@ -1,9 +1,77 @@
-.insooth #aside{inset:auto; top: var(--ap-header-height);height: 0; transition: all 0.3s ease;}
-body.insooth.expand #aside {height: calc(100dvh - var(--ap-header-height));}
-.insooth #aside .navigation-menu__category .view, #aside .navigation-menu__project .view{color: var(--ap-color-black); font-size: var(--ap-text-md);line-height: 1.5;}
-.insooth #aside .navigation-menu__category #slide_add_category li > a{color: var(--ap-color-black);}
-.insooth #aside .navigation-menu{padding: 16px var(--ap-gutter);}
+.ap-nav--scrolled ~ .insooth #aside{
+  --ap-notice-height: 0;
+}
 .insooth #aside .btnClose{display: none;}
+.insooth #aside{inset:auto; top: calc(var(--ap-notice-height) + var(--ap-nav-height));height: 0; transition: height 0.3s ease;    background: var(--ap-color-bg-section);display: flex !important;height: 100%; flex-direction: column; align-items: stretch;}
+body.insooth.expand #aside {height: calc(100dvh - var(--ap-notice-height) - var(--ap-nav-height));}
+.insooth #aside .navigation-menu{padding: 16px var(--ap-gutter) 0;}
+.insooth #aside .navigation-menu__category .view, 
+.insooth #aside .navigation-menu__project .view{color: var(--ap-color-black);}
+.insooth #aside .navigation-menu__category #slide_add_category > li > a.cate{height: 60px;}
+.insooth #aside .navigation-menu__category #slide_add_category li > a{color: var(--ap-color-black); }
+.insooth #aside .navigation-menu__category #slide_add_category li > a:not(.cate){padding: var(--ap-space-lg) var(--ap-space-xl) var(--ap-space-lg) 0;font-size: var(--ap-text-md); font-weight: 500; line-height: var(--ap-leading-heading);}
 .insooth #aside .navigation-menu__category #slide_add_category li.selected .sub_cate01 a.view{padding-bottom: 6px; font-size: var(--ap-text-base);color: var(--ap-color-black); line-height: 1.5;}
 .insooth #aside .navigation-menu__category #slide_add_category li.selected{padding-bottom: 36px;}
 .insooth #aside .navigation-menu__category #slide_add_category li.selected > a{font-weight: 700;}
+
+.insooth.expand #header.ap-nav--scrolled ~ #aside{top: var(--ap-nav-height);}
+
+
+
+/* ---------- 하단: 1차 CTA ---------- */
+.ap-sidebar__bottom{ margin-top: auto; }
+
+.ap-sidebar__cta{
+  display: flex;
+  gap: var(--ap-space-sm);
+  padding: var(--ap-space-md) var(--ap-gutter) 0;
+}
+.ap-sidebar__btn{
+  flex: 1;
+  text-align: center;
+  padding: var(--ap-space-md, 14px) 0;
+  font-size: var(--ap-text-base);
+  font-weight: 600;
+  color: var(--ap-color-bg-section);
+  background: var(--ap-color-black);
+  border-radius: 2px;
+}
+.ap-sidebar__btn:active{ opacity: .85; }
+
+/* ---------- 하단: 2차 유틸리티 링크 ---------- */
+.ap-sidebar__state{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--ap-space-xs, 4px);
+  padding: var(--ap-space-md) var(--ap-gutter) var(--ap-space-lg);
+}
+.ap-sidebar__state a.ap-sidebar__link{
+  padding: var(--ap-space-xs, 6px);
+  font-size: var(--ap-text-xs, 12px);
+  color: var(--ap-color-text-muted);
+}
+.ap-sidebar__dot{
+  color: var(--ap-color-text-muted);
+  opacity: .4;
+  font-size: 10px;
+}
+
+
+
+
+
+.insooth .ap-sidebar#aside .navigation-menu__category #slide_add_category a.cate:before, 
+.insooth .ap-sidebar#aside .navigation-menu__board .icoCategory:before, 
+.insooth .ap-sidebar#aside .navigation-menu__category .categoryList a.cate:before, 
+.insooth .ap-sidebar#aside .navigation-menu__project .icoCategory:before{background-color: var(--ap-color-text-muted);width: 14px;}
+.insooth .ap-sidebar#aside .navigation-menu__category #slide_add_category a.cate::after, 
+.insooth .ap-sidebar#aside .navigation-menu__board .icoCategory::after, 
+.insooth .ap-sidebar#aside .navigation-menu__category .categoryList a.cate::after, 
+.insooth .ap-sidebar#aside .navigation-menu__project .icoCategory::after{background-color: var(--ap-color-text-muted);height: 14px;}
+
+.insooth .ap-sidebar#aside .navigation-menu__category #slide_add_category li.selected > a.cate:before, 
+.insooth .ap-sidebar#aside .navigation-menu__board .selected .icoCategory:before, 
+.insooth .ap-sidebar#aside .navigation-menu__category .categoryList li.selected > a.cate:before, 
+.insooth .ap-sidebar#aside .navigation-menu__project .selected .icoCategory:before{background-color: var(--ap-color-black);}

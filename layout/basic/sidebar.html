@@ -1,4 +1,4 @@
-<aside id="aside" module="layout_slidePackage" class="RTMB" data-ez="contents-0lkigu0-1">
+<aside id="aside" module="layout_slidePackage" class="RTMB ap-sidebar" data-ez="contents-0lkigu0-1">
   <!--@css(/layout/basic/css/ap-sidebar.css)-->
   <!--@css(/layout/basic/css/slideMenu.css)-->
   <!--@js(/layout/basic/js/slide_menu.js)-->
@@ -16,7 +16,7 @@
     <div data-ez-module="menu-side/1">
       <div id="slideCateList" class="navigation-menu__category">
         <ul id="slide_add_category">
-          <li><a href="/product/list.html?cate_no=24" class="view">HIKE&TREK</a>
+          <li><a href="/product/list.html?cate_no=24" class="view ap-text--h5">HIKE&TREK</a>
             <ul class="sub_cate01">
               <li><a href="/product/list.html?cate_no=24" class="view">전체</a></li>
               <li><a href="/product/list.html?cate_no=24" class="view">배낭</a></li>
@@ -24,7 +24,7 @@
               <li><a href="/product/list.html?cate_no=24" class="view">액세서리</a></li>
             </ul>
           </li>
-          <li><a href="/product/list.html?cate_no=26" class="view">CAMP&REST</a>
+          <li><a href="/product/list.html?cate_no=26" class="view ap-text--h5">CAMP&REST</a>
             <ul class="sub_cate01">
               <li><a href="/product/list.html?cate_no=26" class="view">전체</a></li>
               <li><a href="/product/list.html?cate_no=26" class="view">체어</a></li>
@@ -32,14 +32,14 @@
               <li><a href="/product/list.html?cate_no=26" class="view">액세서리</a></li>
             </ul>
           </li>
-          <li><a href="/board/free/list.html?board_no=1" class="view">JOURNAL</a>
+          <li><a href="/board/free/list.html?board_no=1" class="view ap-text--h5">JOURNAL</a>
             <ul class="sub_cate01">
               <li><a href="/board/free/list.html?board_no=1" class="view">큐레이션</a></li>
               <li><a href="/board/free/list.html?board_no=1" class="view">제품가이드</a></li>
               <li><a href="/board/free/list.html?board_no=1" class="view">새소식</a></li>
             </ul>
           </li>
-          <li><a href="/board/free/list.html?board_no=3" class="view">SUPPORT</a>
+          <li><a href="/board/free/list.html?board_no=3" class="view ap-text--h5">SUPPORT</a>
             <ul class="sub_cate01">
               <li><a href="/support/warranty.html" class="view">A/S</a></li>
               <li><a href="/support/authentication/index.html" class="view">정품 등록</a></li>
@@ -47,7 +47,7 @@
               <li><a href="/support/faq.html" class="view">FAQ</a></li>
             </ul>
           </li>
-          <li><a href="/board/free/list.html?board_no=1" class="view">BRAND</a>
+          <li><a href="/board/free/list.html?board_no=1" class="view ap-text--h5">BRAND</a>
             <ul class="sub_cate01">
               <li><a href="/about/insooth_story.html" class="view">본질의 여정</a></li>
               <li><a href="/about/technology.html" class="view">기술과 소재</a></li>
@@ -55,33 +55,27 @@
               <li><a href="/about/share_value.html" class="view">더 나은 세상</a></li>
             </ul>
           </li>
-        </ul>
+        </ul><!-- #slide_add_category -->
       </div>
     </div><!-- //menu-side/1 -->
-
-    <!-- <div class="cboth slide_line"></div>
-
-    <div module="Layout_BoardInfo" class="navigation-menu__board">
-      <div class="title">고객센터<button type="button" class="icoCategory">펼침</button></div>
-      <ul class="categoryList" style="display:none;">
-        <li class="menu"><a href="{$link_board_list}">{$board_name}</a> {$board_adult_icon}</li>
-        <li class="menu"><a href="{$link_board_list}">{$board_name}</a> {$board_adult_icon}</li>
-      </ul>
-    </div> --><!-- //tab_community -->
-
-    <div module="Layout_multishopList">
-      <button type="button" class="toggle">{$current_language} <i aria-hidden="true"
-          class="icon icoArrowBottom"></i></button>
-      <ul module="Layout_multishopListitem">
-        <li class="{$selected_class}">
-          <a href="//{$shop_domain}/">{$locale_language}</a>
-        </li>
-        <li class="{$selected_class}">
-          <a href="//{$shop_domain}/">{$locale_language}</a>
-        </li>
-      </ul>
-    </div>
   </nav>
+  <div class="ap-sidebar__bottom">
+    <div class="ap-sidebar__cta">
+      <a data-ez-item="login" module="Layout_statelogoff" href="/member/login.html" class="ap-sidebar__btn">로그인</a>
+      <a data-ez-item="order" module="Layout_stateLogon" href="/myshop/order/list.html" class="ap-sidebar__btn">주문배송 조회</a>
+    </div>
+    <div class="ap-sidebar__state">
+        <a data-ez-item="order-guest" module="Layout_statelogoff" href="/myshop/order/list.html" class="ap-sidebar__link">주문배송 조회</a>
+        <span class="ap-sidebar__dot ap-sidebar__dot--guest" module="Layout_statelogoff" aria-hidden="true">·</span>
+
+        <a href="https://pf.kakao.com/_Rkfld/chat" target="_blank" class="ap-sidebar__link">카카오톡 문의</a>
+        <span class="ap-sidebar__dot" aria-hidden="true">·</span>
+        <a href="/where-to-buy/index.html" class="ap-sidebar__link">매장안내</a>
+
+        <span class="ap-sidebar__dot ap-sidebar__dot--member" module="Layout_stateLogon" aria-hidden="true">·</span>
+        <a data-ez-item="logout" module="Layout_stateLogon" href="{$action_logout}" class="ap-sidebar__link">로그아웃</a>
+    </div><!-- //ap-sidebar__state -->
+  </div><!-- //ap-sidebar__bottom -->
   <button type="button" class="btnClose"><i aria-hidden="true" class="icon icoClose"></i>닫기</button>
 </aside>
 <!--#ez="1/2"-->

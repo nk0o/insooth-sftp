@@ -6,9 +6,9 @@
     <div class="ap-titleArea">
       <div class="ap-container--narrow">
         <!-- 브래드크럼 -->
-        <div class="ap-list-path path section">
-          <span>현재 위치</span>
-          <ol>
+        <div class="ap-path">
+          <span class="blind">현재 위치</span>
+          <ol class="ap-path__list">
             <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
             <li title="현재 위치"><strong>정품인증</strong></li>
           </ol>
@@ -38,7 +38,7 @@
           <!-- <p class="auth-benefit__title">전수 검수</p> -->
         </li>
       </ul>
-      <div class="auth__btns"><a href="/service/authentication.html" class="ap-btn ap-btn--ghost">정품인증 바로가기 →</a></div>
+      <div class="auth__btns"><a href="/support/authentication.html" class="ap-btn ap-btn--ghost">정품인증 바로가기 →</a></div>
     </div><!-- //ap-container--narrow -->
     <div class="auth__bg">
       <img src="/web/img/story/img_craftmanship-3.webp" alt="">
@@ -105,8 +105,8 @@
             안전 이슈 발생 시 가장 먼저 안내받으실 수 있습니다.</p>
             <p><em><!--@import(/svg/icon-add.html)--></em>AS 접수도 시리얼 확인만으로 간편하게</p>
           <div class="auth__btns">
-            <a href="/service/authentication.html" class="ap-btn ap-btn--primary ap-btn--lg">인증하기</a>
-            <a href="/service/authentication.html" class="ap-btn ap-btn--outline ap-btn--lg">인증내역보기</a>
+            <a href="/support/authentication.html" class="ap-btn ap-btn--primary ap-btn--lg">인증하기</a>
+            <a href="/support/authentication.html" class="ap-btn ap-btn--outline ap-btn--lg">인증내역보기</a>
           </div>
         </div><!-- //ap-container--narrow -->
       </section><!-- //ap-final-cta -->
@@ -131,70 +131,6 @@
       </div>
     </div>
   </section>
-
-
-
   </main><!-- //ap-auth__main -->
-    
 </div><!-- //ap-auth -->
 
-
-<script>
-  
-// ─── 스크롤 리빌 ───
-(function() {
-  const observerOptions = {
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        // flow-items: 순차 지연
-        if (entry.target.classList.contains('flow-item')) return;
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  // 일반 리빌 요소들
-  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
-    observer.observe(el);
-  });
-
-  // flow items 순차 애니메이션
-  const flowObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const items = entry.target.querySelectorAll('.flow-item');
-        items.forEach((item, i) => {
-          setTimeout(() => item.classList.add('visible'), i * 150);
-        });
-        flowObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  const flowContainer = document.querySelector('.inhouse-flow');
-  if (flowContainer) flowObserver.observe(flowContainer);
-
-  // process steps 순차
-  const processObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const steps = entry.target.querySelectorAll('.process-step');
-        steps.forEach((step, i) => {
-          setTimeout(() => step.classList.add('visible'), i * 120);
-        });
-        processObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  const processSteps = document.querySelector('.process-steps');
-  if (processSteps) processObserver.observe(processSteps);
-})();
-
-</script>

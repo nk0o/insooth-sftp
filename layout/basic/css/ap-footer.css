@@ -89,7 +89,7 @@
 }
 
 
-.insooth .ap-fab--top{ position:relative; width:52px; height:52px; border-radius:50%; background:var(--ap-color-bg-surface); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;margin-bottom: 8px;}
+.insooth .ap-fab--top{ position:relative; width:52px; height:52px; border-radius:50%; background:var(--ap-color-bg-surface); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;margin-bottom: 8px;transition: opacity var(--ap-transition-fast) ease, visibility var(--ap-transition-fast) ease;}
 .insooth .ap-fab__ring{ position:absolute; top:0; left:0; transform:rotate(-90deg); shape-rendering:geometricPrecision;}
 .insooth .ap-fab__ring-bg, .ap-fab__ring-progress{ fill:none !important;   vector-effect:non-scaling-stroke;}
 .insooth .ap-fab__ring-bg{ stroke:var(--ap-color-border); stroke-width:2.5;  }

@@ -548,21 +548,234 @@ function ifmore(){
 }
 
 
-// ── 탭 전환 ──
-const tabs = document.querySelectorAll('.ap-tabs');
-tabs.forEach(tab => {
-  const buttons = tab.querySelectorAll('.ap-tabs__item');
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-      const panels = tab.querySelectorAll('.ap-tabs__panel');
-      if (!panels.length) return;
-      panels.forEach(panel => panel.classList.remove('is-active'));
-      const target = tab.querySelector(`#${btn.dataset.target}`);
-      if (target) {
-          target.classList.add('is-active');
-      }
+  // ── 탭 전환 + 스크롤 ──
+  const tabs = document.querySelectorAll('.ap-tabs');
+  tabs.forEach(tab => {
+    const buttons = tab.querySelectorAll('.ap-tabs__item');
+    const list = tab.querySelector('.ap-tabs__list');
+
+    // 로드 시 활성 탭을 애니메이션 없이 즉시 가운데로 정렬
+    const centerActiveOnLoad = () => {
+      if (!list) return;
+      // is-active가 붙은 아이템, 또는 부모(li 등)에 selected 클래스가 붙은 아이템을 찾음
+      const activeBtn = tab.querySelector('.ap-tabs__item.is-active')
+        || tab.querySelector('.selected .ap-tabs__item');
+      if (!activeBtn) return;
+
+      const prevBehavior = list.style.scrollBehavior;
+      list.style.scrollBehavior = 'auto'; // smooth 끄고 즉시 이동
+      activeBtn.scrollIntoView({ behavior: 'auto', block: 'nearest', inline: 'center' });
+      // 다음 프레임에 원래 smooth 설정으로 복구 (이후 클릭 시엔 부드럽게 동작하도록)
+      requestAnimationFrame(() => { list.style.scrollBehavior = prevBehavior; });
+    };
+    centerActiveOnLoad();
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+
+        const panels = tab.querySelectorAll('.ap-tabs__panel');
+        if (panels.length) {
+          panels.forEach(panel => panel.classList.remove('is-active'));
+          const target = tab.querySelector(`#${btn.dataset.target}`);
+          if (target) target.classList.add('is-active');
+        }
+
+        btn.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center'
+        });
+      });
+    });
+
+    if (list) {
+      let isDown = false, startX = 0, scrollLeft = 0, moved = false;
+      let pendingWalk = null; // rAF로 넘길 최신 walk값
+      let rafId = null;
+
+      const applyScroll = () => {
+        rafId = null;
+        if (pendingWalk === null) return;
+        list.scrollLeft = scrollLeft - pendingWalk;
+        pendingWalk = null;
+      };
+
+      list.addEventListener('mousedown', (e) => {
+        isDown = true;
+        moved = false;
+        list.classList.add('is-dragging');
+        list.style.scrollBehavior = 'auto'; // 진행중인 smooth 애니메이션 즉시 중단
+        startX = e.pageX - list.offsetLeft;
+        scrollLeft = list.scrollLeft;
+      });
+
+      const endDrag = () => {
+        if (!isDown) return;
+        isDown = false;
+        list.classList.remove('is-dragging');
+        list.style.scrollBehavior = ''; // CSS의 smooth 값으로 복귀
+        if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; } // 잔여 스크롤 방지
+        pendingWalk = null;
+      };
+      list.addEventListener('mouseleave', endDrag);
+      window.addEventListener('mouseup', endDrag);
+
+      // 네이티브 드래그(고스트 이미지/타이틀 툴팁) 자체를 시작하지 못하게 차단
+      list.addEventListener('dragstart', (e) => e.preventDefault());
+      buttons.forEach(btn => { btn.draggable = false; });
+
+      list.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - list.offsetLeft;
+        const walk = x - startX;
+        if (Math.abs(walk) > 5) moved = true;
+        pendingWalk = walk;
+        if (rafId === null) rafId = requestAnimationFrame(applyScroll); // 프레임당 1회로 스로틀링
+      });
+
+      list.addEventListener('click', (e) => {
+        if (moved) { e.stopPropagation(); e.preventDefault(); }
+      }, true);
+
+      list.addEventListener('wheel', (e) => {
+        if (e.deltaY === 0) return;
+        e.preventDefault();
+        list.style.scrollBehavior = 'auto';
+        list.scrollLeft += e.deltaY;
+        list.style.scrollBehavior = '';
+      }, { passive: false });
+    }
   });
-  });
+
+//스크롤 확대
+document.addEventListener('DOMContentLoaded', function () {
+
+  const sections = document.querySelectorAll('.revealing-image');
+
+  if (!sections.length) return;
+
+  function checkVisibility() {
+    const triggerPoint = window.innerHeight * 0.9;
+
+    sections.forEach(section => {
+      section.classList.toggle(
+        'is-visible',
+        section.getBoundingClientRect().top < triggerPoint
+      );
+    });
+  }
+
+  window.addEventListener('scroll', checkVisibility);
+  window.addEventListener('resize', checkVisibility);
+
+  checkVisibility();
+});
+
+
+/* ==========================
+   Share Toggle
+========================== */
+
+document.addEventListener('click', function(e){
+
+    const opener = e.target.closest('.ap-share__opener');
+
+    if(opener){
+
+        const share = opener.closest('.ap-share');
+
+        share.classList.toggle('is-open');
+
+        return;
+    }
+
+
+    document.querySelectorAll('.ap-share.is-open').forEach(function(el){
+
+        if(!el.contains(e.target)){
+            el.classList.remove('is-open');
+        }
+
+    });
+
+});
+
+
+
+/* ==========================
+   URL Copy
+========================== */
+
+document.addEventListener('click', async function(e){
+
+    const copyBtn = e.target.closest('.btn-copy-url');
+
+    if(!copyBtn) return;
+
+
+    const url = window.location.href;
+
+
+    try{
+
+        await navigator.clipboard.writeText(url);
+
+        alert('현재 페이지 URL이 복사되었습니다.');
+
+    }catch(err){
+
+        const textarea = document.createElement('textarea');
+
+        textarea.value = url;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+
+        document.body.appendChild(textarea);
+
+        textarea.select();
+
+        document.execCommand('copy');
+
+        document.body.removeChild(textarea);
+
+
+        alert('현재 페이지 URL이 복사되었습니다.');
+
+    }
+
+});
+
+
+
+/* ==========================
+  Facebook Share
+========================== */
+
+document.addEventListener('click', function(e){
+    const btn = e.target.closest('.btn-facebook-share');
+    if(!btn) return;
+    const url = encodeURIComponent(window.location.href);
+    window.open(
+        'https://www.facebook.com/sharer/sharer.php?u=' + url,
+        '_blank'
+    );
+});
+
+/* ==========================
+  X Share
+========================== */
+
+document.addEventListener('click', function(e){
+    const btn = e.target.closest('.btn-x-share');
+    if(!btn) return;
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(document.title);
+    window.open(
+        'https://twitter.com/intent/tweet?url=' + url + '&text=' + text,
+        '_blank'
+    );
+
 });

@@ -15,7 +15,7 @@
 .doc-hero__desc { font-size: var(--ap-text-sm); color: var(--ap-color-text-secondary); max-width: 680px; line-height: var(--ap-leading-normal); }
 .doc-hero__note { margin-top:16px; font-size:12.5px; color: var(--ap-color-orange-dark); background: var(--ap-color-orange-light); display:inline-block; padding: 6px 12px; border-radius: var(--ap-radius-sm); }
 
-.doc-section { padding: var(--ap-space-3xl) 0; border-bottom: 1px solid var(--ap-color-border); }
+.doc-section {scroll-padding-top: 300px; padding: var(--ap-space-3xl) 0; border-bottom: 1px solid var(--ap-color-border); }
 .doc-section:last-child { border-bottom: none; }
 .doc-section__num { font-family: var(--ap-font-serif); font-style: italic; font-size: var(--ap-text-base); color: var(--ap-color-gray-400); }
 .doc-section__title { font-size: var(--ap-text-xl); font-weight: 600; margin: var(--ap-space-sm) 0 var(--ap-space-sm); }
@@ -27,11 +27,14 @@
 .group-label:first-child { margin-top: 0; }
 
 /* TOC */
-.sg-toc { background: var(--ap-color-ivory); border-bottom: 1px solid var(--ap-color-border); padding: 20px 0; }
+.sg-toc.floating {position: fixed; bottom: 0;right: 0; width: auto; z-index: 1000;background: var(--ap-color-bg-card);border: 1px solid var(--ap-color-border);    padding: 4px; width: 300px;}
+.sg-toc.floating .sg-toc__inner{padding: 0;}
+.sg-toc.floating .sg-toc__link{display: block;}
+.sg-toc { background: var(--ap-color-bg-card); border-bottom: 1px solid var(--ap-color-border); padding: 20px 0; }
 .sg-toc__inner { max-width: var(--ap-max-width); margin: 0 auto; padding: 0 var(--ap-gutter); display: flex; gap: 4px; flex-wrap: wrap; }
 .sg-toc__link { font-family: var(--ap-font-sans); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ap-color-text-muted); padding: 5px 10px; border-radius: var(--ap-radius-pill); transition: background 0.15s, color 0.15s; }
 .sg-toc__link:hover { background: var(--ap-color-beige); color: var(--ap-color-text-primary); }
-.fix-toc{position: fixed; bottom: 30px; right: 30px; width: 150px; height: 300px;overflow: auto;background: var(--ap-color-ivory);}
+.fix-toc{position: fixed; bottom: 30px; right: 30px; width: 150px; height: 300px;overflow: auto;background: var(--ap-color-bg-card);}
 .fix-toc .sg-toc__inner{padding: 0;}
 
 /* Swatch */
