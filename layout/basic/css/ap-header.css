@@ -10,7 +10,7 @@
 /* ===========================
   NAV + FULL-WIDTH MEGA MENU
 =========================== */
-.insooth #header .ap-header__inner .top_nav_box{border-bottom: 1px solid var(--ap-color-border); }
+/* .insooth #header .ap-header__inner .top_nav_box{border-bottom: 1px solid var(--ap-color-border); } */
 .ap-nav {position: relative; flex: 1;top: 0; z-index: 200; height: var(--ap-nav-height);background: var(--ap-color-white);}
 .ap-nav .ap-container--narrow{display: flex; height: 100%;align-items: center; justify-content: space-between; padding: 0 var(--ap-gutter);background: var(--ap-color-white);}
 .ap-nav__logo {font-size: var(--ap-text-md); font-weight: 700; color: var(--ap-color-black); cursor: pointer; flex-shrink: 0; padding-right: 18px; }

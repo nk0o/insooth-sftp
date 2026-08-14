@@ -676,7 +676,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* ==========================
-   Share Toggle
+  Share Toggle
 ========================== */
 
 document.addEventListener('click', function(e){
@@ -706,7 +706,7 @@ document.addEventListener('click', function(e){
 
 
 /* ==========================
-   URL Copy
+  URL Copy
 ========================== */
 
 document.addEventListener('click', async function(e){
@@ -715,14 +715,11 @@ document.addEventListener('click', async function(e){
 
     if(!copyBtn) return;
 
-
     const url = window.location.href;
-
 
     try{
 
         await navigator.clipboard.writeText(url);
-
         alert('현재 페이지 URL이 복사되었습니다.');
 
     }catch(err){
@@ -734,14 +731,9 @@ document.addEventListener('click', async function(e){
         textarea.style.opacity = '0';
 
         document.body.appendChild(textarea);
-
         textarea.select();
-
         document.execCommand('copy');
-
         document.body.removeChild(textarea);
-
-
         alert('현재 페이지 URL이 복사되었습니다.');
 
     }

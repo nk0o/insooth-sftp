@@ -85,6 +85,14 @@
 .sg-icon-name { font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ap-color-text-muted); font-family: monospace; }
 .sg-icon-import code { font-family: monospace; font-size: 11px; color: var(--ap-color-text-muted); background: rgba(26, 20, 16, 0.04); padding: 6px 8px; border-radius: 4px; display: block; overflow: auto; }
 
+/* 그리드 */
+.doc-section .ap-grid { max-width: var(--ap-container-max); margin: 0 auto; padding: 0 var(--ap-margin); display: grid; grid-template-columns: repeat(var(--ap-columns), 1fr); column-gap: var(--ap-gutter); }
+.doc-section .ap-grid__col { background: #FFF3EC; border: 1px solid #E85C1E; border-radius: 4px; padding: 16px 0; text-align: center; font-size: 12px; font-weight: 600; color: #E85C1E; }
+.doc-section .ap-spec b { color: var(--ap-ink); }
+.ap-grid { margin-top: 12px; }
+
+
+
 @media (max-width: 768px) {
   .doc-hero__title { font-size: 28px; }
   .ap-card-grid { grid-template-columns: 1fr; }
