@@ -80,10 +80,34 @@
               <span class="is-closed"><!--@import(/svg/icon-hamburger.html)--></span>
               <span class="is-open"><!--@import(/svg/icon-close.html)--></span>
             </a>
-          </div>
+          </div><!-- //ap-nav__actions -->
+          <!-- Search layer -->
+          <div module="Layout_SearchHeader">
+            <!--
+              $product_page=/product/detail.html
+              $category_page=/product/list.html
+            -->
+            <div class="top_search_title">SEARCH</div>
+            <fieldset>
+              <legend>검색</legend>
+              <div class="top_search_box">
+                {$form.keyword}
+                <button type="button" class="btnDelete">삭제</button><button type="button" class="btnSearch" onclick="{$action_search_submit}"><!--@import(/svg/icon-search.html)-->검색</button>
+                <ul class="autoDrop" id="{$search_auto_id}"></ul>
+              </div><!-- //top_search_box -->
+              <div module="search_hotkeyword" class="ap-search__keywords">
+                <strong class="heading">인기 검색어</strong>
+                <ul class="list">
+                    <li><a href="{$hot_keyword_search_url}" class="ap-badge ap-badge--outline"># {$hot_keyword_name}</a></li>
+                    <li><a href="{$hot_keyword_search_url}" class="ap-badge ap-badge--outline"># {$hot_keyword_name}</a></li>
+                </ul>
+              </div><!-- //.keywordArea -->
+            </fieldset>
+            <button type="button" class="btnClose"><!--@import(/svg/icon-close.html)-->닫기</button>
+          </div><!-- //Layout_SearchHeader -->
         </div><!-- //ap-container--narrow -->
 
-        <!-- Full-width mega panel: shown on hover of ANY nav item -->
+        <!-- Full-width mega panel -->
         <div class="ap-nav__mega-panel">
 
           <div class="ap-nav__mega-panel__inner">
@@ -141,24 +165,7 @@
       </nav>      
     </div><!-- //top_nav_box -->
 
-    <div module="Layout_SearchHeader">
-      <!--
-				$product_page=/product/detail.html
-				$category_page=/product/list.html
-			-->
-      <div class="top_search_title">SEARCH</div>
-      <fieldset>
-        <legend>검색</legend>
-        <div class="top_search_box">
-          {$form.keyword}<button type="button" class="btnDelete">삭제</button><button type="button"
-            class="btnSearch"
-            onclick="{$action_search_submit}"><!--@import(/svg/icon-search.html)--> 검색</button>
-          <ul class="autoDrop" id="{$search_auto_id}"></ul>
-        </div><!-- //top_search_box -->
-      </fieldset>
-      <button type="button" class="btnClose"><i aria-hidden="true"
-          class="icon icoClose"></i>닫기</button>
-    </div><!-- //Layout_SearchHeader -->
+
   </div><!-- //inner -->
 </header>
 <!--#ez="1/3"-->
@@ -240,7 +247,7 @@ apHandleScroll();
             <div class="ap-empty__icon"><!--@import(/svg/icon-empty.html)--></div>
             <div class="ap-empty__title">검색 결과가 없습니다.</div>
             <div class="ap-empty__desc">다른 키워드로 다시 검색해보세요.</div>
-            <a href="#" class="ap-btn ap-btn--outline ap-btn--sm">전체 상품 보기</a>
+            <a href="/skin-skin6/product/list.html?cate_no=49" class="ap-btn ap-btn--outline ap-btn--sm">전체 상품 보기</a>          <!-- 오픈시 수정 -->
           </div>
           <a class="ap-search-live__more" href="#">전체 결과 보기</a>
         </div>`;
@@ -261,14 +268,16 @@ apHandleScroll();
       const doc = parser.parseFromString(text, 'text/html');
 
       const items = [];
+      
+      console.log(doc)
       doc.querySelectorAll('.prdList li').forEach(li => {
+         console.log(li.outerHTML); // 실제 마크업 구조 확인
         const img   = li.querySelector('.prdImg img');
-        const link  = li.querySelector('.thumbnail a');
+        const link  = li.querySelector('.description .name a');
         const name  = li.querySelector('.description .name a');
         const price = li.querySelector('.description [ec-data-price]');
 
         if (!img || !name) return;
-
         items.push({
           img:   img.getAttribute('src'),
           alt:   img.getAttribute('alt') || '',
@@ -300,8 +309,8 @@ apHandleScroll();
 
       empty.style.display = 'none';
       list.style.display  = '';
-      count.textContent   = `미리보기 ${items.length}개`;
-      more.href           = `/product/search.html?keyword=${encodeURIComponent(keyword)}`;
+      count.textContent   = `${items.length}개`;
+      more.href           = `/skin-skin6/product/search.html?keyword=${encodeURIComponent(keyword)}`;  //-----------------------------오픈시수정
       more.style.display  = '';
 
       items.slice(0, 6).forEach(item => {

@@ -3,6 +3,7 @@
 <!--@css(/css/module/product/menupackage.css)-->
 <!--@css(/layout/basic/css/ap-product.css)-->
 <div class="ap-prdList">
+  <!-- 상품리스트 상단 -->
   <div class="ap-list__hero">
     <div class="ap-titleArea">
       <div class="ap-container--narrow">
@@ -11,21 +12,21 @@
           <span class="blind">현재 위치</span>
           <ol class="ap-path__list">
             <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
-            <!-- <li class="{$disp_cate_1|display}"><a href="{$link_product_list_1}">{$name_1}</a></li> -->
+            <li class="{$disp_cate_1|display}"><a href="{$link_product_list_1}">{$name_1}</a></li>
             <li class="{$disp_cate_2|display}"><strong><a href="{$link_product_list_2}">{$name_2}</a></strong></li>
             <li class="{$disp_cate_3|display}"><a href="{$link_product_list_3}">{$name_3}</a></li>
             <li class="{$disp_cate_4|display}"><strong><a href="{$link_product_list_4}">{$name_4}</a></strong></li>
           </ol>
         </div><!-- //ap-path -->
       </div><!-- //ap-container--narrow -->
-      <!-- 제품목록 타이틀 배경이미지 -->
-      <div module="product_headcategory" data-ez-module="product-list-categoryimage/1" class="product_top_image" data-ez="contents-0z0fv51-1">
-        <div class="ap-list__bg">{$top_image_tag}</div>
-        <div class="ap-list__title ap-container--narrow">
-          <h2 class="ap-text--display"><span>{$title_text_or_image}</span></h2>
-        </div>
-      </div>
     </div><!-- //ap-titleArea -->
+    <!-- 제품목록 타이틀 배경이미지 -->
+    <div module="product_headcategory" data-ez-module="product-list-categoryimage/1" class="product_top_image" data-ez="contents-0z0fv51-1">
+      <div class="ap-list__bg">{$top_image_tag}</div>
+      <div class="ap-list__title ap-container--narrow">
+        <h2 class="ap-text--display"><span>{$title_text_or_image}</span></h2>
+      </div>
+    </div>
   </div><!-- //ap-list__hero -->
   
   <!-- 상품 분류 -->
@@ -102,7 +103,7 @@
           $compare_page = /product/compare.html
         -->
         <div class="function" id="{$listmenu_position}">
-          <p class="prdCount">총<strong class="txtEm">{$total_count}</strong>개</p>
+          <p class="prdCount">총<strong>{$total_count}</strong>개</p>
           <div class="sort">
             <select id="selArray" name="selArray" module="product_Orderby">
               <option value>- 정렬방식 -</option>
@@ -133,10 +134,10 @@
       <div data-ez-holder="product_list">
         <div module="product_listnormal" class="ec-base-product">
           <!--
-            $count = 20
+            $count = 12
             ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
             ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
-            $moreview = no
+            $moreview = yes
             $cache = yes
             $basket_result = /product/add_basket.html
             $basket_option = /product/basket_option.html
@@ -147,12 +148,12 @@
         </div>
   
         <div module="product_listmore" class="more">
-          <a href="#none" onclick="{$more_action}" class="btnMore">
-            MORE
+          <a href="#none" onclick="{$more_action}" class="ap-btn ap-btn--secondary">
+            더보기
           </a>
         </div>
   
-        <div module="product_normalpaging" class="ec-base-paginate typeList">
+        <!-- <div module="product_normalpaging" class="ec-base-paginate typeList">
           <a href="{$param_first}" class="first">첫 페이지</a>
           <a href="{$param_before}">이전 페이지</a>
           <ol>
@@ -164,7 +165,7 @@
           </ol>
           <a href="{$param_next}">다음 페이지</a>
           <a href="{$param_last}" class="last">마지막 페이지</a>
-        </div>
+        </div> -->
       </div><!-- //product_list -->
     </div><!-- //product_normalpackage -->
   </section>

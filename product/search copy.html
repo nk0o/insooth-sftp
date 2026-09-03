@@ -1,0 +1,108 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div class="ap-prdList">
+  <!-- 상품리스트 상단 -->
+  <div class="ap-list__hero">
+    <div class="ap-titleArea">
+      <div class="ap-container--narrow">
+        <!-- 브래드크럼 -->
+        <div class="ap-path" module="product_headcategory">
+          <span class="blind">현재 위치</span>
+          <ol class="ap-path__list">
+            <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
+            <li title="현재 위치"><strong>상품검색</strong></li>
+          </ol>
+        </div><!-- //ap-path -->
+      </div><!-- //ap-container--narrow -->
+    </div><!-- //ap-titleArea -->
+  </div><!-- //ap-list__hero -->
+</div><!-- //ap-prdList -->
+
+
+<!--@import(/product/shoppQ/searchForm_typeTop.html)-->
+
+<div class="ap-container--narrow">
+  <div module="Search_Result" class="ec-base-product">
+    <!--
+      $count = 12
+      $moreview = yes
+    -->
+    <ul class="prdList grid4">
+      <li id="anchorBoxId_{$product_no}">
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href="{$link_product_detail}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" loading="lazy"><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+            <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon} <strong>{$disp_likeprd_count}</strong></button></div>
+            <div class="icon__box">
+              <span class="wish">{$list_wish_icon}WISH</span>
+              <span class="cart">{$basket_icon}ADD</span>
+              <span class="option">{$option_preview_icon}OPTION</span>
+            </div>
+          </div>
+          <div class="description" ec-data-custom="{$product_custom}" ec-data-price="{$product_price}">
+            <div class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></div>
+            <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+            <ul module="search_ListItem" class="spec">
+              <li class="{$item_display|display}">
+                <strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}
+              </li>
+              <li class="{$item_display|display}">
+                <strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}
+              </li>
+            </ul>
+            <div class="icon">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$regular_delivery_icon}</div>
+          </div>
+        </div>
+      </li>
+      <li id="anchorBoxId_{$product_no}">
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href="{$link_product_detail}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" loading="lazy"><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+            <div class="likeButton {$disp_likeprd_class}"><button type="button">{$disp_likeprd_icon} <strong>{$disp_likeprd_count}</strong></button></div>
+            <div class="icon__box">
+              <span class="wish">{$list_wish_icon}WISH</span>
+              <span class="cart">{$basket_icon}ADD</span>
+              <span class="option">{$option_preview_icon}OPTION</span>
+            </div>
+          </div>
+          <div class="description" ec-data-custom="{$product_custom}" ec-data-price="{$product_price}">
+            <div class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}"><span class="title {$product_name_title_display|display}">{$product_name_title} :</span> {$product_name}</a></div>
+            <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
+            <ul module="search_ListItem" class="spec">
+              <li class="{$item_display|display}">
+                <strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}
+              </li>
+              <li class="{$item_display|display}">
+                <strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}
+              </li>
+            </ul>
+            <div class="icon">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$regular_delivery_icon}</div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div module="product_listmore" class="more">
+    <a href="#none" onclick="{$more_action}" class="ap-btn ap-btn--secondary">
+      더보기
+    </a>
+  </div><!-- //more -->
+  <!-- <div module="search_paging" class="section ec-base-paginate typeList">
+      <a href="{$param_first}" class="first">첫 페이지</a>
+      <a href="{$param_before}">이전 페이지</a>
+      <ol>
+          <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+          <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+          <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+          <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+          <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+          <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+          <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+          <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+          <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+          <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+      </ol>
+      <a href="{$param_next}">다음 페이지</a>
+      <a href="{$param_last}" class="last">마지막 페이지</a>
+  </div> -->
+</div><!-- //ap-container--narrow -->
+
