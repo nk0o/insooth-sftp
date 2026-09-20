@@ -1,0 +1,3 @@
+# Local / secrets / AI rules (do not commit)
+.vscode/sftp.json
+.cursorrules

@@ -2,7 +2,7 @@
 /* ===========================
   FOOTER  ← 수정 영역
 =========================== */
-.ap-footer { background: var(--ap-color-white); border-top: 1px solid var(--ap-color-border); }
+.ap-footer { background: var(--ap-color-white); border-top: 1px solid var(--ap-color-border);margin-top: var(--ap-space-3xl); }
 
 .ap-footer__section-label { font-size: var(--ap-text-sm); text-transform: uppercase; color: var(--ap-color-black); font-weight: 700; margin-bottom: 14px; }
 .ap-footer__top { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ap-color-border); }
