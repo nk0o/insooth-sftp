@@ -551,6 +551,37 @@
                 </div>
               </div><!-- //#service_Info -->
             </div>
+            <!-- 모바일 고정 주문 버튼 -->
+            <div module="product_action" class="ec-base-button gFixed" id="orderFixArea">
+              <div class="ap-container--narrow ap-grid {$action_display|display}">
+                <h3 class="ap-col-8 order-fix__name ap-text--h4">
+                  {$name}
+                  <span class="order-fix__subtit {$summary_desc|display}">{$summary_desc}</span>
+                </h3>
+                <!-- 총합계 -->
+                <!-- <div class="ap-col-2 order-fix__total">
+                  <div id="{$total.total_price_id}" class="totalPrice grand-total-bar">
+                    <strong class="title grand-total-label">TOTAL</strong>
+                    <span class="{$total.total_cnt} grand-total-price"><strong class=""><em>0</em></strong></span>
+                  </div>
+                </div> -->
+                <div class="ap-col-2 order-fix__total">
+                    <div class="product-info__price product-originPrice {$product_sale_price_display|display}">&nbsp;{$product_price|numberformat}원&nbsp;</div>
+                    <p class="product-info__price salePrice" title="할인판매가"> {$product_sale_price|numberformat}원</p>
+                </div>
+                <div class="ap-col-2 order-fix__btns">
+                  <span class="ap-btn ap-btn--disabled {$soldout_display|display}">품절</span>
+                  <!-- PC: 옵션 영역으로 스크롤 -->
+                  <a href="#none" class="prd-btn-buy prd-btn-buy--scroll ap-btn ap-btn--primary display_pc_only {$buy_display|display}" onclick="scrollToOption()">구매하기</a>
+                  <!-- Mobile/Tablet: 옵션 레이어 -->
+                  <a href="#none" class="prd-btn-buy prd-btn-buy--buy ap-btn ap-btn--primary display_mobile_only {$buy_display|display}" onclick="{$action_buy}">
+                    <span id="{$btn_buy_mobile_id}">구매하기</span>
+                    <span class="{$btn_reserve_class|display}" id="{$btn_reserve_mobile_id}">예약주문</span>
+                    <span id="{$btn_regular_delivery_id}" class="{$btn_regular_delivery|display}">정기배송 신청하기</span>
+                  </a>
+                </div><!-- ///order-fix__btns -->
+              </div><!-- //ap-grid -->
+            </div><!-- #orderFixArea -->
           </div><!-- //infoArea -->
         </div><!-- ///product_detail -->
         <!-- 쿠폰 받기 영역 -->
@@ -559,37 +590,6 @@
     </div><!-- //ap-prd-layout -->
   </div><!-- //ap-prdDetail-top -->
 
-  <!-- 모바일 고정 주문 버튼 -->
-  <div module="product_action" class="ec-base-button gFixed" id="orderFixArea">
-    <div class="ap-container--narrow ap-grid {$action_display|display}">
-      <h3 class="ap-col-8 order-fix__name ap-text--h4">
-        {$name}
-        <span class="order-fix__subtit {$summary_desc|display}">{$summary_desc}</span>
-      </h3>
-      <!-- 총합계 -->
-      <!-- <div class="ap-col-2 order-fix__total">
-        <div id="{$total.total_price_id}" class="totalPrice grand-total-bar">
-          <strong class="title grand-total-label">TOTAL</strong>
-          <span class="{$total.total_cnt} grand-total-price"><strong class=""><em>0</em></strong></span>
-        </div>
-      </div> -->
-      <div class="ap-col-2 order-fix__total">
-          <div class="product-info__price product-originPrice {$product_sale_price_display|display}">&nbsp;{$product_price|numberformat}원&nbsp;</div>
-          <p class="product-info__price salePrice" title="할인판매가"> {$product_sale_price|numberformat}원</p>
-      </div>
-      <div class="ap-col-2 order-fix__btns">
-        <span class="ap-btn ap-btn--disabled {$soldout_display|display}">품절</span>
-        <!-- PC: 옵션 영역으로 스크롤 -->
-        <a href="#none" class="prd-btn-buy prd-btn-buy--scroll ap-btn ap-btn--primary display_pc_only {$buy_display|display}" onclick="scrollToOption()">구매하기</a>
-        <!-- Mobile/Tablet: 옵션 레이어 -->
-        <a href="#none" class="prd-btn-buy prd-btn-buy--buy ap-btn ap-btn--primary display_mobile_only {$buy_display|display}" onclick="{$action_buy}">
-          <span id="{$btn_buy_mobile_id}">구매하기</span>
-          <span class="{$btn_reserve_class|display}" id="{$btn_reserve_mobile_id}">예약주문</span>
-          <span id="{$btn_regular_delivery_id}" class="{$btn_regular_delivery|display}">정기배송 신청하기</span>
-        </a>
-      </div><!-- ///order-fix__btns -->
-    </div><!-- //ap-grid -->
-  </div><!-- #orderFixArea -->
 
   <!-- 상품 상세정보 -->
   <div class="ap-container--narrow ap-prdDetail__middle is_mo_full">
