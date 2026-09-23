@@ -36,7 +36,6 @@ $(function(){
             var sTotalPrice = SHOP_PRICE_FORMAT.toShopPrice(iSumPrice);
             $('#checked_order_count').html('<strong>' + sprintf(__('%s'),iCheckPrdCnt) + '</strong>' +'개 상품선택').css('padding-bottom','5px');
             $('#checked_order_price').html('결제예정금액 <strong><em><span id="checked_total_order_price">'+sTotalPrice+'</span></em></strong>').css('padding-bottom','5px');
-
             var sPriceRef = SHOP_PRICE_FORMAT.shopPriceToSubPrice(iSumPrice);
             if (sPriceRef != '') $('#checked_order_price').find('strong').append(sPriceRef);
         } else {
