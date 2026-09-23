@@ -60,9 +60,9 @@
         <div module="product_image">
           <!--@js(/js/module/product/product_image.js)-->
           <!-- 대표 이미지 -->
-          <!-- <div class="ap-prd-thumbnail">
+          <div class="ap-prd-thumbnail">
             <img src="{$big_img}" alt="{$seo_alt_tag}" class="{$big_img_class} {$img_display|display}" loading="lazy" ez-prevent="img"><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span>
-          </div> --><!-- //ap-prd-thumbnail -->
+          </div><!-- //ap-prd-thumbnail -->
             <!-- 추가 이미지 -->
           <ul class="ap-prd-imgs" module="product_addimage">
             <li class="ap-prd-addImg">{$add_img}</li>
@@ -72,8 +72,8 @@
       </div><!-- //gallery-section -->
       <!-- 오른쪽 -->
       <div class="product-info">
-        <!-- 브래드크럼 -->
-        <div class="ap-path" module="product_headcategory">
+        <!-- PC 브래드크럼 -->
+        <div class="ap-path display_pc_only" module="product_headcategory">
           <span class="blind">현재 위치</span>
           <ol class="ap-path__list">
             <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
@@ -115,6 +115,7 @@
               <div class="product-price-box">
                 <div class="product-info__price product-originPrice {$product_sale_price_display|display}">&nbsp;{$product_price|numberformat}원&nbsp;</div>
                 <p class="product-info__price salePrice" title="할인판매가"> {$product_sale_price|numberformat}원</p>
+                <p class="product-rating"><a href="#prdReview" class="rating-text">리뷰 {$review_count}개</a></p>
               </div><!-- //product-price-box -->
             </div><!-- //headingArea -->
             <!-- 상품 옵션 -->
@@ -133,8 +134,8 @@
                   <td>
                     <div class="ec-base-qty">
                       {$form.quantity}
-                      <a href="javascript:;" class="up qtyUp eClearUp"><img id="{$quantity_up_id}" class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
-                      <a href="javascript:;" class="down qtyDown eClearDown"><img id="{$quantity_down_id}" class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
+                      <a href="javascript:;" class="up">수량증가</a>
+                      <a href="javascript:;" class="down">수량감소</a>
                     </div>
                   </td>
                 </tr>
@@ -164,8 +165,8 @@
               <dd>
                 <div class="ec-base-qty">
                   {$form.quantity}
-                  <a href="javascript:;" class="up qtyUp eClearUp"><img id="{$quantity_up_id}" class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
-                  <a href="javascript:;" class="down qtyDown eClearDown"><img id="{$quantity_down_id}" class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
+                  <a href="javascript:;" class="up">수량증가</a>
+                  <a href="javascript:;" class="down">수량감소</a>
                 </div>
               </dd>
             </dl>
@@ -204,8 +205,8 @@
                         <li module="product_quantity">
                           <div class="ec-base-qty">
                             {$form.quantity}
-                            <a href="javascript:;" class="up qtyUp eClearUp"><img id="{$quantity_up_id}" class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
-                            <a href="javascript:;" class="down qtyDown eClearDown"><img id="{$quantity_down_id}" class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
+                            <a href="javascript:;" class="up">수량증가</a>
+                            <a href="javascript:;" class="down">수량감소</a>
                           </div>
                         </li>
                       </ul>
@@ -218,8 +219,8 @@
                         <li module="product_quantity">
                           <div class="ec-base-qty">
                             {$form.quantity}
-                            <a href="javascript:;" class="up qtyUp eClearUp"><img id="{$quantity_up_id}" class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
-                            <a href="javascript:;" class="down qtyDown eClearDown"><img id="{$quantity_down_id}" class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
+                            <a href="javascript:;" class="up">수량증가</a>
+                            <a href="javascript:;" class="down">수량감소</a>
                           </div>
                         </li>
                       </ul>
@@ -260,8 +261,8 @@
                         <li module="product_quantity">
                           <div class="ec-base-qty">
                             {$form.quantity}
-                            <a href="javascript:;" class="up qtyUp eClearUp"><img id="{$quantity_up_id}" class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
-                            <a href="javascript:;" class="down qtyDown eClearDown"><img id="{$quantity_down_id}" class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
+                            <a href="javascript:;" class="up">수량증가</a>
+                            <a href="javascript:;" class="down">수량감소</a>
                           </div>
                         </li>
                       </ul>
@@ -274,8 +275,8 @@
                         <li module="product_quantity">
                           <div class="ec-base-qty">
                             {$form.quantity}
-                            <a href="javascript:;" class="up qtyUp eClearUp"><img id="{$quantity_up_id}" class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
-                            <a href="javascript:;" class="down qtyDown eClearDown"><img id="{$quantity_down_id}" class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
+                            <a href="javascript:;" class="up">수량증가</a>
+                            <a href="javascript:;" class="down">수량감소</a>
                           </div>
                         </li>
                       </ul>
@@ -302,8 +303,8 @@
                 <dd>
                   <div class="ec-base-qty">
                     {$form.quantity}
-                    <a href="javascript:;" class="up qtyUp eClearUp"><img id="{$quantity_up_id}" class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
-                    <a href="javascript:;" class="down qtyDown eClearDown"><img id="{$quantity_down_id}" class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
+                    <a href="javascript:;" class="up">수량증가</a>
+                    <a href="javascript:;" class="down">수량감소</a>
                   </div>
                 </dd>
               </dl>
@@ -333,8 +334,8 @@
                         <li module="product_quantity">
                           <div class="ec-base-qty">
                             {$form.quantity}
-                            <a href="javascript:;" class="up qtyUp eClearUp"><img id="{$quantity_up_id}" class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
-                            <a href="javascript:;" class="down qtyDown eClearDown"><img id="{$quantity_down_id}" class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
+                            <a href="javascript:;" class="up">수량증가</a>
+                            <a href="javascript:;" class="down">수량감소</a>
                           </div>
                         </li>
                       </ul>
@@ -347,8 +348,8 @@
                         <li module="product_quantity">
                           <div class="ec-base-qty">
                             {$form.quantity}
-                            <a href="javascript:;" class="up qtyUp eClearUp"><img id="{$quantity_up_id}" class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
-                            <a href="javascript:;" class="down qtyDown eClearDown"><img id="{$quantity_down_id}" class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
+                            <a href="javascript:;" class="up">수량증가</a>
+                            <a href="javascript:;" class="down">수량감소</a>
                           </div>
                         </li>
                       </ul>
@@ -378,8 +379,8 @@
                         <li module="product_quantity">
                           <div class="ec-base-qty">
                             {$form.quantity}
-                            <a href="javascript:;" class="up qtyUp eClearUp"><img id="{$quantity_up_id}" class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
-                            <a href="javascript:;" class="down qtyDown eClearDown"><img id="{$quantity_down_id}" class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
+                            <a href="javascript:;" class="up">수량증가</a>
+                            <a href="javascript:;" class="down">수량감소</a>
                           </div>
                         </li>
                       </ul>
@@ -392,8 +393,8 @@
                         <li module="product_quantity">
                           <div class="ec-base-qty">
                             {$form.quantity}
-                            <a href="javascript:;" class="up qtyUp eClearUp"><img id="{$quantity_up_id}" class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
-                            <a href="javascript:;" class="down qtyDown eClearDown"><img id="{$quantity_down_id}" class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" loading="lazy" ez-prevent="img"></a>
+                            <a href="javascript:;" class="up">수량증가</a>
+                            <a href="javascript:;" class="down">수량감소</a>
                           </div>
                         </li>
                       </ul>
@@ -499,7 +500,7 @@
               <div id="ec-product-price-info" class="displaynone" ec-data-custom="{$disp_product_custom}" ec-data-price="{$product_price}"></div>
               <div class="{$action_display|display} action_button">
                 <span class="prd-btn-soldout ap-btn ap-btn--disabled {$soldout_display|display}">품절</span>
-                <button type="button" class="prd-btn-cart ap-btn ap-btn--secondary actionCart {$basket_display|display}" onclick="{$action_basket}" id="actionCart">장바구니</button>
+                <button type="button" class="prd-btn-cart ap-btn ap-btn--secondary actionCart {$basket_display|display}" onclick="{$action_basket}" id="actionCart">장바구니 담기</button>
                 <a href="#none" class="prd-btn-buy ap-btn ap-btn--primary {$buy_display|display}" onclick="{$action_buy}">
                   <span id="{$btn_buy_mobile_id}">구매하기</span>
                   <span class="{$btn_reserve_class|display} ap-btn ap-btn--outline" id="{$btn_reserve_mobile_id}">예약주문</span>
@@ -550,30 +551,6 @@
                 </div>
               </div><!-- //#service_Info -->
             </div>
-            <!-- 모바일 고정 주문 버튼 -->
-            <div module="product_action" class="ec-base-button gFixed" id="orderFixArea">
-              <div class="ap-container--narrow ap-grid {$action_display|display}">
-                <h3 class="ap-col-7 order-fix__name ap-text--h4">
-                  {$name}
-                  <span class="order-fix__subtit {$summary_desc|display}">{$summary_desc}</span>
-                </h3>
-                <div class="ap-col-2 order-fix__total">
-                  <!-- 총합계 -->
-                  <div id="{$total.total_price_id}" class="totalPrice grand-total-bar">
-                    <strong class="title grand-total-label">TOTAL</strong>
-                    <span class="{$total.total_cnt} grand-total-price"><strong class=""><em>0</em></strong></span>
-                  </div><!-- //{$total.total_price_id} -->
-                </div>
-                <div class="ap-col-2 order-fix__btns">
-                  <span class="ap-btn ap-btn--disabled {$soldout_display|display}">품절</span>
-                  <a href="#none" class="prd-btn-buy ap-btn ap-btn--primary {$buy_display|display}" onclick="scrollToOption()">
-                    <span id="{$btn_buy_mobile_id}">구매하기</span>
-                    <span class="{$btn_reserve_class|display}" id="{$btn_reserve_mobile_id}">예약주문</span>
-                    <span id="{$btn_regular_delivery_id}" class="{$btn_regular_delivery|display}">정기배송 신청하기</span>
-                  </a>
-                </div><!-- ///order-fix__btns -->
-              </div><!-- //ap-grid -->
-            </div><!-- #orderFixArea -->
           </div><!-- //infoArea -->
         </div><!-- ///product_detail -->
         <!-- 쿠폰 받기 영역 -->
@@ -582,8 +559,40 @@
     </div><!-- //ap-prd-layout -->
   </div><!-- //ap-prdDetail-top -->
 
+  <!-- 모바일 고정 주문 버튼 -->
+  <div module="product_action" class="ec-base-button gFixed" id="orderFixArea">
+    <div class="ap-container--narrow ap-grid {$action_display|display}">
+      <h3 class="ap-col-8 order-fix__name ap-text--h4">
+        {$name}
+        <span class="order-fix__subtit {$summary_desc|display}">{$summary_desc}</span>
+      </h3>
+      <!-- 총합계 -->
+      <!-- <div class="ap-col-2 order-fix__total">
+        <div id="{$total.total_price_id}" class="totalPrice grand-total-bar">
+          <strong class="title grand-total-label">TOTAL</strong>
+          <span class="{$total.total_cnt} grand-total-price"><strong class=""><em>0</em></strong></span>
+        </div>
+      </div> -->
+      <div class="ap-col-2 order-fix__total">
+          <div class="product-info__price product-originPrice {$product_sale_price_display|display}">&nbsp;{$product_price|numberformat}원&nbsp;</div>
+          <p class="product-info__price salePrice" title="할인판매가"> {$product_sale_price|numberformat}원</p>
+      </div>
+      <div class="ap-col-2 order-fix__btns">
+        <span class="ap-btn ap-btn--disabled {$soldout_display|display}">품절</span>
+        <!-- PC: 옵션 영역으로 스크롤 -->
+        <a href="#none" class="prd-btn-buy prd-btn-buy--scroll ap-btn ap-btn--primary display_pc_only {$buy_display|display}" onclick="scrollToOption()">구매하기</a>
+        <!-- Mobile/Tablet: 옵션 레이어 -->
+        <a href="#none" class="prd-btn-buy prd-btn-buy--buy ap-btn ap-btn--primary display_mobile_only {$buy_display|display}" onclick="{$action_buy}">
+          <span id="{$btn_buy_mobile_id}">구매하기</span>
+          <span class="{$btn_reserve_class|display}" id="{$btn_reserve_mobile_id}">예약주문</span>
+          <span id="{$btn_regular_delivery_id}" class="{$btn_regular_delivery|display}">정기배송 신청하기</span>
+        </a>
+      </div><!-- ///order-fix__btns -->
+    </div><!-- //ap-grid -->
+  </div><!-- #orderFixArea -->
+
   <!-- 상품 상세정보 -->
-  <div class="ap-container--narrow ap-prdDetail__middle">
+  <div class="ap-container--narrow ap-prdDetail__middle is_mo_full">
     <div module="product_additional" class="ap-prd-customer" data-ez="contents-0ctf423-1">
       <!--@css(/css/module/product/additional.css)-->
       <!--@import(/board/report_popup.html)-->
@@ -774,14 +783,13 @@
 
         <!-- 상품문의 -->
         <div id="QnA" class="ap-qna ap-prdDetail-btm__cont">
-          <div class="ap-prdDetail-btm__tit">
+          <div class="ap-prdDetail-btm__tit" id="use_qna">
             <h3 class="ap-text--h3">문의</h3>
             <a href="{$qna_list}" class="ap-btn ap-btn--ghost">상품 문의 전체보기<!--@import(/svg/icon-chevron-right.html)--></a>
           </div><!-- //ap-prdDetail-btm__tit -->
           <div class="ap-qna__content">
             <div module="product_qna">
               <!--@js(/js/module/product/qna.js)-->
-              <a name="use_qna"></a>
               <p class="noAccess {$deny_display|display}">글읽기 권한이 없습니다.</p>
               <div class="minor {$adult_display|display}">
                 <p><img src="//img.echosting.cafe24.com/skin/skin/product/ico_under19.gif" alt
@@ -974,6 +982,21 @@ document.querySelectorAll('.ap-prd-addImg img').forEach(img => {
     e.preventDefault();
     e.stopPropagation();
     window.location.href = location.pathname + href;
+  });
+})();
+</script>
+<script>
+/* 리뷰 0개이면 product-rating 숨김 */
+(function () {
+  var ratings = document.querySelectorAll('.product-rating');
+  if (!ratings.length) return;
+  ratings.forEach(function (el) {
+    var textEl = el.querySelector('.rating-text') || el;
+    var match = (textEl.textContent || '').match(/(\d+)/);
+    var count = match ? parseInt(match[1], 10) : 0;
+    if (count < 1) {
+      el.classList.add('displaynone');
+    }
   });
 })();
 </script>

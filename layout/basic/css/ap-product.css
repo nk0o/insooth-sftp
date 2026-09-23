@@ -57,7 +57,7 @@
 .insooth .ap-prdItem .thumbnail.ap-prdItem__thumbnail::before{ content: ""; display: block; width: 100%; padding-top: 110%; }
 .insooth .ap-prdItem .thumbnail.ap-prdItem__thumbnail a{z-index: 1;}
 .insooth .ap-prdItem .thumbnail.ap-prdItem__thumbnail a,
-.insooth .ap-prdItem .thumbnail.ap-prdItem__thumbnail .ap-prdItem__thumbnail-img {position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;}
+.insooth .ap-prdItem .thumbnail.ap-prdItem__thumbnail .ap-prdItem__thumbnail-img {position: absolute; inset: 0; width: 100%;}
 
 .insooth .ap-prdItem__badge { position: absolute; top: var(--ap-space-sm); left: var(--ap-space-sm); z-index: 1; background: var(--ap-color-text-primary); color: #fff; ; font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 8px;}
 .insooth .ap-prdItem__badge--gold { background: var(--ap-color-gold-light); color: var(--ap-color-text-primary); }
