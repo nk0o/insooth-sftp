@@ -1,0 +1,184 @@
+/* About 공통. 블랙다이아몬드 히스토리 페이지의 띠 구성·가운데 정렬을 따름.
+   색·간격 토큰은 ap-layout.css :root 를 그대로 사용한다. */
+
+.ap-about {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: var(--ap-color-white);
+  color: var(--ap-color-text-primary);
+  line-height: var(--ap-leading-body);
+  text-align: center;
+}
+.ap-about p { margin: 0; }
+.ap-about__copy {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 var(--ap-gutter);
+}
+
+/* Hero — 태그라인만 */
+.ap-about-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 56vh;
+  padding: var(--ap-space-4xl) var(--ap-gutter);
+  background: var(--ap-color-black);
+  color: var(--ap-color-white);
+}
+.ap-about-hero__tag {
+  font-size: var(--ap-text-4xl);
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--ap-color-white);
+}
+
+/* 히어로 아래 소개. 배경은 섹션에 둔다. */
+.ap-about-intro { background: var(--ap-color-white); }
+.ap-about-intro__logo {
+  width: 76px;
+  margin: 0 auto;
+}
+.ap-about-intro__logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-perspective: initial;
+  image-rendering: initial;
+}
+.ap-about .ap-section { padding-block: var(--ap-space-4xl); }
+.ap-about-intro__title {
+  margin: var(--ap-space-md) 0 var(--ap-space-lg);
+  font-size: var(--ap-text-3xl);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: var(--ap-tracking-tight);
+  color: var(--ap-color-text-primary);
+}
+.ap-about-intro__lead {
+  max-width: 460px;
+  margin: 0 auto;
+  font-size: var(--ap-text-sm);
+  text-align: center;
+}
+
+.ap-about .ap-section__title {
+  margin: 0 0 var(--ap-space-lg);
+  font-size: var(--ap-text-2xl);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: var(--ap-tracking-tight);
+  color: var(--ap-color-text-primary);
+}
+.ap-about-body {
+  font-size: var(--ap-text-md);
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--ap-color-gray-600);
+  text-align: center;
+}
+.ap-about-body p + p { margin-top: 1.2em; }
+
+/* 본문 띠. 배경은 .ap-about-band, 너비는 .ap-container--narrow */
+.ap-about-band { background: var(--ap-color-white); }
+.ap-about-band .ap-container--narrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ap-space-2xl);
+  padding-block: var(--ap-space-3xl);
+  text-align: center;
+}
+.ap-about-split__media { width: 100%; }
+.ap-about-split__media > .ap-about-frame {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+}
+
+/* 빈 이미지 프레임 */
+.ap-about-band .ap-about-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ap-space-md);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  background: transparent;
+}
+.ap-about-frame {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  aspect-ratio: 3 / 4;
+  padding: var(--ap-space-md);
+  border: 0;
+  background: var(--ap-color-gray-100);
+  font-size: var(--ap-text-xs);
+  line-height: 1.5;
+  color: var(--ap-color-gray-700);
+  text-align: center;
+}
+
+/* 마무리 검은 띠 */
+.ap-about-close {
+  background: var(--ap-color-black);
+  color: var(--ap-color-white);
+}
+.ap-about-close__quote {
+  margin: 0 auto var(--ap-space-lg);
+  font-family: var(--ap-font-sans);
+  text-align: center; 
+  font-size: var(--ap-text-xl);
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: var(--ap-tracking-tight);
+  color: var(--ap-color-white);
+}
+.ap-about-close .ap-about-body {
+  max-width: 460px;
+  margin: 0 auto;
+  color: var(--ap-color-gray-400);
+}
+
+/* 하단 바로가기 — 얇은 텍스트 링크 */
+.ap-about-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--ap-color-border);
+  background: var(--ap-color-white);
+  color: var(--ap-color-text-primary);
+}
+.ap-about-links a {
+  display: block;
+  padding: var(--ap-space-xl) var(--ap-space-md);
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--ap-transition-fast);
+}
+.ap-about-links a:hover,
+.ap-about-links a:focus-visible { color: var(--ap-color-orange); outline: none; }
+.ap-about-links b {
+  display: block;
+  font-size: var(--ap-text-sm);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.ap-about-links small {
+  display: block;
+  margin-top: var(--ap-space-xs);
+  font-size: var(--ap-text-xs);
+  color: var(--ap-color-text-muted);
+}
+.ap-about-links a:hover small,
+.ap-about-links a:focus-visible small { color: var(--ap-color-orange); }
+.ap-about a:focus-visible { outline: 2px solid var(--ap-color-blue); outline-offset: -2px; }
+
+@media (max-width: 768px) {
+  .ap-about-hero { min-height: 46vh; }
+  .ap-about-frame { aspect-ratio: 4 / 3; }
+  .ap-about-links { grid-template-columns: 1fr; }
+  .ap-about-links a { border-top: 1px solid var(--ap-color-border); }
+  .ap-about-links a:first-child { border-top: 0; }
+}
