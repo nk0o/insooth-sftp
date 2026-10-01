@@ -8,7 +8,8 @@ body {min-width:100%;padding:0;margin:0;max-width:1680px;}
 #container #contents {margin:0 auto;float:none;padding:0;}
 .cboth {clear:both;*zoom:1}
 .cboth:after {content:" ";display:block;clear:both;}
-audio, canvas, img, svg, video {max-width:100%;height:auto;box-sizing:border-box;}
+audio, canvas, img, video {max-width:100%;height:auto;box-sizing:border-box;}
+svg {max-width:100%;box-sizing:border-box;}
 button {border:0;outline:none;}
 img { -webkit-perspective: 1; }
 input, select, textarea, body, code, button {font-family:"Raleway", "Noto Sans KR", Arial, sans-serif !important;}

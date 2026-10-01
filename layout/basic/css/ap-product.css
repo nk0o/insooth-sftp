@@ -59,7 +59,7 @@
 .insooth .ap-prdItem .thumbnail.ap-prdItem__thumbnail a,
 .insooth .ap-prdItem .thumbnail.ap-prdItem__thumbnail .ap-prdItem__thumbnail-img {position: absolute; inset: 0; width: 100%;}
 
-.insooth .ap-prdItem__badge { position: absolute; top: var(--ap-space-sm); left: var(--ap-space-sm); z-index: 1; background: var(--ap-color-text-primary); color: #fff; ; font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 8px;}
+.insooth .ap-prdItem__badge { position: absolute; top: var(--ap-space-sm); left: var(--ap-space-sm); z-index: 1; background: var(--ap-color-text-primary); color: #fff; ; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 8px;}
 .insooth .ap-prdItem__badge--gold { background: var(--ap-color-gold-light); color: var(--ap-color-text-primary); }
 .insooth .ap-prdItem__icon {display: flex; align-items: center; gap: var(--ap-space-xs); z-index: 1;}
 .insooth .ap-prdItem__icon img{ margin-top: var(--ap-space-sm);}
@@ -76,7 +76,7 @@
 @media (hover: hover) {
   .insooth .ap-prdItem:hover .ap-prdItem__buy{opacity: 1;}
   .insooth .ap-prdItem .ap-prdItem__body .ap-prdItem__buy:hover img:not([alt="품절"]) +span{background: var(--ap-color-orange);}
-  .insooth a:has(.ap-prdItem__name):hover .ap-prdItem__name span, .insooth .ap-prdItem__name:hover, .insooth .ap-prdItem__name span:hover{color: var(--ap-color-orange) !important;}
+  .insooth a:has(.ap-prdItem__name):hover .ap-prdItem__name span, .insooth .ap-prdItem__name:hover, .insooth .ap-prdItem__name span:hover{color: var(--ap-color-black) !important;}
 }
 
 .insooth .ap-prdItem__body {position: relative;}

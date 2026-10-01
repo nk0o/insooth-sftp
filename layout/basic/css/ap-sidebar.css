@@ -9,7 +9,7 @@ body.insooth.expand #aside {height: calc(100dvh - var(--ap-notice-height) - var(
 .insooth #aside .navigation-menu__project .view{color: var(--ap-color-black);}
 .insooth #aside .navigation-menu__category #slide_add_category > li > a.cate{height: 60px;}
 .insooth #aside .navigation-menu__category #slide_add_category li > a{color: var(--ap-color-black); }
-.insooth #aside .navigation-menu__category #slide_add_category li > a:not(.cate){padding: var(--ap-space-lg) var(--ap-space-xl) var(--ap-space-lg) 0;font-size: var(--ap-text-md); font-weight: 500; line-height: var(--ap-leading-heading);}
+.insooth #aside .navigation-menu__category #slide_add_category li > a:not(.cate){padding: var(--ap-space-lg) var(--ap-space-xl) var(--ap-space-lg) 0;font-size: var(--ap-text-md); font-weight: 600; line-height: var(--ap-leading-heading);}
 .insooth #aside .navigation-menu__category #slide_add_category li.selected .sub_cate01 a.view{padding-bottom: 6px; font-size: var(--ap-text-base);color: var(--ap-color-black); line-height: 1.5;}
 .insooth #aside .navigation-menu__category #slide_add_category li.selected{padding-bottom: 36px;}
 .insooth #aside .navigation-menu__category #slide_add_category li.selected > a{font-weight: 700;}
