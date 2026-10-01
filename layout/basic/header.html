@@ -7,7 +7,7 @@
   data-ez-role="style.color" data-ez-display="visible" data-ez="contents-0ufi8ba-1">
   <div class="top_banner_box_inner">
     <div class="top_banner_text">
-      <a data-ez-role="a" href="/skin-skin6/member/login.html" data-href="#" target="_self"><span class="ap-notice__highlight">신규회원</span>즉시 사용가능한 적립금 지급</a>
+      <a data-ez-role="a" href="/skin-skin6/member/login.html" data-href="#" target="_self">신규가입 시 적립금 지급</a>
     </div>
     <div class="top_banner_close" data-ez-role="close">
       <input type="checkbox" name="chkbox" id="top_banner_box_cloase" value="1"
@@ -173,7 +173,7 @@
 var apNav = document.getElementById('apNav');
 var apHeader = document.getElementById('header');
 var apNotice = document.querySelector('.ap-notice');
-var noticeHeight = document.querySelector('.ap-notice')?.offsetHeight || 38;
+var noticeHeight = document.querySelector('.ap-notice')?.clientHeight || 38;
 var apLogoScrollThreshold = 80;
 var ticking = false;
 
@@ -395,20 +395,42 @@ apHandleScroll();
 
     if (!menu || !panel) return;
 
+    const links = [...menu.querySelectorAll(':scope > li')];
+    const cols = [...panel.querySelectorAll('.ap-nav__mega-col')];
+
+    function setMegaHover(index) {
+      links.forEach((li, i) => li.classList.toggle('is-mega-hover', i === index));
+    }
+
+    function clearMegaHover(event) {
+      const next = event.relatedTarget;
+      if (next && (menu.contains(next) || panel.contains(next))) return;
+      links.forEach((li) => li.classList.remove('is-mega-hover'));
+    }
+
+    links.forEach((li, i) => {
+      li.addEventListener('mouseenter', () => setMegaHover(i));
+    });
+    cols.forEach((col, i) => {
+      col.addEventListener('mouseenter', () => setMegaHover(i));
+    });
+
     menu.addEventListener('mouseenter', () => {
         panel.classList.add('is-open');
     });
 
-    menu.addEventListener('mouseleave', () => {
+    menu.addEventListener('mouseleave', (event) => {
         panel.classList.remove('is-open');
+        clearMegaHover(event);
     });
 
     panel.addEventListener('mouseenter', () => {
         panel.classList.add('is-open');
     });
 
-    panel.addEventListener('mouseleave', () => {
+    panel.addEventListener('mouseleave', (event) => {
         panel.classList.remove('is-open');
+        clearMegaHover(event);
     });
   });
 </script>
