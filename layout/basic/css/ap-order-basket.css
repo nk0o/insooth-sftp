@@ -56,9 +56,8 @@
 .ap-order .ap-cart-list .ap-cart-item { border-color: var(--ap-color-border); padding: var(--ap-space-lg) 0; position: relative; }
 .ap-order .ap-cart-item:last-child { border-bottom: none; }
 .ap-order .xans-order-basketpackage .ec-base-prdInfo .ap-cart-item__box { display: grid; grid-template-columns: auto auto 1fr; grid-template-areas: "check thumb desc" "check thumb options" "check thumb qty" "check thumb sum" "check thumb buttons"; gap: 4px var(--ap-space-md); align-items: start; padding:0;padding-right: 28px; /* 삭제 버튼 공간 */ }
-.ap-order .ap-cart-item__checkbox { grid-area: check; display: flex; align-items: flex-start; padding-top: 2px; cursor: pointer; }
-.ap-order .ap-cart-item__checkbox input[type="checkbox"] { appearance: none; -webkit-appearance: none; width: 24px; height: 24px; margin: 0; border: 0; background: url('/svg/icon-checkbox.svg') no-repeat center / 24px 24px; vertical-align: middle; cursor: pointer; }
-.ap-order .ap-cart-item__checkbox input[type="checkbox"]:checked { background: url('/svg/icon-checkbox_checked.svg') no-repeat center / 24px 24px; border: 0; }
+.ap-order .xans-order-basketpackage .ec-base-prdInfo .ap-cart-item__checkbox { grid-area: check; appearance: none; -webkit-appearance: none; width: 24px; height: 24px; margin: 2px 0 0; padding: 0; border: 0; background: url('/svg/icon-checkbox.svg') no-repeat center / 24px 24px; cursor: pointer; }
+.ap-order .xans-order-basketpackage .ec-base-prdInfo .ap-cart-item__checkbox:checked { background: url('/svg/icon-checkbox_checked.svg') no-repeat center / 24px 24px; }
 /* .ap-order .ap-cart-item__checkbox input { position: absolute; opacity: 0; width: 0; height: 0; }
 .ap-order .ap-cart-item__checkbox-mark { width: 20px; height: 20px; border: 1.5px solid var(--ap-color-border); border-radius: 5px; position: relative; flex-shrink: 0; transition: background-color var(--ap-transition-fast), border-color var(--ap-transition-fast); }
 .ap-order .ap-cart-item__checkbox-mark::after { content: ""; position: absolute; left: 6px; top: 2px; width: 6px; height: 10px; border-right: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(45deg) scale(0); transition: transform var(--ap-transition-fast); }
