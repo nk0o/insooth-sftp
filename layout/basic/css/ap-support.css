@@ -134,8 +134,8 @@
 .auth-record__inner{display: flex;}
 .auth-record__card {display: flex; align-items: center; gap: 20px; max-width: 400px; background: var(--ap-color-bg-card); border: 1px solid var(--ap-color-border); border-radius: 4px; padding: 16px; transition: all 0.2s; animation: fadeIn 0.4s ease backwards; }
 .auth-record__list .swiper-buttons{position: absolute;top: -40px; right: 0;}
-.forb .auth-record__list .swiper-button-next{right: auto; left: calc(-1 * var(--ap-gutter));}
-.forb .auth-record__list .swiper-button-prev{left: calc(-1 * var(--ap-gutter) + -50px);}
+.insooth .auth-record__list .swiper-button-next{right: auto; left: calc(-1 * var(--ap-gutter));}
+.insooth .auth-record__list .swiper-button-prev{left: calc(-1 * var(--ap-gutter) + -50px);}
 @keyframes fadeIn { 
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); } 

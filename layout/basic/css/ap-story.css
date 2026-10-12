@@ -64,14 +64,23 @@
 }
 
 .ap-about .ap-section__title {
-  margin: 0 0 var(--ap-space-lg);
+  max-width: 600px;
+  margin: 0 auto var(--ap-space-lg);
   font-size: var(--ap-text-2xl);
   font-weight: 700;
   line-height: 1.4;
   letter-spacing: var(--ap-tracking-tight);
   color: var(--ap-color-text-primary);
 }
-.ap-heritage-body { font-size: var(--ap-text-md); font-weight: 400; line-height: 1.85; color: var(--ap-color-gray-600); text-align: center; }
+.ap-heritage-body {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: var(--ap-text-md);
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--ap-color-gray-600);
+  text-align: center;
+}
 .ap-heritage-body p + p { margin-top: 1.2em; }
 
 /* 본문 띠. 배경은 .ap-heritage-band, 너비는 .ap-container--narrow */

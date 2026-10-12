@@ -24,12 +24,11 @@
 .ap-order .ap-cart-retention { font-size: var(--ap-text-xs); color: var(--ap-color-text-muted); padding: var(--ap-space-sm) 0; }
 
 /* -------------------- 4. 빈 장바구니 -------------------- */
-.forb .ap-order .ap-cart-empty { display: flex; flex-direction: column; align-items: center; text-align: center; padding: var(--ap-space-2xl) var(--ap-space-lg);border-top: 1px solid; border-color: var(--ap-color-border);}
-.forb .ap-order .ap-cart-empty__icon {color: var(--ap-color-text-disabled);  }
-.forb .ap-order .ap-cart-empty__icon svg{width: 100%; height: 100%;}
-.forb .ap-order .ap-cart-empty__title { font-size: var(--ap-text-lg); font-weight: 700; margin: 0 0 6px; 
+.insooth .ap-order .ap-cart-empty { display: flex; flex-direction: column; align-items: center; text-align: center; padding: var(--ap-space-2xl) var(--ap-space-lg);border-top: 1px solid; border-color: var(--ap-color-border);}
+.insooth .ap-order .ap-cart-empty__icon {color: var(--ap-color-text-disabled);  }
+.insooth .ap-order .ap-cart-empty__icon svg{width: 100%; height: 100%;}
+.insooth .ap-order .ap-cart-empty__title { font-size: var(--ap-text-lg); font-weight: 700; margin: 0 0 6px; 
     color: var(--ap-color-text-primary);}
-.forb .ap-order .ap-cart-empty__desc { font-size: var(--ap-text-sm); color: var(--ap-color-text-muted); margin-bottom: var(--ap-space-lg); line-height: 1.3;}
 
 /* -------------------- 5. 전체 레이아웃: 좌우 2단 -------------------- */
 .ap-order .ap-cart-body { display: grid; grid-template-columns: 1fr 380px; gap: var(--ap-space-xl); align-items: start; padding: 0 0 var(--ap-space-xl); }
@@ -188,9 +187,9 @@
 .ap-basket-recommend { margin-top: 80px;border-top: 1px solid var(--ap-color-border);
     padding-top: 40px;}
 .ap-basket-swiper { position: relative; }
-.forb .ap-basket-swiper .swiper-pagination { position: relative; display: flex; justify-content: center; margin-top: 16px; }
-.forb .ap-basket-swiper .ap-prdItem__buy { display: none !important; }
-.forb .ap-basket-result .ap-prdItem__buy { display: none !important; }
+.insooth .ap-basket-swiper .swiper-pagination { position: relative; display: flex; justify-content: center; margin-top: 16px; }
+.insooth .ap-basket-swiper .ap-prdItem__buy { display: none !important; }
+.insooth .ap-basket-result .ap-prdItem__buy { display: none !important; }
 
 /* -------------------- 14. 반응형 -------------------- */
 @media (max-width: 1024px) {

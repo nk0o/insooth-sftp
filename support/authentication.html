@@ -1,115 +1,125 @@
 <!--@layout(/layout/basic/layout.html)-->
 <!--@css(/layout/basic/css/ap-service.css)-->
+<!--@css(/layout/basic/css/ap-support-shell.css)-->
 <div module="layout_logincheck" data-ez="contents-0n78ilv-1">
   <!--
     $url = /member/login.html
 -->
 </div>
-<div class="ap-service ap-auth">
-  <div class="ap-service__top">
-    <div class="ap-titleArea">
-      <div class="ap-container--narrow">
-        <!-- 브래드크럼 -->
-        <div class="ap-path">
-          <span class="blind">현재 위치</span>
-          <ol class="ap-path__list">
-            <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
-            <li title="현재 위치"><strong>정품인증</strong></li>
-          </ol>
-        </div><!-- //ap-path -->
-      </div><!-- //ap-container--narrow -->
-    </div><!-- //ap-titleArea -->
-    
-    <div class="ap-container--narrow">
-      <div class="ap-service__hero">
-        <div class="ap-service__left">
-          <h2 class="ap-service__title">정품 인증</h2>
-          <p class="ap-service__desc">
-            포브가 직접 만들고 관리하는 제품,<br>정품 인증으로 확인하세요.            
-          </p>
-        </div><!-- //auto-hero-left -->
-        <div class="ap-service__badges">
-          <div class="ap-service-badge">
-            <div class="ap-service-badge__icon"><!--@import(/svg/icon-certified.html)--></div>
-            <div class="ap-service-badge__content">
-              <div class="ap-service-badge__label">공식 정품 보증</div>
-              <div class="ap-service-badge__desc">정식 유통 제품만 보증</div>
-            </div>
-          </div>
-          <div class="ap-service-badge">
-            <div class="ap-service-badge__icon"><!--@import(/svg/icon-file-text.html)--></div>
-            <div class="ap-service-badge__content">
-              <div class="ap-service-badge__label">제품 이력 관리</div>
-              <div class="ap-service-badge__desc">내 구매 제품을 한눈에 관리</div>
-            </div>
-          </div>
-          <div class="ap-service-badge">
-            <div class="ap-service-badge__icon"><!--@import(/svg/icon-exchange.html)--></div>
-            <div class="ap-service-badge__content">
-              <div class="ap-service-badge__label">교환/AS 지원</div>
-              <div class="ap-service-badge__desc">등록 제품은 바로 접수</div>
-            </div>
-          </div>
-        </div>
-      </div><!-- //ap-service__hero -->
-    </div><!-- //ap-container--narrow -->
-  </div><!-- //ap-service__top -->
-  
-  <main class="ap-auth__main ap-container--narrow">  
-    <!-- AUTH FORM -->
-    <section class="auth-section ap-grid">
-      <div class="auth-card">
-        <div class="auth-card__body">
-          <div class="auth-section__header">
-            <h2 class="auth-section__title"><em>01</em> 제품 등록</h2>
-          </div><!-- //auth-section__header -->
-  
-          <!-- Serial -->
-          <div class="auth-card__field">
-            <label for="serialInput">시리얼 번호</label>
-            <input type="text" id="serialInput" placeholder="예: FB-2024-AERO-8812" autocomplete="off" spellcheck="false" />
-            <p class="auth-card__hint">
-              제품 태그 또는 보증서에서 시리얼 번호를 확인하세요.(시리얼 번호 부착 위치 안내)
-            </p>
-          </div>
-  
-          <!-- Button -->
-          <button class="auth-btn ap-btn-primary ap-btn--lg" id="authBtn" disabled>
-            <span id="btnText">정품 등록하기</span>
-            <span class="arrow">→</span>
-          </button>
+<div class="ap-support-page">
+  <div class="ap-container">
+    <div class="ap-support-shell" data-page="auth">
+      <!--@import(/support/nav.html)-->
+      <div class="ap-support-shell__main ap-support-shell__main--flush">
+        <div class="ap-service ap-auth">
+          <div class="ap-service__top">
+            <div class="ap-titleArea">
+              <div class="ap-container--narrow">
+                <!-- 브래드크럼 -->
+                <div class="ap-path">
+                  <span class="blind">현재 위치</span>
+                  <ol class="ap-path__list">
+                    <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
+                    <li title="현재 위치"><strong>정품인증</strong></li>
+                  </ol>
+                </div><!-- //ap-path -->
+              </div><!-- //ap-container--narrow -->
+            </div><!-- //ap-titleArea -->
+            
+            <div class="ap-container--narrow">
+              <div class="ap-service__hero">
+                <div class="ap-service__left">
+                  <h2 class="ap-service__title">정품 인증</h2>
+                  <p class="ap-service__desc">
+                    포브가 직접 만들고 관리하는 제품,<br>정품 인증으로 확인하세요.            
+                  </p>
+                </div><!-- //auto-hero-left -->
+                <div class="ap-service__badges">
+                  <div class="ap-service-badge">
+                    <div class="ap-service-badge__icon"><!--@import(/svg/icon-certified.html)--></div>
+                    <div class="ap-service-badge__content">
+                      <div class="ap-service-badge__label">공식 정품 보증</div>
+                      <div class="ap-service-badge__desc">정식 유통 제품만 보증</div>
+                    </div>
+                  </div>
+                  <div class="ap-service-badge">
+                    <div class="ap-service-badge__icon"><!--@import(/svg/icon-file-text.html)--></div>
+                    <div class="ap-service-badge__content">
+                      <div class="ap-service-badge__label">제품 이력 관리</div>
+                      <div class="ap-service-badge__desc">내 구매 제품을 한눈에 관리</div>
+                    </div>
+                  </div>
+                  <div class="ap-service-badge">
+                    <div class="ap-service-badge__icon"><!--@import(/svg/icon-exchange.html)--></div>
+                    <div class="ap-service-badge__content">
+                      <div class="ap-service-badge__label">교환/AS 지원</div>
+                      <div class="ap-service-badge__desc">등록 제품은 바로 접수</div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- //ap-service__hero -->
+            </div><!-- //ap-container--narrow -->
+          </div><!-- //ap-service__top -->
+          
+          <main class="ap-auth__main ap-container--narrow">  
+            <!-- AUTH FORM -->
+            <section class="auth-section ap-grid">
+              <div class="auth-card">
+                <div class="auth-card__body">
+                  <div class="auth-section__header">
+                    <h2 class="auth-section__title"><em>01</em> 제품 등록</h2>
+                  </div><!-- //auth-section__header -->
+          
+                  <!-- Serial -->
+                  <div class="auth-card__field">
+                    <label for="serialInput">시리얼 번호</label>
+                    <input type="text" id="serialInput" placeholder="예: FB-2024-AERO-8812" autocomplete="off" spellcheck="false" />
+                    <p class="auth-card__hint">
+                      제품 태그 또는 보증서에서 시리얼 번호를 확인하세요.(시리얼 번호 부착 위치 안내)
+                    </p>
+                  </div>
+          
+                  <!-- Button -->
+                  <button class="auth-btn ap-btn-primary ap-btn--lg" id="authBtn" disabled>
+                    <span id="btnText">정품 등록하기</span>
+                    <span class="arrow">→</span>
+                  </button>
 
-          <!-- Status -->
-          <div id="statusMsg" class="auth-status"></div>
+                  <!-- Status -->
+                  <div id="statusMsg" class="auth-status"></div>
 
-        </div><!-- //auth-card__body -->
-      </div><!-- //auth-card -->
-      <div class="auth-info__card">
-        <div class="auth-info__img"><img src="/web/img/icon-auth.png?v=3" alt></div>
-        <h3 class="auth-info__title">정품 등록을 하시면<br>이런 혜택을 누릴 수 있어요.</h3>
-        <p class="auth-info__subtitle"></p>
-        
-        <div class="auth-info__checklist">
-          <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>공식 정품 보증 서비스</div>
-          <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>제품 이력 및 보유 관리</div>
-          <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>교환/AS 등 고객 서비스 지원</div>
-          <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>이벤트 및 신제품 소식 우선 안내</div>
-        </div>
-      </div><!-- //auth-info__card -->
-    </section>
-  
-    <!-- RECORDS -->
-    <section class="auth-section auth-section--record">
-      <div class="auth-section__header">
-        <h2 class="auth-section__title"><em>02</em>인증 내역
-          <span class="auth-record__count" id="recordsCount" style="display:none;"></span>
-        </h2>
-      </div>
-      <div id="recordsList"></div>
-    </section>
-  
-  </main>
-</div><!-- //ap-auth -->
+                </div><!-- //auth-card__body -->
+              </div><!-- //auth-card -->
+              <div class="auth-info__card">
+                <div class="auth-info__img"><img src="/web/img/icon-auth.png?v=3" alt></div>
+                <h3 class="auth-info__title">정품 등록을 하시면<br>이런 혜택을 누릴 수 있어요.</h3>
+                <p class="auth-info__subtitle"></p>
+                
+                <div class="auth-info__checklist">
+                  <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>공식 정품 보증 서비스</div>
+                  <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>제품 이력 및 보유 관리</div>
+                  <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>교환/AS 등 고객 서비스 지원</div>
+                  <div class="auth-info__checkItem"><span class="icon"><!--@import(/svg/icon-check.html)--></span>이벤트 및 신제품 소식 우선 안내</div>
+                </div>
+              </div><!-- //auth-info__card -->
+            </section>
+          
+            <!-- RECORDS -->
+            <section class="auth-section auth-section--record">
+              <div class="auth-section__header">
+                <h2 class="auth-section__title"><em>02</em>인증 내역
+                  <span class="auth-record__count" id="recordsCount" style="display:none;"></span>
+                </h2>
+              </div>
+              <div id="recordsList"></div>
+            </section>
+          
+          </main>
+        </div><!-- //ap-auth -->
+      </div><!-- //ap-support-shell__main -->
+    </div><!-- //ap-support-shell -->
+  </div><!-- //ap-container -->
+</div><!-- //ap-support-page -->
 
 <script>
   // ===== Cafe24 연동 설정 =====

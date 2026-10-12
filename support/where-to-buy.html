@@ -1,35 +1,56 @@
 <!--@layout(/layout/basic/layout.html)-->
 <!--@css(/layout/basic/css/ap-wheretobuy.css)-->
-<div class="wheretobuy">
+<!--@css(/layout/basic/css/ap-support-shell.css)-->
+<div class="ap-support-page">
   <div class="ap-titleArea">
-    <div class="ap-container--narrow">
-      <!-- 브래드크럼 -->
+    <div class="ap-container">
       <div class="ap-path">
         <span class="blind">현재 위치</span>
         <ol class="ap-path__list">
           <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
-          <li title="현재 위치"><strong>매장안내</strong></li>
+          <li title="현재 위치"><strong>A/S 안내</strong></li>
         </ol>
-      </div><!-- //ap-path -->
-    </div><!-- //ap-container--narrow -->
+      </div>
+    </div>
   </div><!-- //ap-titleArea -->
 
-  <div class="ap-container--narrow">
-    <div class="wheretobuy__hero">
-      <h2 class="wheretobuy__title">매장안내</h2>
-    </div><!-- //wheretobuy__hero -->
-    <div class="store-wrap">
-      <div class="store-filter"><select id="storeRegion"><option value="">전체 지역</option></select>
-        <select id="storeType"><option value="">전체 매장</option></select><input type="text" id="storeKeyword" placeholder="매장명 검색" /></div>
-      <p class="wheretobuy__notice">매장별 재고 보유 여부는 상이하오니, 전화 후 방문 부탁드립니다.</p>
-      <div class="store-content">
-        <ul id="storeList"></ul>
-        <div id="map"></div>
-      </div>
-    </div><!-- //store-wrap -->
-  </div><!-- //ap-container--narrow -->
-</div><!-- //wheretobuy -->
+  <div class="ap-container">
+    <div class="ap-support-shell" data-page="store"><!-- /support/nav.html의 내용참고 -->
+      <!--@import(/support/nav.html)-->
+      <div class="ap-support-shell__main ap-support-shell__main--flush">
+        <div class="wheretobuy">
+          <div class="ap-titleArea">
+            <div class="ap-container--narrow">
+              <!-- 브래드크럼 -->
+              <div class="ap-path">
+                <span class="blind">현재 위치</span>
+                <ol class="ap-path__list">
+                  <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
+                  <li title="현재 위치"><strong>매장안내</strong></li>
+                </ol>
+              </div><!-- //ap-path -->
+            </div><!-- //ap-container--narrow -->
+          </div><!-- //ap-titleArea -->
 
+          <div class="ap-container--narrow">
+            <div class="wheretobuy__hero">
+              <h2 class="wheretobuy__title">매장안내</h2>
+            </div><!-- //wheretobuy__hero -->
+            <div class="store-wrap">
+              <div class="store-filter"><select id="storeRegion"><option value="">전체 지역</option></select>
+                <select id="storeType"><option value="">전체 매장</option></select><input type="text" id="storeKeyword" placeholder="매장명 검색" /></div>
+              <p class="wheretobuy__notice">매장별 재고 보유 여부는 상이하오니, 전화 후 방문 부탁드립니다.</p>
+              <div class="store-content">
+                <ul id="storeList"></ul>
+                <div id="map"></div>
+              </div>
+            </div><!-- //store-wrap -->
+          </div><!-- //ap-container--narrow --> 
+        </div><!-- //wheretobuy -->
+      </div>
+    </div><!-- //ap-support-shell -->
+  </div><!-- //ap-container -->
+</div><!-- //ap-support-page -->
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1c2339c2dc10c5bb4d9dbd04a5a79d65"></script>
 <script>

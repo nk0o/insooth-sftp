@@ -1,0 +1,25 @@
+<!--
+  고객지원 사이드메뉴
+  사용 페이지 루트에 data-page="as | auth | store | faq" 를 지정하면 해당 항목이 active 됩니다.
+-->
+<aside class="ap-support-nav">
+  <p class="ap-support-nav__title">SUPPORT</p>
+  <nav aria-label="고객지원">
+    <ul class="ap-support-nav__list">
+      <li><a class="ap-support-nav__link" href="/support/warranty.html" data-key="as"><span class="ap-support-nav__index">01</span>A/S 안내</a></li>
+      <li><a class="ap-support-nav__link" href="/support/authentication/index.html" data-key="auth"><span class="ap-support-nav__index">02</span>정품등록</a></li>
+      <li><a class="ap-support-nav__link" href="/support/where-to-buy.html" data-key="store"><span class="ap-support-nav__index">03</span>매장안내</a></li>
+      <li><a class="ap-support-nav__link" href="/support/faq.html" data-key="faq"><span class="ap-support-nav__index">04</span>FAQ</a></li>
+    </ul>
+  </nav>
+</aside>
+<script>
+(function () {
+  var shell = document.currentScript && document.currentScript.parentElement;
+  if (!shell) return;
+  var key = shell.getAttribute('data-page');
+  if (!key) return;
+  var link = shell.querySelector('.ap-support-nav__link[data-key="' + key + '"]');
+  if (link) link.setAttribute('aria-current', 'page');
+})();
+</script>
