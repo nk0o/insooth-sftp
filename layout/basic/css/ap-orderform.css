@@ -1,0 +1,149 @@
+/* ============================================================
+  주문서 / 주문완료
+  토큰·폼·버튼 기준: ap-layout.css
+============================================================ */
+
+/* -------------------- 1. 공통 -------------------- */
+#userStyle { font-family: var(--ap-font-sans); }
+#userStyle #header,
+#userStyle #header .header { background: var(--ap-color-bg-surface) !important; }
+#userStyle.v2 #mCafe24Order { padding-inline: var(--ap-gutter); background: var(--ap-color-bg-section); }
+#userStyle.v2 #titleArea + form { background: var(--ap-color-bg-section); }
+#userStyle #header .header h1 {width: 140px; font-size: var(--ap-text-md); margin: 0 var(--ap-gutter); }
+#userStyle #header .header h1 a{display: block; text-indent: -9999px; background: url('/web/img/logo.svg') no-repeat 0 50% / auto 18px;}
+#userStyle.v2 #header .headerMenu [class*="btn"] { width: 24px; height: 24px; }
+#header .headerMenu.gRight [class*="btn"] { margin-right: var(--ap-space-md); }
+#userStyle .header .headerMenu .btnBasket > a { width: 100%; height: 100%; background: url('/web/img/icon/icon-cart.svg') no-repeat 0 50% / contain; }
+#userStyle .header .headerMenu .btnMy { background: url('/web/img/icon/icon-user.svg') no-repeat 0 50% / contain; }
+#userStyle .header .headerMenu .btnBack a:before { background: url('/web/img/icon/icon-chevron-left.svg') no-repeat 0 50% / contain; top: 3px; }
+#userStyle #header .headerMenu .btnBasket .count { width: var(--ap-space-md); height: var(--ap-space-md); display: flex; justify-content: center; align-items: center; top: -2px; right: -51%; background: var(--ap-color-text-primary); }
+
+/* -------------------- 2. 타이틀 -------------------- */
+#userStyle.v2 #titleArea { border-bottom: 0; background: var(--ap-color-bg-section); }
+#userStyle.v2 #titleArea > h1 { padding-top: var(--ap-space-lg); }
+#userStyle #titleArea > h1 { font-size: var(--ap-text-xl); font-weight: 700; letter-spacing: var(--ap-tracking-tight);line-height: var(--ap-leading-loose); background: var(--ap-color-bg-section); }
+#userStyle #titleArea > h1::after { content: '결제 전 주문 내용을 한 번 더 확인해 주세요'; display: block; font-size: var(--ap-text-sm); font-weight: 400; line-height: var(--ap-leading-tight); color: var(--ap-color-text-muted); }
+
+/* -------------------- 3. 좌우 레이아웃 -------------------- */
+#userStyle.v2 #mCafe24Order .leftGroup,
+#userStyle.v2 #mCafe24Order .rightGroup { padding-top: 30px; }
+#userStyle.v2 #mCafe24Order .leftGroup .ec-base-fold { margin-bottom: var(--ap-space-lg); }
+#userStyle.v2 #mCafe24Order .ec-base-fold { border: 1px solid var(--ap-color-border); border-radius: var(--ap-radius-sm); }
+#userStyle.v2 #mCafe24Order .title h2 { font-size: var(--ap-text-md); }
+#userStyle.v2 #mCafe24Order .ec-base-prdInfo .thumbnail { width: 76px; height: 76px; border-radius: var(--ap-radius-sm); overflow: hidden; background: var(--ap-color-bg-section); flex-shrink: 0; }
+
+#userStyle.v2 #mCafe24Order .rightGroup .stickyTop { top: 80px; border: 1px solid var(--ap-color-border); border-radius: var(--ap-radius-sm); padding: var(--ap-space-sm) var(--ap-space-lg) var(--ap-space-md); background: var(--ap-color-white); box-shadow: var(--ap-shadow-md); }
+#userStyle.v2 #mCafe24Order .rightGroup .stickyTop .ec-base-fold { border: 0; padding-inline: 0; }
+#userStyle.v2 #mCafe24Order .rightGroup .stickyTop .title { padding-inline: 0; }
+#userStyle.v2 #mCafe24Order .rightGroup .stickyTop .ec-base-fold > .contents { padding-inline: 0; padding-bottom: 0; }
+
+/* -------------------- 4. 결제 요약 / 버튼 -------------------- */
+#userStyle.v2 #mCafe24Order .orderArea .totalPrice .title { border-top: 1px solid var(--ap-color-border); padding-bottom: 0; background: var(--ap-color-white); border-radius: 0;}
+/* #userStyle.v2 #mCafe24Order .orderArea .totalPrice .deliveryFee { font-size: 0; font-weight: 600; letter-spacing: var(--ap-tracking-tight); line-height: 20px; color: var(--ap-color-text-primary); }
+#userStyle.v2 #mCafe24Order .orderArea .totalPrice .deliveryFee::after { content: '무료배송'; font-size: var(--ap-text-sm); color: var(--ap-color-orange); vertical-align: middle; } */
+#userStyle.v2 #mCafe24Order .totalPay { padding-bottom: var(--ap-space-md); }
+#userStyle.v2 #mCafe24Order #ec-jigsaw-area-payment .totalPay .heading { color: var(--ap-color-text-secondary); font-size: var(--ap-text-lg); }
+#userStyle.v2 #mCafe24Order #ec-jigsaw-area-payment .totalPay.paymentPrice .txtStrong { color: var(--ap-color-orange); }
+#userStyle.v2 #mCafe24Order .totalPay .txtEm { color: var(--ap-color-error); }
+#userStyle.v2 #orderFixItem.ec-base-button.gFull [class*="btn"] { background-color: var(--ap-color-black); color: var(--ap-color-white); font-size: var(--ap-text-md); }
+#userStyle.v2 #mCafe24Order.is-terms-sticky #orderFixItem.ec-base-button.gFull { padding: 0; }
+#userStyle.v2 #mCafe24Order .ap-btn.ap-btn--outline { background-color: var(--ap-color-white) !important; }
+#userStyle.v2 #mCafe24Order .ap-btn.ap-btn--outline:hover { background-color: var(--ap-color-white) !important; color: var(--ap-color-text-primary) !important; }
+
+/* -------------------- 5. 혜택 / 탭 -------------------- */
+#userStyle.v2 #mCafe24Order .segment .ec-base-table tbody tr th { color: var(--ap-color-text-secondary); }
+#userStyle.v2 #mCafe24Order .segment .ec-base-table tbody tr td span { color: var(--ap-color-text-primary); }
+#userStyle.v2 #mCafe24Order #ec-jigsaw-title-benefit.title h2 { color: var(--ap-color-text-secondary); font-size: var(--ap-text-base); }
+#userStyle.v2 #mCafe24Order .ec-base-fold #mAllMileageSum-title { color: var(--ap-color-text-primary); font-size: var(--ap-text-base); }
+.v2 #mCafe24Order .ec-base-fold > .title #ec-jigsaw-heading-discount { font-weight: 500; }
+#userStyle.v2 #mCafe24Order .ec-base-tab a { color: var(--ap-color-text-muted); }
+#userStyle.v2 #mCafe24Order .ec-base-tab li.selected a { color: var(--ap-color-text-primary); }
+#userStyle.v2 #mCafe24Order .ec-base-tab li.selected::after { background-color: var(--ap-color-text-primary); height: 2px; }
+
+/* -------------------- 6. 배송지 / 입력 -------------------- */
+#userStyle.v2 #mCafe24Order .recentShipArea .segment { border: 1px solid var(--ap-color-border); background: var(--ap-color-bg-card); border-radius: var(--ap-radius-sm); padding: var(--ap-space-lg); }
+#userStyle.v2 #mCafe24Order .recentShipArea .recent .name { font-size: var(--ap-text-base); font-weight: 700; color: var(--ap-color-text-primary); }
+#userStyle.v2 #mCafe24Order .recentShipArea .name .txtEm:not(:empty) { color: var(--ap-color-text-primary); background-color: transparent; font-size: var(--ap-text-base); }
+#userStyle.v2 #mCafe24Order .recentShipArea .contact { font-size: var(--ap-text-sm); color: var(--ap-color-text-secondary); margin: var(--ap-space-xs) 0 var(--ap-space-md); }
+#userStyle.v2 #mCafe24Order .btnNormal,
+#userStyle.v2 #mCafe24Order .btnNormal.mini,
+#userStyle.v2 #mCafe24Order .btnBasic { border-color: var(--ap-color-border); border-radius: var(--ap-radius-sm); box-shadow: none; }
+#userStyle.v2 #mCafe24Order .shippingList { margin-top: 0; }
+#userStyle.v2 #mCafe24Order .shippingList li:first-child { border-top: 0; }
+#userStyle.v2 #mCafe24Order .ec-base-table.typeWrite th,
+.v2 #mCafe24Order .deliveryDate .heading { font-size: var(--ap-text-sm); font-weight: 600; color: var(--ap-color-text-secondary); }
+
+#userStyle.v2 select,
+#userStyle.v2 input[type=text],
+#userStyle.v2 input[type=password] { box-shadow: none; min-height: 40px !important; font-family: var(--ap-font-sans) !important; font-size: var(--ap-text-sm) !important; color: var(--ap-color-text-primary) !important; border: 1px solid var(--ap-color-border) !important; border-radius: var(--ap-radius-sm) !important; padding: 0 var(--ap-space-md) !important; outline: none !important; transition: var(--ap-transition-fast) !important; -webkit-appearance: none; }
+#userStyle.v2 select { appearance: none !important; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23C8A97E' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") !important; background-position: right 16px center !important; background-repeat: no-repeat !important; background-size: 16px !important; }
+#userStyle.v2 select:not([type=text][readonly]):focus,
+#userStyle.v2 input[type=text]:not([type=text][readonly]):focus,
+#userStyle.v2 input[type=password]:not([type=password][readonly]):focus,
+.ap-form__input:focus,
+.ap-form__select:focus,
+.ap-form__textarea:focus { border-color: var(--ap-color-orange) !important; }
+#userStyle.v2 input[type=text]::placeholder,
+#userStyle.v2 input[type=password]::placeholder,
+.ap-form__input::placeholder { color: var(--ap-color-text-disabled) !important; }
+#userStyle.v2 input[type=text].hasDatepicker { width: auto !important; }
+#userStyle.v2 input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px var(--ap-color-white) inset; -webkit-text-fill-color: var(--ap-color-text-primary); }
+#userStyle.v2 input:-webkit-autofill,
+#userStyle.v2 input:-webkit-autofill:hover,
+#userStyle.v2 input:-webkit-autofill:focus,
+#userStyle.v2 input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; }
+
+#userStyle #mCafe24Order .ec-base-mail .mailAddress .directInput { width: 80%; border: 0; position: absolute; top: 1px; left: 1px; right: auto; bottom: auto; }
+#userStyle #mCafe24Order .ec-base-mail .mailAddress .directInput input { height: calc(40px - 2px) !important; border: 0 !important; }
+
+/* -------------------- 7. 결제수단 / 약관 -------------------- */
+#userStyle.v2 #mCafe24Order .fRadio[type="radio"],
+#userStyle.v2 #mCafe24Order input[type="radio"] { width: 18px; height: 18px; margin: 0; border: 0; cursor: pointer; outline: 0; flex-shrink: 0; vertical-align: middle; appearance: none; -webkit-appearance: none; background: url("//img.echosting.cafe24.com/skin/skin/common/bg_radio.png") no-repeat 0 0 / 18px 18px; }
+#userStyle.v2 #mCafe24Order .fRadio:not(:disabled):checked[type="radio"],
+#userStyle.v2 #mCafe24Order .selected > .fRadio,
+#userStyle.v2 #mCafe24Order input:not(:disabled):checked[type="radio"] { background-image: url("//img.echosting.cafe24.com/skin/skin/common/bg_radio_checked.png"); }
+#userStyle.v2 #mCafe24Order input[type="checkbox"] { width: 24px; height: 24px; margin: 0; padding: 0; border: 0; cursor: pointer; flex-shrink: 0; vertical-align: middle; appearance: none; -webkit-appearance: none; background: url('/svg/icon-checkbox.svg') no-repeat center / 24px 24px; transition: none; }
+#userStyle.v2 #mCafe24Order input:not(:disabled):checked[type="checkbox"] { background-image: url('/svg/icon-checkbox_checked.svg'); border-color: transparent; filter: none;}
+.v2 #mCafe24Order .agreeArea .agreement .agree .check > input{filter: none;}
+#userStyle.v2 #mCafe24Order input[type="checkbox"]::-ms-check { background: url('/svg/icon-checkbox.svg') no-repeat center / 24px 24px; border-color: transparent; }
+#userStyle.v2 #mCafe24Order input[type="checkbox"]:checked::-ms-check { background: url('/svg/icon-checkbox_checked.svg') no-repeat center / 24px 24px; border-color: transparent; }
+#userStyle.v2 #mCafe24Order #ec-jigsaw-area-paymethod .inner:has(div){padding:0 var(--ap-space-sm);}
+#userStyle.v2 #mCafe24Order #ec-jigsaw-area-paymethod .inner:before{display: none;}
+#userStyle.v2 #mCafe24Order #ec-jigsaw-area-paymethod .ec-base-label { display: flex; align-items: center; gap: var(--ap-space-sm); padding: var(--ap-space-sm) 0; border-radius: var(--ap-radius-sm); }
+#userStyle.v2 #mCafe24Order #ec-jigsaw-area-paymethod .ec-base-label input[type="radio"] + label { width: 100%; }
+#userStyle.v2 #mCafe24Order #ec-jigsaw-area-paymethod .ec-base-label input { flex-shrink: 0; }
+#userStyle.v2 #mCafe24Order label { color: var(--ap-color-text-secondary); }
+#userStyle.v2 #mCafe24Order .icoRequired { background-image: url('/web/img/icon/icon-required.svg'); }
+#userStyle.v2 #mCafe24Order.is-terms-sticky .agree-msg { padding: 0; }
+#userStyle.v2 #mCafe24Order .agreeArea { padding: 0; }
+#userStyle.v2 #mCafe24Order #all_agreement_checkbox { margin: 0; }
+#userStyle.v2 #mCafe24Order .agreeArea .checkNone ul { padding: 0; background-color: transparent; }
+
+/* -------------------- 8. 우편번호 -------------------- */
+#zipcodeLayer { border: 1px solid var(--ap-color-border); }
+#userStyle .mCafe24Post.themeEC h1 { color: var(--ap-color-text-primary); }
+
+/* -------------------- 9. 주문완료 -------------------- */
+#userStyle.v2.orderResult #mCafe24Order .resultArea { border: 1px solid var(--ap-color-border); }
+#userStyle.v2.orderResult #mCafe24Order .resultArea .orderNumber { background: var(--ap-color-bg-section); padding: 2px var(--ap-space-sm); }
+#userStyle.v2.orderResult #mCafe24Order .resultArea .message:before { background: url("/web/img/icon/ico_resultarea_message.png") 50% 50% no-repeat; }
+#userStyle.v2.orderResult #mCafe24Order .ec-base-button.gColumn { background-color: var(--ap-color-bg-section); padding-bottom: 100px; }
+#mCafe24Order .ec-base-button[class*="gColumn"] a,
+#mCafe24Order .ec-base-button[class*="gColumn"] button { margin-left: 0; }
+
+/* -------------------- 10. 반응형 -------------------- */
+@media all and (max-width: 768px) {
+  #userStyle.v2 #mCafe24Order .leftGroup { padding-top: var(--ap-space-lg); }
+  #userStyle.v2 #mCafe24Order .rightGroup { padding-top: 0; }
+  #userStyle.v2 #mCafe24Order.is-terms-sticky .agree-msg { padding: 0; bottom: 56px; }
+  #userStyle.v2 #mCafe24Order.is-terms-sticky #orderFixItem.ec-base-button.gFull { padding: var(--ap-space-sm); }
+  #zipcodeLayer { position: fixed !important; inset: 0 !important; width: 100% !important; height: 100dvh !important; }
+}
+
+
+#userStyle.v2 #orderFixItem.ec-base-button.gFull [class*="btn"] { border-radius: 0;}
+#userStyle.v2 #mCafe24Order #ec-jigsaw-area-paymethod .column{border-top: 1px solid var(--ap-color-border);}
+#userStyle.v2:not(.orderResult) #mCafe24Order #ec-jigsaw-area-paymethod .column > div > div:not(#wrappingOriginal){border-bottom-color: var(--ap-color-border);border-radius: 0;}
+#userStyle.v2:not(.orderResult) #mCafe24Order #ec-jigsaw-area-paymethod .column > div > div:not(#wrappingOriginal):has(> .ec-base-label input[type="radio"]:checked){border-color: var(--ap-color-gray-500);background-color:transparent;}
+#userStyle.v2 #orderFixItem.ec-base-button.gFull:before{display: none;}
+#userStyle.v2 #mCafe24Order .agreeArea .allAgree{padding: var(--ap-space-sm) 0 0;}

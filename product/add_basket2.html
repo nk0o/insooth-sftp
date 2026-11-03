@@ -57,7 +57,65 @@
                 </ol>
                 <a href="#none" {$param_next}>다음 페이지</a>
             </div>
-        </div>
+            <!-- 추천상품 -->
+            <section class="ap-basket-recommend">
+              <div class="ap-container--narrow">
+                <h3 class="ap-text--h3">추천 상품</h3>
+              </div><!-- //ap-container--narrow -->
+              <div class="normalpackage_box" data-ez-module="product-normalpackage/1" data-ez-layout="grid4" data-ez="contents-0ozazsd-1">
+                <div class="ap-container--narrow">
+                  <div module="product_recentlist">
+                    <!--@css(/css/module/product/recentlist.css)-->
+                    <!--
+                        $count = 10
+                    -->
+                    <!-- 참고 : 뉴상품관리 전용 변수가 포함되어 있습니다. 뉴상품관리 이외의 곳에서 사용하면 일부 변수가 정상동작하지 않을 수 있습니다. -->
+      
+                    <div class="ap-basket-swiper swiper">
+                      <ul module="product_listitem" class="prdList grid4 swiper-wrapper" data-ez-role="layout ez-discount-tag">
+                        <li class="swiper-slide">
+                            <div class="description">
+                                <p class="prdImg"><a href="/product/detail.html{$param}"><img src="{$image_medium}" alt="" width="85" height="85"></a></p>
+                                <strong class="prdName"><a href="/product/detail.html{$param}">{$product_name}</a></strong>
+                                <ul module="product_setproduct" class="item">
+                                    <li>{$product_name}</li>
+                                    <li>{$product_name}</li>
+                                </ul>
+                                <p class="price">{$price}</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="description">
+                                <p class="prdImg"><a href="/product/detail.html{$param}"><img src="{$image_medium}" alt="" width="85" height="85"></a></p>
+                                <strong class="prdName"><a href="/product/detail.html{$param}">{$product_name}</a></strong>
+                                <ul module="product_setproduct" class="item">
+                                    <li>{$product_name}</li>
+                                    <li>{$product_name}</li>
+                                </ul>
+                                <p class="price">{$price}</p>
+                            </div>
+                        </li>
+                      </ul>
+                      <div class="swiper-pagination"></div><!-- //swiper-pagination -->
+                    </div><!-- //ap-basket-swiper -->
+                    <p class="empty {$empty_display|display}">최근본 상품 내역이 없습니다.</p>
+                  </div>                  
+                </div><!-- //ap-container--narrow -->
+              </div>
+            </section><!-- //.ap-basket-recommend -->
+            
+
+
+
+
+
+
+
+
+            
+
+
+        </div><!-- //.content -->
         <div class="ec-base-button gColumn">
             <a href="/order/basket.html{$basket_param}" class="btnNormal sizeM">장바구니 이동</a>
             <a href="#none" class="btnSubmit sizeM" onclick="Basket.orderLayerAll(this)" link-order="/order/orderform.html?basket_type=all_buy" link-login="/member/login.html">바로 구매</a>

@@ -175,6 +175,7 @@ if(typeof Kakao !== 'undefined'){
   }
 
   document.addEventListener('DOMContentLoaded', () => {
+      if (typeof apHandleScroll === 'function') apHandleScroll();
       updateLayoutHeight();
 
       // 폰트 로드 완료 후 재측정 (FOUT로 인한 높이 변화 반영)

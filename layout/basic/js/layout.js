@@ -304,18 +304,11 @@ jQuery(document).ready(function() {
 			jQuery(".main_top_banner").slideUp("fast");
 		 }
     });
-	var main_top_banner_diplay = jQuery(".main_top_banner").attr("data-ez-display");
-	if (!getCookiem("top_banner_cookie") && (main_top_banner_diplay == 'visible')) {
-		jQuery(".main_top_banner").slideDown("fast");
-	}
-
-	/* 최상단배너 닫기버튼 없을시 높이 수정 */
-	if(jQuery(".top_banner_close").css("display") == "none"){
+	/* 노출·높이는 header의 apHandleScroll(is-main)에서 처리. slideDown은 높이를 0으로 덮어씀 */
+	if (document.documentElement.classList.contains('is-main') && jQuery(".top_banner_close").css("display") == "none") {
 		jQuery(".main_top_banner").addClass('close_none');
-		if (main_top_banner_diplay == 'visible') {
-			jQuery(".main_top_banner").slideDown("fast");
-		}
 	}
+	if (typeof apHandleScroll === 'function') apHandleScroll();
 
 	/* 상단 고객센터 - 서정환 */
 	jQuery("#header .inner .toparea .toparea_state .toparea_state_board").click(function() {
@@ -770,4 +763,25 @@ document.addEventListener('click', function(e){
         '_blank'
     );
 
+});
+
+/* 푸터 바로가기 — 스토리 페이지에서는 헤리티지 링크와 문구로 전환 */
+document.addEventListener('DOMContentLoaded', function () {
+    var link = document.querySelector('.ap-about-links__switch');
+    if (!link) return;
+    var path = window.location.pathname;
+    if (!/\/about\/insooth_story(?:\.html)?\/?$/.test(path)) return;
+
+    var span = link.querySelector('span');
+    var textNode = link.firstChild;
+    while (textNode && !(textNode.nodeType === 3 && textNode.textContent.trim())) {
+        textNode = textNode.nextSibling;
+    }
+    if (textNode) {
+        textNode.textContent = '헤리티지';
+    } else {
+        link.insertBefore(document.createTextNode('헤리티지'), span);
+    }
+    if (span) span.textContent = '세계가 의존해 온 30년의 뼈대';
+    link.href = '/about/heritage.html';
 });

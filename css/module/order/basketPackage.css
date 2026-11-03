@@ -39,7 +39,7 @@
 
 /********************* Mobile / Tablet *********************/
 @media all and (max-width:1024px) {
-    .xans-order-basketpackage .xans-order-tabinfo { margin:0 0 40px; }
+  .xans-order-basketpackage .xans-order-tabinfo { margin:0 0 40px; }
 	.xans-order-basketpackage .totalSummary { margin:0 16px; }
 }
 

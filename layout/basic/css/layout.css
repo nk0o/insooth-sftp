@@ -20,6 +20,8 @@ a:hover {text-decoration:none;}
 .layer_shadow {position:fixed;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,0.3);z-index:10;opacity:0;visibility:hidden;-webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; -o-transition: all 0.3s;  transition: all 0.3s;}
 .layer_shadow.on {opacity:1;visibility:visible;}
 .not_scroll {height:100%; min-height:100%; overflow:hidden !important; touch-action:none;}
+html:has(body.ap-scroll-lock),
+body.ap-scroll-lock { overflow: hidden; }
 
 /* 최상단 배너 */
 .main_top_banner {position:relative;z-index:997;background-color:#000;overflow:hidden;width:100%;display:none;padding:20px 0;}
