@@ -5,22 +5,27 @@
 <!--@js(/js/ap-cart-custom.js)-->
 <div class="ap-order">  
   <div class="ap-titleArea displaynone">
-    <div class="ap-container--narrow">
-      <!-- 브래드크럼 -->
-      <div class="ap-list-path path section" module="product_headcategory">
-        <span>현재 위치</span>
-        <ol>
+    <div class="ap-titleArea__bg"></div>
+    <div class="ap-titleArea__body ap-container--narrow">
+      <div class="ap-path">
+        <span class="blind">현재 위치</span>
+        <ol class="ap-path__list">
           <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
           <li title="현재 위치"><strong>장바구니</strong></li>
         </ol>
-      </div><!-- //ap-list-path -->
-    </div><!-- //ap-container--narrow -->
+      </div><!-- //ap-path -->
+      <div class="ap-titleArea__heading">
+        <h1 class="ap-titleArea__title ap-text--h1">장바구니</h1>
+      </div>
+    </div><!-- //ap-titleArea__body -->
   </div><!-- //ap-titleArea -->
   
-  <div class="titleArea ap-container--narrow ap-cart-head" data-ez="module-0mt2ehn-1"
-    data-ez-module="user-defined/1" data-ez-name="USER DEFINED" data-ez-type="plain">
-    <h2 class="ap-cart-head__title">장바구니</h2>
-  </div><!-- //titleArea -->
+  <div class="ap-titleArea ap-cart-head">
+    <div class="ap-container--narrow">
+      <a href="/" class="ap-cart-head__back"><!--@import(/svg/icon-go-back.html)--><span class="ap-sr-only">뒤로가기</span></a>
+      <h2 class="ap-cart-head__title">장바구니</h2>
+    </div>
+  </div><!-- //ap-titleArea -->
   
   <div class="ec-base-step ap-container--narrow ap-cart-step" data-ez="module-0dg7krv-1"
     data-ez-module="user-defined/1" data-ez-name="USER DEFINED" data-ez-type="plain">
@@ -63,7 +68,7 @@
           -->
         </div>
         <div module="Order_SelectOrder" class="ec-base-button typeMulti ap-cart-toolbar">
-          <a href="#none" id="product_select_all" data-onoff="off" data-status="off">전체선택</a>
+          <a href="#none" id="product_select_all" data-onoff="off" data-status="off">전체선택<span class="ap-cart-select-count"></span></a>
           <a href="#none" onclick="{$action_delete}" class="ap-btn ap-btn--outline ap-btn--xs">선택삭제</a>
         </div><!-- //ec-base-button -->
         <div class="ec-base-fold theme1 selected eToggle ap-card" module="Order_EmptyItem">
@@ -113,7 +118,7 @@
                             class="{$qty_display|display}">({$qty}개)</span>
                           <span class="{$nplusevent_hide_display|display}"><a href="#none"
                               onclick="{$action_option_change}"
-                              class="btnText ap-link {$option_change_display|display}">옵션변경</a></span>
+                              class="btnText ap-txt--under {$option_change_display|display}">옵션변경</a></span>
                         </div>
                       </li>
                       <li class="ap-cart-item__option-row">
@@ -124,7 +129,7 @@
                             class="{$qty_display|display}">({$qty}개)</span>
                           <span class="{$nplusevent_hide_display|display}"><a href="#none"
                               onclick="{$action_option_change}"
-                              class="btnText ap-link {$option_change_display|display}">옵션변경</a></span>
+                              class="btnText ap-txt--under {$option_change_display|display}">옵션변경</a></span>
                         </div>
                       </li>
                     </ul>
@@ -136,7 +141,7 @@
                           {$form.quantity}
                           <a href="javascript:;" class="up ap-qty-stepper__btn ap-qty-stepper__btn--up" onclick="{$add_shortcut}" aria-label="수량증가"> </a>
                         </span>
-                        <a href="javascript:;" class="sizeQty ap-btn ap-btn--outline ap-btn--md" onclick="{$action_modify}">변경</a>
+                        <a href="javascript:;" class="sizeQty ap-btn ap-btn--outline ap-btn--sm" onclick="{$action_modify}">변경</a>
                       </div><!-- //ap-cart-item__qty-control -->
                       <div class="{$nplusevent_show_display|display} ap-cart-item__qty-fixed">
                         {$quantity}</div>
@@ -216,7 +221,7 @@
                             class="{$qty_display|display}">({$qty}개)</span>
                           <span class="{$nplusevent_hide_display|display}"><a href="#none"
                               onclick="{$action_option_change}"
-                              class="btnText ap-link {$option_change_display|display}">옵션변경</a></span>
+                              class="btnText ap-txt--under {$option_change_display|display}">옵션변경</a></span>
                         </div>
                       </li>
                       <li class="ap-cart-item__option-row">
@@ -227,7 +232,7 @@
                             class="{$qty_display|display}">({$qty}개)</span>
                           <span class="{$nplusevent_hide_display|display}"><a href="#none"
                               onclick="{$action_option_change}"
-                              class="btnText ap-link {$option_change_display|display}">옵션변경</a></span>
+                              class="btnText ap-txt--under {$option_change_display|display}">옵션변경</a></span>
                         </div>
                       </li>
                     </ul>
@@ -239,7 +244,7 @@
                           {$form.quantity}
                           <a href="javascript:;" class="up ap-qty-stepper__btn ap-qty-stepper__btn--up" onclick="{$add_shortcut}" aria-label="수량증가"> </a>
                         </span>
-                        <a href="javascript:;" class="sizeQty ap-btn ap-btn--outline ap-btn--md" onclick="{$action_modify}">변경</a>
+                        <a href="javascript:;" class="sizeQty ap-btn ap-btn--outline ap-btn--sm" onclick="{$action_modify}">변경</a>
                       </div><!-- //ap-cart-item__qty-control -->
                       <div class="{$nplusevent_show_display|display} ap-cart-item__qty-fixed">
                         {$quantity}</div>
@@ -333,7 +338,7 @@
                           </span>{$option_str} <span class="{$qty_display|display}">({$qty}개)</span>
                           <span class="{$nplusevent_hide_display|display}"><a href="#none"
                               onclick="{$action_option_change}"
-                              class="btnText ap-link {$option_change_display|display}">옵션변경</a></span>
+                              class="btnText ap-txt--under {$option_change_display|display}">옵션변경</a></span>
                         </div>
                       </li>
                       <li class="ap-cart-item__option-row">
@@ -342,7 +347,7 @@
                           </span>{$option_str} <span class="{$qty_display|display}">({$qty}개)</span>
                           <span class="{$nplusevent_hide_display|display}"><a href="#none"
                               onclick="{$action_option_change}"
-                              class="btnText ap-link {$option_change_display|display}">옵션변경</a></span>
+                              class="btnText ap-txt--under {$option_change_display|display}">옵션변경</a></span>
                         </div>
                       </li>
                     </ul>
@@ -354,7 +359,7 @@
                           {$form.quantity}
                           <a href="javascript:;" class="up ap-qty-stepper__btn ap-qty-stepper__btn--up" onclick="{$add_shortcut}" aria-label="수량증가"> </a>
                         </span>
-                        <a href="javascript:;" class="sizeQty ap-btn ap-btn--outline ap-btn--md" onclick="{$action_modify}">변경</a>
+                        <a href="javascript:;" class="sizeQty ap-btn ap-btn--outline ap-btn--sm" onclick="{$action_modify}">변경</a>
                       </div><!-- //ap-cart-item__qty-control -->
                       <div class="{$nplusevent_show_display|display} ap-cart-item__qty-fixed">
                         {$quantity}</div>
@@ -452,7 +457,7 @@
                           </span>{$option_str} <span class="{$qty_display|display}">({$qty}개)</span>
                           <span class="{$nplusevent_hide_display|display}"><a href="#none"
                               onclick="{$action_option_change}"
-                              class="btnText ap-link {$option_change_display|display}">옵션변경</a></span>
+                              class="btnText ap-txt--under {$option_change_display|display}">옵션변경</a></span>
                         </div>
                       </li>
                       <li class="ap-cart-item__option-row">
@@ -461,7 +466,7 @@
                           </span>{$option_str} <span class="{$qty_display|display}">({$qty}개)</span>
                           <span class="{$nplusevent_hide_display|display}"><a href="#none"
                               onclick="{$action_option_change}"
-                              class="btnText ap-link {$option_change_display|display}">옵션변경</a></span>
+                              class="btnText ap-txt--under {$option_change_display|display}">옵션변경</a></span>
                         </div>
                       </li>
                     </ul>
@@ -473,7 +478,7 @@
                           {$form.quantity}
                           <a href="javascript:;" class="up ap-qty-stepper__btn ap-qty-stepper__btn--up" onclick="{$add_shortcut}" aria-label="수량증가"> </a>
                         </span>
-                        <a href="javascript:;" class="sizeQty ap-btn ap-btn--outline ap-btn--md" onclick="{$action_modify}">변경</a>
+                        <a href="javascript:;" class="sizeQty ap-btn ap-btn--outline ap-btn--sm" onclick="{$action_modify}">변경</a>
                       </div><!-- //ap-cart-item__qty-control -->
                       <div class="{$nplusevent_show_display|display} ap-cart-item__qty-fixed">
                         {$quantity}</div>
@@ -564,7 +569,7 @@
                           </span>{$option_str} <span class="{$qty_display|display}">({$qty}개)</span>
                           <span class="{$nplusevent_hide_display|display}"><a href="#none"
                               onclick="{$action_option_change}"
-                              class="btnText ap-link {$option_change_display|display}">옵션변경</a></span>
+                              class="btnText ap-txt--under {$option_change_display|display}">옵션변경</a></span>
                         </div>
                       </li>
                       <li class="ap-cart-item__option-row">
@@ -573,7 +578,7 @@
                           </span>{$option_str} <span class="{$qty_display|display}">({$qty}개)</span>
                           <span class="{$nplusevent_hide_display|display}"><a href="#none"
                               onclick="{$action_option_change}"
-                              class="btnText ap-link {$option_change_display|display}">옵션변경</a></span>
+                              class="btnText ap-txt--under {$option_change_display|display}">옵션변경</a></span>
                         </div>
                       </li>
                     </ul>
@@ -585,7 +590,7 @@
                           {$form.quantity}
                           <a href="javascript:;" class="up ap-qty-stepper__btn ap-qty-stepper__btn--up" onclick="{$add_shortcut}" aria-label="수량증가"> </a>
                         </span>
-                        <a href="javascript:;" class="sizeQty ap-btn ap-btn--outline ap-btn--md" onclick="{$action_modify}">변경</a>
+                        <a href="javascript:;" class="sizeQty ap-btn ap-btn--outline ap-btn--sm" onclick="{$action_modify}">변경</a>
                       </div><!-- //ap-cart-item__qty-control -->
                       <div class="{$nplusevent_show_display|display} ap-cart-item__qty-fixed">
                         {$quantity}</div>
@@ -684,7 +689,7 @@
                           </span>{$option_str} <span class="{$qty_display|display}">({$qty}개)</span>
                           <span class="{$nplusevent_hide_display|display}"><a href="#none"
                               onclick="{$action_option_change}"
-                              class="btnText ap-link {$option_change_display|display}">옵션변경</a></span>
+                              class="btnText ap-txt--under {$option_change_display|display}">옵션변경</a></span>
                         </div>
                       </li>
                       <li class="ap-cart-item__option-row">
@@ -693,7 +698,7 @@
                           </span>{$option_str} <span class="{$qty_display|display}">({$qty}개)</span>
                           <span class="{$nplusevent_hide_display|display}"><a href="#none"
                               onclick="{$action_option_change}"
-                              class="btnText ap-link {$option_change_display|display}">옵션변경</a></span>
+                              class="btnText ap-txt--under {$option_change_display|display}">옵션변경</a></span>
                         </div>
                       </li>
                     </ul>
@@ -705,7 +710,7 @@
                           {$form.quantity}
                           <a href="javascript:;" class="up ap-qty-stepper__btn ap-qty-stepper__btn--up" onclick="{$add_shortcut}" aria-label="수량증가"> </a>
                         </span>
-                        <a href="javascript:;" class="sizeQty ap-btn ap-btn--outline ap-btn--md" onclick="{$action_modify}">변경</a>
+                        <a href="javascript:;" class="sizeQty ap-btn ap-btn--outline ap-btn--sm" onclick="{$action_modify}">변경</a>
                       </div><!-- //ap-cart-item__qty-control -->
                       <div class="{$nplusevent_show_display|display} ap-cart-item__qty-fixed">
                         {$quantity}</div>
@@ -799,7 +804,7 @@
                           </span>{$option_str} <span class="{$qty_display|display}">({$qty}개)</span>
                           <span class="{$nplusevent_hide_display|display}"><a href="#none"
                               onclick="{$action_option_change}"
-                              class="btnText ap-link {$option_change_display|display}">옵션변경</a></span>
+                              class="btnText ap-txt--under {$option_change_display|display}">옵션변경</a></span>
                         </div>
                       </li>
                       <li class="ap-cart-item__option-row">
@@ -808,7 +813,7 @@
                           </span>{$option_str} <span class="{$qty_display|display}">({$qty}개)</span>
                           <span class="{$nplusevent_hide_display|display}"><a href="#none"
                               onclick="{$action_option_change}"
-                              class="btnText ap-link {$option_change_display|display}">옵션변경</a></span>
+                              class="btnText ap-txt--under {$option_change_display|display}">옵션변경</a></span>
                         </div>
                       </li>
                     </ul>
@@ -820,7 +825,7 @@
                           {$form.quantity}
                           <a href="javascript:;" class="up ap-qty-stepper__btn ap-qty-stepper__btn--up" onclick="{$add_shortcut}" aria-label="수량증가"> </a>
                         </span>
-                        <a href="javascript:;" class="sizeQty ap-btn ap-btn--outline ap-btn--md" onclick="{$action_modify}">변경</a>
+                        <a href="javascript:;" class="sizeQty ap-btn ap-btn--outline ap-btn--sm" onclick="{$action_modify}">변경</a>
                       </div><!-- //ap-cart-item__qty-control -->
                       <div class="{$nplusevent_show_display|display} ap-cart-item__qty-fixed">
                         {$quantity}</div>
@@ -918,7 +923,7 @@
                           </span>{$option_str} <span class="{$qty_display|display}">({$qty}개)</span>
                           <span class="{$nplusevent_hide_display|display}"><a href="#none"
                               onclick="{$action_option_change}"
-                              class="btnText ap-link {$option_change_display|display}">옵션변경</a></span>
+                              class="btnText ap-txt--under {$option_change_display|display}">옵션변경</a></span>
                         </div>
                       </li>
                       <li class="ap-cart-item__option-row">
@@ -927,7 +932,7 @@
                           </span>{$option_str} <span class="{$qty_display|display}">({$qty}개)</span>
                           <span class="{$nplusevent_hide_display|display}"><a href="#none"
                               onclick="{$action_option_change}"
-                              class="btnText ap-link {$option_change_display|display}">옵션변경</a></span>
+                              class="btnText ap-txt--under {$option_change_display|display}">옵션변경</a></span>
                         </div>
                       </li>
                     </ul>
@@ -939,7 +944,7 @@
                           {$form.quantity}
                           <a href="javascript:;" class="up ap-qty-stepper__btn ap-qty-stepper__btn--up" onclick="{$add_shortcut}" aria-label="수량증가"> </a>
                         </span>
-                        <a href="javascript:;" class="sizeQty ap-btn ap-btn--outline ap-btn--md" onclick="{$action_modify}">변경</a>
+                        <a href="javascript:;" class="sizeQty ap-btn ap-btn--outline ap-btn--sm" onclick="{$action_modify}">변경</a>
                       </div><!-- //ap-cart-item__qty-control -->
                       <div class="{$nplusevent_show_display|display} ap-cart-item__qty-fixed">
                         {$quantity}</div>
@@ -1038,7 +1043,7 @@
                     class="shippingArea {$order_shipfee_sale_info_display|display} ap-shipfee-area">
                     <span class="status">({$shipfee_condition}</span>
                     <div class="shippingFee">
-                      <a href="#none" class="btnText ap-link" id="{$shipfee_layer_id}">자세히</a>)
+                      <a href="#none" class="btnText ap-txt--under" id="{$shipfee_layer_id}">자세히</a>)
                       <div class="ec-base-tooltip ap-tooltip">
                         <strong class="title">배송비할인</strong>
                         <div class="content">
@@ -1293,7 +1298,7 @@
           <div class="{$btn_order_display|display} ap-cart-order-buttons" module="Order_TotalOrder"
             id="orderFixItem">
             <div class="ec-base-button">
-              <a href="#none" onclick="{$action_order_select}" class="ap-btn ap-btn--gold ap-btn--lg" link-order="/order/orderform.html{$param}" link-login="/member/login.html">구매하기</a>
+              <a href="#none" onclick="{$action_order_select}" class="ap-btn ap-btn--primary" link-order="/order/orderform.html{$param}" link-login="/member/login.html">구매하기</a>
             </div>
             <!-- 네이버 체크아웃 구매 버튼  -->
             <div id="{$naver_checkout_button_id}"></div>
@@ -1313,11 +1318,16 @@
       </div>
     </div>
   
+    <div class="ap-toast ap-cart-toast" id="apCartToast">
+      <div class="ap-toast__panel" id="apCartToastPanel"></div>
+    </div>
+
     <!-- 모바일 하단 고정 주문 바 -->
     <div class="ec-base-button gFixed {$btn_order_display|display} ap-cart-mobile-bar"
       module="Order_TotalOrder" id="orderFixArea">
+      <p class="ap-cart-mobile-bar__count displaynone">총 <span class="ap-cart-buy__count">0</span>개 상품<button type="button" class="ap-toast__toggle" aria-expanded="false" aria-controls="apCartToast"><span class="ap-sr-only">결제정보</span><!--@import(/svg/icon-chevron-up.html)--></button></p>
       <div class="ec-base-button gColumn ap-cart-mobile-bar__inner">
-        <a href="#none" onclick="{$action_order_select}" class="ap-btn ap-btn--gold ap-btn--lg" link-order="/order/orderform.html{$param}" link-login="/member/login.html">구매하기</a>
+        <a href="#none" onclick="{$action_order_select}" class="ap-btn ap-btn--primary" link-order="/order/orderform.html{$param}" link-login="/member/login.html"><span class="ap-cart-buy__price"></span>구매하기</a>
       </div>
     </div>
   </div>
@@ -1386,7 +1396,7 @@
 
   <section class="ap-basket-recommend">
     <div class="ap-container--narrow">
-      <h3 class="ap-text--h2">추천 상품</h3>
+      <h3 class="ap-text--h3">추천 상품</h3>
     </div><!-- //ap-container--narrow -->
     <div class="normalpackage_box" data-ez-module="product-normalpackage/1" data-ez-layout="grid4" data-ez="contents-0ozazsd-1">
       <div class="ap-container--narrow">
@@ -1417,11 +1427,11 @@
 
 <script>
 let ww = window.innerWidth;
-let mySwiper = undefined;
+let basketRecommendSwiper = undefined;
 
 function initSwiper() {
-  if (ww < 1025 && mySwiper === undefined) {
-    mySwiper = new Swiper(".ap-basket-swiper", {
+  if (ww < 1025 && basketRecommendSwiper === undefined) {
+    basketRecommendSwiper = new Swiper(".ap-basket-swiper", {
       slidesPerView: 2.1,
       spaceBetween: 8,
       simulateTouch: true,
@@ -1431,9 +1441,9 @@ function initSwiper() {
         clickable: true, 
       },
     });
-  } else if (ww >= 1025 && mySwiper !== undefined) {
-    mySwiper.destroy(true, true);
-    mySwiper = undefined;
+  } else if (ww >= 1025 && basketRecommendSwiper !== undefined) {
+    basketRecommendSwiper.destroy(true, true);
+    basketRecommendSwiper = undefined;
   }
 }
 
@@ -1458,6 +1468,28 @@ window.addEventListener("resize", function () {
     이미 처리하므로, 여기서는 시각적 보강(클래스 토글)만 다룸
    ============================================================ */
   document.addEventListener('DOMContentLoaded', function () {
+
+    /* 같은 쇼핑몰의 상품·목록에서 온 경우만 뒤로. 주문서·외부·기록 없음은 메인. */
+    document.querySelectorAll('.ap-cart-head__back').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        var referrerPath = '';
+        try {
+          var referrerUrl = new URL(document.referrer);
+          if (referrerUrl.origin === window.location.origin) {
+            referrerPath = referrerUrl.pathname;
+          }
+        } catch (err) {
+          referrerPath = '';
+        }
+        var fromOrderform = /\/order\/orderform\.html$/i.test(referrerPath);
+        if (referrerPath && !fromOrderform) {
+          window.history.back();
+          return;
+        }
+        window.location.href = '/';
+      });
+    });
 
     /* 전체선택 아이콘은 js/module/order/basket.js 가 체크 상태에 맞춰 갱신한다. */
 
