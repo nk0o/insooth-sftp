@@ -32,13 +32,6 @@
 /* ============================================================
 제품 진열 커스텀
 ============================================================ */
-.ap-list__hero{position: relative;height: 300px;}
-.ap-list__hero .ap-titleArea{position:absolute;z-index: 1;width: 100%;}
-.ap-list__hero .product_top_image{position:relative;max-width: none !important;height: 100%;  padding: 0;}
-.ap-list__hero .ap-list__title{position:absolute; bottom: 0;left: 50%; width: 100%; padding-bottom:var(--ap-space-xl); transform: translateX(-50%); text-align: left;}
-.ap-list__hero .ap-list__title .ap-text--display{color: var(--ap-color-white);letter-spacing: 0.02em;}
-.ap-list__bg{height: 100%;background-color: var(--ap-color-black);}
-.ap-list__bg img{width: 100%; height: 100%; object-fit: cover;}
 .ap-product__tab .ap-tabs{padding-bottom: 28px; border-bottom: 1px solid var(--ap-color-border-light);}
 .insooth .ap-list__cont select{min-width: 130px;}
 .ap-prdList .ap-tabs--category{margin-top: var(--ap-space-lg);}

@@ -8,6 +8,8 @@
     <!--@css(/css/module/order/ec_orderform/form_onetouch.css)-->
     <!--@css(/css/module/order/ec_orderform/form_onetouch_v2.css)-->
     <!-- 사용자 스타일 수정이 필요한 경우, 신규 CSS 파일을 추가하여 #userStyle #mCafe24Order { } 셀렉터로 처리 가능합니다. -->
+    <!--@css(/layout/basic/css/ap-layout.css)-->
+    <!--@css(/layout/basic/css/ap-orderform.css)-->
 
     <!--@js(/layout/basic/js/common.js)-->
     <!--@js(/js/module/order/ec_orderform/orders.js)-->
@@ -47,7 +49,7 @@
 
     <!-- [주문완료정보] -->
     <div class="resultArea">
-        <p class="message"><strong>고객님의 주문이<br>정상적으로 완료되었습니다.</strong></p>
+        <p class="message"><strong>{$user_name}님,<br>소중한 주문 감사합니다!</strong></p>
         <div class="resultInfo">
             <em class="orderNumber">주문번호 : {$order_id}</em>
             <p class="totalPrice">
@@ -920,8 +922,8 @@
     </div>
 
     <div class="ec-base-button gColumn">
-        <a href="/myshop/order/list.html" class="btnEm">주문 확인하기</a>
-        <a href="/" class="btnSubmit">쇼핑 계속하기</a>
+        <a href="/myshop/order/list.html" class="ap-btn ap-btn--outline">주문 확인하기</a>
+        <a href="/" class="ap-btn ap-btn--gold">쇼핑 계속하기</a>
     </div>
 </div>
 </body>

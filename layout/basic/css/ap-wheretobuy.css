@@ -1,0 +1,51 @@
+/* ── Notice Banner ── */
+.wheretobuy__notice {display: inline-block; padding: 10px 0 10px 8px;font-size: var(--ap-text-sm); color: var(--ap-color-text-primary); }
+.wheretobuy__notice::before { content: "※ "; }
+
+/* ── Store ── */
+.store-filter{display: inline-flex; gap: 4px; }
+.store-content { display: flex; height: 620px;margin: 24px 0 0; border: 1px solid var(--ap-color-border-light);}
+.store-filter select{min-width: 130px;}
+#storeList {flex: 40%;min-width: 380px; list-style: none; height: 100%; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--ap-color-gray-300) transparent; }
+/* ── Map ── */
+#map {flex: 60%; width: 60%; height: 100%; }
+#storeList::-webkit-scrollbar { width: 4px; }
+#storeList::-webkit-scrollbar-track { background: transparent; }
+#storeList::-webkit-scrollbar-thumb { background: var(--ap-color-gray-300); border-radius: 2px; }
+#storeList li { padding: 20px; border-bottom: 1px solid var(--ap-color-border-light); cursor: pointer; transition: background var(--ap-transition-fast); position: relative; }
+#storeList li:last-child { border-bottom: none; }
+#storeList li:hover { background: var(--ap-color-bg); }
+#storeList li.active { background: var(--ap-color-bg-section); }
+#storeList li.active::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--ap-color-text-primary); }
+/* ── Store Info (inside li) ── */
+.store-info { display: flex; gap: 14px; align-items: flex-start; }
+.store-img { width: 72px; height: 72px; object-fit: cover; border-radius: var(--ap-radius-sm); background: var(--ap-color-bg-section); flex-shrink: 0; border: 1px solid var(--ap-color-border-light);}
+.store-detail { flex: 1; min-width: 0; }
+.store-tag { display: inline-block; display: none; font-size: var(--ap-text-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ap-color-text-secondary); background: var(--ap-color-orange-light); padding: 2px 7px; border-radius: var(--ap-radius-pill); margin-bottom: 5px; font-weight: 500; }
+.store-name { display: block; font-size: var(--ap-text-base); font-weight: 600; color: var(--ap-color-text-primary); margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.store-address,
+.store-tel,
+.store-time { font-size: var(--ap-text-sm); color: var(--ap-color-text-secondary); line-height: 1.6; display: flex; align-items: flex-start; gap: 5px; word-break: keep-all;}
+.store-tel{pointer-events: none;}
+.store-address::before { content: "📍"; font-size: 10px; margin-top: 2px; }
+.store-tel::before    { content: "📞"; font-size: 10px; margin-top: 2px; }
+.store-time::before   { content: "🕐"; font-size: 10px; margin-top: 2px; }
+
+/* ── MOBILE (≤ 768px) ── */
+@media (max-width: 1024px) {
+  #storeList {flex: 50%;min-width: auto;}
+  #map{flex: 50%;}
+}
+@media (max-width: 768px) {
+  .store-content {height: auto; flex-direction: column; margin-top: 16px;}
+  .store-tel{pointer-events:auto; text-decoration: underline;}
+  #storeList { height: auto; max-height: 420px; border-top: 2px solid var(--ap-color-text-primary);}
+  #storeList li{padding: 12px;}
+  #storeList li.active::before{display: none;}
+  #map { flex: 400px;height: 400px; width: 100%;   border-top: 2px solid var(--ap-color-text-primary);}
+  .store-tel::before{text-decoration: none;}
+}
+@media (max-width: 520px) {
+  .store-filter{display: grid; grid-template-columns: 1fr 1fr; gap: 6px;}
+  #storeKeyword{grid-column: span 2;}
+}

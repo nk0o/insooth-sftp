@@ -9,7 +9,8 @@
 <!--@css(/layout/basic/css/ap-main.css)--> <!-- 메인 -->
 <!--@css(/layout/basic/css/ap-memeber.css)--> <!-- 회원 -->
 <!--@css(/layout/basic/css/ap-myshop.css)--> <!-- 마이페이지 -->
-<!--@css(/layout/basic/css/ap-service.css)--> <!-- 서비스 -->
+<!--@css(/layout/basic/css/ap-support.css)--><!-- 서비스 -->
+<!--@css(/layout/basic/css/ap-support-shell.css)--> <!-- 서비스 -->
 <!--@css(/layout/basic/css/ap-product.css)--> <!-- 제품목록/제품카드 -->
 
 <div class="guide">
@@ -584,6 +585,22 @@
           <a href="#" class="ap-btn ap-btn--outline ap-btn--lg">전체 상품 보기</a>
         </div>
     </div><!-- //demo-box -->
+
+    <div class="group-label"><span>Toast (Mobile)</span><i></i></div>
+    <div class="demo-box">
+      <div class="ap-toast-stage">
+        <div class="ap-toast" id="apToastDemo">
+          <div class="ap-toast__panel">
+            <h3 class="ap-text--h5">결제정보</h3>
+            <p class="ap-text--body">총 상품금액 55,000원</p>
+          </div>
+        </div>
+        <div class="ap-toast__bar">
+          <p class="ap-toast__count">총 2개 상품<button type="button" class="ap-toast__toggle" aria-expanded="false" aria-controls="apToastDemo"><span class="ap-sr-only">결제정보</span><!--@import(/svg/icon-chevron-up.html)--></button></p>
+          <a href="#none" class="ap-btn ap-btn--primary">55,000원 구매하기</a>
+        </div>
+      </div>
+    </div>
   </section> 
   
   

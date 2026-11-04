@@ -4,30 +4,24 @@
 <!--@css(/layout/basic/css/ap-product.css)-->
 <div class="ap-prdList">
   <!-- 상품리스트 상단 -->
-  <div class="ap-list__hero">
-    <div class="ap-titleArea">
-      <div class="ap-container--narrow">
-        <!-- 브래드크럼 -->
-        <div class="ap-path white" module="product_headcategory">
-          <span class="blind">현재 위치</span>
-          <ol class="ap-path__list">
-            <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
-            <li class="{$disp_cate_1|display}"><a href="{$link_product_list_1}">{$name_1}</a></li>
-            <li class="{$disp_cate_2|display}"><strong><a href="{$link_product_list_2}">{$name_2}</a></strong></li>
-            <li class="{$disp_cate_3|display}"><a href="{$link_product_list_3}">{$name_3}</a></li>
-            <li class="{$disp_cate_4|display}"><strong><a href="{$link_product_list_4}">{$name_4}</a></strong></li>
-          </ol>
-        </div><!-- //ap-path -->
-      </div><!-- //ap-container--narrow -->
-    </div><!-- //ap-titleArea -->
-    <!-- 제품목록 타이틀 배경이미지 -->
-    <div module="product_headcategory" data-ez-module="product-list-categoryimage/1" class="product_top_image" data-ez="contents-0z0fv51-1">
-      <div class="ap-list__bg">{$top_image_tag}</div>
-      <div class="ap-list__title ap-container--narrow">
-        <h2 class="ap-text--display"><span>{$title_text_or_image}</span></h2>
+  <div class="ap-titleArea ap-titleArea--hero" module="product_headcategory" data-ez-module="product-list-categoryimage/1" data-ez="contents-0z0fv51-1">
+    <div class="ap-titleArea__bg product_top_image">{$top_image_tag}</div>
+    <div class="ap-titleArea__body ap-container--narrow">
+      <div class="ap-path white">
+        <span class="blind">현재 위치</span>
+        <ol class="ap-path__list">
+          <li><a href="/"><!--@import(/svg/icon-home.html)--></a></li>
+          <li class="{$disp_cate_1|display}"><a href="{$link_product_list_1}">{$name_1}</a></li>
+          <li class="{$disp_cate_2|display}"><strong><a href="{$link_product_list_2}">{$name_2}</a></strong></li>
+          <li class="{$disp_cate_3|display}"><a href="{$link_product_list_3}">{$name_3}</a></li>
+          <li class="{$disp_cate_4|display}"><strong><a href="{$link_product_list_4}">{$name_4}</a></strong></li>
+        </ol>
+      </div><!-- //ap-path -->
+      <div class="ap-titleArea__heading">
+        <h1 class="ap-titleArea__title white ap-text--display"><span>{$title_text_or_image}</span></h1>
       </div>
-    </div>
-  </div><!-- //ap-list__hero -->
+    </div><!-- //ap-titleArea__body -->
+  </div><!-- //ap-titleArea -->
   
   <!-- 상품 분류 -->
   <div class="ap-tabs ap-tabs--category" data-ez-module="product-list-subcategory/1" data-ez="contents-0p3uk7o-1">

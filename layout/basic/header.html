@@ -181,18 +181,20 @@ var ticking = false;
 const apHeadisMobile = () => window.innerWidth <= 1024;
 
 function updateNoticeHeight() {
-  if (!apHeadisMobile()) {
-    document.documentElement.style.setProperty(
-      '--ap-notice-height',
-      `${noticeHeight}px`
-    );
+  var isMain = document.documentElement.classList.contains('is-main');
+  var closed = (typeof getCookiem === 'function') && getCookiem('top_banner_cookie');
+
+  if (!isMain || closed) {
+    noticeHeight = 0;
+    document.documentElement.style.setProperty('--ap-notice-height', '0px');
+    if (apNotice) apNotice.style.display = 'none';
     return;
   }
 
-  document.documentElement.style.setProperty(
-    '--ap-notice-height',
-    window.scrollY > 0 ? '0px' : `${noticeHeight}px`
-  );
+  if (!noticeHeight) noticeHeight = 38;
+  var next = (!apHeadisMobile() || window.scrollY <= 0) ? noticeHeight : 0;
+  document.documentElement.style.setProperty('--ap-notice-height', next + 'px');
+  if (apNotice) apNotice.style.display = 'block';
 }
 
 function apHandleScroll() {

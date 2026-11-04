@@ -2,6 +2,10 @@
 <!--@js(/layout/basic/js/main.js)-->
 <!--@css(/layout/basic/css/main.css)-->
 <!--@css(/layout/basic/css/ap-main.css)-->
+<script>
+document.documentElement.classList.add('is-main');
+if (typeof apHandleScroll === 'function') apHandleScroll();
+</script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
 
