@@ -106,7 +106,7 @@
 /* 로그인 */
 .xans-member-login {margin-left:auto;margin-right:auto;text-align:center;}
 .xans-member-login .login {max-width:400px;}
-.xans-member-login .login input[type=text], .login input[type=password] {height:48px;margin-bottom:8px;border:1px solid #e3e3e3;}
+.xans-member-login .login input[type=text], .login input[type=password] {height:44px;margin-bottom:8px;border:1px solid #e3e3e3;}
 .xans-member-login .wrap_security {max-width:400px;margin-left:auto;margin-right:auto;display:flex;justify-content:flex-end;}
 .xans-member-login .wrap_find {display:flex;justify-content:center}
 .xans-member-login .wrap_find div {margin:20px 0 0;padding:0 10px;font-size:14px;}
@@ -137,7 +137,7 @@
 /* 비회원 주문조회 */
 .xans-myshop-orderhistorynologin {max-width:400px;margin-left:auto;margin-right:auto;text-align:center;}
 .xans-myshop-orderhistorynologin .login {width:100%;}
-.xans-myshop-orderhistorynologin .login input[type=text], .login input[type=password] {height:48px;margin-bottom:8px;border:1px solid #e3e3e3;}
+.xans-myshop-orderhistorynologin .login input[type=text], .login input[type=password] {height:44px;margin-bottom:8px;border:1px solid #e3e3e3;}
 .xans-myshop-orderhistorynologin .txt_nonmem_check {margin:40px 0 8px;font-size:16px;font-weight:700;color:#1a1a1a;}
 .xans-myshop-orderhistorynologin .txtInfo {margin:0px 0 24px;font-size:14px;;color:#8a8a8a;}
 .xans-myshop-orderhistorynologin .login__button {margin:0;}
@@ -539,7 +539,7 @@ div.ec-base-help ul {margin:0;}
 /* 마이페이지 추천인 아이디 */
 .myshop_recommender .invite {margin:0;padding:50px 0;border:1px solid #e3e3e3;border-top:0;text-align:center;}
 .myshop_recommender .invite > div {display:block;padding:0 0 10px;color:#000;font-size:16px;}
-.myshop_recommender .invite p input {padding:4px;max-width:450px;width:100%;height:40px;border:1px solid #e3e3e3 !important;color:#111;}
+.myshop_recommender .invite p input {padding:4px;max-width:450px;width:100%;height:44px;border:1px solid #e3e3e3 !important;color:#111;}
 .myshop_recommender .invite ul {margin:15px 0 0;font-size:14px;line-height:1.5;color:#6a6a6a;}
 .myshop_recommender .invite .btnNormal {display:inline-block;height:40px;margin:0;padding:0 10px;font-size:14px;line-height:40px;color:#111;cursor:pointer;vertical-align:middle;border:1px solid #e3e3e3; -moz-box-sizing:border-box;box-sizing:border-box;}
 
@@ -915,7 +915,7 @@ div.ec-base-help ul {margin:0;}
 	/* 마이페이지 추천인 아이디 */
 	.myshop_recommender .invite {margin:0;padding:25px 0;border:0;border-bottom:1px solid #e3e3e3;width:108%;margin-left:-4%;}
 	.myshop_recommender .invite > div {font-size:14px;}
-	.myshop_recommender .invite p input {padding:4px;max-width:auto;width:60%;height:40px;border:1px solid #e3e3e3 !important;color:#111;}
+	.myshop_recommender .invite p input {padding:4px;max-width:auto;width:60%;height:44px;border:1px solid #e3e3e3 !important;color:#111;}
 	.myshop_recommender .invite ul {margin:10px 0 0;font-size:13px;}
 
 	/* 장바구니 */

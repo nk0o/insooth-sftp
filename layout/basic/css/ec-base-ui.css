@@ -68,7 +68,7 @@ svg.icon { display:block; }
 
 /* Form */
 input[type=text],
-input[type=password] { height:40px; line-height:40px; padding:2px 4px 2px 15px; border:1px solid #e0e0e0; color:var(--font-color-base); font-size:13px; box-sizing:border-box; outline:1px; }
+input[type=password] { height:44px; line-height:44px; padding:2px 4px 2px 15px; border:1px solid #e0e0e0; color:var(--font-color-base); font-size:13px; box-sizing:border-box; outline:1px; }
 input[type="button"], input[type="text"], input[type="password"], input[type="tel"], input[type="image"], textarea, select { -moz-appearance:none; -webkit-appearance:none; appearance:none; }
 input[type=text]:not(:disabled):focus,
 input[type=password]:not(:disabled):focus,
@@ -82,11 +82,11 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color:#c
 input::-moz-placeholder, textarea::-moz-placeholder { color:#c1c1c1; opacity:1; }
 input.gFull { width:100%; }
 /* file */
-input[type="file"] { height:40px; line-height:1; font-size:13px; color:#7d7d7d; }
+input[type="file"] { height:44px; line-height:1; font-size:13px; color:#7d7d7d; }
 input[type="file"]::file-selector-button,
-input[type="file"]::-webkit-file-upload-button { height:40px; padding:0 20px; font-size:13px; color:#1c1c1c; border:1px solid #bcbcbc; border-radius:0; background:#fff; box-sizing:border-box; -webkit-appearance:none; }
+input[type="file"]::-webkit-file-upload-button { height:44px; padding:0 20px; font-size:13px; color:#1c1c1c; border:1px solid #bcbcbc; border-radius:0; background:#fff; box-sizing:border-box; -webkit-appearance:none; }
 /* select */
-select { max-width:100%; height:40px; padding:0 30px 0 15px; font-size:13px; border:1px solid #e0e0e0; box-sizing:border-box; background:#fff url("//img.echosting.cafe24.com/skin/skin/common/ico_select.png") no-repeat right 10px center; background-size:14px 8px; }
+select { max-width:100%; height:44px; padding:0 30px 0 15px; font-size:13px; border:1px solid #e0e0e0; box-sizing:border-box; background:#fff url("//img.echosting.cafe24.com/skin/skin/common/ico_select.png") no-repeat right 10px center; background-size:14px 8px; }
 select::-ms-expand { display:none; }
 /* radio */
 input[type="radio"] { position:relative; opacity:1; width:18px; height:18px; cursor:pointer; appearance:none; -webkit-appearance:none; -moz-appearance:none; border:0;

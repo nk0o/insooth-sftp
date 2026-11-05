@@ -297,7 +297,9 @@ ap- COMPONENT
 .insooth input[type=password],
 .insooth .ap-form__input,
 .insooth .ap-form__select,
-.insooth .ap-form__textarea {height: 40px; border: 1px solid var(--ap-color-border); padding: 0 var(--ap-space-md); font-size: var(--ap-text-sm); font-family: var(--ap-font-sans); border-radius: var(--ap-radius-sm); outline: none; transition: var(--ap-transition-fast); }
+.insooth .ap-form__textarea,
+.insooth .ap-member .ap-form__group input.ap-form__input,
+.insooth .ap-member .ap-form__group select.ap-form__select {height: 44px; border: 1px solid var(--ap-color-border); padding: 0 var(--ap-space-md); font-size: var(--ap-text-sm); font-family: var(--ap-font-sans); border-radius: var(--ap-radius-sm); outline: none; transition: var(--ap-transition-fast); }
 
 .insooth input[type=text]:not([type=text][readonly]):focus, 
 .insooth input[type=password]:not([type=password][readonly]):focus,
