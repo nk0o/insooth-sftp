@@ -6,8 +6,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid var(--ap-color-border);
-  background: var(--ap-color-white);
-  color: var(--ap-color-text-primary);
+  color: var(--ap-color-white);
+  background-color: var(--ap-color-text-primary);
 }
 .ap-about-links__item {
   display: block;
